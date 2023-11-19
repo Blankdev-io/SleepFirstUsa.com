@@ -1,0 +1,1375 @@
+{% liquid
+    assign savings = 0
+    assign upsell_title = section.settings.upsell_title
+    assign sug_mat = section.settings.sug_mat
+    assign sug_bas = section.settings.sug_bas
+    assign sug_pil = section.settings.sug_pil
+    assign sug_she = section.settings.sug_she
+%}
+
+<div id="cart-items" class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-text bg-white shadow-sp rounded-cl py-6 px-3 ds:py-10 ds:px-7">
+        <template v-if="loading == true">
+            <div class="flex flex-col items-center">
+                <h1 class="text-title mb-7">Loading</h1>
+                <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+            </div>
+        </template>
+        <template v-else>
+            <template v-if="itemsCount > 0">
+                <h1 class="text-title mb-7">Shopping Cart</h1>
+                <div class="border-b-2 border-b-secondary w-1/5 mb-8"></div>
+                <form action="/cart" method="post" novalidate>
+                    <div class="grid w-full">
+                        <div class="hidden font-bold text-xl text-center border-b border-b-secondary pb-5 ts:grid ts:grid-cols-6 ts:text-3xl">
+                            <div class="col-span-2 text-left ts:col-span-3">Products</div>
+                            <div>Price</div>
+                            <div>Quantity</div>
+                            <div>Total</div>
+                        </div>
+                        <div v-for="(product, index) in products" class="grid grid-cols-3 gap-y-3 relative text-sm text-center py-5 ts:grid-cols-6 ts:gap-y-0 ts:text-base">
+                            <span @click="removeItem(index)" title="Delete" class="absolute right-0 top-5 cursor-pointer">{% render 'icons', icon: 'delete' %}</span>
+                            <div class="flex justify-center items-center">
+                                <a :href="product.url">
+                                    <img :src="product.featured_image.url + '&width=180'" :alt="product.featured_image.alt" class="object-cover object-center rounded-cl">
+                                </a>
+                            </div>
+                            <div class="col-span-2 flex flex-col justify-evenly px-3 ts:text-left">
+                                <a :href="product.url" class="font-bold text-base ts:text-xl">${ product.product_title}</a>
+                                <span class="font-bold text-accent-2">${ product.variant_title }</span>
+                                <template v-if="product.properties != null" v-for="(propertie, index) in product.properties">
+                                    <span v-if="propertie.value != '_mws_cart' || propertie != '_mws_qty' || propertie != '_mws_required'" class="font-bold text-primary">${ propertie }</span>
+                                </template>
+                            </div>
+                            <div class="flex flex-col gap-3 ts:justify-center ts:gap-0">
+                                <span class="font-bold text-xl ts:hidden">Price</span>
+                                <div class="flex flex-col">
+                                    ${ product.price }
+                                    <span v-if="product.compare_at_price > 0" class="text-primary line-through">${ product.compare_at_price }</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 justify-between ts:justify-center ts:flex-row ts:gap-0">
+                                <span class="font-bold text-xl ts:hidden">Quantity</span>
+                                <div class="relative w-3/4">
+                                    <button @click="decrement(index)" class="flex items-center absolute inset-y-0 left-0 pl-2 mm:pl-4" type="button" title="quantity minus" data-id="add-btn">-</button>
+                                    <input class="text-center appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 px-3 mm:px-8" type="number" name="quantity" :value="product.quantity" min="1" title="quantity input">
+                                    <button @click="increment(index)" class="flex items-center absolute inset-y-0 right-0 pr-2 mm:pr-4" type="button" title="quantity plus" data-id="add-btn">+</button>
+                                </div>
+                                {% comment %} <input type="number" name="updates[]" id="updates_{{ item.key }}" :value="product.quantity" min="0" class="text-center rounded-full border-primary w-4/5"> {% endcomment %}
+                            </div>
+                            <div class="flex flex-col gap-3 ts:justify-center ts:gap-0">
+                                <span class="font-bold text-xl ts:hidden">Total</span>
+                                <div class="flex flex-col">
+                                    {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+                                    ${ product.line_price }
+                                    <div v-for="discount in product.discounts">
+                                    ${ discount.title }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden text-text mt-4">
+                        <div class="text-bold text-2xl mb-4">{% for item in cart.items limit: 1 %}Perfect with your {{ item.product.title }}:{% endfor %}</div>
+                        <div class="grid gap-4 mb-10 tl:grid-cols-2">
+                            {% for item in cart.items limit: 1 %}
+                                {% if item.product.type == 'Mattresses' %}
+                                    {% for bas in sug_bas %}
+                                        {% if forloop.index == 1 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ bas.url }}" title="{{ bas.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ bas.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ bas.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ bas.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ bas.featured_image | image_url: width: 440 }}" title="{{ bas.featured_image.title }}" alt="{{ bas.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ bas.url }}" title="{{ bas.title }}"><p class="font-bold text-lg {% if bas.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ bas.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="base1VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ base1VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ base1VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in base1Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="base1Selected[index]" @change="base1Form.selections = base1Selected, base1ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="base1AddToCart" @click="addToCart" class="button-upsell mm:w-max" title="ADD TO CART">
+                                                        <template v-if="addingToCart == false">ADD TO CART</template>
+                                                        <template v-else>
+                                                            <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                        </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if forloop.index == 2 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ bas.url }}" title="{{ bas.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ bas.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ bas.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ bas.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ bas.featured_image | image_url: width: 440 }}" title="{{ bas.featured_image.title }}" alt="{{ bas.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ bas.url }}" title="{{ bas.title }}"><p class="font-bold text-lg {% if bas.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ bas.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="base2VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ base2VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ base2VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in base2Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="base2Selected[index]" @change="base2Form.selections = base2Selected, base2ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="base2AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elsif item.product.type == 'Pillows' or item.product.type == 'Pregnancy Pillow' or item.product.type == 'Wedge Pillow' %}
+                                    {% for she in sug_she %}
+                                        {% if forloop.index == 1 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ she.url }}" title="{{ she.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ she.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ she.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ she.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ she.featured_image | image_url: width: 440 }}" title="{{ she.featured_image.title }}" alt="{{ she.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ she.url }}" title="{{ she.title }}"><p class="font-bold text-lg {% if she.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ she.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="sheet1VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ sheet1VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ sheet1VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in sheet1Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="sheet1Selected[index]" @change="sheet1Form.selections = sheet1Selected, sheet1ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="sheet1AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if forloop.index == 2 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ she.url }}" title="{{ she.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ she.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ she.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ she.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ she.featured_image | image_url: width: 440 }}" title="{{ she.featured_image.title }}" alt="{{ she.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ she.url }}" title="{{ she.title }}"><p class="font-bold text-lg {% if she.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ she.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="sheet2VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ sheet2VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ sheet2VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in sheet2Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="sheet2Selected[index]" @change="sheet2Form.selections = sheet2Selected, sheet2ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="sheet2AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elsif item.product.type == 'Bed Sheets' or item.product.type == 'Mattress Protectors' or item.product.type == 'Mattress Topper' or item.product.type == 'Weighted Blanket' %}
+                                    {% for pil in sug_pil %}
+                                        {% if forloop.index == 1 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ pil.url }}" title="{{ pil.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ pil.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ pil.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ pil.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ pil.featured_image | image_url: width: 440 }}" title="{{ pil.featured_image.title }}" alt="{{ pil.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ pil.url }}" title="{{ pil.title }}"><p class="font-bold text-lg {% if pil.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ pil.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="pillow1VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ pillow1VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ pillow1VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in pillow1Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="pillow1Selected[index]" @change="pillow1Form.selections = pillow1Selected, pillow1ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="pillow1AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if forloop.index == 2 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ pil.url }}" title="{{ pil.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ pil.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ pil.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ pil.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ pil.featured_image | image_url: width: 440 }}" title="{{ pil.featured_image.title }}" alt="{{ pil.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ pil.url }}" title="{{ pil.title }}"><p class="font-bold text-lg {% if pil.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ pil.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="pillow2VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ pillow2VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ pillow2VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in pillow2Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="pillow2Selected[index]" @change="pillow2Form.selections = pillow2Selected, pillow2ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="pillow2AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% else %}
+                                    {% for mat in sug_mat %}
+                                        {% if forloop.index == 1 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ mat.url }}" title="{{ mat.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ mat.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ mat.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ mat.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ mat.featured_image | image_url: width: 440 }}" title="{{ mat.featured_image.title }}" alt="{{ mat.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ mat.url }}" title="{{ mat.title }}"><p class="font-bold text-lg {% if mat.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ mat.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="mattress1VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ mattress1VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ mattress1VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in mattress1Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="mattress1Selected[index]" @change="mattress1Form.selections = mattress1Selected, mattress1ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="mattress1AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if forloop.index == 2 %}
+                                            <div class="grid grid-flow-row text-text bg-white shadow-mp rounded-cl h-auto mm:grid-cols-2">
+                                                <a href="{{ mat.url }}" title="{{ mat.title }}"><picture>
+                                                    <source media="(min-width: 868px)" srcset="{{ mat.featured_image | image_url: width: 565 }}">
+                                                    <source media="(min-width: 768px)" srcset="{{ mat.featured_image | image_url: width: 830 }}">
+                                                    <source media="(min-width: 480px)" srcset="{{ mat.featured_image | image_url: width: 730 }}">
+                                                    <img class="object-cover rounded-t-cl w-full h-full max-h-[215px] tl:rounded-r-none tl:rounded-l-cl" src="{{ mat.featured_image | image_url: width: 440 }}" title="{{ mat.featured_image.title }}" alt="{{ mat.featured_image.alt }}" loading="lazy">
+                                                </picture></a>
+                                                <div class="flex flex-col justify-between p-4 tl:h-[215px]">
+                                                    <a href="{{ mat.url }}" title="{{ mat.title }}"><p class="font-bold text-lg {% if mat.options.size > 1 %}line-clamp-1{% else %}line-clamp-2{% endif %} mb-2 mm:text-2xl tl:text-xl tl:mb-0">{{ mat.title }}</p></a>
+                                                    <div class="grid grid-cols-2 mb-2">
+                                                        <div class="self-center">
+                                                            <p v-if="mattress2VariantComparePrice != '$0.00'" class="font-bold text-accent-2 line-through tl:text-lg">${ mattress2VariantComparePrice }</p>
+                                                            <p class="font-bold text-primary tl:text-lg">${ mattress2VariantPrice }</p>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                        <template v-for="(option, index) in mattress2Form.options" :key="index">
+                                                            <label class="text-sm" :for="option.name">${ option.name }:</label>
+                                                            <div>
+                                                            <select v-model="mattress2Selected[index]" @change="mattress2Form.selections = mattress2Selected, mattress2ChangePrice()" class="text-sm truncate appearance-none border rounded-full border-primary focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-10" :name="option.name" title="Size Selector">
+                                                                <template v-for="(value, i) in option.values">
+                                                                <option :value="value">${ value }</option>
+                                                                </template>
+                                                            </select>
+                                                            </div>
+                                                        </template>
+                                                        </div>
+                                                    </div>
+                                                    <button id="mattress2AddToCart" @click="addToCart($event, index)" class="button-upsell mm:w-max" data-id="add-btn">
+                                                    <template v-if="addingToCart == false">
+                                                    ADD TO CART
+                                                    </template>
+                                                    <template v-else>
+                                                        <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+                                                    </template>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>           
+                    </div>
+                    <div class="flex flex-col items-end text-right gap-3 mt-4 ts:pr-8">
+                        <p class="font-extrabold text-3xl">Subtotal: <span>${ totalPrice }</span></p>
+                        <p class="hidden font-bold text-2xl text-primary">Total Savings: {{ cart.total_discount | money }}</p>
+                    </div>
+                    <div class="flex flex-col justify-between gap-y-4 mt-4 ts:flex-row ts:px-8">
+                        <div class="flex flex-col gap-2">
+                            <label for="notes">Order Notes:</label>
+                            <textarea v-model="orderNote" name="notes" id="notes" cols="30" rows="4" class="border-primary rounded-cl">${ orderNote }</textarea>
+                            <button @click="updateNote" name="update-note" class="button-white w-full">SUBMIT</button>
+                        </div>
+                        <div class="flex flex-col items-end gap-3 pt-3 ts:pt-8">
+                            <button @click="clearCart" name="clear" class="button-white w-full" data-id="add-btn">CLEAR CART</button>
+                            <button type="submit" name="checkout" class="button w-full">CHECKOUT</button>
+                        </div>
+                    </div>
+                </form>
+            </template>
+            <template v-else-if="itemsCount == 0">
+                <h1 class="text-title mb-7">Cart</h1>
+                <p class="text-bold text-2xl mb-7">Your cart is empty</p>
+                <p class="text-bold text-2xl mb-7">You can take a look at these offers:</p>
+                <div class="flex flex-col gap-4 mb-10 ts:flex-row ds:gap-8">
+                    {% for block in section.blocks %}
+                    {% liquid 
+                        assign banner_img = block.settings.banner_img
+                        assign banner_img_mob = block.settings.banner_img_mob
+                        assign url = block.settings.url
+                    %}
+
+                    <div class="w-full ts:w-1/3">
+                        <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                            <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
+                            <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}" loading="lazy">
+                        </picture></a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <p class="text-bold text-2xl mb-7">Or visit our collections:</p>
+                <a class="button w-max" href="/collections/all">Continue Shopping</a>
+            </template>
+        </template>
+    </div>
+</div>
+
+
+<script>
+var { createApp } = Vue
+
+const appCart = createApp({
+    delimiters: ['${', '}'],
+    data() {
+      const products = "",
+      qty = 1,
+      itemsCount = 0,
+      loading = true,
+      addingToCart = false,
+      totalPrice = "",
+      orderNote = "",
+      itemsPrice = [],
+      linesPrice = [],
+      base1VariantPrice = "",
+      base1VariantComparePrice = "",
+      base1VariantID = "",
+      base1Variants = "",
+      base1Selected = [],
+      base1Form = {
+        selections: "",
+        options: ""
+      },
+      base2VariantPrice = "",
+      base2VariantComparePrice = "",
+      base2VariantID = "",
+      base2Variants = "",
+      base2Selected = [],
+      base2Form = {
+        selections: "",
+        options: ""
+      },
+      mattress1VariantPrice = "",
+      mattress1VariantComparePrice = "",
+      mattress1VariantID = "",
+      mattress1Variants = "",
+      mattress1Selected = [],
+      mattress1Form = {
+        selections: "",
+        options: ""
+      },
+      mattress2VariantPrice = "",
+      mattress2VariantComparePrice = "",
+      mattress2VariantID = "",
+      mattress2Variants = "",
+      mattress2Selected = [],
+      mattress2Form = {
+        selections: "",
+        options: ""
+      },
+      pillow1VariantPrice = "",
+      pillow1VariantComparePrice = "",
+      pillow1VariantID = "",
+      pillow1Variants = "",
+      pillow1Selected = [],
+      pillow1Form = {
+        selections: "",
+        options: ""
+      },
+      pillow2VariantPrice = "",
+      pillow2VariantComparePrice = "",
+      pillow2VariantID = "",
+      pillow2Variants = "",
+      pillow2Selected = [],
+      pillow2Form = {
+        selections: "",
+        options: ""
+      },
+      sheet1VariantPrice = "",
+      sheet1VariantComparePrice = "",
+      sheet1VariantID = "",
+      sheet1Variants = "",
+      sheet1Selected = [],
+      sheet1Form = {
+        selections: "",
+        options: ""
+      },
+      sheet2VariantPrice = "",
+      sheet2VariantComparePrice = "",
+      sheet2VariantID = "",
+      sheet2Variants = "",
+      sheet2Selected = [],
+      sheet2Form = {
+        selections: "",
+        options: ""
+      };
+
+      return {
+        products,
+        qty,
+        itemsCount,
+        loading,
+        addingToCart,
+        totalPrice,
+        orderNote,
+        itemsPrice,
+        linesPrice,
+        base1VariantPrice,
+        base1VariantComparePrice,
+        base1VariantID,
+        base1Variants,
+        base1Selected,
+        base1Form,
+        base2VariantPrice,
+        base2VariantComparePrice,
+        base2VariantID,
+        base2Variants,
+        base2Selected,
+        base2Form,
+        mattress1VariantPrice,
+        mattress1VariantComparePrice,
+        mattress1VariantID,
+        mattress1Variants,
+        mattress1Selected,
+        mattress1Form,
+        mattress2VariantPrice,
+        mattress2VariantComparePrice,
+        mattress2VariantID,
+        mattress2Variants,
+        mattress2Selected,
+        mattress2Form,
+        pillow1VariantPrice,
+        pillow1VariantComparePrice,
+        pillow1VariantID,
+        pillow1Variants,
+        pillow1Selected,
+        pillow1Form,
+        pillow2VariantPrice,
+        pillow2VariantComparePrice,
+        pillow2VariantID,
+        pillow2Variants,
+        pillow2Selected,
+        pillow2Form,
+        sheet1VariantPrice,
+        sheet1VariantComparePrice,
+        sheet1VariantID,
+        sheet1Variants,
+        sheet1Selected,
+        sheet1Form,
+        sheet2VariantPrice,
+        sheet2VariantComparePrice,
+        sheet2VariantID,
+        sheet2Variants,
+        sheet2Selected,
+        sheet2Form
+      }
+    },
+
+    created() {
+
+        const options = {
+            method: "GET"
+        };
+        fetch("/cart.js", options)
+            .then( response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(response.status);
+                }
+            })
+            .then(data => {
+                const cartData = data;
+                const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+                this.products = cartData.items;
+                this.itemsCount = cartData.item_count;
+                this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
+                this.orderNote = cartData.note;
+
+                const productArray = this.products;
+                productArray.forEach((item, index) => {
+                    item.price = formatter.format((item.price/100).toFixed(2));
+                    item.original_price = formatter.format((item.original_price/100).toFixed(2));
+                    item.discounted_price = formatter.format((item.discounted_price/100).toFixed(2));
+                    item.line_price = formatter.format((item.line_price/100).toFixed(2));
+                    item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
+                    item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
+                    item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                    item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
+                });
+                this.loading = false;
+            })
+            .catch(err => {
+                console.error("Error:", err)
+            });
+        {% for bas in sug_bas %}
+            {% if forloop.index == 1  %}
+                fetch("/products/{{ bas.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const base1Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.base1Form.options = base1Data.options.map(item => ({...item, visible: false}));
+                        this.base1VariantPrice = formatter.format((base1Data.variants[0].price/100).toFixed(2));
+                        this.base1VariantComparePrice = formatter.format((base1Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.base1Variants = base1Data.variants;
+                        this.base1VariantID = base1Data.variants[0].id;
+                        base1Data.options.map(item => this.base1Selected.push(item.values[0]));
+                        this.base1Form.selections = [
+                        this.base1Selected[0] ? this.base1Selected[0] : null,
+                        this.base1Selected[1] ? this.base1Selected[1] : null,
+                        this.base1Selected[2] ? this.base1Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+            {% if forloop.index == 2  %}
+                fetch("/products/{{ bas.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const base2Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.base2Form.options = base2Data.options.map(item => ({...item, visible: false}));
+                        this.base2VariantPrice = formatter.format((base2Data.variants[0].price/100).toFixed(2));
+                        this.base2VariantComparePrice = formatter.format((base2Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.base2Variants = base2Data.variants;
+                        this.base2VariantID = base2Data.variants[0].id;
+                        base2Data.options.map(item => this.base2Selected.push(item.values[0]));
+                        this.base2Form.selections = [
+                        this.base2Selected[0] ? this.base2Selected[0] : null,
+                        this.base2Selected[1] ? this.base2Selected[1] : null,
+                        this.base2Selected[2] ? this.base2Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+        {% endfor %}
+        {% for mat in sug_mat %}
+            {% if forloop.index == 1  %}
+                fetch("/products/{{ mat.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const mattress1Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.mattress1Form.options = mattress1Data.options.map(item => ({...item, visible: false}));
+                        this.mattress1VariantPrice = formatter.format((mattress1Data.variants[0].price/100).toFixed(2));
+                        this.mattress1VariantComparePrice = formatter.format((mattress1Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.mattress1Variants = mattress1Data.variants;
+                        this.mattress1VariantID = mattress1Data.variants[0].id;
+                        mattress1Data.options.map(item => this.mattress1Selected.push(item.values[0]));
+                        this.mattress1Form.selections = [
+                        this.mattress1Selected[0] ? this.mattress1Selected[0] : null,
+                        this.mattress1Selected[1] ? this.mattress1Selected[1] : null,
+                        this.mattress1Selected[2] ? this.mattress1Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+            {% if forloop.index == 2  %}
+                fetch("/products/{{ mat.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const mattress2Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.mattress2Form.options = mattress2Data.options.map(item => ({...item, visible: false}));
+                        this.mattress2VariantPrice = formatter.format((mattress2Data.variants[0].price/100).toFixed(2));
+                        this.mattress2VariantComparePrice = formatter.format((mattress2Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.mattress2Variants = mattress2Data.variants;
+                        this.mattress2VariantID = mattress2Data.variants[0].id;
+                        mattress2Data.options.map(item => this.mattress2Selected.push(item.values[0]));
+                        this.mattress2Form.selections = [
+                        this.mattress2Selected[0] ? this.mattress2Selected[0] : null,
+                        this.mattress2Selected[1] ? this.mattress2Selected[1] : null,
+                        this.mattress2Selected[2] ? this.mattress2Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+        {% endfor %}
+        {% for pil in sug_pil %}
+            {% if forloop.index == 1  %}
+                fetch("/products/{{ pil.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const pillow1Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.pillow1Form.options = pillow1Data.options.map(item => ({...item, visible: false}));
+                        this.pillow1VariantPrice = formatter.format((pillow1Data.variants[0].price/100).toFixed(2));
+                        this.pillow1VariantComparePrice = formatter.format((pillow1Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.pillow1Variants = pillow1Data.variants;
+                        this.pillow1VariantID = pillow1Data.variants[0].id;
+                        pillow1Data.options.map(item => this.pillow1Selected.push(item.values[0]));
+                        this.pillow1Form.selections = [
+                        this.pillow1Selected[0] ? this.pillow1Selected[0] : null,
+                        this.pillow1Selected[1] ? this.pillow1Selected[1] : null,
+                        this.pillow1Selected[2] ? this.pillow1Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+            {% if forloop.index == 2  %}
+                fetch("/products/{{ pil.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const pillow2Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.pillow2Form.options = pillow2Data.options.map(item => ({...item, visible: false}));
+                        this.pillow2VariantPrice = formatter.format((pillow2Data.variants[0].price/100).toFixed(2));
+                        this.pillow2VariantComparePrice = formatter.format((pillow2Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.pillow2Variants = pillow2Data.variants;
+                        this.pillow2VariantID = pillow2Data.variants[0].id;
+                        pillow2Data.options.map(item => this.pillow2Selected.push(item.values[0]));
+                        this.pillow2Form.selections = [
+                        this.pillow2Selected[0] ? this.pillow2Selected[0] : null,
+                        this.pillow2Selected[1] ? this.pillow2Selected[1] : null,
+                        this.pillow2Selected[2] ? this.pillow2Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+        {% endfor %}
+        {% for she in sug_she %}
+            {% if forloop.index == 1  %}
+                fetch("/products/{{ she.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const sheet1Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.sheet1Form.options = sheet1Data.options.map(item => ({...item, visible: false}));
+                        this.sheet1VariantPrice = formatter.format((sheet1Data.variants[0].price/100).toFixed(2));
+                        this.sheet1VariantComparePrice = formatter.format((sheet1Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.sheet1Variants = sheet1Data.variants;
+                        this.sheet1VariantID = sheet1Data.variants[0].id;
+                        sheet1Data.options.map(item => this.sheet1Selected.push(item.values[0]));
+                        this.sheet1Form.selections = [
+                        this.sheet1Selected[0] ? this.sheet1Selected[0] : null,
+                        this.sheet1Selected[1] ? this.sheet1Selected[1] : null,
+                        this.sheet1Selected[2] ? this.sheet1Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+            {% if forloop.index == 2  %}
+                fetch("/products/{{ she.handle }}.js")
+                    .then(response => {
+                        if (response.ok) {
+                        return response.json();
+                        } else {
+                        throw error
+                        }
+                    })
+                    .then(data => {
+                        const sheet2Data = data;
+                        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+
+                        this.sheet2Form.options = sheet2Data.options.map(item => ({...item, visible: false}));
+                        this.sheet2VariantPrice = formatter.format((sheet2Data.variants[0].price/100).toFixed(2));
+                        this.sheet2VariantComparePrice = formatter.format((sheet2Data.variants[0].compare_at_price/100).toFixed(2));
+                        this.sheet2Variants = sheet2Data.variants;
+                        this.sheet2VariantID = sheet2Data.variants[0].id;
+                        sheet2Data.options.map(item => this.sheet2Selected.push(item.values[0]));
+                        this.sheet2Form.selections = [
+                        this.sheet2Selected[0] ? this.sheet2Selected[0] : null,
+                        this.sheet2Selected[1] ? this.sheet2Selected[1] : null,
+                        this.sheet2Selected[2] ? this.sheet2Selected[2] : null
+                        ]
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            {% endif %}
+        {% endfor %}
+
+    },
+    methods: {
+        orderNoteText(e) {
+            this.orderNote = e.target.value
+        },
+        updateNote(e) {
+            e.preventDefault();
+            const options = {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    note: `${this.orderNote}` 
+                })
+            };
+            fetch('/cart/update.js', options)
+                .then( response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                })
+                .then(data => {
+                    const cartData = data;
+                    this.orderNote = cartData.note;
+                })
+                .catch( error => {
+                    this.errorMessage = error;
+                    console.log('there was an error!', error);
+                }); 
+        },
+        increment(index) {
+            const qty = this.products[index].quantity;
+            const key = this.products[index].key;
+            const options = {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    id: `${key}`,
+                    quantity: qty + 1
+                })
+            };
+            fetch('cart/change.js', options)
+                .then( response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                })
+                .then(data => {
+                    
+                    const cartData = data;
+                    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+                    this.products = cartData.items;
+                    this.itemsCount = cartData.item_count;
+                    this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
+
+                    const productArray = this.products;
+                    productArray.forEach((item, index) => {
+                        item.price = formatter.format((item.price/100).toFixed(2));
+                        item.original_price = formatter.format((item.original_price/100).toFixed(2));
+                        item.discounted_price = formatter.format((item.discounted_price/100).toFixed(2));
+                        item.line_price = formatter.format((item.line_price/100).toFixed(2));
+                        item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
+                        item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
+                        item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
+                    });
+
+                    const counter = document.getElementById('cart-counter');
+                    const counterMb = document.getElementById('cart-counter-mb');
+                    counter.textContent = cartData.item_count;
+                    counterMb.textContent = cartData.item_count;
+                })
+                .catch( error => {
+                    this.errorMessage = error;
+                    console.log('there was an error!', error);
+                });
+
+        },
+        decrement(index) {
+            const qty = this.products[index].quantity;
+            const key = this.products[index].key;
+            const options = {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    id: `${key}`,
+                    quantity: qty - 1
+                })
+            };
+            fetch('cart/change.js', options)
+                .then( response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                })
+                .then(data => {
+                    
+                    const cartData = data;
+                    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+                    this.products = cartData.items;
+                    this.itemsCount = cartData.item_count;
+                    this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
+
+                    const productArray = this.products;
+                    productArray.forEach((item, index) => {
+                        item.price = formatter.format((item.price/100).toFixed(2));
+                        item.original_price = formatter.format((item.original_price/100).toFixed(2));
+                        item.discounted_price = formatter.format((item.discounted_price/100).toFixed(2));
+                        item.line_price = formatter.format((item.line_price/100).toFixed(2));
+                        item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
+                        item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
+                        item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
+                    });
+
+                    const counter = document.getElementById('cart-counter');
+                    const counterMb = document.getElementById('cart-counter-mb');
+                    counter.textContent = cartData.item_count;
+                    counterMb.textContent = cartData.item_count;
+                })
+                .catch( error => {
+                    this.errorMessage = error;
+                    console.log('there was an error!', error);
+                });
+        },
+        removeItem(index) {
+            const key = this.products[index].key;
+            const options = {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    id: `${key}`,
+                    quantity: 0
+                })
+            };
+            fetch('cart/change.js', options)
+                .then( response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                })
+                .then(data => {
+                    
+                    const cartData = data;
+                    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+                    this.products = cartData.items;
+                    this.itemsCount = cartData.item_count;
+                    this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
+
+                    const productArray = this.products;
+                    productArray.forEach((item, index) => {
+                        item.price = formatter.format((item.price/100).toFixed(2));
+                        item.original_price = formatter.format((item.original_price/100).toFixed(2));
+                        item.discounted_price = formatter.format((item.discounted_price/100).toFixed(2));
+                        item.line_price = formatter.format((item.line_price/100).toFixed(2));
+                        item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
+                        item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
+                        item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
+                    });
+                    
+                    const counter = document.getElementById('cart-counter');
+                    const counterMb = document.getElementById('cart-counter-mb');
+                    counter.textContent = cartData.item_count;
+                    counterMb.textContent = cartData.item_count;
+                })
+                .catch( error => {
+                    this.errorMessage = error;
+                    console.log('there was an error!', error);
+                });
+        },
+        clearCart(e) {
+            e.preventDefault();
+            const options = {
+                method: 'POST'
+            };
+            fetch('/cart/clear.js', options)
+                .then(async response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                })
+                .then( data => {
+                    const cartData = data;
+                    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+                    this.itemsCount = cartData.item_count;
+                    this.products = cartData.items;
+                    
+                    const counter = document.getElementById('cart-counter');
+                    const counterMb = document.getElementById('cart-counter-mb');
+                    counter.textContent = cartData.item_count;
+                    counterMb.textContent = cartData.item_count;
+                })
+                .catch( error => {
+                    this.errorMessage = error;
+                    console.log('there was an error!', error);
+                }); 
+        },
+        base1ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.base1Variants.forEach(variant => {
+                if (variant.option1 == this.base1Form.selections[0] && variant.option2 == this.base1Form.selections[1] && variant.option3 == this.base1Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.base1VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.base1VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.base1VariantID = selectedVariant.id;
+        },
+        base2ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.base2Variants.forEach(variant => {
+                if (variant.option1 == this.base2Form.selections[0] && variant.option2 == this.base2Form.selections[1] && variant.option3 == this.base2Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.base2VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.base2VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.base2VariantID = selectedVariant.id;
+        },
+        mattress1ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.mattress1Variants.forEach(variant => {
+                if (variant.option1 == this.mattress1Form.selections[0] && variant.option2 == this.mattress1Form.selections[1] && variant.option3 == this.mattress1Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.mattress1VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.mattress1VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.mattress1VariantID = selectedVariant.id;
+        },
+        mattress2ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.mattress2Variants.forEach(variant => {
+                if (variant.option1 == this.mattress2Form.selections[0] && variant.option2 == this.mattress2Form.selections[1] && variant.option3 == this.mattress2Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.mattress2VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.mattress2VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.mattress2VariantID = selectedVariant.id;
+        },
+        pillow1ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.pillow1Variants.forEach(variant => {
+                if (variant.option1 == this.pillow1Form.selections[0] && variant.option2 == this.pillow1Form.selections[1] && variant.option3 == this.pillow1Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.pillow1VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.pillow1VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.pillow1VariantID = selectedVariant.id;
+        },
+        pillow2ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.pillow2Variants.forEach(variant => {
+                if (variant.option1 == this.pillow2Form.selections[0] && variant.option2 == this.pillow2Form.selections[1] && variant.option3 == this.pillow2Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.pillow2VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.pillow2VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.pillow2VariantID = selectedVariant.id;
+        },
+        sheet1ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.sheet1Variants.forEach(variant => {
+                if (variant.option1 == this.sheet1Form.selections[0] && variant.option2 == this.sheet1Form.selections[1] && variant.option3 == this.sheet1Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.sheet1VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.sheet1VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.sheet1VariantID = selectedVariant.id;
+        },
+        sheet2ChangePrice(e) {
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+            let selectedVariant;
+            this.sheet2Variants.forEach(variant => {
+                if (variant.option1 == this.sheet2Form.selections[0] && variant.option2 == this.sheet2Form.selections[1] && variant.option3 == this.sheet2Form.selections[2]) {
+                selectedVariant = variant;
+                }
+            });
+            this.sheet2VariantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+            this.sheet2VariantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+            this.sheet2VariantID = selectedVariant.id;
+        },
+        addToCart(e) {
+            e.preventDefault();
+            this.addingToCart = true;
+
+            let selectedVariant;
+
+            if (e.target.id == 'base1AddToCart') {
+                this.base1Variants.forEach(variant => {
+                    if (variant.option1 == this.base1Form.selections[0] && variant.option2 == this.base1Form.selections[1] && variant.option3 == this.base1Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'base2AddToCart') {
+                this.base2Variants.forEach(variant => {
+                    if (variant.option1 == this.base2Form.selections[0] && variant.option2 == this.base2Form.selections[1] && variant.option3 == this.base2Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'mattress1AddToCart') {
+                this.mattress1Variants.forEach(variant => {
+                    if (variant.option1 == this.mattress1Form.selections[0] && variant.option2 == this.mattress1Form.selections[1] && variant.option3 == this.mattress1Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'mattress2AddToCart') {
+                this.mattress2Variants.forEach(variant => {
+                    if (variant.option1 == this.mattress2Form.selections[0] && variant.option2 == this.mattress2Form.selections[1] && variant.option3 == this.mattress2Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'pillow1AddToCart') {
+                this.pillow1Variants.forEach(variant => {
+                    if (variant.option1 == this.pillow1Form.selections[0] && variant.option2 == this.pillow1Form.selections[1] && variant.option3 == this.pillow1Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'pillow2AddToCart') {
+                this.pillow2Variants.forEach(variant => {
+                    if (variant.option1 == this.pillow2Form.selections[0] && variant.option2 == this.pillow2Form.selections[1] && variant.option3 == this.pillow2Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'sheet1AddToCart') {
+                this.sheet1Variants.forEach(variant => {
+                    if (variant.option1 == this.sheet1Form.selections[0] && variant.option2 == this.sheet1Form.selections[1] && variant.option3 == this.sheet1Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            if (e.target.id == 'sheet2AddToCart') {
+                this.sheet2Variants.forEach(variant => {
+                    if (variant.option1 == this.sheet2Form.selections[0] && variant.option2 == this.sheet2Form.selections[1] && variant.option3 == this.sheet2Form.selections[2]) {
+                    selectedVariant = variant;
+                    }
+                });
+            }
+
+            var data = {
+                'items': [{
+                id: selectedVariant.id,
+                quantity: this.qty
+                }]
+            };
+            var options = {
+                method: "POST",
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/cart/add.js', options)
+                .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error(response.status);
+                }
+                })
+                .then(data => {
+                const options = {
+                    method: "GET"
+                };
+                fetch("/cart.js", options)
+                    .then( response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(response.status);
+                        }
+                    })
+                    .then(data => {
+                        const cartData = data;
+                        const counter = document.getElementById('cart-counter');
+                        const counterMb = document.getElementById('cart-counter-mb');
+                        counter.textContent = cartData.item_count;
+                        counterMb.textContent = cartData.item_count;
+                    })
+                    .catch(err => {
+                        console.error("Error:", err)
+                    });
+                    this.addingToCart = false;
+                    const mainDiv = document.getElementById('MainContent');
+                    mainDiv.insertAdjacentHTML( 'beforeend', `<div id="confirmation-toast" class="flex justify-center items-center gap-2 fixed right-0 left-0 bottom-10 z-[100] text-text bg-white shadow-lp rounded-cl mx-5 p-4 mm:w-max mm:m-auto">
+                                                {% render 'icons', icon: 'blue-rounded-check' %}
+                                                <p>The product has been added to your cart</p>
+                                                </div>`);
+                    setTimeout(() => {
+                    document.getElementById('confirmation-toast').remove();
+                    }, 3000);
+                })
+                .catch(error => {
+                console.log(error)
+                });
+        }
+    }
+});
+appCart.mount('#cart-items')
+
+</script>
+
+
+{% schema %}
+{
+    "name": "Cart",
+    "max_blocks": 3,
+    "settings": [
+        {
+            "type": "header",
+            "content": "Cart Up-sell",
+            "info": "Settings for cart"
+        },
+        {
+            "type": "text",
+            "id": "upsell_title",
+            "label": "Up-Sell Title"
+        },
+        {
+            "type": "product_list",
+            "id": "sug_mat",
+            "label": "Suggested mattresses",
+            "limit": 2
+        },
+        {
+            "type": "product_list",
+            "id": "sug_bas",
+            "label": "Suggested bases",
+            "limit": 2
+        },
+        {
+            "type": "product_list",
+            "id": "sug_pil",
+            "label": "Suggested pillows",
+            "limit": 2
+        },
+        {
+            "type": "product_list",
+            "id": "sug_she",
+            "label": "Suggested sheets",
+            "limit": 2
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Sale Banner",
+            "type": "banner",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "banner_img",
+                    "label": "Desktop Banner Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "banner_img_mob",
+                    "label": "Mobile Banner Image"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Banner URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

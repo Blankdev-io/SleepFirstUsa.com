@@ -1,0 +1,61 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign content = section.settings.content
+    assign hours1 = section.settings.hours1
+    assign hours2 = section.settings.hours2
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-text bg-white shadow-sp rounded-cl mb-8 p-8 ds:mb-10 ds:p-10">
+        <h1 class="text-title text-center mb-8 ds:mb-10">{{ heading }}</h1>
+        <div class="text-center whitespace-pre-wrap mb-8 ds:mb-10">{{ content }}</div>
+        <div class="flex flex-col gap-8 ts:flex-row ts:justify-evenly ts:gap-0">
+            <div class="text-center whitespace-pre-wrap">{{ hours1 }}</div>
+            <div class="text-center whitespace-pre-wrap">{{ hours2 }}</div>
+        </div>
+    </div>
+    <div class="text-text bg-white shadow-sp rounded-cl mb-8 p-8 ds:mb-10 ds:p-10">
+        <!-- Start Stockist.co widget -->
+        <div data-stockist-widget-tag="u7981">Loading store locator
+        from <a href="https://stockist.co">Stockist store locator</a>...</div>
+        <script>
+        (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;
+        k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);
+        })(document,'script','//stockist.co/embed/v1/widget.min.js');
+        </script>
+        <!-- End Stockist.co widget -->
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Find a Store",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Content</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "hours1",
+            "label": "Timetable 1",
+            "default": "<p>Timetable 1</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "hours2",
+            "label": "Timetable 2",
+            "default": "<p>Timetable 2</p>"
+        }
+    ]  
+}
+{% endschema %}

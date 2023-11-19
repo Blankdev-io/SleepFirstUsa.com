@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "text": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "Sleep First",
+        "heading": "No Credit Needed",
+        "content": "<p>Apply online for no-credit lease to own purchase options. It's a fast and secure process!<br\/><br\/>If your application has been approved, simply print your approval confirmation and bring it to any Sleep First store location.<\/p>",
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "double": {
+      "type": "double",
+      "settings": {
+        "heading": "Your Privacy Protected",
+        "hierarchy": "h2",
+        "content": "<p>Now you can handle your no-credit lease to own application from the comfort of your own device.<\/p>",
+        "button": "APPLY NOW",
+        "url": "https:\/\/approve.me\/s\/sleepfirst\/67253#\/marketing",
+        "image": "shopify:\/\/shop_images\/Progressive_Leasing.png",
+        "order": false
+      }
+    }
+  },
+  "order": [
+    "text",
+    "double"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "fundraising": {
+      "type": "fundraising",
+      "settings": {
+        "title": "Sleep First can help you raise the money you need to succeed!",
+        "content": "<p>Send us a few details about your goals, and our fundraising team will be in touch with you quickly!<\/p>",
+        "button": "SUBMIT",
+        "message": "<p>Thanks! We’ll be in touch shortly!<\/p>"
+      }
+    }
+  },
+  "order": [
+    "fundraising"
+  ]
+}

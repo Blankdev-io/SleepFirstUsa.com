@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-screenshot",
+      "settings": {
+        "coupon": "shopify:\/\/shop_images\/Mattress_Deal_2_Coupon.png",
+        "coupon_mobile": "shopify:\/\/shop_images\/Mattress_Deal_2_Coupon_Mobile.png",
+        "message": "Screenshot to save this coupon and redeem at your local Sleep First store.",
+        "button": "Find my store",
+        "url": "shopify:\/\/pages\/store-locator",
+        "b_col": "#ffffff",
+        "b_bcol": "#384fae"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

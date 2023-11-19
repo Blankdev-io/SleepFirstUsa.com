@@ -1,0 +1,134 @@
+{% liquid
+    assign logo1 = section.settings.social_svg1
+    assign image1 = section.settings.social_image1
+    assign check1 = section.settings.social_check1
+    assign link1 = section.settings.social_media_url1
+    assign logo2 = section.settings.social_svg2
+    assign image2 = section.settings.social_image2
+    assign check2 = section.settings.social_check2
+    assign link2 = section.settings.social_media_url2
+    assign logo3 = section.settings.social_svg3
+    assign image3 = section.settings.social_image3
+    assign check3 = section.settings.social_check3
+    assign link3 = section.settings.social_media_url3
+    assign copyright = section.settings.copyright
+    assign disclaimer = section.settings.disclaimer
+%}
+
+<div id="footer-alt" class="bg-primary w-full {% unless page.title contains 'Closeout' %}ts:fixed ts:bottom-0 ts:z-50{% endunless %}">
+    <div class="mx-5 py-4 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-5 dl:px-0">
+        <div class="flex justify-between">
+            <p class="self-center text-sm text-white">{{ copyright }}</p>
+            <div class="flex flex-wrap gap-2 justify-end">
+                {% if check1 %}
+                    <a href="{{ link1 }}" title="{{ link1.url }}" target="_blank"><img src="{{ image1 | image_url }}" alt="{{ image1.alt }}" loading="lazy"></a>
+                {% else %}
+                    <a href="{{ link1 }}" title="{{ link1.url }}" target="_blank"><img src="{{ logo1 }}" alt="{{ logo1.alt }}" loading="lazy"></a>
+                {% endif %}
+                {% if check2 %}
+                    <a href="{{ link2 }}" title="{{ link2.url }}" target="_blank"><img src="{{ image2 | image_url }}" alt="{{ image2.alt }}" loading="lazy"></a>
+                {% else %}
+                    <a href="{{ link2 }}" title="{{ link2.url }}" target="_blank"><img src="{{ logo2 }}" class="mx-3" alt="{{ logo2.alt }}" loading="lazy"></a>
+                {% endif %}
+                {% if check3 %}
+                    <a href="{{ link3 }}" title="{{ link3.url }}" target="_blank"><img src="{{ image3 | image_url }}" alt="{{ image3.alt }}" loading="lazy"></a>
+                {% else %}
+                    <a href="{{ link3 }}" title="{{ link3.url }}" target="_blank"><img src="{{ logo3 }}" alt="{{ logo3.alt }}" loading="lazy"></a>
+                {% endif %}
+            </div>
+        </div>
+        {% if page.title contains 'Mattress' %}
+            {% if disclaimer != blank %}
+                <div class="flex justify-center items-center text-sm text-white italic mt-4 ds:mt-5">{{ disclaimer }}</div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Footer Alternative",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Social media logos",
+            "info": "Logos and URL's"
+        },
+        {
+            "type": "url",
+            "id": "social_svg1",
+            "label": "Social Media Logo SVG 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image1",
+            "label": "Social Media Logo Image 1"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check1",
+            "label": "Use image instead (Social media logo 1)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url1",
+            "label": "Social Media URL 1"                    
+        },
+        {
+            "type": "url",
+            "id": "social_svg2",
+            "label": "Social Media Logo SVG 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image2",
+            "label": "Social Media Logo Image 2"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check2",
+            "label": "Use image instead (Social media logo 2)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url2",
+            "label": "Social Media URL 2"                    
+        },
+        {
+            "type": "url",
+            "id": "social_svg3",
+            "label": "Social Media Logo SVG 3"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image3",
+            "label": "Social Media Logo Image 3"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check3",
+            "label": "Use image instead (Social media logo 3)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url3",
+            "label": "Social Media URL 3"                    
+        },
+        {
+            "type": "text",
+            "id": "copyright",
+            "label": "Copyright",
+            "default": "Copyright"
+        },
+        {
+            "type": "richtext",
+            "id": "disclaimer",
+            "label": "Disclaimer text"
+        }
+    ]
+}
+{% endschema %}

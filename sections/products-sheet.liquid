@@ -1,0 +1,148 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign sub_heading = section.settings.sub_heading
+%}
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="bg-white shadow-sp rounded-cl py-6 px-5 ds:py-12 ds:px-10">
+        {% if heading != blank %}
+            <h2 class="text-title text-center text-text mb-4">{{ heading }}</h2>
+        {% endif %}
+        {% if sub_heading != blank %}
+            <p class="text-xl text-center text-gray-400 italic mb-8">{{ sub_heading }} <span id="yesterdaysDate"></span></p>
+        {% endif %}
+        <table class="table-auto border border-secondary/50 w-full">
+            <thead>
+                <tr class="border-b border-b-secondary/50 divide-x divide-secondary/50">
+                    <th class="font-bold text-xl text-center px-1 py-3 ts:text-2xl">Size</th>
+                    <th class="font-bold text-xl text-center px-1 py-3 ts:text-2xl">Mattress</th>
+                    <th class="font-bold text-xl text-center px-1 py-3 ts:text-2xl">Price</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-secondary/50">
+                {% for block in section.blocks %}
+                    {% liquid
+                        assign size = block.settings.size
+                        assign name = block.settings.name
+                        assign url = block.settings.url
+                        assign compare_at_price = block.settings.compare_at_price
+                        assign price = block.settings.price
+                        assign discount = block.settings.discount
+                        assign flag = block.settings.flag
+                    %}
+                    <tr class="divide-x divide-y divide-secondary/50">
+                        <td class="text-center border border-secondary/50 px-1 py-4 tl:text-lg ds:py-3">{{ size }}</td>
+                        <td class="text-center border border-secondary/50 px-1 py-4 tl:text-lg ds:text-left ds:py-3">{% if url != blank %}<a href="{{ url }}" title="{{ url.title }}">{% endif %}{{ name }}{% if url != blank %}</a>{% endif %} <span style="font-size: 0.65rem;" class="block mt-2 self-center text-center bg-primary text-white rounded-full w-max mx-auto py-1 px-2 mm:hidden tl:mt-0 tl:text-sm tl:px-4">{% if flag %}FREE {% endif %}NEXT-DAY DELIVERY</span></td>
+                        <td class="border border-secondary/50 px-1 py-4 ds:py-3">
+                            <div class="flex flex-col justify-center items-center gap-1 tl:flex-row tl:justify-start tl:gap-2">
+                                {% if block.settings.details %}              
+                                    <a href="tel:8889753371" 
+       class="bg-primary text-white py-2 rounded-full text-center block transition hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary flex justify-center items-center flex-wrap text-sm sm:text-base px-2 sm:px-4">
+        <span class="sm:mr-3">Call for detail</span>
+        <span>(888) 975-3371</span>
+    </a>
+                                {% else %}
+                                  <div class="flex flex-col items-center gap-1 font-bold text-2xl tl:flex-row tl:items-end tl:gap-2 ds:gap-4">
+                                    <span class="align-baseline text-sm text-accent-4/80 line-through tl:text-base">{{ compare_at_price }}</span>
+                                    <div class="flex flex-col items-center mm:flex-row">
+                                        <span class="text-base text-primary tl:text-lg">{{ price }}</span>
+                                        <span class="ml-2 self-center text-xs bg-accent-4 text-white rounded-full py-1 px-2 tl:text-sm tl:px-4">-{{ discount }}</span>
+                                    </div>
+                                  </div>
+                                <span style="font-size: 0.65rem;" class="hidden mt-2 self-center text-center bg-primary text-white rounded-full w-max py-1 px-2 mm:inline-block tl:mt-0 tl:text-sm tl:px-4">{% if flag %}FREE {% endif %}NEXT-DAY DELIVERY</span>
+                                {% endif %}
+                            </div>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Yesterday's date
+    let dateObj = new Date();
+    dateObj.setDate(dateObj.getDate() - 1);
+    console.log(dateObj);
+    document.getElementById("yesterdaysDate").innerHTML = dateObj.toLocaleDateString('en-US');
+</script>
+
+
+{% schema %}
+{
+    "name": "Products Sheet",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Product Sheet"
+        },
+        {
+            "type": "text",
+            "id": "sub_heading",
+            "label": "Sub-Heading",
+            "default": "Last Updated:",
+            "info": "Always show yesterday's date"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Product",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "size",
+                    "label": "Size"
+                }, 
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Product Name"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Product URL (If Available)",
+                    "info": "Add link to product name if available"
+                },
+                {
+                    "type": "text",
+                    "id": "compare_at_price",
+                    "label": "Sale Price"
+                },
+                {
+                    "type": "text",
+                    "id": "price",
+                    "label": "Clearance Price"
+                },
+                {
+                    "type": "text",
+                    "id": "discount",
+                    "label": "Discount"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "details",
+                    "label": "Hide Details",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "flag",
+                    "label": "Add 'Free' to 'Next-Day Delivery' flag",
+                    "default": false
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Products Sheet"
+        }
+    ]
+}
+{% endschema %}

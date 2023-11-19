@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-coupons",
+      "blocks": {
+        "144faf6f-7123-4335-91ea-e953614d54f5": {
+          "type": "Coupon",
+          "settings": {
+            "url": "",
+            "coupon_title": "B.O.G.O. FREE",
+            "t_col": "#ffffff",
+            "t_bcol": "#db0032",
+            "coupon_sub": "Buy One Pillow, Get One Free",
+            "s_col": "#000000",
+            "s_bcol": "#fafafa"
+          }
+        },
+        "5945cbac-c789-489b-b56b-36d155e1bbfb": {
+          "type": "Coupon",
+          "settings": {
+            "url": "",
+            "coupon_title": "EXTRA $50 OFF",
+            "t_col": "#ffffff",
+            "t_bcol": "#db0032",
+            "coupon_sub": "Serenity Sleep Bundle",
+            "s_col": "#000000",
+            "s_bcol": "#fafafa"
+          }
+        }
+      },
+      "block_order": [
+        "144faf6f-7123-4335-91ea-e953614d54f5",
+        "5945cbac-c789-489b-b56b-36d155e1bbfb"
+      ],
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/1600px-Purple_PillowToolkit_Day3_0664.jpg",
+        "title": "Choose Your Bedding Deal!",
+        "description": "<p>Click On The Coupon Of The Deal You Like The Most<\/p>",
+        "text_align": "right"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

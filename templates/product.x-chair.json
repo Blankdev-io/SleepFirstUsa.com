@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-chair",
+      "settings": {
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "quantity": false,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it.",
+        "description_order": false,
+        "details_order": false
+      }
+    },
+    "5fa1f0f5-978a-40e3-a0eb-a7bb246b4c31": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "40f6e325-f434-4c22-beba-b8a6c1b81267": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5fa1f0f5-978a-40e3-a0eb-a7bb246b4c31",
+    "40f6e325-f434-4c22-beba-b8a6c1b81267"
+  ]
+}

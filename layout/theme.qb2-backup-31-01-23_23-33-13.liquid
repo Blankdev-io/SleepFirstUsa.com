@@ -1,0 +1,306 @@
+<!doctype html>
+<html class="no-js scroll-smooth scroll-pt-32 ds:scroll-pt-40" lang="{{ request.locale.iso_code }}">
+  <head>
+<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+<script>
+/* >> TriplePixel :: start*/
+~function(W,H,A,L,E,_,B,N){function O(U,T,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,H.open("GET",U,!0),H.send(null),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):N[B]=R):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}A.getItem('"!nC`')||(A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return W=L(),(E._q=E._q||[]).push([W,t,e]),W},E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",0),O("//triplewhale-pixel.web.app/triplefw.txt?",5)))}}("K","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <meta name="robots" content="index,follow">
+
+    {% comment %} Preload {% endcomment %}
+    <link rel="preload" href="https:{{ 'theme.css' | asset_url }}" as="style" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" />
+    <link rel="preload" href="https://unpkg.com/vue@3/dist/vue.global.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" as="script" />
+    <link rel="preload" href="https://cdn1.stamped.io/files/widget.min.css" as="style">
+    {% comment %} <link rel="preload" href="https://cdn.shopify.com/extensions/a128435f-195f-475d-86c5-725cf7f4d7fc/0.17.0/assets/advanced-product-options.css" as="style"> {% endcomment %}
+    {% comment %} <link rel="preload" href="main.js" as="script" /> {% endcomment %}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {% comment %} Canonical Tag {% endcomment %}
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% comment %} HREF Lang Taga SEO {% endcomment %}
+    {% if request.page_type != 'index' %}
+    <link rel="alternate" href="{{ canonical_url | replace: '.com/es/', '.com/' }}" hreflang="x-default">
+    <link rel="alternate" href="{{ canonical_url | replace: '.com/es/', '.com/' }}" hreflang="en-us">
+    <link rel="alternate" href="{{ canonical_url | remove_first: '/es' | replace: '.com', '.com/es' }}" hreflang="es-us">
+    {% else %}
+    <link rel="alternate" href="{{ canonical_url | replace: '.com/es', '.com/' }}" hreflang="x-default">
+    <link rel="alternate" href="{{ canonical_url | replace: '.com/es', '.com/' }}" hreflang="en-us">
+    <link rel="alternate" href="{{ canonical_url | remove_first: 'es' | replace: '.com/', '.com/es/' }}" hreflang="es-us">
+    {% endif %}
+    {% comment %} End  {% endcomment %}
+
+    {% comment %} Theme CSS {% endcomment %}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} Google Fonts {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    {% comment %} Vue.js {% endcomment %}
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    {% comment %} Swiper Slider {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <title>
+      {{ page_title }}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8BD73Q');</script>
+    <!-- End Google Tag Manager -->
+
+    {{ content_for_header }}
+
+  </head>
+  <body class="gradient font-body bg-body">
+    <style>
+        .shopify-policy__container {
+            max-width: unset;
+            max-width: unset;
+            margin: unset;
+            padding-left: unset;
+            padding-right: unset;
+        }
+        .shopify-policy__title {
+            display: none;
+        }
+        #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image img {
+          display: none !important;
+        }
+        #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image a {
+          display: unset !important;
+        }
+        #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image {
+          border: unset !important;
+        }
+        .stamped-badge-starrating {
+          display: flex !important;
+        }
+    </style>
+    <main id="MainContent" class="" role="main">
+      {% section 'announcement-bar' %}
+      {% section 'header' %}
+      {%- unless template == 'index' or template == '404' -%}
+      {%- assign t = template | split: '.' | first -%}
+
+      <nav role="navigation" aria-label="breadcrumbs" class="font-bold text-text mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+        <ol class="list-none">
+          <li class="inline-block mr-1">
+            <a class="hover:text-primary hover:underline" href="/">Home</a>
+            <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+          </li>
+          {%- case t -%}
+            {%- when 'page' -%}
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+              </li>
+            {%- when 'cart' -%}
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+              </li>
+            {%- when 'list-collections' -%}
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+              </li>
+            {%- when 'product' -%}
+              {% for collection in product.collections %}
+                {% if collection.title contains product.vendor %}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ collection.title | link_to: collection.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+              </li>
+            {%- when 'collection' and collection.handle -%}
+              {%- if current_tags -%}
+                <li class="inline-block mr-1">
+                  <span class="hover:text-primary hover:underline">{{ collection.title | link_to: collection.url }}</span>
+                  <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                </li>
+                <li class="inline-block">
+                  {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                  <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+                </li>
+              {%- else -%}
+                <li class="inline-block">
+                  <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'blog' -%}
+              {%- if current_tags -%}
+                <li class="inline-block mr-1">
+                  <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                  <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                </li>
+                <li class="inline-block">
+                  {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+                </li>
+              {%- else -%}
+                <li class="inline-block">
+                  <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'article' -%}
+              <li class="inline-block mr-1">
+                <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+              </li>
+            {%- else -%}
+              <li class="inline-block">
+                <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+              </li>
+          {%- endcase -%}
+        </ol>
+      </nav>
+      {%- endunless -%}
+      {{ content_for_layout }} 
+      {% section 'footer' %}
+    </main>
+
+    <!--Gorgias Chat Widget Start-->
+    <script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=4004" async></script>
+    <script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script>
+    <!--Gorgias Chat Widget End-->
+    
+    <!--  Klaviyo main script  -->
+    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WHVWA6"></script>
+    <!--  Klaviyo main script end -->
+  
+{% render 'oneclickupsellapp-theme', oneclickupsellapp: oneclickupsellapp %}
+{% assign oneclickupsellapp = true %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-b8-data>
+  window.B8_CUSTOMER_ID = {{ customer.id | json }};
+  window.B8_CUSTOMER_TAGS = {{ customer.tags | json }};
+</script></body>
+</html>

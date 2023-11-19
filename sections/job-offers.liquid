@@ -1,0 +1,102 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign sub1 = section.settings.sub1
+    assign sub2 = section.settings.sub2
+    assign sub3 = section.settings.sub3
+    assign sub4 = section.settings.sub4
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-text bg-white shadow-sp rounded-cl mb-10 py-4 px-5 ds:py-10 ds:px-10">
+        <h2 class="text-title text-center mb-10 ds:mb-12">{{ heading }}</h2>
+        <div class="hidden justify-center gap-16 font-bold text-2xl text-center ds:flex">
+            {% comment %} <h3 class="w-40">{{ sub1 }}</h3>
+            <h3 class="w-40">{{ sub2 }}</h3>
+            <h3 class="w-40">{{ sub3 }}</h3>
+            <h3 class="w-40">{{ sub4 }}</h3> {% endcomment %}
+        </div>
+        <div class="flex flex-col">
+            <div class="">
+                {% comment %} <a href="/c/Sleep-First/Jobs?absolute=1&amp;hiring_company=f7788bf7" id="jobs_widget_company_link" target="_blank">Job postings at Sleep First</a> {% endcomment %}
+                <script type="text/javascript" src="https://www.ziprecruiter.com/jobs-widget/v1/f7788bf7"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Job offers",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Job Openings:"
+        },
+        {
+            "type": "text",
+            "id": "sub1",
+            "label": "Sub-title 1",
+            "default": "Job Title"
+        },
+        {
+            "type": "text",
+            "id": "sub2",
+            "label": "Sub-title 2",
+            "default": "Location"
+        },
+        {
+            "type": "text",
+            "id": "sub3",
+            "label": "Sub-title 3",
+            "default": "Posted"
+        },
+        {
+            "type": "text",
+            "id": "sub4",
+            "label": "Sub-title 4",
+            "default": "Apply"
+        }
+    ],
+    "max_blocks": 15,
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Options",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "option1",
+                    "label": "Option 1",
+                    "default": "Option 1"
+                },
+                {
+                    "type": "text",
+                    "id": "option2",
+                    "label": "Option 2",
+                    "default": "Option 2"
+                },
+                {
+                    "type": "text",
+                    "id": "option3",
+                    "label": "Option 3",
+                    "default": "Option 3"
+                },
+                {
+                    "type": "text",
+                    "id": "link",
+                    "label": "Link",
+                    "default": "Link"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Url"
+                }                                              
+            ]
+        }
+    ]       
+}
+{% endschema %}

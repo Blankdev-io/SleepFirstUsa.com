@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "image-and-text": {
+      "type": "image-and-text",
+      "settings": {
+        "heading": "Join Our Team! Sleep First Is Growing.",
+        "hierarchy": "h1",
+        "sub_title": "Retail Sales & Management Positions are Now Available.",
+        "content": "<p>We offer a fun and competitive culture, with the opportunity of growth, both locally and nationally, as we build a brand that is both loved and respected within the sleep category.<\/p><p><\/p><p>Sleep First is the kind of place where you can genuinely help people in your local community, and make a direct and positive impact on the life of every customer. <\/p>",
+        "button": "APPLY NOW",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/store-frontdoor.jpg",
+        "order": false
+      }
+    },
+    "text": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "",
+        "heading": "Our mission is to make sleep better for everyone. Period.",
+        "content": "<p>At Sleep First, we thrive on change and growth for our employees and as a company. We operate on trust, and we leverage the unique skills, talents and ambitions each team member brings to the table.<br\/>We always solve problems quickly, and always with a smile.<br\/><br\/>In short, we get it done and we get it done right! If your ambition aligns with ours, and you’re passionate about investing your energy and talent in our growing company, we’d truly love to meet you.<br\/><br\/>Check this page often to find current job postings.<br\/>We’ll keep it updated with all positions available across the United States.<\/p>",
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "job-offers": {
+      "type": "job-offers",
+      "settings": {
+        "heading": "Job Openings:",
+        "sub1": "Job Title",
+        "sub2": "Location",
+        "sub3": "Posted",
+        "sub4": "Apply"
+      }
+    }
+  },
+  "order": [
+    "image-and-text",
+    "text",
+    "job-offers"
+  ]
+}

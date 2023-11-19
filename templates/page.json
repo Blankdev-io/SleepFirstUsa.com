@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {
+        "text_align": "left"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

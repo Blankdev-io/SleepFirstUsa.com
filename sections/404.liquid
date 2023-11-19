@@ -1,0 +1,49 @@
+{% liquid 
+    assign title = section.settings.title
+    assign content = section.settings.content
+    assign button = section.settings.button
+    assign url = section.settings.url
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="flex flex-col items-center text-text divide-y divide-primary bg-white shadow-sp rounded-cl mb-8 p-6 ds:flex-row ds:divide-x ds:divide-y-0 ds:h-[300px] ds:mb-10 ds:p-8">
+        <div class="font-semibold text-[130px] text-center text-secondary pb-8 ds:text-[190px] ds:p-4 ds:pr-10">404</div>
+        <div class="flex flex-col justify-evenly pt-8 ds:p-4 ds:pl-10">
+            <h1 class="text-title mb-8">{{ title }}</h1>
+            <div class="mb-5">{{ content }}</div>
+            <a href="{{ url }}" title="{{ url.title }}" class="button mm:w-max">{{ button }}</a>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "404",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "title",
+            "default": "Page Not Found"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>We're sorry, but the page you requested could not be found.</p>"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button label",
+            "default": "CONTINUE SHOPPING"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Button URL"
+        }
+    ]  
+}
+{% endschema %}

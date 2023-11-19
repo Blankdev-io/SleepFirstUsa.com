@@ -1,0 +1,346 @@
+{
+  "sections": {
+    "main": {
+      "type": "stores",
+      "settings": {
+        "heading": "Vacaville, California",
+        "hierarchy": "h1",
+        "image": "shopify:\/\/shop_images\/Vacaville_Exterior_1_a62b6733-4d8f-4ac3-9d34-8e271bab5cd2.jpg",
+        "order": false,
+        "sub_title1": "<p>1001 Helen Power Dr<br\/>Vacaville, California 95687<br\/>USA<\/p>",
+        "lab": "Click to call:",
+        "number": "(707) 448-3720",
+        "number_url": "tel:+17074483720",
+        "sub_title2": "Hours of operation:",
+        "content1": "<p>Mon-Sat 10am-7:30pm<br\/>Sun 12pm-6pm<br\/><br\/><\/p>",
+        "content2": "<p>Content 2<\/p>",
+        "sub_title3": "Parking Available",
+        "option1": "Private lots",
+        "option2": "Plenty of parking",
+        "option3": "Wheelchair accessible",
+        "button": "Get Directions",
+        "url": "https:\/\/www.google.com\/maps?ll=38.365296,-121.961917&z=16&t=m&hl=en&gl=CA&mapclient=embed&daddr=1001+Helen+Power+Dr+Vacaville,+CA+95687+USA@38.3652959,-121.9619168"
+      }
+    },
+    "text-with-buttons": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "Find What You're Looking For",
+        "heading": "Shop Now",
+        "content": "<p><\/p><p><\/p>",
+        "font_size": 16,
+        "button1": "Shop by size",
+        "url1": "shopify:\/\/pages\/shop-by-size",
+        "button2": "Promotions",
+        "url2": "shopify:\/\/pages\/mattress-sale",
+        "button3": "",
+        "url3": ""
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "998613a8-c5e1-4d40-88e7-5f402d18440a": {
+          "type": "slide",
+          "settings": {
+            "question": "What local neighborhoods do you serve?",
+            "answer": "<p><strong>We regularly deliver to:<br\/><br\/>Vacaville<br\/>Fairfield<br\/>Rockville<br\/>Mankas Corner<br\/>Dixon<br\/>Winters<br\/>Napa<br\/>Davis<br\/>Creston<br\/>Dozier<br\/>Denverton<br\/>Rio Vista<br\/>Mortmar<\/strong><\/p>"
+          }
+        },
+        "42b40795-5267-4a60-a4b9-c76faa97316e": {
+          "type": "slide",
+          "settings": {
+            "question": "Do you charge for delivery?",
+            "answer": "<p><strong>Nope. Unlike our competitors, we are happy to offer fast & free delivery.<\/strong><\/p>"
+          }
+        },
+        "83d97f03-8d5f-4cbf-bbd3-a4dc21a14915": {
+          "type": "slide",
+          "settings": {
+            "question": "Where can I find your store?",
+            "answer": "<p><strong>You’ll find us off the intersection of Nut tree Parkway & Helen Power Rd., in the Power Plaza across from Sprouts, 1000 ft North of WalMart.<br\/><br\/>We're located near Restoration Hardware, Sams, William Sonoma Home Outlet and Target.<\/strong><\/p>"
+          }
+        },
+        "a9196f4c-52c6-4228-ad53-f703ec176fbb": {
+          "type": "slide",
+          "settings": {
+            "question": "When did this store open?",
+            "answer": "<p><strong>Our Vacaville store location opened in July, 2019.<\/strong><\/p>"
+          }
+        },
+        "d7cdecc3-a9a5-46bf-b9b1-ed3bfa02415d": {
+          "type": "slide",
+          "settings": {
+            "question": "What happens if I don't like my new mattress?",
+            "answer": "<p><strong>As a locally owned small business, we're proud to offer even better guarantees than our competitors. We work really hard to keep every single customer happy.<br\/><br\/>Sleep First has a 365 night comfort guarantee and price guarantee. That's around 120 days longer than any other mattress store!<br\/><br\/>If your mattress is advertised lower than you paid, we'll refund the difference. If you don't love the comfort, just let us know and we'll be more than happy to switch out for a different model.<\/strong><\/p>"
+          }
+        },
+        "7dae0d07-0699-4d5b-b723-374703aee16b": {
+          "type": "slide",
+          "settings": {
+            "question": "What are your promotions this week?",
+            "answer": "<p><strong>We've got a ton of deals for you this week! <\/strong><a href=\"https:\/\/sleepfirstusa.com\/pages\/mattress-sale\" title=\"Mattress Sale\">Check them out here<\/a><strong>.<\/strong><\/p>"
+          }
+        },
+        "9daae9d2-9066-4845-a2b8-ffd18688b1d7": {
+          "type": "slide",
+          "settings": {
+            "question": "Are you hiring?",
+            "answer": "<p><strong>Sleep First is growing! You can find all current job openings listed on our <\/strong><a href=\"https:\/\/sleepfirstusa.com\/pages\/careers\" title=\"Careers at Sleep First | Management Roles\">Careers page<\/a><strong>.<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "998613a8-c5e1-4d40-88e7-5f402d18440a",
+        "42b40795-5267-4a60-a4b9-c76faa97316e",
+        "83d97f03-8d5f-4cbf-bbd3-a4dc21a14915",
+        "a9196f4c-52c6-4228-ad53-f703ec176fbb",
+        "d7cdecc3-a9a5-46bf-b9b1-ed3bfa02415d",
+        "7dae0d07-0699-4d5b-b723-374703aee16b",
+        "9daae9d2-9066-4845-a2b8-ffd18688b1d7"
+      ],
+      "settings": {
+        "heading": "Vacaville FAQs",
+        "hierarchy": "h2"
+      }
+    },
+    "02df60ea-23f1-4547-8fa4-b84a268b27e8": {
+      "type": "image-with-title",
+      "settings": {
+        "heading": "As heard in Vacavilleon 95.3 KUIC",
+        "hierarchy": "h2",
+        "sub": "",
+        "imageDesk": "shopify:\/\/shop_images\/95.3_KUIC_Logo_Vacaville_730x_00d4c73f-bcd0-434d-966f-ffaa8af1003a.webp",
+        "imageMob": "shopify:\/\/shop_images\/95.3_KUIC_Logo_Vacaville_730x_00d4c73f-bcd0-434d-966f-ffaa8af1003a.webp",
+        "url": "https:\/\/www.kuic.com\/"
+      }
+    },
+    "double1": {
+      "type": "double",
+      "settings": {
+        "heading": "Home of free delivery.",
+        "hierarchy": "h2",
+        "content": "<p>Unlike our competitors, we offer free delivery, both locally and nationwide.<br\/><\/p><p>We are currently able to deliver same-day or next-day, with 100% contact-free delivery, including drop-off at the door. <br\/>White glove setup service is also an option in most areas.<br\/><br\/>Oh - and we'll haul away your old mattress too.<\/p>",
+        "button": "View Our Promotions",
+        "url": "shopify:\/\/pages\/mattress-sale",
+        "image": "shopify:\/\/shop_images\/Fast-Free-Delivery_8bb586c2-cc14-43ea-b1d4-5b62759c1044.png",
+        "order": false
+      }
+    },
+    "double2": {
+      "type": "double",
+      "settings": {
+        "heading": "Your health and wellness is extremely important to us.",
+        "hierarchy": "h2",
+        "content": "<p>Sleep supports our physical, emotional and mental health, and there’s no question that a proper mattress is the right tool. <br\/><br\/>We are taking all precautions to clean surfaces, doors, handles, product, etc. Your health and wellness is the most important factor in every interaction.<br\/><br\/>In fact, we have a Clean Shop Promise. <\/p>",
+        "button": "View Our Promotions",
+        "url": "shopify:\/\/pages\/mattress-sale",
+        "image": "shopify:\/\/shop_images\/clean-shop-promise.png",
+        "order": true
+      }
+    },
+    "double3": {
+      "type": "double",
+      "settings": {
+        "heading": "#ShopLocal",
+        "hierarchy": "h2",
+        "content": "<p>Here at Sleep First we offer the same amazing deals as huge mattress chains.<br\/><\/p><p>As a proudly locally owned and operated business, our team has a deep love for the local community, and we understand your desire for a supportive and pressure-free shopping environment.<br\/><\/p><p>We’re dedicated to listening to your needs and helping you find the right mattress. We’re here to listen to you and guide you towards the best sleep solutions for the best possible price.<br\/><br\/>Thank you for choosing to #ShopLocal and support our small business!<\/p>",
+        "button": "Shop Now",
+        "url": "shopify:\/\/pages\/mattress-sale",
+        "image": "shopify:\/\/shop_images\/Shop_Local_Sleep_First_1024-High-Quality.jpg",
+        "order": false
+      }
+    },
+    "best-selling": {
+      "type": "best-selling",
+      "settings": {
+        "heading": "Best Selling",
+        "collection": "tempurpedic",
+        "button": false
+      }
+    },
+    "buy-by": {
+      "type": "buy-by",
+      "blocks": {
+        "ee7609b0-2f89-4049-85d1-a089f1ab7812": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Beautyrest_Logo_Bar_02e35210-fbca-4766-adce-ee8ecfa81959.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "simmons-beautyrest"
+          }
+        },
+        "6aee44b3-fc2f-4829-a9f6-f21b90e3c197": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Tempurpedic_Logo_Bar_248e83f0-9c0b-4ce3-a7cc-b527acf9def9.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "tempurpedic"
+          }
+        },
+        "7a2bfa80-2602-4957-a569-6d8b1753e8a4": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Nectar_Logo_Bar_ee45c2b3-27ff-4bbd-aed9-e978aedf054a.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "nectar-mattress"
+          }
+        },
+        "4f8df4a2-8027-413c-ad76-bab53b65b2e6": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Purple_Mattress_Logo_800x800-Max-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "purple"
+          }
+        },
+        "08bb29c3-973e-4bd2-8e63-ccc97f319668": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/AWARA_Mattress_Logo_800x800-High-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "awara"
+          }
+        },
+        "6b411208-cbb0-4382-bc11-030510b302f6": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/DreamCloud_Mattress_Logo_800x800-High-Quality_6634957a-de20-47ca-9c60-0e06f50519d7.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "dreamcloud"
+          }
+        },
+        "2bf3e2f6-11d9-4772-90d7-a7fdd5d33f3f": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sealy_Logo_Bar_46668c26-7339-4b45-9f64-566cfa8ce208.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "sealy-mattress-collection"
+          }
+        },
+        "ffe3301b-ec37-4254-b1ad-4e82a980a863": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/osakimassagechair-logo2-1-copy_1.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "osaki"
+          }
+        },
+        "cf6b602a-d6c5-4fdb-9f22-98f2dde74ee0": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Serta_Mattress_Logo_800x800-High-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "serta-mattresses"
+          }
+        },
+        "bea35015-2909-4815-bcaf-417cddc10db5": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sherwood-Bedding-TempurSealy.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Sherwood",
+            "description": "",
+            "collection": "sherwood"
+          }
+        },
+        "a201675d-c85c-4dfd-b882-ef14a05875e6": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/brand-x-chair.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "xchair"
+          }
+        },
+        "a24c8c0c-3a65-434d-a244-6bf157961396": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/infinity-logo.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "infinity"
+          }
+        }
+      },
+      "block_order": [
+        "ee7609b0-2f89-4049-85d1-a089f1ab7812",
+        "6aee44b3-fc2f-4829-a9f6-f21b90e3c197",
+        "7a2bfa80-2602-4957-a569-6d8b1753e8a4",
+        "4f8df4a2-8027-413c-ad76-bab53b65b2e6",
+        "08bb29c3-973e-4bd2-8e63-ccc97f319668",
+        "6b411208-cbb0-4382-bc11-030510b302f6",
+        "2bf3e2f6-11d9-4772-90d7-a7fdd5d33f3f",
+        "ffe3301b-ec37-4254-b1ad-4e82a980a863",
+        "cf6b602a-d6c5-4fdb-9f22-98f2dde74ee0",
+        "bea35015-2909-4815-bcaf-417cddc10db5",
+        "a201675d-c85c-4dfd-b882-ef14a05875e6",
+        "a24c8c0c-3a65-434d-a244-6bf157961396"
+      ],
+      "settings": {
+        "heading": "Brands We Carry",
+        "brand": true
+      }
+    },
+    "featured-blog": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Mattress & Sleep Articles",
+        "blog": "your-mattress-matters"
+      }
+    },
+    "719f45ca-44b9-40c9-8e73-05cd11411e7f": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Massage Chair Education",
+        "blog": "massage-education"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text-with-buttons",
+    "faq",
+    "02df60ea-23f1-4547-8fa4-b84a268b27e8",
+    "double1",
+    "double2",
+    "double3",
+    "best-selling",
+    "buy-by",
+    "featured-blog",
+    "719f45ca-44b9-40c9-8e73-05cd11411e7f"
+  ]
+}

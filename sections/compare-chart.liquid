@@ -1,0 +1,295 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign sub = section.settings.sub
+%}
+
+<div id="compare-chart" class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="py-10">
+        {% if heading != blank %}
+            {% if hierarchy == "h2" %}
+                <h2 class="font-extrabold text-[32px] text-center text-text mb-4">{{ heading }}</h2>  
+            {% else %}
+                <h1 class="font-extrabold text-[32px] text-center text-text mb-4">{{ heading }}</h1>   
+            {% endif %}  
+        {% endif %}
+        {% if sub != blank %}
+            <div class="font-medium text-center text-text mb-10">{{ sub }}</div>
+        {% endif %}
+    </div>
+    <div class="hidden {% if section.blocks.size == 4 %}grid-cols-11{% else %}grid-cols-8{% endif %} text-text bg-white shadow-sp rounded-cl px-8 py-14 ts:grid">
+        {% for block in section.blocks %}
+            {% liquid 
+                assign title = block.settings.title
+                assign image = block.settings.image
+                assign model = block.settings.model
+                assign technology = block.settings.technology
+                assign relief = block.settings.relief
+                assign height = block.settings.height
+                assign cancellation = block.settings.cancellation
+                assign feel = block.settings.feel
+                assign pricing = block.settings.pricing
+            %}
+            {% if forloop.index == 1 %}
+                <div class="col-span-2 flex flex-col divide-y divide-primary">
+                    <div class="flex flex-col justify-between items-center text-center h-[152px] mb-14">
+                        {% if image != blank %}
+                            <div class="font-bold text-2xl">{{ title }}</div>
+                            <img class="h-[70px]" src="{{ image | image_url: height: 70  }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                    {% if model != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ model }}</div>
+                    {% endif %}
+                    {% if technology != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ technology }}</div>
+                    {% endif %}
+                    {% if relief != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ relief }}</div>
+                    {% endif %}
+                    {% if height != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ height }}</div>
+                    {% endif %}
+                    {% if cancellation != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ cancellation }}</div>
+                    {% endif %}
+                    {% if feel != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ feel }}</div>
+                    {% endif %}
+                    {% if pricing != blank %}
+                        <div class="flex flex-col justify-center font-bold text-xl leading-none h-[128px]">{{ pricing }}</div>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="col-span-3 flex flex-col divide-y divide-primary">
+                    <div class="flex flex-col justify-between items-center text-center h-[152px] mb-14 pl-11">
+                        {% if image != blank %}
+                            <div class="font-bold text-2xl">{{ title }}</div>
+                            <img class="h-[70px]" src="{{ image | image_url: height: 70 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                    {% if model != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ model }}</div>
+                    {% endif %}
+                    {% if technology != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ technology }}</div>
+                    {% endif %}
+                    {% if relief != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ relief }}</div>
+                    {% endif %}
+                    {% if height != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ height }}</div>
+                    {% endif %}
+                    {% if cancellation != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ cancellation }}</div>
+                    {% endif %}
+                    {% if feel != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11">{{ feel }}</div>
+                    {% endif %}
+                    {% if pricing != blank %}
+                        <div class="flex flex-col justify-center items-center font-medium text-center leading-none h-[128px] pl-11"><p>Starting At</p><div class="font-bold text-2xl">{{ pricing }}</div></div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="flex flex-col text-center text-text bg-white shadow-sp rounded-cl divide-y divide-primary px-4 py-7 ts:hidden">
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full pb-8">
+            {% for block in section.blocks %}
+                {% assign model = block.settings.model %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ model }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ model }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full py-8">
+            {% for block in section.blocks %}
+                {% assign technology = block.settings.technology %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ technology }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ technology }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full py-8">
+            {% for block in section.blocks %}
+                {% assign relief = block.settings.relief %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ relief }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ relief }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full py-8">
+            {% for block in section.blocks %}
+                {% assign height = block.settings.height %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ height }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ height }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full py-8">
+            {% for block in section.blocks %}
+                {% assign cancellation = block.settings.cancellation %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ cancellation }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ cancellation }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full py-8">
+            {% for block in section.blocks %}
+                {% assign feel = block.settings.feel %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ feel }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex justify-center items-center text-sm leading-none mm:text-base">{{ feel }}</div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="grid {% if section.blocks.size == 4 %}grid-cols-3{% else %}grid-cols-2{% endif %} justify-items-center items-center w-full pt-8">
+            {% for block in section.blocks %}
+                {% assign pricing = block.settings.pricing %}
+                {% if forloop.index == 1 %}
+                    {% if model != blank %}
+                        <div class="{% if section.blocks.size == 4 %}col-span-3{% else %}col-span-2{% endif %} flex justify-center items-center font-bold text-xl leading-none mb-5">{{ pricing }}</div>
+                    {% endif %}
+                {% else %}
+                    {% if model != blank %}
+                        <div class="flex flex-col justify-center items-center text-sm leading-none"><p>Starting At</p><div class="font-bold text-xl">{{ pricing }}</div></div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div> 
+</div>
+
+
+{% schema %}
+{
+    "name": "Compare Chart",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Sleep First FAQs"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "richtext",
+            "id": "sub",
+            "label": "Sub-title"
+        }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "name": "Chart",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "The first block is for the titles column"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Column Title"
+                }, 
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Model Image"
+                },
+                {
+                    "type": "richtext",
+                    "id": "model",
+                    "label": "Mattress Model"
+                },
+                {
+                    "type": "richtext",
+                    "id": "technology",
+                    "label": "Technology"
+                },
+                {
+                    "type": "richtext",
+                    "id": "relief",
+                    "label": "Relief"
+                },
+                {
+                    "type": "richtext",
+                    "id": "height",
+                    "label": "Height"
+                },
+                {
+                    "type": "richtext",
+                    "id": "cancellation",
+                    "label": "Motion Cancellation"
+                },
+                {
+                    "type": "richtext",
+                    "id": "feel",
+                    "label": "Feel"
+                },
+                {
+                    "type": "richtext",
+                    "id": "pricing",
+                    "label": "Pricing"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Compare Chart"
+        }
+    ]
+}
+{% endschema %}

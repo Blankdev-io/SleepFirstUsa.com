@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-on-sale",
+      "settings": {
+        "button": false,
+        "show_page_card": true,
+        "brand1": "shopify:\/\/shop_images\/logo-offer-tempur.png",
+        "image": "shopify:\/\/shop_images\/versus.png",
+        "brand2": "shopify:\/\/shop_images\/Purple_Logo.png",
+        "heading": "Sleep Comparison",
+        "pre_heading": "Choose Wisely, Sleep Better",
+        "content": "<p>Discover the ideal mattress for you. Compare brands and make the best decision.<\/p>",
+        "page_button": "PICK YOUR BRANDS",
+        "page_button_url": "shopify:\/\/pages\/brand-comparison"
+      }
+    },
+    "635d450f-f8eb-4cfe-afdf-26f8d1c55100": {
+      "type": "features",
+      "settings": {
+        "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/calendar.svg?v=1689608702",
+        "heading1": "365-Night In Home Trial",
+        "content1": "",
+        "button1": "TRY NOW",
+        "url1": "#collection-page",
+        "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/number-1.svg?v=1689608702",
+        "heading2": "One Year Price & Comfort Guarantee",
+        "content2": "",
+        "button2": "SHOP NOW",
+        "url2": "#collection-page",
+        "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/Delivery.svg?v=1676482442",
+        "heading3": "Fast Free Shipping",
+        "content3": "",
+        "button3": "SHOP NOW",
+        "url3": "#collection-page"
+      }
+    },
+    "1a241c46-54bb-454f-895b-de4aa5fafe70": {
+      "type": "collection-recomendations",
+      "blocks": {
+        "356e4d02-c589-46d9-809d-c0539d325cff": {
+          "type": "slide",
+          "settings": {
+            "collection": "nectar-mattress"
+          }
+        },
+        "d389aefe-802d-48ce-b0da-76095ae09c5d": {
+          "type": "slide",
+          "settings": {
+            "collection": "queen"
+          }
+        },
+        "e5c1812e-c782-48e1-8bb5-673784c3b194": {
+          "type": "slide",
+          "settings": {
+            "collection": "dreamcloud"
+          }
+        }
+      },
+      "block_order": [
+        "356e4d02-c589-46d9-809d-c0539d325cff",
+        "d389aefe-802d-48ce-b0da-76095ae09c5d",
+        "e5c1812e-c782-48e1-8bb5-673784c3b194"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "635d450f-f8eb-4cfe-afdf-26f8d1c55100",
+    "1a241c46-54bb-454f-895b-de4aa5fafe70"
+  ]
+}

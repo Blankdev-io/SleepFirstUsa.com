@@ -1,0 +1,269 @@
+{% liquid
+    assign logo_url = section.settings.logo_url
+    assign text = section.settings.text
+    assign logo1 = section.settings.social_svg1
+    assign image1 = section.settings.social_image1
+    assign check1 = section.settings.social_check1
+    assign link1 = section.settings.social_media_url1
+    assign logo2 = section.settings.social_svg2
+    assign image2 = section.settings.social_image2
+    assign check2 = section.settings.social_check2
+    assign link2 = section.settings.social_media_url2
+    assign logo3 = section.settings.social_svg3
+    assign image3 = section.settings.social_image3
+    assign check3 = section.settings.social_check3
+    assign link3 = section.settings.social_media_url3
+    assign store_head = section.settings.store_head
+    assign store_loc1 = section.settings.store_loc1
+    assign addresses1 = section.settings.addresses1
+    assign store_loc2 = section.settings.store_loc2
+    assign addresses2 = section.settings.addresses2
+    assign copyright = section.settings.copyright
+%}
+
+<div class="bg-primary">
+    <div class="mx-5 py-6 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+        <div class="grid grid-cols-2 gap-y-4 gap-x-9 text-sm text-white mb-6 ds:grid-cols-4 ds:gap-x-16">
+            <div class="col-span-2 ds:col-span-1">
+                <a href="{{ logo_url }}" title="Sleep First" class="w-1/2 ds:w-full">{% render 'icons', icon: 'white-outline-logo' %}</a>
+                <p class="mt-4 ds:mt-6">{{ text }}</p>
+                <div class="flex justify-center mt-6 ds:justify-start">
+                    {% if check1 %}
+                        <a href="{{ link1 }}" title="{{ link1.url }}" target="_blank"><img src="{{ image1 | image_url }}" alt="{{ image1.alt }}" loading="lazy"></a>
+                    {% else %}
+                        <a href="{{ link1 }}" title="{{ link1.url }}" target="_blank"><img src="{{ logo1 }}" alt="{{ logo1.alt }}" loading="lazy"></a>
+                    {% endif %}
+                    {% if check2 %}
+                        <a href="{{ link2 }}" title="{{ link2.url }}" target="_blank"><img src="{{ image2 | image_url }}" alt="{{ image2.alt }}" loading="lazy"></a>
+                    {% else %}
+                        <a href="{{ link2 }}" title="{{ link2.url }}" target="_blank"><img src="{{ logo2 }}" class="mx-3" alt="{{ logo2.alt }}" loading="lazy"></a>
+                    {% endif %}
+                    {% if check3 %}
+                        <a href="{{ link3 }}" title="{{ link3.url }}" target="_blank"><img src="{{ image3 | image_url }}" alt="{{ image3.alt }}" loading="lazy"></a>
+                    {% else %}
+                        <a href="{{ link3 }}" title="{{ link3.url }}" target="_blank"><img src="{{ logo3 }}" alt="{{ logo3.alt }}" loading="lazy"></a>
+                    {% endif %}
+                </div>
+            </div>
+            {% for block in section.blocks %}
+                {% liquid
+                    assign title = block.settings.title
+                    assign links = block.settings.menu.links
+                    assign message = block.settings.message
+                %}
+                <div class="ds:pt-5">
+                    <h2 class="font-bold text-2xl mb-6">{{ title }}</h2>
+                    {% for link in links %}
+                        <ul>
+                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                        </ul>                    
+                    {% endfor %}                
+                    <p class="mt-3">{{ message }}</p>
+                </div>            
+            {% endfor %}
+            <div class="col-span-2 ds:col-span-1 ds:pt-5">
+                <h2 class="font-bold text-2xl mb-6">{{ store_head }}</h2>
+                <div class="mm:flex mm:gap-9 ds:block">
+                    <div class="h-auto mb-6 mm:w-1/2 ds:w-full">
+                        <div class="flex items-center gap-2 font-bold text-base mb-3">{{ store_loc1 }}</div>
+                        <div id="stores" class="pl-2">{{ addresses1 }}</div>
+                    </div>
+                    <!-- <div class="transition-all duration-300 ease-in-out h-auto mb-6 mm:w-1/2 ds:w-full">
+                        <div onclick="myFunction('stores2')" class="flex items-center gap-2 font-bold text-base cursor-pointer mb-3">{{ store_loc2 }} <span id="stores2icon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span></div>
+                        <div id="stores2" class="transition-all duration-300 ease-in-out hidden opacity-0 h-0 pl-2">{{ addresses2 }}</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+        <div class="flex justify-between py-4 ds:py-5">
+            <p class="self-center text-sm text-text">{{ copyright }}</p>
+            <div class="flex flex-wrap gap-2 justify-end">
+                {%- for type in shop.enabled_payment_types -%}
+                    {{ type | payment_type_svg_tag }}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        var y = document.getElementById(id + 'icon');
+        if (x.classList.contains('hidden')) {
+            x.classList.remove('hidden');
+            x.classList.add('block');
+            x.classList.remove('h-0');
+            x.classList.add('h-auto');
+            x.classList.remove('opacity-0');
+            x.classList.add('opacity-100');
+        } else {
+            x.classList.remove('block');
+            x.classList.add('hidden');
+            x.classList.remove('h-auto');
+            x.classList.add('h-0');
+            x.classList.remove('opacity-100');
+            x.classList.add('opacity-0');
+        }
+        if (y.classList.contains('rotate-0')) {
+            y.classList.remove('rotate-0');
+            y.classList.add('rotate-180');
+        } else {
+            y.classList.remove('rotate-180');
+            y.classList.add('rotate-0');
+        }
+    }  
+</script> -->
+
+
+{% schema %}
+{
+    "name": "Footer",
+    "settings": [
+        {
+            "type": "url",
+            "id": "logo_url",
+            "label": "Main logo URL"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Content under the logo"                    
+        },
+        {
+            "type": "header",
+            "content": "Social media logos",
+            "info": "Logos and URL's"
+        },
+        {
+            "type": "url",
+            "id": "social_svg1",
+            "label": "Social Media Logo SVG 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image1",
+            "label": "Social Media Logo Image 1"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check1",
+            "label": "Use image instead (Social media logo 1)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url1",
+            "label": "Social Media URL 1"                    
+        },
+        {
+            "type": "url",
+            "id": "social_svg2",
+            "label": "Social Media Logo SVG 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image2",
+            "label": "Social Media Logo Image 2"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check2",
+            "label": "Use image instead (Social media logo 2)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url2",
+            "label": "Social Media URL 2"                    
+        },
+        {
+            "type": "url",
+            "id": "social_svg3",
+            "label": "Social Media Logo SVG 3"
+        },
+        {
+            "type": "image_picker",
+            "id": "social_image3",
+            "label": "Social Media Logo Image 3"
+        },
+        {
+            "type": "checkbox",
+            "id": "social_check3",
+            "label": "Use image instead (Social media logo 3)",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "social_media_url3",
+            "label": "Social Media URL 3"                    
+        },
+        {
+            "type": "header",
+            "content": "Store section",
+            "info": "Store section"
+        },
+        {
+            "type": "text",
+            "id": "store_head",
+            "label": "Stores heading",
+            "default": "Store Locations"                   
+        },
+        {
+            "type": "text",
+            "id": "store_loc1",
+            "label": "Store location 1"                    
+        },
+        {
+            "type": "richtext",
+            "id": "addresses1",
+            "label": "Addresses 1"                    
+        },
+        {
+            "type": "text",
+            "id": "store_loc2",
+            "label": "Store location 2"                    
+        },
+        {
+            "type": "richtext",
+            "id": "addresses2",
+            "label": "Addresses 2"                    
+        },
+        {
+            "type": "text",
+            "id": "copyright",
+            "label": "Copyright",
+            "default": "Copyright"
+        }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+        {
+            "name": "Menus",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"                    
+                },
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "label": "Menu"
+                },
+                {
+                    "type": "richtext",
+                    "id": "message",
+                    "label": "Support message"                    
+                }
+            ]
+        }
+    ]   
+}
+{% endschema %}

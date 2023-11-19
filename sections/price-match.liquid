@@ -1,0 +1,113 @@
+{% liquid
+    assign pre = section.settings.pre_heading
+    assign heading = section.settings.heading
+    assign content = section.settings.content
+    assign contact_title = section.settings.contact_title
+    assign contact_info = section.settings.contact_info
+    assign form_title = section.settings.form_title
+    assign form_heading = section.settings.form_heading
+    assign button = section.settings.button
+    assign form_message = section.settings.form_message
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="bg-white shadow-sp rounded-cl py-6 px-5 ds:py-12 ds:px-10">
+        {% if pre != blank %}
+            <p class="font-bold text-center text-text ds:mb-4">{{ pre }}</p>
+        {% endif %}
+        <h1 class="text-title text-center text-text mb-12 ds:mb-14">{{ heading }}</h1>
+        <div class="text-center text-text whitespace-pre-wrap mb-12 ds:mb-14">{{ content }}</div>
+        <div class="grid gap-y-10 text-text h-auto ds:grid-cols-2 ds:gap-x-24">
+            <div>
+                <h2 class="text-title mb-12">{{ contact_title }}</h2>
+                <div>{{ contact_info }}</div>
+            </div>
+            <div>
+                <h2 class="text-title mb-12">{{ form_title }}</h2>
+                {% form 'contact' %}
+                    {{ form.errors | default_errors }}
+                    <div class="flex flex-col gap-4">
+                        <div>{{ form_heading }}</div>
+                        <input type="text" name="contact[title]" id="title" value="Price Match Request" class="hidden border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[first_name]" id="first-name" placeholder="First Name" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[last_name]" id="last-name" placeholder="Last Name" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="email" name="contact[email]" id="email" placeholder="Email Address" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="tel" name="contact[phone]" id="phone" placeholder="Phone Number" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[zip_code]" id="zip-code" placeholder="ZIP Code" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[model]" id="model" placeholder="Brand and Model Barcode/UPC" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[price]" id="price" placeholder="Price You Would Like Sleep First to Match" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <input type="text" name="contact[store]" id="store" placeholder="Store Name or Link" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                        <label for="myfile">Add Handwritten Quote (optional):</label>
+                        <input type="file" id="file" name="contact[file]">
+                        <textarea name="contact[body]" id="message" rows="2" placeholder="Your Message" class="border-[0.5px] border-secondary rounded-cl px-4 py-2"></textarea>
+                        <input type="submit" value="{{ button }}" class="button self-start cursor-pointer">
+                        {% if form_message != blank %}
+                            <div>{{ form_message }}</div>
+                        {% endif %}
+                    </div>
+                {% endform %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Price Match",
+    "settings": [
+        {
+            "type": "text",
+            "id": "pre_heading",
+            "label": "Pre heading",
+            "default": "Pre heading"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Content</p>"
+        },
+        {
+            "type": "text",
+            "id": "contact_title",
+            "label": "Contact Section Title"
+        },
+        {
+            "type": "richtext",
+            "id": "contact_info",
+            "label": "Contact Section Info"
+        },
+        {
+            "type": "text",
+            "id": "form_title",
+            "label": "Form Title",
+            "default": "Form Title"
+        },
+        {
+            "type": "richtext",
+            "id": "form_heading",
+            "label": "Form Heading",
+            "default": "<p>Form Heading</p>"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "type": "richtext",
+            "id": "form_message",
+            "label": "Final Message",
+            "default": "<p>Final Message</p>"
+        }
+    ]
+}
+{% endschema %}

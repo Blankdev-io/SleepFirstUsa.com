@@ -1,0 +1,484 @@
+{
+  "sections": {
+    "997ccedc-e356-4d55-92e0-a365612b885d": {
+      "type": "sales-banner-new",
+      "blocks": {
+        "9d5bc0ae-87f9-497a-89a2-b974217b559c": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/1.02-376x700-IRG-JVD-198525.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.02-727x350-IRG-JVD-198525.jpg",
+            "url": "shopify:\/\/collections\/tempurpedic"
+          }
+        },
+        "2d1f52b5-5efe-4bb6-8088-c816a1c71936": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/1.01-376x700-IRG-ZX-197834.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-197834.jpg",
+            "url": "shopify:\/\/collections\/purple"
+          }
+        },
+        "8b831004-584a-4128-bc64-cf493d51ded4": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/1.03-376x700-IRG-JVD-200286.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.03-727x350-IRG-JVD-200286.jpg",
+            "url": "shopify:\/\/collections\/nectar-mattress"
+          }
+        }
+      },
+      "block_order": [
+        "9d5bc0ae-87f9-497a-89a2-b974217b559c",
+        "2d1f52b5-5efe-4bb6-8088-c816a1c71936",
+        "8b831004-584a-4128-bc64-cf493d51ded4"
+      ],
+      "settings": {
+        "showStoreLocator": true
+      }
+    },
+    "1664312891a4b2e7cf": {
+      "type": "buy-by",
+      "blocks": {
+        "b54383ce-52e8-4a09-b448-02e20214664b": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-twin.svg?v=1664313210",
+            "logo_check": true,
+            "product_name": "Twin",
+            "description": "<p>38\" X 74\"<br\/>96.5cm X 190.5cm<\/p>",
+            "collection": "twin"
+          }
+        },
+        "1d089f40-56f8-4fad-8b6a-bddcf0caf7f0": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-twin_xl.svg?v=1664313210",
+            "logo_check": true,
+            "product_name": "Twin XL",
+            "description": "<p>38\" X 80\"<br\/>96.5cm X 203cm<\/p>",
+            "collection": "twin-long"
+          }
+        },
+        "aa8a09ea-700a-459c-9177-753c562b65d9": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-double.svg?v=1664313209",
+            "logo_check": true,
+            "product_name": "Double",
+            "description": "<p>53\" X 75\"<br\/>134.5cm X 190.5cm<\/p>",
+            "collection": "double"
+          }
+        },
+        "483a5c08-2e87-47ee-8f1b-c6b55cc2b559": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-queen.svg?v=1664313209",
+            "logo_check": true,
+            "product_name": "Queen",
+            "description": "<p>60\" X 80\"<br\/>152.5cm X 203cm<\/p>",
+            "collection": "queen"
+          }
+        },
+        "1598e98c-6aa0-4b71-be99-bcc632dea7bc": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-king.svg?v=1664313209",
+            "logo_check": true,
+            "product_name": "King",
+            "description": "<p>76\" X 80\"<br\/>193cm X 203cm<\/p>",
+            "collection": "king"
+          }
+        },
+        "4beb672d-fd97-4f19-aaa7-708fa5a380bb": {
+          "type": "slide",
+          "settings": {
+            "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-calking.svg?v=1664368520",
+            "logo_check": true,
+            "product_name": "Cal King",
+            "description": "<p>72\" X 84\"<br\/>183cm X 213cm<\/p>",
+            "collection": "cal-king"
+          }
+        }
+      },
+      "block_order": [
+        "b54383ce-52e8-4a09-b448-02e20214664b",
+        "1d089f40-56f8-4fad-8b6a-bddcf0caf7f0",
+        "aa8a09ea-700a-459c-9177-753c562b65d9",
+        "483a5c08-2e87-47ee-8f1b-c6b55cc2b559",
+        "1598e98c-6aa0-4b71-be99-bcc632dea7bc",
+        "4beb672d-fd97-4f19-aaa7-708fa5a380bb"
+      ],
+      "settings": {
+        "heading": "Shop by Size",
+        "brand": false
+      }
+    },
+    "166431289526836eec": {
+      "type": "buy-by",
+      "blocks": {
+        "8602d083-7008-44a6-99b8-c8f063ea4517": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Beautyrest_Logo_Bar_02e35210-fbca-4766-adce-ee8ecfa81959.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Beautyrest",
+            "description": "",
+            "collection": "simmons-beautyrest"
+          }
+        },
+        "941ec13d-1a7b-475d-a258-636452bde186": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Tempurpedic_Logo_Bar_248e83f0-9c0b-4ce3-a7cc-b527acf9def9.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Tempur-Pedic",
+            "description": "",
+            "collection": "tempurpedic"
+          }
+        },
+        "dd9268f8-0c9e-432e-b068-4f25179985f6": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Nectar_Logo_Bar_ee45c2b3-27ff-4bbd-aed9-e978aedf054a.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Nectar",
+            "description": "",
+            "collection": "nectar-mattress"
+          }
+        },
+        "414e897c-8864-45bd-a54a-30b9833cda8e": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Purple_Mattress_Logo_800x800-Max-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Purple",
+            "description": "",
+            "collection": "purple"
+          }
+        },
+        "bc98ce6b-6f5a-4aef-a596-9803dd2d1607": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/AWARA_Mattress_Logo_800x800-High-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Awara",
+            "description": "",
+            "collection": "awara"
+          }
+        },
+        "0d70e7f1-0a5b-4629-93d2-7480bc12fcaf": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/DreamCloud_Mattress_Logo_800x800-High-Quality_6634957a-de20-47ca-9c60-0e06f50519d7.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "DreamCloud",
+            "description": "",
+            "collection": "dreamcloud"
+          }
+        },
+        "1dd526bf-6227-4d57-b56d-bf3c100c3963": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sealy_Logo_Bar_46668c26-7339-4b45-9f64-566cfa8ce208.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Sealy",
+            "description": "",
+            "collection": "sealy-mattress-collection"
+          }
+        },
+        "703e6c67-8151-4d63-b78f-14833236979c": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Serta_Mattress_Logo_800x800-High-Quality_bab59d56-f454-4323-8042-e4a10cf2f2a1.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Serta",
+            "description": "",
+            "collection": "serta-mattresses"
+          }
+        },
+        "02089d54-63c7-4488-bd2e-65b2e1d5f089": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sherwood-Bedding-TempurSealy.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Sherwood",
+            "description": "",
+            "collection": "sherwood"
+          }
+        },
+        "3de9f560-f977-413f-b4fd-2ceedce49423": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/osakimassagechair-logo2-1-copy_1.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Osaki",
+            "description": "",
+            "collection": "osaki"
+          }
+        },
+        "363c5025-f9e5-4323-9905-f3a073f654ea": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/brand-x-chair.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "X-Chair",
+            "description": "",
+            "collection": "xchair"
+          }
+        },
+        "9f90d0e9-b30b-4fbc-b48d-08768dd1b8b6": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/infinity-logo.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "Infinity",
+            "description": "",
+            "collection": "infinity"
+          }
+        }
+      },
+      "block_order": [
+        "8602d083-7008-44a6-99b8-c8f063ea4517",
+        "941ec13d-1a7b-475d-a258-636452bde186",
+        "dd9268f8-0c9e-432e-b068-4f25179985f6",
+        "414e897c-8864-45bd-a54a-30b9833cda8e",
+        "bc98ce6b-6f5a-4aef-a596-9803dd2d1607",
+        "0d70e7f1-0a5b-4629-93d2-7480bc12fcaf",
+        "1dd526bf-6227-4d57-b56d-bf3c100c3963",
+        "703e6c67-8151-4d63-b78f-14833236979c",
+        "02089d54-63c7-4488-bd2e-65b2e1d5f089",
+        "3de9f560-f977-413f-b4fd-2ceedce49423",
+        "363c5025-f9e5-4323-9905-f3a073f654ea",
+        "9f90d0e9-b30b-4fbc-b48d-08768dd1b8b6"
+      ],
+      "settings": {
+        "heading": "Shop by Brand",
+        "brand": true
+      }
+    },
+    "a4641aaf-6c7d-4bd6-9fa2-36c6ad25c37c": {
+      "type": "sales-banner-new",
+      "blocks": {
+        "86ca0dfb-9e27-4f5b-9019-1ff801f1e7c4": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/1.02-376x700-IRG-RR-195754.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.02-727x350-IRG-RR-195754.jpg",
+            "url": "shopify:\/\/collections\/dreamcloud"
+          }
+        },
+        "6e001c51-7c5e-4d5c-9b50-e89358cc01a5": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/1.01-376x700-IRG-ZX-190163.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-190163.jpg",
+            "url": "shopify:\/\/collections\/tempurpedic"
+          }
+        },
+        "3ecf528b-a0cd-46d7-917d-a424d220f14b": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Desktop.png",
+            "banner_img_mob": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Mobile.png",
+            "url": "shopify:\/\/collections\/king-for-queen-free-adjustable-base"
+          }
+        }
+      },
+      "block_order": [
+        "86ca0dfb-9e27-4f5b-9019-1ff801f1e7c4",
+        "6e001c51-7c5e-4d5c-9b50-e89358cc01a5",
+        "3ecf528b-a0cd-46d7-917d-a424d220f14b"
+      ],
+      "settings": {
+        "showStoreLocator": false
+      }
+    },
+    "1664314931aa0863b0": {
+      "type": "offer-banner",
+      "blocks": {
+        "9f8f2bda-7b46-4147-a56e-c6a293094473": {
+          "type": "text",
+          "settings": {
+            "text": "<p>$300<\/p>",
+            "add_logo": "shopify:\/\/shop_images\/Amazon-gift-cad-logo-short.png",
+            "font_size": 90,
+            "font_weight": "900",
+            "text_color": "#384fae"
+          }
+        },
+        "042416a9-2e1e-45f1-a3fb-81e06b4b3f8f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>WITH ANY TEMPUR-PEDIC<\/p>",
+            "font_size": 32,
+            "font_weight": "700",
+            "text_color": "#231f20"
+          }
+        },
+        "10bd258b-ebd6-4e26-aa6c-8ff00ce2e7b6": {
+          "type": "text",
+          "settings": {
+            "text": "<p><\/p>",
+            "font_size": 16,
+            "font_weight": "400",
+            "text_color": "#231f20"
+          }
+        }
+      },
+      "block_order": [
+        "9f8f2bda-7b46-4147-a56e-c6a293094473",
+        "042416a9-2e1e-45f1-a3fb-81e06b4b3f8f",
+        "10bd258b-ebd6-4e26-aa6c-8ff00ce2e7b6"
+      ],
+      "disabled": true,
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/banner-tempur-mobile.jpg",
+        "logo": "shopify:\/\/shop_images\/logo-offer-tempur.png",
+        "button": "SHOP NOW",
+        "button_link": "shopify:\/\/collections\/tempurpedic",
+        "label_color": "#ffffff",
+        "btn_color": "#384fae"
+      }
+    },
+    "11f10af6-118a-4467-bc20-76bc99d869cf": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "July Fourth Mattress Sale",
+        "hierarchy": "h2",
+        "sub": "<p>Save $500 on ALL NEW TEMPUR-breeze<strong>° <\/strong>mattresses.<\/p>",
+        "video": "shopify:\/\/files\/videos\/Sleep First July Fourth Mattress Sale - Save Big on Tempur-Pedic Mattresses!.mp4"
+      }
+    },
+    "1664825596ef4ea7a4": {
+      "type": "featured-product",
+      "settings": {
+        "invert": false,
+        "product_ann": true,
+        "ann_text": "Every TEMPUR mattress comes with $300 Amazon.com gift card.",
+        "product": "tempurpedic-proadapt-medium-hybrid-mattress",
+        "accent_color": "#a593e7"
+      }
+    },
+    "1664548101330e0782": {
+      "type": "collections",
+      "blocks": {
+        "b410efca-10db-4a03-8ea4-08b6b39a2f1b": {
+          "type": "slide",
+          "settings": {
+            "collection": "pillow-cube"
+          }
+        },
+        "92a007f3-881c-410e-8d6c-61c41b298cd7": {
+          "type": "slide",
+          "settings": {
+            "collection": "nectar-mattress"
+          }
+        },
+        "be9eee4b-af48-4c78-a0ef-1fe146bf4289": {
+          "type": "slide",
+          "settings": {
+            "collection": "queen"
+          }
+        },
+        "2765bc7a-d2ba-4640-9c18-3384fe6866a4": {
+          "type": "slide",
+          "settings": {
+            "collection": "dreamcloud"
+          }
+        }
+      },
+      "block_order": [
+        "b410efca-10db-4a03-8ea4-08b6b39a2f1b",
+        "92a007f3-881c-410e-8d6c-61c41b298cd7",
+        "be9eee4b-af48-4c78-a0ef-1fe146bf4289",
+        "2765bc7a-d2ba-4640-9c18-3384fe6866a4"
+      ],
+      "settings": {
+      }
+    },
+    "166483851473e99371": {
+      "type": "featured-product",
+      "settings": {
+        "invert": true,
+        "product_ann": true,
+        "ann_text": "",
+        "product": "nectar-premier-copper-mattress",
+        "accent_color": "#5b9dd3"
+      }
+    },
+    "13c00f48-e144-4c72-ae42-15bff2eda6a9": {
+      "type": "products-list",
+      "settings": {
+        "heading": "Best Selling Chairs",
+        "url": "shopify:\/\/collections\/massage-chairs",
+        "product_list": [
+          "osaki-os-4d-pro-maestro-le-massage-chair",
+          "osaki-amamedic-hilux-4d-massage-chair",
+          "infinity-aura-massage-chair",
+          "infinity-smart-chair-x3-massage-chair"
+        ],
+        "button": false
+      }
+    },
+    "16645689562ca2c00e": {
+      "type": "featured-post",
+      "settings": {
+        "article": "your-mattress-matters\/6-unmistakable-signs-you-need-a-new-pillow"
+      }
+    },
+    "1664805458b02e917b": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Massage Chair Education",
+        "blog": "massage-education"
+      }
+    },
+    "16648223710eccdae6": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Over 4,500 Five Star Reviews",
+        "principal_logo": "shopify:\/\/shop_images\/logo-sleepfirst_medal.png",
+        "left_logo": "shopify:\/\/shop_images\/logo-google.png",
+        "right_logo": "shopify:\/\/shop_images\/logo-facebook.png"
+      }
+    },
+    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5": {
+      "type": "html",
+      "disabled": true,
+      "settings": {
+        "custom_html": "<div class=\"klaviyo-form-REgYdn\"><\/div>"
+      }
+    }
+  },
+  "order": [
+    "997ccedc-e356-4d55-92e0-a365612b885d",
+    "1664312891a4b2e7cf",
+    "166431289526836eec",
+    "a4641aaf-6c7d-4bd6-9fa2-36c6ad25c37c",
+    "1664314931aa0863b0",
+    "11f10af6-118a-4467-bc20-76bc99d869cf",
+    "1664825596ef4ea7a4",
+    "1664548101330e0782",
+    "166483851473e99371",
+    "13c00f48-e144-4c72-ae42-15bff2eda6a9",
+    "16645689562ca2c00e",
+    "1664805458b02e917b",
+    "16648223710eccdae6",
+    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5"
+  ]
+}

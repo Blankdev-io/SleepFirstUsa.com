@@ -1,0 +1,127 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign content = section.settings.content
+    assign button = section.settings.button
+    assign url = section.settings.url
+    assign image = section.settings.image
+    assign order = section.settings.order
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-flow-row text-text divide-y divide-primary bg-white shadow-sp rounded-cl h-auto mb-10 p-4 ts:px-10 ts:py-20 tl:grid-rows-1 tl:grid-cols-2 tl:divide-y-0">
+        {% if order == false %}
+            <div class="justify-self-center self-center pb-4 ts:pb-8 tl:pt-0 tl:pb-0 tl:pr-10">
+                {% if image != blank %}
+                    <a href="{{ url }}" title="{{ heading }}">
+                        <picture>
+                            <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 500 }}">
+                            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 600 }}">
+                            <img class="w-full max-w-lg" src="{{ image | image_url: width: 430 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
+                        </picture>
+                    </a>             
+                {% else %}
+                    <div class="flex items-center justify-center bg-black/50 w-[250px] h-[250px]">
+                        <p class="font-bold text-2xl text-center text-white">Image</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex flex-col justify-evenly pt-4 ts:pt-8 tl:order-1 tl:border-l tl:border-primary tl:pb-4 tl:pl-10">
+                {% if hierarchy == "h2" %}
+                    <h2 class="text-title mb-8">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="text-title mb-8">{{ heading }}</h1>
+                {% endif %}
+                <span class="grid gap-3 mb-5">{{ content }}</span>
+                {% if button != blank %}
+                    <a href="{{ url }}" title="{{ url.title }}" class="button mm:w-max">{{ button }}</a>
+                {% endif %}
+            </div>            
+        {% else %}
+            <div class="justify-self-center self-center pb-4 ts:pb-8 tl:order-2 tl:pt-0 tl:pb-0 tl:pl-10">
+                {% if image != blank %}
+                    <picture>
+                        <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 500 }}">
+                        <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 600 }}">
+                        <img class="w-full max-w-lg" src="{{ image | image_url: width: 430 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
+                    </picture>
+                    </a>              
+                {% else %}
+                    <div class="flex items-center justify-center bg-black/50 w-[250px] h-[250px]">
+                        <p class="font-bold text-2xl text-center text-white">Image</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex flex-col justify-evenly pt-4 ts:pt-8 tl:border-l-0 tl:border-r tl:border-primary tl:order-1 tl:pb-4 tl:pr-10">
+                {% if hierarchy == "h2" %}
+                    <h2 class="text-title mb-8">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="text-title mb-8">{{ heading }}</h1>
+                {% endif %} 
+                <span class="grid gap-3 mb-5">{{ content }}</span>
+                {% if button != blank %}
+                    <a href="{{ url }}" title="{{ url.title }}" class="button mm:w-max">{{ button }}</a>
+                {% endif %}
+            </div>            
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Double",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },       
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Content</p>"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+        },        
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "order",
+            "label": "Change order",
+            "default": false
+        }
+    ]   
+}
+{% endschema %}

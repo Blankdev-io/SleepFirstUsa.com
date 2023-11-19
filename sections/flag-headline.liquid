@@ -1,0 +1,71 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign font_size = section.settings.font_size
+    assign hierarchy = section.settings.hierarchy
+    assign color = section.settings.color
+    assign text_color = section.settings.text_color
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    {% if hierarchy == "h2" %}
+        <h2 class="text-title text-center rounded-cl shadow-sp max-w-max mx-auto py-3 px-5 ds:py-5 ds:px-8" style="font-size:{{ font_size }}px; background-color: {{ color }}; color: {{ text_color }};">{{ heading }}</h2>
+    {% else %}
+        <h1 class="text-title text-center rounded-cl shadow-sp max-w-max mx-auto py-3 px-5 ds:py-5 ds:px-8" style="font-size:{{ font_size }}px; background-color: {{ color }}; color: {{ text_color }};">{{ heading }}</h1>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Flag Headline",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 128,
+            "step": 2,
+            "unit": "px",
+            "label": "Font size",
+            "default": 40
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Headline Background Color"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Headline Text Color"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Flag Headline"
+        }
+    ]
+}
+{% endschema %}

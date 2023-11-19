@@ -1,0 +1,111 @@
+{% liquid 
+    assign color = section.settings.color
+    assign ann_text = section.settings.ann_text
+    assign ann_enable = section.settings.ann_enable
+    assign mess_color = section.settings.mess_color
+    assign url = section.settings.url
+    assign btn_color = section.settings.btn_color
+    assign custom_url_1 = section.settings.custom_url_1
+    assign custom_url_2 = section.settings.custom_url_2 
+    assign custom_text_1 = section.settings.custom_text_1
+    assign text_color1 = section.settings.text_color1
+    assign custom_text_2 = section.settings.custom_text_2
+    assign text_color2 = section.settings.text_color2
+%}
+
+{% if ann_enable %}
+<div class="py-1" style="background-color:{{ color }};">
+    <div class="flex justify-center mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:justify-between ds:mx-9 dl:px-0">
+        <a class="hidden gap-2 rounded-full py-1 px-3 ds:flex ds:items-center" href="{{ custom_url_1 }}" style="background-color:{{ btn_color }};">
+            <div class="flex items-center h-6">
+                {% render 'icons', icon: 'map-small' %}
+            </div>
+            <p class="text-xl font-semibold" style="color:{{ text_color1 }};">{{ custom_text_1 }}</p>
+        </a>
+        <div class="flex justify-center items-center overflow-hidden w-auto mm:w-4/5 ds:w-auto dm:w-[59%]">
+            <a href="{{ url }}" title="{{ url.title }}"><p class="text-xs font-medium animate-x-left-move whitespace-nowrap mm:animate-x-left-move-m ts:animate-x-left-move-t ds:font-bold ds:text-base ds:animate-x-left-move dm:animate-x-left-move-d" style="color:{{ mess_color }};">{{ ann_text }}</p></a>
+        </div>
+        <a class="hidden gap-2 rounded-full p-1 px-3 ds:flex ds:items-center" href="{{ custom_url_2 }}" style="background-color:{{ btn_color }};">
+            <div class="flex items-center h-6">
+                {% render 'icons', icon: 'phone' %}
+            </div>
+            <p class="text-xl font-semibold" style="color:{{ text_color2 }};">{{ custom_text_2 }}</p>
+        </a>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "Announcement Bar",
+    "settings": [
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Bar Color",
+            "default": "#7992EB"
+        },
+        {
+            "type": "checkbox",
+            "id": "ann_enable",
+            "label": "Enable announcement bar",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "ann_text",
+            "label": "Message text"
+        },
+        {
+            "type": "color",
+            "id": "mess_color",
+            "label": "Message Color",
+            "default": "#FFF"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Bar URL"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "label": "Buttons Color",
+            "default": "#FFF"
+        },
+        {
+            "type": "url",
+            "id": "custom_url_1",
+            "label": "Custom URL 1"
+        },
+        {
+            "type": "text",
+            "id": "custom_text_1",
+            "label": "Custom text 1"
+        },
+        {
+            "type": "color",
+            "id": "text_color1",
+            "label": "Custom text color 1",
+            "default": "#384FAE"
+        },
+        {
+            "type": "url",
+            "id": "custom_url_2",
+            "label": "Custom URL 2"
+        },
+        {
+            "type": "text",
+            "id": "custom_text_2",
+            "label": "Custom text 2"
+        },
+        {
+            "type": "color",
+            "id": "text_color2",
+            "label": "Custom text color 2",
+            "default": "#384FAE"
+        }
+    ]
+}
+{% endschema %}

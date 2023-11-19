@@ -1,0 +1,345 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-tempur",
+      "settings": {
+        "desk_banner": "shopify:\/\/shop_images\/tempur-ad.png",
+        "mob_banner": "shopify:\/\/shop_images\/tempur-ad-mobile.png",
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "upsell_title": "Choose Your Base",
+        "product_list": [
+          "tempurpedic-flat-foundation",
+          "tempur-ergo-adjustable-power_base",
+          "tempur-ergo-smartbase-adjustable-power-base"
+        ],
+        "quantity": false,
+        "pre_title": "Select a Gift",
+        "gift_title1": "YETI Tundra® 35 Hard Cooler",
+        "gift_color1": "#006481",
+        "gift_text1": "YETI Tundra 35",
+        "gift_img1": "shopify:\/\/shop_images\/W-Tundra_35_White_Front_33582_B.png",
+        "gift_title2": "$300 Amazon.com Gift Card",
+        "gift_color2": "#231f20",
+        "gift_text2": "$300",
+        "gift_img2": "shopify:\/\/shop_images\/Amazon_Gift.png",
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it."
+      }
+    },
+    "ed8b1338-abfc-4583-b374-d7000316eec4": {
+      "type": "full-page-banner",
+      "settings": {
+        "heading": "TEMPUR-PEDIC® QUALITY",
+        "hierarchy": "h2",
+        "sub": "<p>The Most Highly Recommended Bed In America<\/p>",
+        "imageDesk": "shopify:\/\/shop_images\/Tempur_LuxeBreezeHybrid_ErgoSmart_Queen_Talent_250223003700790610_lowres.jpg",
+        "imageMob": "shopify:\/\/shop_images\/Tempur_LuxeBreezeHybrid_ErgoSmart_Queen_Talent_250223003700790610_lowres.jpg",
+        "frameImage": "shopify:\/\/shop_images\/Tempur-Pedic_Trophies.png",
+        "frameHeading": "#1 In Customer Satisfaction With Mattresses Purchased Online",
+        "frameSubheading": "— Awarded by J.D. Power in 2022 & 2021+",
+        "url": ""
+      }
+    },
+    "e7b8af51-f6a1-445e-bf6d-541de0773baf": {
+      "type": "product-feel",
+      "blocks": {
+        "203686c9-2008-42de-98cd-4cc951694cda": {
+          "type": "slide",
+          "settings": {
+            "title": "Soft",
+            "option1": "LuxeBreeze",
+            "option2": "",
+            "image1": "shopify:\/\/shop_images\/Desktop_Luxebreeze_Soft_FQmYN1A.original.original.webp",
+            "layersDescription1": "<h4>A. Pure Cool® Plus Material - 4cm<\/h4><p><strong><br\/><\/strong>An enhanced version of our exclusive and innovative cooling material, designed to pull heat away from your body<br\/><br\/><\/p><h4>B. Ventilated Advanced Relief™ Material - 7cm<\/h4><p><strong><br\/><\/strong>One-of-kind pressure-relieving material, enhanced with added ventilation for increased airflow—for deeper, more restful sleep<\/p>",
+            "layersDescription2": "",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "6512b9b4-f28c-42fb-bfa0-a5a65ebebf8c": {
+          "type": "slide",
+          "settings": {
+            "title": "Medium Hybrid",
+            "option1": "ProBreeze",
+            "option2": "LuxeBreeze",
+            "image1": "shopify:\/\/shop_images\/Probreeze_MediumHybrid_3.original.webp",
+            "image2": "shopify:\/\/shop_images\/Desktop_Luxebreeze_Hybrid_1.original.webp",
+            "layersDescription1": "<h4>A. Pure Cool® Material - 4cm<\/h4><p><strong><br\/><\/strong>An exclusive Tempur-Pedic® technology, this innovative material is designed to pull heat away from your body to help you sleep cool, all night long<br\/><br\/><\/p><h4>B. Ventilated Advanced Relief™ Material - 5cm<\/h4><p><strong><br\/><\/strong>One-of-kind pressure-relieving material, enhanced with added ventilation for increased airflow— for deeper, more restful sleep<br\/><br\/><\/p><h4>C. Proprietary Hybrid Technology<\/h4><p><strong><br\/><\/strong> Over 1,000« premium innersprings complement our one-of-a-kind pressure-relieving and cooling materials to deliver the right combination of pressure relief and support<\/p>",
+            "layersDescription2": "<h4>A. Pure Cool® Plus Material - 3cm<\/h4><p><strong><br\/><\/strong>An enhanced version of our exclusive and innovative cooling material, designed to pull heat away from your body<br\/><br\/><\/p><h4>B. Hybrid Material - 4cm<\/h4><p><strong><br\/><\/strong>Responsive material that enhances the feel of the Hybrid Technology to provide easier movement in bed and increased edge support<br\/><br\/><\/p><h4>C. Ventilated Advanced Relief™ Material - 5cm<\/h4><p><strong><br\/><\/strong>One-of-kind pressure-relieving material, enhanced with added ventilation for increased airflow— for deeper, more restful sleep<br\/><br\/><\/p><h4>D. Proprietary Hybrid Technology<\/h4><p><strong><br\/><\/strong> Over 1,300« premium, double-stacked innersprings provide a lighter, more responsive feel that helps support any sleep position<\/p>",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "823f74f4-bd30-497a-b0dc-431535ce9400": {
+          "type": "slide",
+          "settings": {
+            "title": "Medium",
+            "option1": "ProBreeze",
+            "option2": "",
+            "image1": "shopify:\/\/shop_images\/Probreeze_Medium_1_UKGqrRT.original.original.webp",
+            "layersDescription1": "<h4>A. Pure Cool® Material - 4cm<\/h4><p><strong><br\/><\/strong>An exclusive Tempur-Pedic® technology, this innovative material is designed to pull heat away from your body to help you sleep cool, all night long<br\/><br\/><\/p><h4>B. Ventilated Advanced Relief™ Material - 5cm<\/h4><p><strong><br\/><\/strong>One-of-kind pressure-relieving material, enhanced with added ventilation for increased airflow— for deeper, more restful sleep<\/p>",
+            "layersDescription2": "",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "4c5257f1-e85f-4372-8d22-a0e7766ec6c2": {
+          "type": "slide",
+          "settings": {
+            "title": "Firm",
+            "option1": "LuxeBreeze",
+            "option2": "",
+            "image1": "shopify:\/\/shop_images\/Desktop_Luxebreeze_Firm_wwNDku6.original.original.webp",
+            "layersDescription1": "<h4>A. Pure Cool® Plus Material - 5cm<\/h4><p><strong><br\/><\/strong>An enhanced version of our exclusive and innovative cooling material, designed to pull heat away from your body<br\/><br\/><\/p><h4>B. Ventilated Advanced Relief™ Material - 6cm<\/h4><p><strong><br\/><\/strong>One-of-kind pressure-relieving material, enhanced with added ventilation for increased airflow—for deeper, more restful sleep<\/p>",
+            "layersDescription2": "",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "203686c9-2008-42de-98cd-4cc951694cda",
+        "6512b9b4-f28c-42fb-bfa0-a5a65ebebf8c",
+        "823f74f4-bd30-497a-b0dc-431535ce9400",
+        "4c5257f1-e85f-4372-8d22-a0e7766ec6c2"
+      ],
+      "settings": {
+        "heading": "Find Your Perfect Feel",
+        "hierarchy": "h2",
+        "sub": "<p>Sink Into Ultimate Comfort With Our Plush Bedding Layers.<\/p>"
+      }
+    },
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd": {
+      "type": "product-materials",
+      "blocks": {
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card1.original.width-1000.webp",
+            "select": "image",
+            "title": "Cool When You Lie Down",
+            "description": "<p>The cool-to-the-touch SmartClimate® cover is made with cooling fibers that help you settle in for the night and relax.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        },
+        "87fe9299-2a0d-484b-938f-f16a1877f948": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Advanced_Relief_1.original.width-1000.webp",
+            "select": "image",
+            "title": "Cool As You Fall Asleep",
+            "description": "<p>The cooling layer reacts to your body within minutes, dissipating excess heat and delivering a soothing sensation.<\/p>",
+            "disclaimer": "",
+            "switch": true,
+            "button": "",
+            "url": ""
+          }
+        },
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card3.original.width-1000.webp",
+            "select": "image",
+            "title": "Cool All Night Long",
+            "description": "<p>Our most advanced Pure Cool® and Pure Cool® Plus materials help you sleep cool all night and wake up feeling refreshed.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f",
+        "87fe9299-2a0d-484b-938f-f16a1877f948",
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c"
+      ],
+      "settings": {
+        "heading": "Experience the Tempur-Pedic® Difference",
+        "hierarchy": "h2",
+        "sub": "<p>The exclusive cooling materials of TEMPUR-Breeze® create an all-night cooling experience that lasts from the minute you lay down to the moment you wake up.<\/p>"
+      }
+    },
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0": {
+      "type": "full-page-video",
+      "settings": {
+        "heading": "All-Night Cooling. One-Of-A-Kind Comfort.",
+        "hierarchy": "h2",
+        "sub": "<p>The TEMPUR-Breeze® collection pairs our all-new Pure Cool® Plus material with Advanced Relief™ technology to deliver unmatched cooling comfort and pressure-relieving support.<\/p>",
+        "video": "shopify:\/\/files\/videos\/TEMPUR-Material_080223045520181921.mp4"
+      }
+    },
+    "1820005c-aacb-411e-afb3-aac55d57568c": {
+      "type": "compare-chart",
+      "blocks": {
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "model": "<p>Mattress Models<\/p>",
+            "technology": "<p>Cooling Technology<\/p>",
+            "relief": "<p>Cooling<\/p>",
+            "height": "<p>Profile Height<\/p>",
+            "cancellation": "<p>Ventilated Advanced Relief™ Material<\/p>",
+            "feel": "<p>Available Feels<\/p>",
+            "pricing": "<p>Pricing<\/p>"
+          }
+        },
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae": {
+          "type": "slide",
+          "settings": {
+            "title": "CLASSIC",
+            "image": "shopify:\/\/shop_images\/Probreeze_Degrees_1.original.width-500.height-500.webp",
+            "model": "<p><strong>ProBreeze®<\/strong><\/p>",
+            "technology": "<p>Pure Cool® Material<\/p>",
+            "relief": "<p>Up to <strong>5°<\/strong> cooler<\/p>",
+            "height": "<p><strong>12”<\/strong><\/p>",
+            "cancellation": "<p>Yes<\/p>",
+            "feel": "<p>Medium<br\/>Med. Hybrid<\/p>",
+            "pricing": "<p>$4,099.99 <\/p>"
+          }
+        },
+        "cd434804-c29c-4f4f-ad02-b09bbf743203": {
+          "type": "slide",
+          "settings": {
+            "title": "COOLER",
+            "image": "shopify:\/\/shop_images\/Luxebreeze_Degrees.original.width-500.height-500.webp",
+            "model": "<p><strong>LuxeBreeze®<\/strong><\/p>",
+            "technology": "<p>Pure Cool® Plus Material<\/p>",
+            "relief": "<p>Up to <strong>10°<\/strong> cooler<\/p>",
+            "height": "<p><strong>13”<\/strong><\/p>",
+            "cancellation": "<p>Yes<br\/>+ up to 33% more Tempur-Material™<\/p>",
+            "feel": "<p>Soft<br\/>Med. Hybrid<br\/>Firm<\/p>",
+            "pricing": "<p>$5,099.99 <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5",
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae",
+        "cd434804-c29c-4f4f-ad02-b09bbf743203"
+      ],
+      "settings": {
+        "heading": "Compare TEMPUR-Adapt®",
+        "hierarchy": "h2",
+        "sub": "<p>Superior Pressure Relief And Motion Cancellation For Deeper, More Rejuvenating Sleep.<\/p>"
+      }
+    },
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce": {
+      "type": "product-materials",
+      "blocks": {
+        "2e061d6a-98df-4f67-9959-5493a59d92f8": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ST_SR_SK2.width-500.webp",
+            "select": "image",
+            "title": "Responds to Snoring, Automatically.",
+            "description": "<p>When your TEMPUR-Ergo® Smart Base senses snoring from you or your partner, it automatically adjusts the bed* to raise your head to a position that may reduce snoring.<\/p>",
+            "disclaimer": "*Bed raises once approximately 12 degrees in response to snoring. This may help reduce snoring in otherwise healthy individuals who snore due to body positioning.",
+            "switch": false,
+            "button": "LEARN MORE",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e061d6a-98df-4f67-9959-5493a59d92f8"
+      ],
+      "settings": {
+        "heading": "TEMPUR-Ergo® Smart Base",
+        "hierarchy": "h2",
+        "sub": "<p>Powered by Sleeptracker®-AI Technology<\/p>"
+      }
+    },
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c": {
+      "type": "faq-new",
+      "blocks": {
+        "73cb9943-c6aa-41b9-8f85-ea62250b2dff": {
+          "type": "slide",
+          "settings": {
+            "question": "What's the difference between the Medium and Medium Hybrid feels?",
+            "answer": "<p>While the medium hybrid will be slightly softer in feel, the biggest difference is that our medium is made entirely of TEMPUR® material — and our medium hybrid is made with TEMPUR-ES™ material, plus 1000+ premium spring coils in the base layer. People who have trouble getting out of bed or turning over in bed may like the hybrid because it makes it a bit easier, but still allows you to have the comfort, support, and conformity of a Tempur-Pedic.<\/p>"
+          }
+        },
+        "e1a94c15-edbf-492f-8844-26e28618344b": {
+          "type": "slide",
+          "settings": {
+            "question": "Will a TEMPUR-Breeze® mattress fit inside my existing bed frame?",
+            "answer": "<p>All our mattresses and power bases are designed to be used with most modern bed frames. However, they may not fit inside antique bed frames or other non-standard furniture. If you’re concerned about compatibility, please measure the inside of your current bed frame, and compare the measurements with our mattress size specifications.<\/p>"
+          }
+        },
+        "fabc8769-d786-4789-8b23-1f28d5facb02": {
+          "type": "slide",
+          "settings": {
+            "question": "Do I need to rotate my new Tempur-Pedic® mattress?",
+            "answer": "<p>No, you do not. Our mattresses feature a top side designed specifically for sleeping, so you’ll never have to face the backbreaking task of flipping or rotating.<\/p>"
+          }
+        },
+        "66812a79-d8a9-4b35-b8df-415b15b0c744": {
+          "type": "slide",
+          "settings": {
+            "question": "Could you explain the 10-Year mattress warranty?",
+            "answer": "<p>Simply put, for a full decade after you purchase your new Tempur-Pedic®, if the mattress has a defect covered under the warranty guidelines, we’ll replace or repair it. This includes all parts of the mattress. Note that there are certain circumstances that will automatically void the manufacturer’s warranty, including inappropriate foundation use and physical damage.<\/p>"
+          }
+        },
+        "5aaff8d9-eb5b-4740-992d-76ad06913cf1": {
+          "type": "slide",
+          "settings": {
+            "question": "What are the best sheets to use with a Tempur-Pedic® mattress?",
+            "answer": "<p>Most sheet sets are compatible, but we recommend checking the pocket depth of the fitted sheet to ensure it will properly cover your mattress. To guarantee a perfect fit, you can also purchase our sheet sets designed specifically to use on Tempur-Pedic mattresses. These premium combed cotton sheets feature patented DreamFlex™ bands that hold tight all night long, and Firstfit® straps that help you secure the fitted sheet on the mattress correctly the first time.<\/p><p><a href=\"\/collections\/bedding\" title=\"Bedding\">Shop<\/a> our available sheet sets.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "73cb9943-c6aa-41b9-8f85-ea62250b2dff",
+        "e1a94c15-edbf-492f-8844-26e28618344b",
+        "fabc8769-d786-4789-8b23-1f28d5facb02",
+        "66812a79-d8a9-4b35-b8df-415b15b0c744",
+        "5aaff8d9-eb5b-4740-992d-76ad06913cf1"
+      ],
+      "settings": {
+        "heading": "Mattress FAQs",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    },
+    "7996d260-f64c-433a-a489-d1afc2d611ba": {
+      "type": "product-reviews",
+      "settings": {
+      }
+    },
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "97bc0dc4-e594-4dee-b2a8-340683a359d9": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ed8b1338-abfc-4583-b374-d7000316eec4",
+    "e7b8af51-f6a1-445e-bf6d-541de0773baf",
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd",
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0",
+    "1820005c-aacb-411e-afb3-aac55d57568c",
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce",
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c",
+    "7996d260-f64c-433a-a489-d1afc2d611ba",
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5",
+    "97bc0dc4-e594-4dee-b2a8-340683a359d9"
+  ]
+}

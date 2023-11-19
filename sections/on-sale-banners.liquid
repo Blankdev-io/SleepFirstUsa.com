@@ -1,0 +1,104 @@
+<style>
+    .on-sale-btn:hover {
+        background-color: #231F20 !important;
+        color: white !important;
+    }
+    .on-sale-btn:active {
+        background-color: white !important;
+        border-color: #231F20 !important;
+        border-width: 2px !important;
+        color: #231F20 !important;
+    }
+</style>
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-cols-1 text-text gap-4 mb-4 mm:grid-cols-2 mm:gap-8 mm:mb-8 ts:grid-cols-3 ts:gap-9 ts:mb-9">
+        {% for block in section.blocks %}
+            {% liquid 
+                assign image = block.settings.image
+                assign title = block.settings.title
+                assign content = block.settings.content
+                assign url = block.settings.url
+                assign btn_label = block.settings.btn_label
+                assign label_color = block.settings.label_color
+                assign btn_color = block.settings.btn_color
+            %}
+            <div class="flex flex-col rounded-cl shadow-sp h-auto">
+                <a class="h-[200]" href="{{ url }}"><picture>
+                    <source media="(min-width: 1024px)" srcset="{{ image | image_url: width: 350 }}">
+                    <source media="(min-width: 568px)" srcset="{{ image | image_url: width: 475 }}">
+                    <img class="object-cover w-full h-full rounded-t-cl" src="{{ image | image_url: width: 530 }}" alt="{{ image.alt }}" title="{{ title }}" loading="lazy">
+                </picture></a>
+                <div class="flex flex-col justify-between bg-white rounded-b-cl h-full p-3 mm:p-4">
+                    <h2 class="font-bold text-xl text-center mb-1 ts:text-2xl ts:mb-2">{{ title }}</h2>
+                    <div class="text-xs text-center mb-1 ts:text-sm ts:mb-2">{{ content }}</div>
+                    <div class="flex justify-center">
+                        <a class="on-sale-btn button-custom" style="background-color:{{ btn_color }}; color:{{ label_color }};" href="{{ url }}" title="{{ title }}">{{ btn_label }}</a>
+                    </div>
+                </div>
+            </div>          
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "On Sale Banners",
+    "settings": [
+    ],
+    "blocks": [
+        {
+            "name": "Banners",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Description",
+                    "default": "<p>Description</p>"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Banner Link"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_label",
+                    "label": "Button Label",
+                    "default": "SHOP NOW"
+                },
+                {
+                    "type": "color",
+                    "id": "label_color",
+                    "label": "Label color",
+                    "default": "#231f20"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_color",
+                    "label": "Button background color",
+                    "default": "#ffffff"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "On Sale Banners"
+        }
+    ]
+}
+{% endschema %}

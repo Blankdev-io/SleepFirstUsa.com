@@ -1,0 +1,55 @@
+{% liquid
+    assign title = page.title
+    assign content = page.content
+    assign pre = section.settings.pre_heading
+    assign align = section.settings.text_align
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="bg-white shadow-sp rounded-cl py-6 px-5 ds:py-12 ds:px-10">
+        {% if title == 'Accessibility' %}
+            <p class="font-extrabold text-{{ align }} text-text ds:mb-4">{{ pre }}</p>
+            <h1 class="font-black text-[64px] text-{{ align }} text-text mb-12 ds:mb-14">{{ title }}</h1>
+            <p class="font-bold text-2xl text-{{ align }} text-text whitespace-pre-wrap">{{ content }}</p>            
+        {% else %}
+            <p class="font-bold text-{{ align }} text-text ds:mb-4">{{ pre }}</p>
+            <h1 class="text-title text-{{ align }} text-text mb-12 ds:mb-14">{{ title }}</h1>
+            <p class="text-{{ align }} text-text whitespace-pre-wrap">{{ content }}</p>
+        {% endif %}        
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Policies",
+    "settings": [
+        {
+            "type": "text",
+            "id": "pre_heading",
+            "label": "Pre heading",
+            "default": "Pre heading"
+        },
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text Alignment",
+            "options": [
+                {
+                "value": "left",
+                "label": "Left"
+                },
+                {
+                "value": "center",
+                "label": "Center"
+                },
+                {
+                "value": "right",
+                "label": "Right"
+                }
+            ],
+            "default": "left"
+        }
+    ]  
+}
+{% endschema %}

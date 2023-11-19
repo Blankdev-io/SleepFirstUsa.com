@@ -1,0 +1,366 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-tempur-alternative",
+      "blocks": {
+        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0": {
+          "type": "model",
+          "settings": {
+            "model_name": "Ergo® Power",
+            "model_list": [
+              "tempur-ergo-adjustable-power_base"
+            ],
+            "model_url": "shopify:\/\/products\/tempur-ergo-adjustable-power_base"
+          }
+        },
+        "0c067a14-9f95-4045-8bfd-d921a8319ad4": {
+          "type": "model",
+          "settings": {
+            "model_name": "Ergo® Smart",
+            "model_list": [
+              "tempur-ergo-smartbase-adjustable-power-base"
+            ],
+            "model_url": "shopify:\/\/products\/tempur-ergo-smartbase-adjustable-power-base"
+          }
+        },
+        "26cb1ccc-f74d-4183-8f53-c660b581212b": {
+          "type": "model",
+          "settings": {
+            "model_name": "Ergo® ProSmart™",
+            "model_list": [
+
+            ],
+            "model_url": "shopify:\/\/products\/tempur-ergo-extend"
+          }
+        }
+      },
+      "block_order": [
+        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0",
+        "0c067a14-9f95-4045-8bfd-d921a8319ad4",
+        "26cb1ccc-f74d-4183-8f53-c660b581212b"
+      ],
+      "settings": {
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "upsell_title": "Choose Your Mattress",
+        "product_list": [
+          "tempurpedic-luxeadapt-mattress",
+          "tempurpedic-breeze-mattress",
+          "tempurpedic-proadapt-mattress"
+        ],
+        "quantity": false,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it."
+      }
+    },
+    "ed8b1338-abfc-4583-b374-d7000316eec4": {
+      "type": "full-page-banner",
+      "settings": {
+        "heading": "SMART BASE TECHNOLOGY",
+        "hierarchy": "h2",
+        "sub": "<p>Our innovative Smart Base senses snoring and raises your head to a position that may reduce snoring.<\/p>",
+        "imageDesk": "shopify:\/\/shop_images\/Couple_on_a_Split_King.width-1600.jpg",
+        "imageMob": "shopify:\/\/shop_images\/Couple_on_a_Split_King.width-1600.jpg",
+        "frameHeading": "",
+        "frameSubheading": "",
+        "url": ""
+      }
+    },
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd": {
+      "type": "product-materials",
+      "blocks": {
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/030823_Sleeptracker_Module_Snore_364.width-500.webp",
+            "select": "image",
+            "title": "AUTOMATIC SNORE RESPONSE",
+            "description": "<p>TEMPUR-Ergo® Smart Bases detect snoring and adjust automatically— without waking your partner (or you). Enable Snore Response™ to have your Smart Base automatically raise your head when it senses snoring.<\/p>",
+            "disclaimer": "",
+            "switch": true,
+            "button": "",
+            "url": ""
+          }
+        },
+        "87fe9299-2a0d-484b-938f-f16a1877f948": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/030823_Sleeptracker_Module_Coaching_364.width-1000.webp",
+            "select": "image",
+            "title": "SLEEP COACHING",
+            "description": "<p>Prepare for nights of deep, restful sleep with personal analytics that tell your sleep story. You’ll get custom sleep coaching and tailored tips powered by Sleeptracker-AI® to improve your sleep.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        },
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/030823_Sleeptracker_Module_Connected_364.width-1000.webp",
+            "select": "image",
+            "title": "CONNECTED HOME",
+            "description": "<p>Compatible with Google Assistant™ and Amazon Alexa, the TEMPUR-Ergo® Smart Bases give you control with simple voice commands to access your insights and adjust your smart base.<\/p>",
+            "disclaimer": "",
+            "switch": true,
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f",
+        "87fe9299-2a0d-484b-938f-f16a1877f948",
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c"
+      ],
+      "settings": {
+        "heading": "Sleep Problems? Meet Sleep Solutions.",
+        "hierarchy": "h2",
+        "sub": "<p>Our new and improved TEMPUR-Ergo® Smart Bases powered by Sleeptracker-AI® automatically respond to snoring and provide expert-level sleep insights and coaching through an easy-to-use app.<\/p>"
+      }
+    },
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0": {
+      "type": "full-page-video",
+      "settings": {
+        "heading": "All-Night Support",
+        "hierarchy": "h2",
+        "sub": "<p>Perfect for stomach and side sleepers, the adjustable lumbar feature in every TEMPUR-Ergo® Base gives you extra support for your lower back to help you stay comfortable throughout the night (<em>Not Available with the Ease® Power Base<\/em>).<\/p>",
+        "video": "shopify:\/\/files\/videos\/Tempur_LuxeBreezeHybrid_ErgoProSmart_Queen_Overall_1080p_080223014851359885.mp4"
+      }
+    },
+    "0ad9fe3f-f59d-4fd7-a51c-5a7378972b1a": {
+      "type": "steps",
+      "settings": {
+        "heading": "Experience Customized Comfortwith TEMPUR-Ergo® Bases",
+        "hierarchy": "h2",
+        "sub": "<p>Our newest adjustable bases combine advanced comfort with exclusive features<br\/>to help you get your best night's rest.<\/p>",
+        "image1": "shopify:\/\/shop_images\/Lumbar_Support_5.width-1000.webp",
+        "heading1": "ADJUSTABLE LUMBAR SUPPORT",
+        "content1": "<p>Raising up to 6 inches, this feature gives extra support for your lower back to help you stay comfortable all night — for every position, including stomach sleepers.<\/p>",
+        "image2": "shopify:\/\/shop_images\/Zero_Gravity_3.width-1000.webp",
+        "heading2": "HEAD & FOOT LIFTS",
+        "content2": "<p>Take complete control of your comfort with endless ergonomic positions to give you the ultimate support and customization while sleeping, reading, watching TV, and more.<\/p>",
+        "heading3": "",
+        "content3": "<p><\/p><p><\/p>",
+        "heading4": "",
+        "content4": "<p><\/p><p><\/p>"
+      }
+    },
+    "1820005c-aacb-411e-afb3-aac55d57568c": {
+      "type": "compare-chart",
+      "blocks": {
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "model": "<p>Bases Models<\/p>",
+            "technology": "<p>Type<\/p>",
+            "relief": "<p>Lifts<\/p>",
+            "height": "<p>Massage Zones<\/p>",
+            "cancellation": "<p>Snore Response™<\/p>",
+            "feel": "<p>Warranty<\/p>",
+            "pricing": "<p>Pricing<\/p>"
+          }
+        },
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae": {
+          "type": "slide",
+          "settings": {
+            "title": "PREMIUM",
+            "image": "shopify:\/\/shop_images\/Ergo_Power.png",
+            "model": "<p><strong>TEMPUR-Ergo® Power Base<\/strong><\/p>",
+            "technology": "<p>Power Base<\/p>",
+            "relief": "<p>Head & Foot<\/p>",
+            "height": "<p>A soothing massage for the lower back area.<\/p>",
+            "cancellation": "<p>No<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$1,399<\/p>"
+          }
+        },
+        "cd434804-c29c-4f4f-ad02-b09bbf743203": {
+          "type": "slide",
+          "settings": {
+            "title": "ADVANCED",
+            "image": "shopify:\/\/shop_images\/Ergo_Smart.png",
+            "model": "<p><strong>TEMPUR-Ergo® Smart Base<\/strong><\/p>",
+            "technology": "<p>Smart Base<\/p>",
+            "relief": "<p>Head & Foot<\/p>",
+            "height": "<p>Two massage zones. One at the head and one at the foot.<\/p>",
+            "cancellation": "<p>Yes<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$1,699<\/p>"
+          }
+        },
+        "10784e95-13b7-4ac6-9359-ad687fbc535f": {
+          "type": "slide",
+          "settings": {
+            "title": "MOST ADVANCED",
+            "image": "shopify:\/\/shop_images\/Ergo_ProSmart.png",
+            "model": "<p><strong>TEMPUR-Ergo® ProSmart™ Base<\/strong><\/p>",
+            "technology": "<p>Smart Base<\/p>",
+            "relief": "<p>Head & Foot<\/p>",
+            "height": "<p>Sound waves to transmit vibrations from the base throughout the mattress.<\/p>",
+            "cancellation": "<p>Yes<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$2,199<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5",
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae",
+        "cd434804-c29c-4f4f-ad02-b09bbf743203",
+        "10784e95-13b7-4ac6-9359-ad687fbc535f"
+      ],
+      "settings": {
+        "heading": "Build the Bed of Your Dreams",
+        "hierarchy": "h2",
+        "sub": "<p>Our power bases offer endless comfort — from custom head and foot positions to automatic snore detection and response — for truly personalized sleep.<\/p>"
+      }
+    },
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce": {
+      "type": "product-materials",
+      "blocks": {
+        "2e061d6a-98df-4f67-9959-5493a59d92f8": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ST_SR_SK2.width-500.webp",
+            "select": "image",
+            "title": "Put Your Sleep on Autopilot",
+            "description": "<p>Nothing to wear, start, or stop — just smarter sleep, night after night. Sleeptracker-AI® technology does the work for you. Download our companion app to your <a href=\"https:\/\/apps.apple.com\/us\/app\/tempur-sleeptracker-ai\/id1634707821\" target=\"_blank\">iPhone <\/a>or <a href=\"https:\/\/play.google.com\/store\/apps\/details?id=com.fullpower.applications.horizon&pli=1\" target=\"_blank\">Android <\/a>device to improve your sleep habits.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e061d6a-98df-4f67-9959-5493a59d92f8"
+      ],
+      "settings": {
+        "heading": "TEMPUR-Ergo® Smart Base",
+        "hierarchy": "h2",
+        "sub": "<p>Powered by Sleeptracker®-AI Technology<\/p>"
+      }
+    },
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c": {
+      "type": "faq-new",
+      "blocks": {
+        "65675c2b-611d-4490-8b18-a5ac54edb29d": {
+          "type": "slide",
+          "settings": {
+            "question": "What are the Tempur-Pedic® Sleeptracker-AI® system requirements?",
+            "answer": "<p>The Tempur-Pedic® Sleeptracker-AI® system requires: <br\/><br\/><\/p><ul><li>A 110-240v power adapter (included) <\/li><li>2.4GHz or 5GHz Wi-Fi router connected to an active home Internet <\/li><li>An iOS device operating on OS 15.0 or later <strong>or<\/strong> an Android device operating on OS 9.0 or later. <\/li><\/ul>"
+          }
+        },
+        "45ad7750-9505-4aa8-90d7-49be5bb9f8eb": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the Sleeptracker-AI® Sleep Coach? ",
+            "answer": "<p>The Sleeptracker-AI® sleep coach in the app generates a personal sleep rating each night (for up to two individual sleepers). The app tracks improvement over time and offers easy-to-implement, personal sleep tips based on an analysis of individual sleep patterns. The advice is always informed by your personal sleep behavior. Your sleep coach may react to something that worked well like hitting your sleep goal or a high percentage of deep sleep. You will get tips that have the potential to raise your sleep quality rating in the coming nights.<\/p>"
+          }
+        },
+        "6b259d2e-9b4b-488a-a79a-efc50b319862": {
+          "type": "slide",
+          "settings": {
+            "question": "Which smart home devices are compatible with the Tempur-Pedic® Sleeptracker-AI® app?",
+            "answer": "<p>The Tempur-Pedic® Sleeptracker-AI® app is compatible with the following smart home devices: <\/p><p><br\/><\/p><ul><li><strong>Any Amazon Alexa-enabled device<\/strong> — just set up the Sleeptracker-AI® skill in your Amazon Alexa app. This includes smart speakers like the Amazon Echo and Echo Dot, any other Alexa-enabled devices in your home, as well as third-party smart home products that include speakers, televisions, appliances, etc. <\/li><li><strong>Any Google Assistant-enabled device<\/strong> — just set up the Sleeptracker-AI® skill in your Google Assistant app. This includes smart speakers and connected home devices like Google Home and Nest, any other Google Assistant-enabled devices in your home, as well as third-party smart home products that include speakers, televisions, appliances, etc. <\/li><\/ul><p><br\/>Additionally, the Tempur-Pedic® Sleeptracker-AI® app is compatible with <strong>all mobile phones and tablets<\/strong> running Android OS 9.0 and later or iOS 15.0 and later. You can ask any of these devices <br\/><br\/>Sleeptracker-AI® -related questions, including \"Ask Sleeptracker to set my bed to the TV position.\"<\/p>"
+          }
+        },
+        "da8dc3b1-3049-46b0-99fa-a205363719ce": {
+          "type": "slide",
+          "settings": {
+            "question": "Does the Tempur-Pedic® Sleeptracker-AI® system store sleep data for both my partner and myself?",
+            "answer": "<p>Yes, you and your partner will each have unique Sleeptracker-AI® accounts that monitor and store sleep data. During the app setup, you will be asked to specify which side of the bed you sleep on, allowing the system to distinguish you from your partner. If you switch sides of the bed, simply update this information in the app at Menu &gt; My Sleeptracker-AI® Monitor &gt; Bed & Sleeper Setup &gt; Change Your Side of Bed.<\/p>"
+          }
+        },
+        "ce8070b7-b5e5-47ed-9fcd-6cd6b1bbfe6b": {
+          "type": "slide",
+          "settings": {
+            "question": "What if I have a pet that sleeps on the bed?",
+            "answer": "<p>Generally, the Sleeptracker-AI® sensors are designed to ignore pets at the foot of the bed and should not affect your heart rate or respiratory rate data, but if the pet gets up and move during the night, it could affect the recorded data.Select Menu -&gt; My Smart Bed -&gt; Smart Bed Details and ensure that you have “Yes” selected for “Are pets allowed on your smart bed?”<\/p>"
+          }
+        },
+        "ec894e62-43c6-40ae-9eb8-19496589ae05": {
+          "type": "slide",
+          "settings": {
+            "question": "How are mattresses\/foundations\/power bases delivered?",
+            "answer": "<p>We use an in-home delivery service to deliver these products. Once you place your order, they will call you to schedule your delivery. Delivery is typically within a few weeks from the day you placed your order, with metro areas usually faster than rural areas. When they deliver your new bed, they will set it up in your bedroom and remove the packing materials. They will even remove your old mattress and box spring, unless you ask them not to.*TEMPUR-Cloud® ships via UPS Ground and does not include in-home set-up or mattress removal services.<\/p>"
+          }
+        },
+        "d4e17f0c-54f5-46ab-bd9f-8659097351dc": {
+          "type": "slide",
+          "settings": {
+            "question": "Will your power base fit inside my existing bed frame?",
+            "answer": "<p>We have found that the power bases fit inside most modern bed frames. However, they may not fit inside antique bed frames or other non-standard frames. We recommend you measure the inside of the bed frame and compare to the measurements below to be sure the power base will fit.<\/p>"
+          }
+        },
+        "a46b68f6-f585-4e68-8417-03fa88ddf75d": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the weight limit of your power base?",
+            "answer": "<p>Our power bases support up to 650 lbs. each (Twin, Twin Long, Double, Queen, and Split\/Dual CA King bases).All power bases will structurally support the recommended weight distributed evenly across the head and foot sections. Power base products are not designed to support or lift this amount of weight in the head or foot sections alone.<\/p>"
+          }
+        },
+        "c45ec9c0-09fa-4ffa-8482-bddd5c1b5583": {
+          "type": "slide",
+          "settings": {
+            "question": "Can I use two remotes with one adjustable base?",
+            "answer": "<p>For Twin, Twin XL, Full\/Double, Queen, and King size power bases, you cannot pair two separate remotes with the one power base. If you purchase a Split King or Split California King power base, your base will come with two separate remotes as each side can function individually.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "65675c2b-611d-4490-8b18-a5ac54edb29d",
+        "45ad7750-9505-4aa8-90d7-49be5bb9f8eb",
+        "6b259d2e-9b4b-488a-a79a-efc50b319862",
+        "da8dc3b1-3049-46b0-99fa-a205363719ce",
+        "ce8070b7-b5e5-47ed-9fcd-6cd6b1bbfe6b",
+        "ec894e62-43c6-40ae-9eb8-19496589ae05",
+        "d4e17f0c-54f5-46ab-bd9f-8659097351dc",
+        "a46b68f6-f585-4e68-8417-03fa88ddf75d",
+        "c45ec9c0-09fa-4ffa-8482-bddd5c1b5583"
+      ],
+      "settings": {
+        "heading": "Power Base & Sleeptracker-AI® App FAQs",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    },
+    "7996d260-f64c-433a-a489-d1afc2d611ba": {
+      "type": "product-reviews",
+      "settings": {
+      }
+    },
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "67b553b2-a499-40e3-8011-f2596fbf915d": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ed8b1338-abfc-4583-b374-d7000316eec4",
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd",
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0",
+    "0ad9fe3f-f59d-4fd7-a51c-5a7378972b1a",
+    "1820005c-aacb-411e-afb3-aac55d57568c",
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce",
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c",
+    "7996d260-f64c-433a-a489-d1afc2d611ba",
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5",
+    "67b553b2-a499-40e3-8011-f2596fbf915d"
+  ]
+}

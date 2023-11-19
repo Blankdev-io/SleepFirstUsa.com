@@ -1,0 +1,214 @@
+{% assign button = section.settings.button %}
+
+<div id="product-recomendations" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+  
+  <div v-if="success" class="flex items-center gap-2 fixed right-5 z-[100] text-text bg-white shadow-mp rounded-cl w-max p-4 ds:right-9 dm:right-20">
+    {% render 'icons', icon: 'blue-rounded-check' %}
+    <p>The product has been added to your cart</p>
+  </div>
+    
+    <h2 class="text-title text-center text-text mb-6">{{ section.settings.title }}</h2>
+    <div class="grid gap-5 mm:grid-cols-2 ts:gap-x-20 ts:gap-y-10 tl:grid-cols-4 tl:gap-4 ds:gap-7">
+
+      <template v-for="(product, index) in recomendations">
+        <div>
+          <div class="grid grid-rows-4 group shadow-sp rounded-cl {% if button %}h-[470px]{% else %}h-[400px]{% endif %} ds:grid-rows-5 ds:h-[400px] ds:w-auto">
+            <div class="row-span-2 relative ds:row-span-3">
+              <div v-if="product.compare_at_price != 0" class="flex absolute left-4 top-4 bg-accent-4 rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+                  <p class="self-center font-bold text-xs text-center text-white">${ product.savePercent }% OFF</p>
+              </div>
+              <div v-if="product.tags.includes('sold out')" class="flex absolute right-4 top-4 bg-[#800007] rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                  <p class="self-center font-bold text-xs text-center text-white">SOLD OUT</p>
+              </div>
+              <div v-else-if="product.tags.includes('new')" class="flex absolute right-4 top-4 bg-secondary rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                  <p class="self-center font-bold text-xs text-center text-white">NEW!</p>
+              </div>
+              {% if button %}
+                <a @click="addToCart($event, index)" title="ADD TO CART" class="button-hidden absolute bottom-4 inset-x-6 cursor-pointer" data-id="add-btn">
+                ADD TO CART
+                </a>
+              {% endif %}
+              <a :href="'/products/' + product.handle" :title="product.title">
+                <img v-if="index < 6" class="object-cover rounded-t-cl w-full h-full" :src="product.featured_image + '&width=450'" :title="product.title" alt="Product">
+                <img v-else class="object-cover rounded-t-cl w-full h-full" :src="product.featured_image + '&width=450'" :title="product.title" alt="Product" loading="lazy">
+              </a>
+            </div>
+            <div class="row-span-2 grid {% if button %}grid-rows-3{% else %}grid-rows-2{% endif %} text-text bg-white rounded-b-cl p-4 ds:grid-rows-2 ds:py-3">
+              <h2 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a :href="'/products/' + product.handle" :title="product.title">${ product.title }</a></h2>
+              <div class="grid grid-cols-2 self-center">
+                <div class="ds:self-center">
+                    <p class="text-[12px]">Starting at</p>
+                    <p class="font-bold text-[14px] text-primary">$ ${ product.price }</p>     
+                    <p v-if="product.compare_at_price != 0" class="font-bold text-[14px] text-accent-2 line-through">$ ${ product.compare_at_price }</p>  
+                </div>
+                {% assign aux = 0 %}
+                {% for col in product.collections %}
+                  {% for pro in col.products %}
+                    <div v-if="product.id == '{{ pro.id }}'" class="grid justify-items-end ds:justify-items-center  ds:items-center">
+                      {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: pro %}
+                      {% assign aux = 1 %}
+                    </div>
+                  {% endfor %}
+                  {% if aux == 1 %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% if button %}
+                <a @click="addToCart($event, index)" title="ADD TO CART" class="button cursor-pointer w-full ds:hidden" data-id="add-btn">
+                ADD TO CART           
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+</div>
+
+<script>
+var { createApp} = Vue;
+
+const appRecomendations = createApp({
+    delimiters: ['${', '}'],
+    data() {
+        const 
+        recomendations = []
+        addingToCart = false,
+        success = false;
+
+        return {
+            recomendations,
+            addingToCart,
+            success
+        }
+    },
+
+    created() {
+
+        fetch("{{ store.url }}/recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related")
+            .then(response => {
+                if (response.ok){
+                    return response.json()
+                } else {
+                    throw new Error(response.status);
+                }
+            })
+            .then(( data ) => {
+                this.recomendations = data.products;
+
+                const productArray = this.recomendations;
+                
+                const formatter = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2, });
+
+                productArray.forEach((item, index) => {
+                    item.savePercent = (((item.compare_at_price - item.price) / item.compare_at_price ) * 100).toFixed(0);
+                    item.price = formatter.format((item.price/100));
+                    item.compare_at_price = formatter.format((item.compare_at_price/100));
+                 });
+            })
+            .catch((err) => {
+                console.error("Error:", err)
+            });
+    },
+
+    methods: {
+      //Add to cart funtion
+      addToCart(e, index) {
+        e.preventDefault();
+        e.target.innerHTML = '<div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>';
+        this.addingToCart = true;
+        let variantId;
+        const productVariants = this.recomendations[index].variants;
+        for (var variant in productVariants) {
+            console.log(variant);
+            if (productVariants[variant].available) {
+                variantId = productVariants[variant].id;
+                break;
+            }
+        };
+
+        var data = {
+          'items': [{
+            id: variantId,
+            quantity: 1
+          }]
+        };
+        var options = {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        fetch('/cart/add.js', options)
+          .then(response => {
+            if (response.ok) {
+              return response.json()
+            } else {
+              throw new Error(response.status);
+            }
+          })
+          .then(data => {
+            const options = {
+              method: "GET"
+            };
+            fetch("/cart.js", options)
+              .then( response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(response.status);
+                }
+              })
+              .then(data => {
+                const cartData = data;
+                const counter = document.getElementById('cart-counter');
+                const counterMb = document.getElementById('cart-counter-mb');
+                counter.textContent = cartData.item_count;
+                counterMb.textContent = cartData.item_count;
+              })
+              .catch(err => {
+                console.error("Error:", err)
+              });
+            this.addingToCart = false;
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 3000);
+            e.target.innerHTML = 'ADD TO CART';
+          })
+          .catch(error => {
+            console.log(error)
+          });
+      },
+    }
+});
+appRecomendations.mount('#product-recomendations');
+</script>
+
+
+{% schema %}
+    {
+        "name": "Product Recomendations",
+        "settings": [ 
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "You May Also Like"
+            },
+            {
+                "type": "checkbox",
+                "id": "button",
+                "label": "Show 'Add to Cart' Button",
+                "default": false
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product Recomendations"
+            }
+        ]
+    }
+{% endschema %}

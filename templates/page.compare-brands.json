@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "compare": {
+      "type": "compare-brands",
+      "settings": {
+        "introduction": "<p><strong>Tempur-Pedic is a legend in the memory foam market, but Nectar provides a comfortable foam bed for a much lower price. In this comparison, we’ll help you decide the best bed for you by covering materials, firmness, prices, and warranty.<br\/><br\/><\/strong>Shoppers may be wondering what the difference is between these mattresses, and whether or not they should splurge on a luxury model. This comprehensive comparison of Tempur-Pedic vs. Nectar will help shoppers understand the main differences between the two.<br\/><br\/>We’ll review how the mattresses perform in terms of motion isolation, pressure relief, and temperature regulation. We’ll also take a closer look at the construction, sizing, and pricing of available models to help shoppers determine which mattress is best for them.<\/p>",
+        "posts_heading": "Your Mattress Matters: Sleep First's Blog",
+        "sales_heading": ""
+      }
+    }
+  },
+  "order": [
+    "compare"
+  ]
+}

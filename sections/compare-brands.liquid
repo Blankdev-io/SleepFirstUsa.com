@@ -1,0 +1,605 @@
+{% liquid 
+    assign desk_banner = section.settings.desk_banner
+    assign mob_banner = section.settings.mob_banner
+    assign frameImage = section.settings.frameImage
+    assign introduction = section.settings.introduction
+    assign posts_heading = section.settings.posts_heading
+    assign sales_heading = section.settings.sales_heading
+%}
+
+<div id="compare-brands" class="mb-10">
+    {% comment %} Sale Banner {% endcomment %}
+    {% comment %} <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-10 dl:px-0">
+        {% if mob_banner != blank and desk_banner != blank %}
+        <div class="mb-6">
+            <picture>
+            <source media="(min-width: 568px)" srcset="{{ desk_banner | image_url }}">
+            <img class="rounded-cl w-full h-full" src="{{ mob_banner | image_url }}" alt="{{ mob_banner | escape }}" title="{{ mob_banner.alt | escape }}" loading="lazy">
+            </picture>
+        </div>
+        {% endif %}
+    </div> {% endcomment %}
+
+    {% comment %} Images Banner {% endcomment %}
+    <div class="grid grid-rows-2 gap-2 relative bg-primary h-[720px] tl:grid-rows-1 tl:grid-cols-2 tl:gap-3 tl:h-[500px]">
+        <template v-if="loading == true">
+            <div class="flex flex-col items-center justify-center w-full h-full">
+                <h1 class="text-title mb-7">Loading</h1>
+                <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full h-full">
+                <h1 class="text-title mb-7">Loading</h1>
+                <div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>
+            </div>
+        </template>
+        <template v-else>
+            <img class="object-cover w-full h-full" :src="selectedBrand1.banner_image" :title="selectedBrand1.name" alt="Banner Image">
+            <img class="object-cover w-full h-full" :src="selectedBrand2.banner_image" :title="selectedBrand2.name" alt="Banner Image">
+        </template>
+        <div class="flex justify-center absolute bottom-0 z-10 w-full">
+            <div class="h-[90px]">{% render 'icons', icon: 'vs-semi-circle' %}</div>
+        </div>
+        <div class="flex justify-center absolute bottom-0 w-full">
+            <div class="flex justify-center items-center gap-[120px] bg-primary rounded-t-cl h-[70px] w-[700px] px-4 ds:px-8">
+                <div class="flex justify-center w-1/2">
+                    <picture>
+                        <img class="h-6 ds:h-10" :src="selectedBrand1.logo" :title="selectedBrand1.name" alt="Banner Logo">
+                    </picture>
+                </div>
+                <div class="flex justify-center w-1/2">
+                    <picture>
+                        <img class="h-6 ds:h-10" :src="selectedBrand2.logo" :title="selectedBrand2.name" alt="Banner Logo">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} Selectors {% endcomment %}
+    <div class="mx-5 py-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+        <div class="flex justify-center">
+            <span class="font-bold text-xl text-center mb-8 ts:text-2xl ds:text-3xl">Select Your Brands</span>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-5 tl:flex-row tl:gap-20 ds:gap-40">
+            <select id="brandSelector1" @change="changeBrand($event)" class="font-bold text-xl truncate bg-transparent appearance-none border-0 border-b-4 border-b-black outline-none focus:border-b-4 focus:border-b-black focus:ring-0 focus:border-transparent focus:outline-none w-max py-1 pl-4 pr-12 ds:text-2xl" name="brandSelector1" title="Brand Selector">
+                {% for brand in shop.metaobjects.brand.values %}
+                    {% if forloop.index0 == 0 %}
+                        <option selected value="{{ forloop.index0 }}">{{ brand.name }}</option>
+                    {% else %}
+                        <option value="{{ forloop.index0 }}">{{ brand.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <select id="brandSelector2" @change="changeBrand2($event)" class="font-bold text-xl truncate bg-transparent appearance-none border-0 border-b-4 border-b-black outline-none focus:border-b-4 focus:border-b-black focus:ring-0 focus:border-transparent focus:outline-none w-max py-1 pl-4 pr-12 ds:text-2xl" name="brandSelector2" title="Brand Selector">
+                {% for brand in shop.metaobjects.brand.values %}
+                    {% if forloop.index0 == 1 %}
+                        <option selected value="{{ forloop.index0 }}">{{ brand.name }}</option>
+                    {% else %}
+                        <option value="{{ forloop.index0 }}">{{ brand.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    {% comment %} Introduction {% endcomment %}
+    {% comment %} <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-10 dl:px-0">
+        <div class="py-20">{{ introduction }}</div>
+    </div> {% endcomment %}
+
+    {% comment %} Content {% endcomment %}
+    <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-10 dl:px-0">
+        <div class="flex flex-col ds:flex-row ds:justify-between">
+            {% comment %} Comparative Chart {% endcomment %}
+            <div id="comparative_chart" class="ds:w-[700px] dm:w-[750px] dl:w-[800px]">
+                {% comment %} Images {% endcomment %}
+                <div class="grid grid-cols-2 gap-4 relative h-[220px] mb-20">
+                    <picture>
+                        <img class="rounded-cl object-cover w-full h-[220px]" :src="selectedBrand1.image" alt="Brand Image" :title="selectedBrand1.name" loading="lazy">
+                    </picture>
+                    <picture>
+                        <img class="rounded-cl object-cover w-full h-[220px]" :src="selectedBrand2.image" alt="Brand Image" :title="selectedBrand2.name" loading="lazy">
+                    </picture>
+                    <div class="flex justify-center absolute -bottom-12 z-10 w-full">
+                        <div class="h-[64px]">{% render 'icons', icon: 'vs-semi-circle-small' %}</div>
+                    </div>
+                    <div class="flex justify-center absolute -bottom-12 w-full">
+                        <div class="flex justify-center items-center gap-[86px] bg-primary rounded-b-cl h-12 w-[500px] px-4 ds:px-8">
+                            <div class="flex justify-center w-1/2">
+                                <picture>
+                                    <img class="h-6" :src="selectedBrand1.logo" :title="selectedBrand1.name" alt="Brand Logo" loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="flex justify-center w-1/2">
+                                <picture>
+                                    <img class="h-6" :src="selectedBrand2.logo" :title="selectedBrand2.name" alt="Brand Logo" loading="lazy">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} Chart {% endcomment %}
+                <div class="bg-white shadow-sp rounded-cl divide-y-[0.5px] divide-secondary p-8 mb-20">
+                    {% comment %} Best For {% endcomment %}
+                    <div id="best_for" class="grid grid-cols-2 justify-center items-center gap-4 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.best_for" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'best-for-comparative' %}</div>
+                        <div v-html="selectedBrand2.best_for" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Price {% endcomment %}
+                    <div id="price_range" class="grid grid-cols-2 justify-center items-center gap-4 text-center pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.price_range" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'price-range-comparative' %}</div>
+                        <div v-html="selectedBrand2.price_range" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Type {% endcomment %}
+                    <div id="type" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.type" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'type-comparative' %}</div>
+                        <div v-html="selectedBrand2.type" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Firmness {% endcomment %}
+                    <div id="firmness" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.firmness" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'firmness-comparative' %}</div>
+                        <div v-html="selectedBrand2.firmness" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Features {% endcomment %}
+                    <div id="features" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.features" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'features-comparative' %}</div>
+                        <div v-html="selectedBrand2.features" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Models {% endcomment %}
+                    <div id="models" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.models" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'models-comparative' %}</div>
+                        <div v-html="selectedBrand2.models" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Warranty {% endcomment %}
+                    <div id="warranty" class="grid grid-cols-2 justify-center items-center gap-4 text-center pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.warranty" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'warranty-comparative' %}</div>
+                        <div v-html="selectedBrand2.warranty" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Pros {% endcomment %}
+                    <div id="pros" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.pros" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'pros-comparative' %}</div>
+                        <div v-html="selectedBrand2.pros" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Cons {% endcomment %}
+                    <div id="cons" class="grid grid-cols-2 justify-center items-center gap-4 pt-8 mb-8 ds:grid-cols-3 ds:gap-0">
+                        <div v-html="selectedBrand1.cons" class="order-2 text-sm ds:order-1 ds:text-base"></div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'cons-comparative' %}</div>
+                        <div v-html="selectedBrand2.cons" class="order-3 text-sm ds:text-base"></div>
+                    </div>
+
+                    {% comment %} Offer {% endcomment %}
+                    <div id="offer" class="grid grid-cols-2 justify-center items-center gap-4 text-center pt-8 ds:grid-cols-3 ds:gap-0">
+                        <div class="flex flex-col justify-between items-center gap-4 order-2 ds:order-1">
+                            <div v-html="selectedBrand1.offer" class="text-sm ds:text-base"></div>
+                            <a :href="selectedBrand1.url" :title="selectedBrand1.name" class="button max-w-max">Shop Now</a>
+                        </div>
+                        <div class="col-span-2 flex justify-center items-center order-1 ds:col-span-1 ds:order-2">{% render 'comparative-icons', icon: 'offer-comparative' %}</div>
+                        <div class="flex flex-col justify-between items-center gap-4 order-3">
+                            <div v-html="selectedBrand2.offer" class="text-sm ds:text-base"></div>
+                            <a :href="selectedBrand2.url" :title="selectedBrand2.name" class="button max-w-max">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} Products {% endcomment %}
+                <div class="flex flex-col gap-14 border-y-4 border-y-secondary py-14 ds:gap-20 ds:py-20">
+                    {% comment %} Sale Banner 1 {% endcomment %}  
+                    {% comment %} <div v-if="">
+                        <a :href="selectedBrand1.url" :title="selectedBrand1.name"><picture>
+                            <source media="(min-width: 568px)" :srcset="">
+                            <img class="rounded-cl w-full h-full" :src="" alt="Sale Banner" :title="selectedBrand1.name" loading="lazy">
+                        </picture></a>
+                    </div> {% endcomment %}
+
+                    {% comment %} Selector 1 {% endcomment %}
+                    <select id="productSelector1" @change="changeProduct($event)" class="font-bold text-xl truncate bg-transparent appearance-none border-0 border-b-4 border-b-black outline-none focus:border-b-4 focus:border-b-black focus:ring-0 focus:border-transparent focus:outline-none w-max py-1 pl-4 pr-12" name="productSelector1" title="Product Selector">
+                        <template v-for="(product, i) in selectedBrand1.collection_products">
+                            <option v-if="i == 0" selected :value="i">${ product.title }</option>
+                            <option v-else :value="i">${ product.title }</option>
+                        </template>
+                    </select>
+
+                    {% comment %} Product 1 {% endcomment %}
+                    <div class="flex flex-col gap-8 mb-7 ds:mb-10">
+                        {% comment %} Title {% endcomment %}
+                        <a :href="'/products/' + selectedProduct1.handle" :title="selectedProduct1.title"><h3 class="font-bold text-2xl text-primary border-l-4 border-l-secondary pl-4 ds:text-4xl">${ selectedProduct1.title }</h3></a>
+
+                        {% comment %} Image, Pros, Best for {% endcomment %}
+                        <div id="product1_details" class="grid grid-cols-1 justify-between items-center gap-4 ds:grid-cols-2 ds:mb-8">
+                            <a :href="'/products/' + selectedProduct1.handle" :title="selectedProduct1.title"><picture>
+                                <img class="rounded-cl object-cover aspect-square" :src="selectedProduct1.featured_image + '&width=400'" alt="Product Image" :title="selectedProduct1.title">
+                            </picture></a>
+                            <div class="flex flex-col gap-4">
+                                <h4 class="font-bold text-xl">Description</h4>
+                                <p class="line-clamp-10 leading-8" v-html="selectedProduct1.description"></p>
+                            </div>
+                        </div>
+
+                        {% comment %} Details {% endcomment %}
+                        <div class="flex flex-col gap-4 ds:gap-8">
+                            <h4 class="font-bold text-xl">Product Details</h4>
+                            <div class="grid grid-cols-1 grid-rows-3 justify-between items-center gap-4 ds:grid-cols-3 ds:grid-rows-1 ds:gap-0">
+                                {% comment %} Price Range {% endcomment %}
+                                <div class="flex items-center gap-3">
+                                    {% render 'details-icons', icon: 'product-price-range' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Price Range</h5>
+                                        <template v-if="selectedProduct1.price <= 100000">
+                                            {% render 'details-icons', icon: 'money-range-1' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct1.price <= 200000">
+                                            {% render 'details-icons', icon: 'money-range-2' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct1.price <= 300000">
+                                            {% render 'details-icons', icon: 'money-range-3' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct1.price <= 400000">
+                                            {% render 'details-icons', icon: 'money-range-4' %}
+                                        </template>
+                                        <template v-else>
+                                            {% render 'details-icons', icon: 'money-range-5' %}
+                                        </template>
+                                    </div>
+                                </div>
+
+                                {% comment %} Firmness {% endcomment %}
+                                <div class="flex justify-start items-center gap-3 ds:justify-center">
+                                    {% render 'details-icons', icon: 'product-firmness' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Firmness</h5>
+                                        <template v-for="(tag, i) in selectedProduct1.tags">
+                                            <p v-if="tag == 'medium firm'">Medium Firm</p>
+                                            <p v-else-if="tag == 'firm'">Firm</p>
+                                            <p v-else-if="tag == 'medium'">Medium</p>
+                                            <p v-else-if="tag == 'soft'">Soft</p>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                {% comment %} Type {% endcomment %}
+                                <div class="flex justify-start items-center gap-3 ds:justify-end">
+                                    {% render 'details-icons', icon: 'product-type' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Type</h5>
+                                        <template v-for="(tag, i) in selectedProduct1.tags">
+                                            <p v-if="tag == 'hybrid'">Hybrid</p>
+                                            <p v-else-if="tag == 'memory foam'">Memory Foam</p>
+                                            <p v-else-if="tag == 'innerspring'">Innerspring</p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% comment %} Button {% endcomment %}
+                        <a :href="'/products/' + selectedProduct1.handle" :title="selectedProduct1.title" class="button w-max">Shop Now</a>
+                    </div>
+
+                    {% comment %} Selector 2 {% endcomment %}
+                    <select id="productSelector2" @change="changeProduct2($event)" class="font-bold text-xl truncate bg-transparent appearance-none border-0 border-b-4 border-b-black outline-none focus:border-b-4 focus:border-b-black focus:ring-0 focus:border-transparent focus:outline-none w-max py-1 pl-4 pr-12" name="productSelector2" title="Product Selector">
+                        <template v-for="(product, i) in selectedBrand2.collection_products">
+                            <option v-if="i == 0" selected :value="i">${ product.title }</option>
+                            <option v-else :value="i">${ product.title }</option>
+                        </template>
+                    </select>
+
+                    {% comment %} Product 2 {% endcomment %}
+                    <div class="flex flex-col gap-8">
+                        {% comment %} Title {% endcomment %}
+                        <a :href="'/products/' + selectedProduct2.handle" :title="selectedProduct2.title"><h3 class="font-bold text-2xl text-primary border-l-4 border-l-secondary pl-4 ds:text-4xl">${ selectedProduct2.title }</h3></a>
+
+                        {% comment %} Image, Pros, Best for {% endcomment %}
+                        <div id="product2_details" class="grid grid-cols-1 justify-between items-center gap-4 ds:grid-cols-2 ds:mb-8">
+                            <a :href="'/products/' + selectedProduct2.handle" :title="selectedProduct2.title"><picture>
+                                <img class="rounded-cl object-cover aspect-square" :src="selectedProduct2.featured_image + '&width=400'" alt="Product Image" :title="selectedProduct2.title">
+                            </picture></a>
+                            <div class="flex flex-col gap-4">
+                                <h4 class="font-bold text-xl">Description</h4>
+                                <p class="line-clamp-10 leading-8" v-html="selectedProduct2.description"></p>
+                            </div>
+                        </div>
+
+                        {% comment %} Details {% endcomment %}
+                        <div class="flex flex-col gap-4 ds:gap-8">
+                            <h4 class="font-bold text-xl">Product Details</h4>
+                            <div class="grid grid-cols-1 grid-rows-3 justify-between items-center gap-4 ds:grid-cols-3 ds:grid-rows-1 ds:gap-0">
+                                {% comment %} Price Range {% endcomment %}
+                                <div class="flex items-center gap-3">
+                                    {% render 'details-icons', icon: 'product-price-range' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Price Range</h5>
+                                        <template v-if="selectedProduct2.price <= 100000">
+                                            {% render 'details-icons', icon: 'money-range-1' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct2.price <= 200000">
+                                            {% render 'details-icons', icon: 'money-range-2' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct2.price <= 300000">
+                                            {% render 'details-icons', icon: 'money-range-3' %}
+                                        </template>
+                                        <template v-else-if="selectedProduct2.price <= 400000">
+                                            {% render 'details-icons', icon: 'money-range-4' %}
+                                        </template>
+                                        <template v-else>
+                                            {% render 'details-icons', icon: 'money-range-5' %}
+                                        </template>
+                                    </div>
+                                </div>
+
+                                {% comment %} Firmness {% endcomment %}
+                                <div class="flex justify-start items-center gap-3 ds:justify-center">
+                                    {% render 'details-icons', icon: 'product-firmness' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Firmness</h5>
+                                        <template v-for="(tag, i) in selectedProduct2.tags">
+                                            <p v-if="tag == 'medium firm'">Medium Firm</p>
+                                            <p v-else-if="tag == 'firm'">Firm</p>
+                                            <p v-else-if="tag == 'medium'">Medium</p>
+                                            <p v-else-if="tag == 'soft'">Soft</p>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                {% comment %} Type {% endcomment %}
+                                <div class="flex justify-start items-center gap-3 ds:justify-end">
+                                    {% render 'details-icons', icon: 'product-type' %}
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <h5 class="font-bold">Type</h5>
+                                        <template v-for="(tag, i) in selectedProduct2.tags">
+                                            <p v-if="tag == 'hybrid'">Hybrid</p>
+                                            <p v-else-if="tag == 'memory foam'">Memory Foam</p>
+                                            <p v-else-if="tag == 'innerspring'">Innerspring</p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% comment %} Button {% endcomment %}
+                        <a :href="'/products/' + selectedProduct2.handle" :title="selectedProduct2.title" class="button w-max">Shop Now</a>
+                    </div>
+
+                    {% comment %} Sale Banner 2 {% endcomment %}  
+                    {% comment %} <div v-if="selectedBrand2.sale_banner_desk != blank">
+                        <a :href="selectedBrand1.url" :title="selectedBrand1.name"><picture>
+                            <source media="(min-width: 568px)" :srcset="selectedBrand2.sale_banner_desk">
+                            <img class="rounded-cl w-full h-full" :src="selectedBrand2.sale_banner_mob" alt="Sale Banner" :title="selectedBrand2.name" loading="lazy">
+                        </picture></a>
+                    </div> {% endcomment %}
+                </div>
+
+                {% comment %} Graphic {% endcomment %}
+                {% comment %} <div class="flex flex-col gap-14 py-14 ds:gap-20 ds:py-20">
+                    Title
+                    <h3 class="font-bold text-[36px] text-primary border-l-4 border-l-secondary pl-4">{% for brand in shop.metaobjects.brand.values %}{% if brand.name == 'Tempur-Pedic' %}{{ brand.name }}{% endif %}{% endfor %} vs {% for brand in shop.metaobjects.brand.values %}{% if brand.name == 'Nectar' %}{{ brand.name }}{% endif %}{% endfor %} Mattress Highlights</h3>
+                </div> {% endcomment %}
+            </div>
+
+            {% comment %} Aside Content {% endcomment %}
+            <div class="ds:w-[210px] dm:w-[250px] dl:w-[300px]">
+                <h4 class="font-bold text-2xl text-center text-text mb-8">{{ posts_heading }}</h4>
+                <div class="grid gap-8 mb-14 mm:grid-cols-2 mm:gap-5 ts:gap-x-20 ts:gap-y-10 tl:grid-cols-4 tl:gap-4 ds:grid-cols-1 ds:gap-8 ds:mb-20">
+                    {% for article in blogs.your-mattress-matters.articles limit: 4 %}
+                        {% liquid
+                            assign image_art = article.image
+                            assign title_art = article.title
+                            assign author_art = article.author
+                            assign url_art = article.url
+                            assign totalWords_art = article.content | split: ' '
+                            assign totalReadTime_art = totalWords_art.size | divided_by: 270.0
+                        %}
+                        <div class="grid grid-rows-2 rounded-cl shadow-sp h-[340px] tl:w-auto">
+                            <a href="{{ url_art }}"><picture>
+                                <source media="(min-width: 868px)" srcset="{{ image_art | image_url: width: 260 }}">
+                                <source media="(min-width: 768px)" srcset="{{ image_art | image_url: width: 380 }}">
+                                <source media="(min-width: 480px)" srcset="{{ image_art | image_url: width: 360 }}">
+                                <img class="object-cover rounded-t-cl w-full h-full" src="{{ image_art | image_url: width: 450 }}" title="{{ title_art }}" alt="{{ image_art.alt }}" loading="lazy">
+                            </picture></a>
+                            <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-3">
+                                <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a href="{{ url_art }}" title="{{ title_art }}">{{ title_art }}</a></h3>
+                                <div class="grid grid-cols-2 items-start mm:items-center">
+                                    <p class="text-xs text-text">by {{ author_art }}</p>
+                                    <p class="text-xs text-right">{{ totalReadTime_art | ceil }} min read</p>
+                                </div>
+                                <a class="font-bold text-base text-primary self-center" href="{{ url_art }}" title="{{ title_art }}">Read More</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <h4 class="font-bold text-2xl text-center text-text mb-8">{{ sales_heading }}</h4>
+                {% if blogs.your-mattress-matters.metafields.custom.sale_banner_images != blank %}
+                    <div class="flex flex-col gap-8 mb-14 ts:flex-row ts:gap-4 ds:flex-col ds:gap-8 ds:mb-20">
+                        {% for url in blogs.your-mattress-matters.metafields.custom.sale_banner_urls.value %}
+                            {% if forloop.index == 1 %}
+                                <div class="w-full ml:w-1/3 ds:w-full">
+                                    <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                        {% for imag in blogs.your-mattress-matters.metafields.custom.sale_banner_images.value %}
+                                            {% if forloop.index == 1 %}
+                                                <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                            {% endif %}
+                                        {% endfor %}
+                                    </picture></a>
+                                </div>
+                            {% elsif forloop.index == 2 %}
+                                <div class="w-full ml:w-1/3 ds:w-full">
+                                    <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                        {% for imag in blogs.your-mattress-matters.metafields.custom.sale_banner_images.value %}
+                                            {% if forloop.index == 2 %}
+                                                <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                            {% endif %}
+                                        {% endfor %}
+                                    </picture></a>
+                                </div>
+                            {% elsif forloop.index == 3 %}
+                                <div class="w-full ml:w-1/3 ds:w-full">
+                                    <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                        {% for imag in blogs.your-mattress-matters.metafields.custom.sale_banner_images.value %}
+                                            {% if forloop.index == 3 %}
+                                                <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                            {% endif %}
+                                        {% endfor %}
+                                    </picture></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #comparative_chart ol,
+    #comparative_chart ul,
+    #comparative_chart menu {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+    #comparative_chart ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+
+{% paginate shop.metaobjects.brand.values by 250 %}
+  {%- capture allBrands -%}
+  [
+    {%- for brand in shop.metaobjects.brand.values -%}
+      {
+        "name": {{ brand.name | json }},
+        "banner_image": '{{ brand.banner_image | img_url: '900x' }}',
+        "image": '{{ brand.image | img_url: '400x' }}',
+        "logo": '{{ brand.logo | img_url: 'original' }}',
+        "best_for": '{{ brand.best_for | metafield_tag }}',
+        "price_range": '{{ brand.price_range | metafield_tag }}',
+        "type": '{{ brand.type | metafield_tag }}',
+        "firmness": '{{ brand.firmness | metafield_tag }}',
+        "features": '{{ brand.features | metafield_tag }}',
+        "models": '{{ brand.models | metafield_tag }}',
+        "warranty": '{{ brand.warranty | metafield_tag }}',
+        "pros": '{{ brand.pros | metafield_tag }}',
+        "cons": '{{ brand.cons | metafield_tag }}',
+        "offer": '{{ brand.offer | metafield_tag }}',
+        "url": '{{ brand.url }}',
+        "collection_products": {{ brand.collection.value.products | json | replace: "'", "´" }},
+      },
+    {%- endfor -%}
+  ]
+  {%- endcapture -%}
+{% endpaginate %}
+
+<script>
+var { createApp } = Vue;
+const appCompareBrands = createApp({
+    delimiters: ['${', '}'],
+    data() {
+        const
+        brands = {{ allBrands }},
+        loading = true,
+        selectedBrand1 = [],
+        selectedBrand2 = [],
+        selectedProduct1 = [],
+        selectedProduct2 = [];
+
+        return {
+            brands,
+            loading,
+            selectedBrand1,
+            selectedBrand2,
+            selectedProduct1,
+            selectedProduct2
+        }
+    },
+
+    created() {
+        this.selectedBrand1 = this.brands[0];
+        this.selectedBrand2 = this.brands[1];
+        this.selectedProduct1 = this.selectedBrand1.collection_products[0];
+        this.selectedProduct2 = this.selectedBrand2.collection_products[0];
+        this.loading = false;
+    },
+    methods: {
+        //Change Brand
+        changeBrand(e) {
+            this.selectedBrand1 = this.brands[e.target.value];
+            this.selectedProduct1 = this.selectedBrand1.collection_products[0];
+        },
+
+        //Change Brand 2
+        changeBrand2(e) {
+            this.selectedBrand2 = this.brands[e.target.value];
+            this.selectedProduct2 = this.selectedBrand2.collection_products[0];
+        },
+
+        //Change Product
+        changeProduct(e) {
+            this.selectedProduct1 = this.selectedBrand1.collection_products[e.target.value];
+        },
+
+        //Change Product 2
+        changeProduct2(e) {
+            this.selectedProduct2 = this.selectedBrand2.collection_products[e.target.value];
+        }
+    }
+});
+appCompareBrands.mount('#compare-brands')
+</script>
+
+
+{% schema %}
+{   
+    "name": "Compare Brands",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "desk_banner",
+            "label": "Desktop banner image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mob_banner",
+            "label": "Mobile banner image"
+        },
+        {
+            "type": "image_picker",
+            "id": "frameImage",
+            "label": "Frame Image"
+        },
+        {
+            "type": "richtext",
+            "id": "introduction",
+            "label": "Introduction"
+        },
+        {
+            "type": "text",
+            "id": "posts_heading",
+            "label": "Related Posts Heading"
+        },
+        {
+            "type": "text",
+            "id": "sales_heading",
+            "label": "Sales Banners Heading"
+        }
+    ]
+}
+{% endschema %}

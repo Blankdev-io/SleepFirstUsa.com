@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "contact": {
+      "type": "contact",
+      "settings": {
+        "title": "Contact Sleep First",
+        "content": "<p><strong>Phone<\/strong><br\/><a href=\"tel:+18889753371\" title=\"tel:+18889753371\">+1 (888) 975-3371<\/a><br\/><br\/><strong>Email<\/strong><br\/><a href=\"mailto:molly@sleepfirstusa.com\" title=\"mailto:molly@sleepfirstusa.com\">molly@sleepfirstusa.com<\/a><br\/><br\/><strong>Messenger Chat<\/strong><br\/><a href=\"https:\/\/m.me\/sleepfirstusa\" title=\"https:\/\/m.me\/sleepfirstusa\">Click here to start a chat<\/a><br\/><br\/><strong>WebChat<\/strong><br\/>Our webchat is available during store hours. You'll find the chat button in the lower right corner of your screen<\/p>",
+        "sub-title": "We're here to help!",
+        "heading": "<p>Our Sleep First team is standing by to answer any questions you may have.<\/p>",
+        "questionA": "How would you like us to reply?",
+        "optionA1": "Phone me",
+        "optionA2": "Text me",
+        "optionA3": "Email me",
+        "optionA4": "No need to reply",
+        "questionB": "Are you contacting us about an existing order?",
+        "optionB1": "Yes",
+        "optionB2": "No",
+        "button": "SUBMIT",
+        "message": "<p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "contact"
+  ]
+}

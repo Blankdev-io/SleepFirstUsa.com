@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-bundle",
+      "blocks": {
+        "399cdb1a-c1be-40b5-a4d7-f7e63c3b631a": {
+          "type": "banner",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Sleep_First_CF_Nectar_Bundle_Mattress_Protector_PNG.png",
+            "pre_title": "Included",
+            "title": "Mattress Protector",
+            "price": "$99 value",
+            "url": "#"
+          }
+        },
+        "d5a2373d-4aa6-4a9b-b002-9b4e677070bb": {
+          "type": "banner",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Sleep_First_CF_Nectar_Bundle_Pillows_PNG.png",
+            "pre_title": "Included",
+            "title": "Cooling <br>Pillow",
+            "price": "$200 value",
+            "url": "#"
+          }
+        },
+        "38ddc05d-0bb2-4d34-bd9e-5f213deb80b0": {
+          "type": "banner",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Sleep_First_CF_Nectar_Bundle_Sheet_Set_PNG.png",
+            "pre_title": "Included",
+            "title": "Sheet <br>Set",
+            "price": "$200 value",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "399cdb1a-c1be-40b5-a4d7-f7e63c3b631a",
+        "d5a2373d-4aa6-4a9b-b002-9b4e677070bb",
+        "38ddc05d-0bb2-4d34-bd9e-5f213deb80b0"
+      ],
+      "settings": {
+        "desk_banner": "shopify:\/\/shop_images\/dreamcloud-ad.png",
+        "mob_banner": "shopify:\/\/shop_images\/dreamcloud-ad-2.png",
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "quantity": false,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it.",
+        "description_order": false,
+        "details_order": false
+      }
+    },
+    "bcc6799f-5729-4595-9dbc-d698b4398304": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "bcc6799f-5729-4595-9dbc-d698b4398304"
+  ]
+}

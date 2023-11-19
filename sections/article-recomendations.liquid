@@ -1,0 +1,55 @@
+{% liquid
+    assign title = section.settings.title
+    assign article1 = section.settings.article1
+    assign article2 = section.settings.article2
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <h2 class="text-title text-center text-text mb-6">{{ title }}</h2>
+    <div class="grid grid-cols-1 gap-4 ts:grid-cols-2 ts:gap-4 ds:gap-6">
+        <div class="flex flex-col gap-1 bg-white rounded-cl shadow-mp ts:flex-row ts:h-[325px] ds:gap-2">
+            <a href="{{ article1.url }}" title="{{ article1.title }}" class="ts:w-2/5"><img class="object-cover rounded-t-cl w-full h-full ts:rounded-r-none ts:rounded-l-cl" src="{{ article1.image | image_url }}" title="{{ article1.image.title }}" alt="{{ article1.image.alt }}" loading="lazy"></a>
+            <div class="flex flex-col justify-between gap-4 p-4 ts:w-3/5">
+                <a href="{{ article1.url }}" title="{{ article1.title }}" class="font-bold text-lg line-clamp-3 ds:text-xl"><h3>{{ article1.title }}</h3></a>
+                <p class="text-sm ds:text-base">{{ article1.excerpt }}</p>
+                <a href="{{ article1.url }}" title="{{ article1.title }}" class="button ds:w-max">READ MORE</a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-1 bg-white rounded-cl shadow-mp ts:flex-row ts:h-[325px] ds:gap-2">
+            <a href="{{ article2.url }}" title="{{ article2.title }}" class="ts:w-2/5"><img class="object-cover rounded-t-cl w-full h-full ts:rounded-r-none ts:rounded-l-cl" src="{{ article2.image | image_url }}" title="{{ article2.image.title }}" alt="{{ article2.image.alt }}" loading="lazy"></a>
+            <div class="flex flex-col justify-between gap-4 p-4 ts:w-3/5">
+                <a href="{{ article2.url }}" title="{{ article2.title }}" class="font-bold text-lg line-clamp-3 ds:text-xl"><h3>{{ article2.title }}</h3></a>
+                <p class="text-sm ds:text-base">{{ article2.excerpt }}</p>
+                <a href="{{ article2.url }}" title="{{ article2.title }}" class="button ds:w-max">READ MORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Article Recomendations",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Section Title"
+            },
+            {
+                "type": "article",
+                "id": "article1",
+                "label": "First Article"
+            },
+            {
+                "type": "article",
+                "id": "article2",
+                "label": "Second Article"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Article Recomendations"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,1182 @@
+{% liquid
+  assign button = section.settings.button 
+  assign show_page_card = section.settings.show_page_card 
+  assign brand1 = section.settings.brand1
+  assign image = section.settings.image 
+  assign brand2 = section.settings.brand2
+  assign heading = section.settings.heading 
+  assign pre_heading = section.settings.pre_heading
+  assign content = section.settings.content 
+  assign page_button = section.settings.page_button
+  assign page_button_url = section.settings.page_button_url 
+%}
+
+{% capture card %}
+  <div class="grid grid-rows-4 group shadow-sp rounded-cl {% if button %}h-[470px]{% else %}h-[400px]{% endif %} ds:grid-rows-5 ds:h-[400px] ds:w-auto">
+    <div class="row-span-2 relative ds:row-span-3">
+      <div v-if="product.compare_at_price != 0" class="flex absolute left-4 top-4 bg-accent-4 rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+          <p class="self-center font-bold text-xs text-center text-white">${ product.savePercent }% OFF</p>
+      </div>
+      <div v-if="product.tags.includes('sold out')" class="flex absolute right-4 top-4 bg-[#800007] rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+          <p class="self-center font-bold text-xs text-center text-white">SOLD OUT</p>
+      </div>
+      <div v-else-if="product.tags.includes('new')" class="flex absolute right-4 top-4 bg-secondary rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+          <p class="self-center font-bold text-xs text-center text-white">NEW!</p>
+      </div>
+      {% if button %}
+        <a @click="addToCart($event, index)" title="ADD TO CART" class="button-hidden absolute bottom-4 inset-x-6 cursor-pointer" data-id="add-btn">ADD TO CART</a>
+      {% endif %}
+      {% comment %} <template v-if="product.options.includes('Color')">
+        <div v-for="(option, index) in product.options_with_values" class="absolute bottom-4 right-4">
+          <div v-if="option.name == 'Color'" class="flex gap-3">
+            <div v-for="(color, i) in option.values" class="border-2 border-secondary rounded-full shadow-lp h-6 w-6">
+              <div v-if="color == 'White'" title="White" class="bg-white rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Ash'" title="Ash" class="bg-[#cecfd3] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Blush'" title="Blush" class="bg-[#eddee5] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Driftwood'" title="Driftwood" class="bg-[#d5d0cc] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Pacific'" title="Pacific" class="bg-[#8ca5b9] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Ivory'" title="Ivory" class="bg-[#eeedeb] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Fern'" title="Fern" class="bg-[#c0c7a8] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Light Grey'" title="Light Grey" class="bg-[#e7e8ea] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'True White'" title="True White" class="bg-[#dddddf] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Stormy Grey'" title="Stormy Grey" class="bg-[#787878] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Opal'" title="Opal" class="bg-[#c7dad4] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Dusk'" title="Dusk" class="bg-[#898b97] rounded-full w-full h-full"></div>
+              <div v-else-if="color == 'Ecru'" title="Ecru" class="bg-[#cdb7aa] rounded-full w-full h-full"></div>
+            </div>
+          </div>
+        </div>
+      </template> {% endcomment %}
+      <a :href="'/products/' + product.handle" :title="product.title">
+        <img v-if="index < 6" class="object-cover rounded-t-cl w-full h-full" :src="product.featured_image + '&width=450'" :title="product.title" alt="Product">
+        <img v-else class="object-cover rounded-t-cl w-full h-full" :src="product.featured_image + '&width=450'" :title="product.title" alt="Product" loading="lazy">
+      </a>
+    </div>
+    <div class="row-span-2 grid {% if button %}grid-rows-3{% else %}grid-rows-2{% endif %} text-text bg-white rounded-b-cl p-4 ds:grid-rows-2 ds:py-3">
+        <h2 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a :href="'/products/' + product.handle" :title="product.title">${ product.title }</a></h2>
+        <div class="grid grid-cols-2 self-center">
+          <div class="ds:self-center">
+            <p class="text-[12px]">Starting at</p>
+            <p class="font-bold text-[14px] text-primary">$ ${ product.price }</p>     
+            <p v-if="product.compare_at_price != 0" class="font-bold text-[14px] text-accent-2 line-through">$ ${ product.compare_at_price }</p>
+          </div>
+          {% for product in collection.products %}
+            <div v-if="product.id == '{{ product.id }}'" class="grid justify-items-end ds:justify-items-center ds:items-center">
+              {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+            </div>
+          {% endfor %}
+        </div>
+        {% if button %}
+          <a @click="addToCart($event, index)" title="ADD TO CART" class="button cursor-pointer w-full ds:hidden" data-id="add-btn">ADD TO CART</a>
+        {% endif %}
+    </div>
+  </div>
+  {% for product in collection.products %}
+    {% if product.metafields.custom.promotion != blank %}
+      <div v-if="product.id == '{{ product.id }}'" class="flex justify-center px-5">
+        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ product.metafields.custom.promotion_tag_color }};">
+          <span class="self-center">{{ product.metafields.custom.promotion }}</span>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture page_card %}
+  <div class="flex flex-col gap-8 text-text bg-white shadow-sp rounded-cl h-auto p-3 mm:col-span-2 tl:flex-row tl:gap-0 tl:justify-around tl:items-center tl:p-5 ds:col-span-3">
+    <div class="flex justify-center items-center">
+      <a href="{{ page_button_url }}" title="{{ page_button_url.title }}" class="flex flex-col items-center gap-5 tl:gap-3">
+        <picture>
+          <img class="h-[45px] tl:h-[40px]" src="{{ brand1 | image_url: width: 200 }}" title="{{ heading }}" alt="{{ brand1.alt }}" loading="lazy">
+        </picture>
+        <picture>
+          <img class="h-[70px] aspect-square tl:h-[58px]" src="{{ image | image_url: width: 200 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
+        </picture>
+        <picture>
+          <img class="h-[45px] tl:h-[40px]" src="{{ brand2 | image_url: width: 200 }}" title="{{ heading }}" alt="{{ brand2.alt }}" loading="lazy">
+        </picture>
+      </a>
+    </div>
+    <div class="flex flex-col justify-between items-center">
+      <span class="font-bold text-lg text-center text-primary mb-4 tl:mb-2">{{ pre_heading }}</span>
+      <h3 class="font-bold text-3xl text-center mb-4 tl:mb-3">{{ heading }}</h3>                
+      <div class="text-center whitespace-pre-wrap mb-4">{{ content }}</div>
+      <a href="{{ page_button_url }}" title="{{ page_button_url.title }}" class="button mm:w-max">{{ page_button }}</a>          
+    </div>
+  </div>
+{% endcapture %}
+
+<div id="collection-page" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+
+  {% if collection.metafields.banner.images != blank %}    
+  <div class="mb-6">
+    <picture>
+      {% for elem in collection.metafields.banner.images.value %}
+        {% if forloop.index == 1 %}
+            <source media="(min-width: 568px)" srcset="{{ elem | image_url }}">
+        {% else %}
+            <img class="rounded-cl w-full h-full" src="{{ elem | image_url }}" alt="{{ elem.alt }}" title="{{ title }}" loading="lazy">
+        {% endif %}
+      {% endfor %}
+    </picture>
+  </div>
+  {% endif %}
+
+  <div class="flex justify-between mb-6">
+    <div class="flex items-center">
+      <div class="flex items-end gap-5">
+        <h1 class="text-title text-text">{{ collection.title }}</h1>
+        <span class="font-bold text-xl text-gray-400">{{ collection.products_count }} results</span>
+      </div>
+    </div>
+    <div class="hidden items-center gap-4 bg-white shadow-lp rounded-cl px-4 py-3 mb-4 ds:flex ds:shadow-sp ds:px-6 ds:py-4">
+        <label class="font-bold">Sort By:</label>
+        <div>
+          <select id="sortSelector" @change="sortBy()" class="truncate appearance-none border-none rounded-full border-transparent focus:border-none focus:ring-0 focus:border-transparent focus:outline-none w-full py-1 pl-0 pr-10" name="sort" title="Sort selector">
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
+              <option value="price-lth">Price: lowest to highest</option>
+              <option value="price-htl">Price: highest to lowest</option>
+              <option value="discount-lth">Discount: lowest to highest</option>
+              <option selected="selected" value="discount-htl">Discount: highest to lowest</option>
+          </select>
+        </div>
+    </div>
+  </div>
+
+  {% comment %} <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full mb-6 p-4 ts:flex-row ds:hidden">
+      <div class="flex justify-center items-center gap-4 w-full">
+          <span>{% render 'icons', icon: 'map' %}</span>
+          <span class="text-center ds:text-lg">Experience our personalized service.</span>
+      </div>
+      <div class="button w-max">Find A Store</div>
+  </div> {% endcomment %}
+
+  <template v-if="selectedShip != '' || selectedSize != '' || selectedPrice.min != minPrice || selectedPrice.max != maxPrice || selectedVendors.length != 0 || selectedTypes.length != 0 || selectedComfortFeel != ''">
+    <div class="mb-4 ds:mb-5">
+      <span class="font-bold">Selected Filters: </span>
+      <span @click="clearAllFilters" class="text-primary cursor-pointer">Clear All</span>
+      <div class="flex flex-wrap gap-4 mt-4" >
+        <div v-if="selectedShip != ''" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+          ${ selectedShip }
+        </div>
+        <div v-if="selectedSize != ''" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+          ${ selectedSize }
+        </div>
+        <div v-if="selectedPrice.min != minPrice || selectedPrice.max != maxPrice" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+          <span>Price Range: </span>
+          ${ selectedPrice.min } - ${ selectedPrice.max }
+        </div>
+        <div v-if="selectedComfortFeel != ''" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl  px-6 py-4">
+          ${ selectedComfortFeel }
+        </div>
+        <div v-if="selectedVendors.length > 0" v-for="(vendor, index) in selectedVendors" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+          ${ vendor }
+        </div>
+        <div v-if="selectedTypes.length > 0" v-for="(type, index) in selectedTypes" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+          ${ type }
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <div class="grid gap-y-6 gap-x-5 text-text mm:grid-cols-2 ds:grid-cols-4 ds:gap-7">
+    <div id="extDiv" class="sticky top-28 z-30 mm:col-span-2 ds:col-span-1 ds:top-36 ds:h-min">
+      {% comment %} <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="hidden flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full mb-6 p-4 ds:flex">
+          <div class="flex justify-center items-center gap-4 w-full">
+              <span>{% render 'icons', icon: 'map' %}</span>
+              <span class="text-center ds:text-lg">Experience our personalized service.</span>
+          </div>
+          <div class="button w-max">Find A Store</div>
+      </div> {% endcomment %}
+      <div class="grid grid-cols-2 gap-3 bg-white shadow-lp rounded-cl overflow-auto overscroll-none w-full px-4 py-3 mm:gap-12 ts:gap-28 ds:flex ds:flex-col ds:gap-0 ds:shadow-sp ds:divide-y ds:divide-secondary ds:max-h-scol ds:px-6 ds:py-7">
+        {% comment %} desktop {% endcomment %}
+        <div class="hidden relative ds:block">
+          <div onclick="myFunctionFlex('shipping')" class="flex items-center gap-3 cursor-pointer">
+            <span id="shippingicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Shipping</span>
+          </div>
+          <form id="shipping" class="hidden static flex-col gap-2 mt-5">
+              <input v-if="selectedShip != ''" @click="clearFilter($event)" type="reset" name="shipping" value="Clear"  class="absolute right-0 top-0 text-primary cursor-pointer"/>
+              <div class="flex items-center gap-2">
+                  <input @input="addToFilter($event)"  type="radio" name="shipping" id="local" value="ships local" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                  <label for="local" class="align-middle">Ships Local</label><br>
+              </div>
+              <div class="flex items-center gap-2">
+                  <input @input="addToFilter($event)"  type="radio" name="shipping" id="nationwide" value="ships nationwide" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                  <label for="nationwide" class="align-middle">Ships Nationwide</label><br>
+              </div>
+          </form>
+        </div>
+        <div class="hidden relative mt-4 pt-4 ds:block">
+          <div onclick="myFunctionFlex('size')" class="flex items-center gap-3 cursor-pointer">
+            <span id="sizeicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Size</span>
+          </div>
+          <form id="size" class="hidden static flex-col gap-3 mt-5">
+            <input v-if="selectedSize != ''" @click="clearFilter($event)" type="reset" name="size" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="twin" value="Twin" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="twin" class="align-middle capitalize">Twin</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="twin-xl" value="Twin XL" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="twin-xl" class="align-middle capitalize">Twin XL</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="full-double" value="Full /Double" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="full-double" class="align-middle capitalize">Full/Double</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="queen" value="Queen" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="queen" class="align-middle capitalize">Queen</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="king" value="King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="king" class="align-middle capitalize">King</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="king-2-pieces" value="King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="king-2-pieces" class="align-middle capitalize">King (2 Pieces)</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="split-king" value="Split King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="split-king" class="align-middle capitalize">Split King</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="split-king-2-pieces" value="Split King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="split-king-2-pieces" class="align-middle capitalize">Split King (2 Pieces)</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="cal-king" value="Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="cal-king" class="align-middle capitalize">Cal King</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="cal-king-2-pieces" value="Cal King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="cal-king-2-pieces" class="align-middle capitalize">Cal King (2 Pieces)</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="split-cal-king" value="Split Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="split-cal-king" class="align-middle capitalize">Split Cal King</label><br>
+            </div>          
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="split-cal-king-2-pieces" value="Split Cal King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="split-cal-king-2-pieces" class="align-middle capitalize">Split Cal King (2 Pieces)</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="dual-split-king" value="Dual Split King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="dual-split-king" class="align-middle capitalize">Dual Split King</label><br>
+            </div>
+            <div class="flex items-center gap-2">
+              <input @input="addToFilter($event)" type="radio" name="size" id="dual-split-cal-king" value="Dual Split Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+              <label for="dual-split-cal-king" class="align-middle capitalize">Dual Split Cal King</label><br>
+            </div>
+          </form>
+        </div>
+        <div class="hidden relative mt-4 pt-4 ds:block">
+          <div onclick="myFunctionFlex('price')" class="flex items-center gap-3 cursor-pointer">
+            <span id="priceicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Price</span>
+          </div>
+          <form id="price" class="hidden static justify-between items-center gap-1 mt-5">
+            <input v-if="selectedPrice.min != minPrice || selectedPrice.max != maxPrice" @click="clearFilter($event)" type="reset" name="price" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+            <input @keyup="addToFilter($event)" type="number" name="price" id="lowest_price" :value="selectedPrice.min" :min="minPrice" :max="maxPrice" class="font-light text-center rounded-full border-primary w-full">
+            <span>-</span>
+            <input @keyup="addToFilter($event)" type="number" name="price" id="highest_price" :value="selectedPrice.max" :min="minPrice" :max="maxPrice" class="font-light text-center rounded-full border-primary w-full">
+          </form>
+        </div>
+        <div class="hidden relative mt-4 pt-4 ds:block">
+          <div onclick="myFunctionFlex('comfort-feel')" class="flex items-center gap-3 cursor-pointer">
+            <span id="comfort-feelicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Comfort/Feel</span>
+          </div>
+          <form id="comfort-feel" class="hidden static flex-col gap-3 mt-5">
+              <input v-if="selectedComfortFeel != ''" @click="clearFilter($event)" type="reset" name="comfort-feel" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+              <div class="flex items-center gap-2">
+                  <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="soft" value="soft" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                  <label for="soft" class="align-middle capitalize">Soft</label><br>
+              </div>
+                <div class="flex items-center gap-2">
+                  <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="medium" value="medium" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                  <label for="medium" class="align-middle capitalize">Medium</label><br>
+              </div>
+              <div class="flex items-center gap-2">
+                  <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="firm" value="firm" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                  <label for="firm" class="align-middle capitalize">Firm</label><br>
+              </div>
+          </form>
+        </div>
+        <div v-if="vendors.length != 0" class="hidden relative mt-4 pt-4 ds:block">
+          <div onclick="myFunctionFlex('brand')" class="flex items-center gap-3 cursor-pointer">
+            <span id="brandicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Brand</span>
+          </div>
+          <form id="brand" class="hidden static flex-col gap-2 mt-5">
+              <input v-if="selectedVendors.length != 0" @click="clearFilter($event)" type="reset" name="brand" value="Clear"  class="absolute right-0 top-4 text-primary cursor-pointer"/>
+              <div v-for="(item, index) in vendors" class="flex items-center gap-2">
+                  <input @input="addToFilter($event, item)" type="checkbox" name="brand" :id="item" :value="item" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                  <label :for="item" class="align-middle capitalize">${ item }</label><br>
+              </div>
+          </form>
+        </div>
+        <div v-if="types.length != 0" class="hidden relative mt-4 pt-4 ds:block">
+          <div onclick="myFunctionFlex('type')" class="flex items-center gap-3 cursor-pointer">
+            <span id="typeicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+            <span class="font-bold">Type</span>
+          </div>
+          <form id="type" class="hidden static flex-col gap-2 mt-5">
+            <input v-if="selectedTypes.length != 0" @click="clearFilter($event)" type="reset" name="type" value="Clear"  class="absolute right-0 top-4 text-primary cursor-pointer"/>
+            <div v-for="(type, index) in types" class="flex items-center gap-2">
+                <input @input="addToFilter($event, type)" type="checkbox" name="type" :id="type" :value="type" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                <label :for="type" class="align-middle capitalize">${ type }</label><br>
+            </div>
+          </form>
+        </div>
+        {% comment %} mobile / tablet {% endcomment %}
+        <div class="ds:hidden">
+          <select id="mob_sortSelector" @change="sortBy()" class="font-bold truncate appearance-none border-none rounded-full border-transparent focus:border-none focus:ring-0 focus:border-transparent focus:outline-none w-full py-1 pl-0 pr-10" name="sort" title="Sort selector">
+              <option selected="selected" disabled value="">Sort By:</option>
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
+              <option value="price-lth">Price: lowest to highest</option>
+              <option value="price-htl">Price: highest to lowest</option>
+              <option value="discount-lth">Discount: lowest to highest</option>
+              <option value="discount-htl">Discount: highest to lowest</option>
+          </select>
+        </div>
+        <div onclick="myFunctionFilters('filters')" class="flex justify-between items-center ts:justify-around ds:hidden">
+          <span class="font-bold">Seach Filter</span>
+          {% render 'icons', icon: 'filter' %}
+        </div>
+        {% comment %} Mobile filters {% endcomment %}
+        <div id="ext_filters" onclick="myFunctionFilters('filters')" class="fixed z-40 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 backdrop-blur-[15px] bg-gray-100/50 w-screen h-screen">
+        </div>
+        <div id="filters" class="flex justify-center fixed z-50 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 w-screen h-max">
+          <div class="flex gap-1 relative top-6 w-full max-w-[715px] mx-5 dm:mx-auto ds:mx-9">
+            <div onclick="myFunctionFilters('filters')" title="Close" class="cursor-pointer bg-primary shadow-sp rounded-full h-min p-2">{% render 'icons', icon: 'white-delete' %}</div>
+            <div class="flex-col gap-0 text-text bg-white shadow-sp rounded-cl overflow-auto overscroll-none h-min max-h-fil w-full px-6 py-7">
+              <div class="relative">
+                <div onclick="myFunctionFlex('mob_shipping')" class="flex items-center gap-4">
+                  <span id="mob_shippingicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Shipping</span>
+                </div>
+                <form id="mob_shipping" class="hidden flex-col gap-2 mt-5">
+                    <input v-if="selectedShip != ''" @click="clearFilter($event)" type="reset" name="shipping" value="Clear"  class="absolute right-0 top-0 text-primary cursor-pointer"/>
+                    <div class="flex items-center gap-2">
+                        <input @input="addToFilter($event)"  type="radio" name="shipping" id="mob-local" value="ships local" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                        <label for="mob-local" class="align-middle">Ships Local</label><br>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input @input="addToFilter($event)"  type="radio" name="shipping" id="mob-nationwide" value="ships nationwide" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                        <label for="mob-nationwide" class="align-middle">Ships Nationwide</label><br>
+                    </div>
+                </form>
+              </div>
+              <div class="relative border-t border-secondary mt-4 pt-4">
+                <div onclick="myFunctionFlex('mob_size')" class="flex items-center gap-4">
+                  <span id="mob_sizeicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Size</span>
+                </div>
+                <form id="mob_size" class="hidden flex-col gap-3 mt-5">
+                  <input v-if="selectedSize != ''" @click="clearFilter($event)" type="reset" name="size" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-twin" value="Twin" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-twin" class="align-middle capitalize">Twin</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-twin-xl" value="Twin XL" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-twin-xl" class="align-middle capitalize">Twin XL</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-full-double" value="Full /Double" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-full-double" class="align-middle capitalize">Full/Double</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-queen" value="Queen" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-queen" class="align-middle capitalize">Queen</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-king" value="King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-king" class="align-middle capitalize">King</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-king-2-pieces" value="King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-king-2-pieces" class="align-middle capitalize">King (2 Pieces)</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-split-king" value="Split King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-split-king" class="align-middle capitalize">Split King</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-split-king-2-pieces" value="Split King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-split-king-2-pieces" class="align-middle capitalize">Split King (2 Pieces)</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-cal-king" value="Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-cal-king" class="align-middle capitalize">Cal King</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-cal-king-2-pieces" value="Cal King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-cal-king-2-pieces" class="align-middle capitalize">Cal King (2 Pieces)</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-split-cal-king" value="Split Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-split-cal-king" class="align-middle capitalize">Split Cal King</label><br>
+                  </div>          
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-split-cal-king-2-pieces" value="Split Cal King (2 Pieces)" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-split-cal-king-2-pieces" class="align-middle capitalize">Split Cal King (2 Pieces)</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-dual-split-king" value="Dual Split King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-dual-split-king" class="align-middle capitalize">Dual Split King</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input @input="addToFilter($event)" type="radio" name="size" id="mob-dual-split-cal-king" value="Dual Split Cal King" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                    <label for="mob-dual-split-cal-king" class="align-middle capitalize">Dual Split Cal King</label><br>
+                  </div>
+                </form>
+              </div>
+              <div class="relative border-t border-secondary mt-4 pt-4">
+                <div onclick="myFunctionFlex('mob_price')" class="flex items-center gap-4">
+                  <span id="mob_priceicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Price</span>
+                </div>
+                <form id="mob_price" class="hidden static justify-between items-center gap-1 mt-5">
+                  <input v-if="selectedPrice.min != minPrice || selectedPrice.max != maxPrice" @click="clearFilter($event)" type="reset" name="price" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                  <input @keyup="addToFilter($event)" type="number" name="price" id="mob-lowest_price" :value="selectedPrice.min" :min="minPrice" :max="maxPrice" class="font-light text-center rounded-full border-primary w-full">
+                  <span>-</span>
+                  <input @keyup="addToFilter($event)" type="number" name="price" id="mob-highest_price" :value="selectedPrice.max" :min="minPrice" :max="maxPrice" class="font-light text-center rounded-full border-primary w-full">
+                </form>
+              </div>
+              <div class="relative border-t border-secondary mt-4 pt-4">
+                <div onclick="myFunctionFlex('mob_comfort-feel')" class="flex items-center gap-4">
+                  <span id="mob_comfort-feelicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Comfort/Feel</span>
+                </div>
+                <form id="mob_comfort-feel" class="hidden flex-col gap-3 mt-5">
+                  <input v-if="selectedComfortFeel != ''" @click="clearFilter($event)" type="reset" name="comfort-feel" value="Clear" class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                  <div class="flex items-center gap-2">
+                      <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="mob-soft" value="soft" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                      <label for="mob-soft" class="align-middle capitalize">Soft</label><br>
+                  </div>
+                    <div class="flex items-center gap-2">
+                      <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="mob-medium" value="medium" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                      <label for="mob-medium" class="align-middle capitalize">Medium</label><br>
+                  </div>
+                  <div class="flex items-center gap-2">
+                      <input @input="addToFilter($event)" type="radio" name="comfort-feel" id="mob-firm" value="firm" class="border-secondary rounded-full focus:ring-0 w-5 h-5">
+                      <label for="mob-firm" class="align-middle capitalize">Firm</label><br>
+                  </div>
+                </form>
+              </div>
+              <div v-if="vendors.length != 0" class="relative border-t border-secondary mt-4 pt-4">
+                <div onclick="myFunctionFlex('mob_brand')" class="flex items-center gap-4">
+                  <span id="mob_brandicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Brand</span>
+                </div>
+                <form id="mob_brand" class="hidden flex-col gap-2 mt-5">
+                  <input v-if="selectedVendors.length != 0" @click="clearFilter($event)" type="reset" name="brand" value="Clear"  class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                  <div v-for="(item, index) in vendors" class="flex items-center gap-2">
+                    <input @input="addToFilter($event, item)" type="checkbox" name="brand" :id="'mob-' + item" :value="item" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                    <label :for="'mob-' + item" class="align-middle capitalize">${ item }</label><br>
+                  </div>
+                </form>
+              </div>
+              <div v-if="types.length != 0" class="relative border-t border-secondary mt-4 pt-4">
+                <div onclick="myFunctionFlex('mob_types')" class="flex items-center gap-4">
+                  <span id="mob_typesicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                  <span class="font-bold">Type</span>
+                </div>
+                <form id="mob_types" class="hidden flex-col gap-2 mt-5">
+                  <input v-if="selectedTypes.length != 0" @click="clearFilter($event)" type="reset" name="type" value="Clear"  class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                  <div v-for="(type, index) in types" class="flex items-center gap-2">
+                      <input @input="addToFilter($event, type)" type="checkbox" name="type" :id="'mob-' + type" :value="type" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                      <label :for="'mob-' + type" class="align-middle capitalize">${ type }</label><br>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-5 mm:col-span-2 mm:grid-cols-2 ts:gap-x-20 ts:gap-y-10 ds:col-span-3 ds:grid-cols-3 ds:gap-7 ds:h-min">
+      <template v-if="selectedShip != '' || selectedSize != '' || selectedPrice.min != minPrice || selectedPrice.max != maxPrice || selectedVendors.length != 0 || selectedTypes.length != 0 || selectedComfortFeel != ''" v-for="(product, index) in products">
+        <div v-if="index <= 5 && includeProductShip(product) && includeProductSize(product) && includeProductPrice(product) && includeProductFeel(product) && includeProductVendor(product) && includeProductTypes(product)">
+          {{ card }}
+        </div>
+      </template>
+      <template v-else v-for="(product, index) in products">
+        <div v-if="index <= 5">
+          {{ card }}
+        </div>
+      </template>
+      {% if show_page_card == true %}
+        {{ page_card }}
+      {% endif %}
+      <template v-if="selectedShip != '' || selectedSize != '' || selectedPrice.min != minPrice || selectedPrice.max != maxPrice || selectedVendors.length != 0 || selectedTypes.length != 0 || selectedComfortFeel != ''" v-for="(product, index) in products">
+        <div v-if="index >= 6 && includeProductShip(product) && includeProductSize(product) && includeProductPrice(product) && includeProductFeel(product) && includeProductVendor(product) && includeProductTypes(product)">
+          {{ card }}
+        </div>
+      </template>
+      <template v-else v-for="(product, index) in products">
+        <div v-if="index >= 6">
+          {{ card }}
+        </div>
+      </template>
+    </div>
+  </div>
+</div>
+
+{% comment %} Collection Description {% endcomment %}
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="bg-white shadow-sp rounded-cl py-6 px-5 ds:py-12 ds:px-10">
+        <h3 class="text-title text-center text-text mb-12 ds:mb-14">{{ collection.title }}</h3>
+        <div class="text-center text-text whitespace-pre-wrap">{{ collection.description }}</div>
+    </div>
+</div>
+
+{% comment %} Store Locator Card {% endcomment %}
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+  <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
+      <div class="flex justify-center items-center gap-4 w-full">
+          <span>{% render 'icons', icon: 'map' %}</span>
+          <span class="text-center ds:text-lg">Experience our personalized service.</span>
+      </div>
+      <div class="button w-max">Find A Store</div>
+  </div>
+  <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="hidden justify-around items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:flex">
+      <span>{% render 'icons', icon: 'map' %}</span>
+      <span class="text-center ds:text-lg">You can get the best of {{ collection.title }} at any of our locations. Experience our personalized service.</span>
+      <div class="button w-max">Find A Store</div>
+  </div>
+</div>
+
+{% comment %} Store Locator Popup {% endcomment %}
+<div id="store-locator-background" onclick="showLocatorPopup('store-locator-popup')" class="fixed z-50 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 backdrop-blur-[2px] bg-gray-600/50 w-screen h-screen"></div>
+<div id="store-locator-popup" class="flex justify-center fixed z-[60] top-12 right-0 transition-all duration-300 ease-in-out invisible opacity-0 w-screen h-max">
+  <div class="w-full mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="relative text-text bg-white shadow-sp rounded-cl w-full mb-8 p-8 ds:mb-10 ds:p-10">
+      <span onclick="showLocatorPopup('store-locator-popup')" title="Delete" class="absolute right-4 top-4 cursor-pointer">{% render 'icons', icon: 'delete' %}</span>
+      <!-- Start Stockist.co widget -->
+      <div data-stockist-widget-tag="u7981">Loading store locator
+      from <a href="https://stockist.co">Stockist store locator</a>...</div>
+      <script>
+      (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;
+      k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);
+      })(document,'script','//stockist.co/embed/v1/widget.min.js');
+      </script>
+      <!-- End Stockist.co widget -->
+    </div>
+  </div>
+</div>
+ 
+{% comment %} Product Capture {% endcomment %}
+{% paginate collection.products by 250 %}
+  {%- capture allProducts -%}
+  [
+    {%- for product in collection.products -%}
+      {
+        "id": {{ product.id }},
+        "handle": {{ product.handle | json }},
+        "title": {{ product.title | json }},
+        "price": {{ product.price | json }},
+        "compare_at_price": {{ product.compare_at_price | json }},
+        "type": {{ product.type | json }},
+        "vendor": {{ product.vendor | json }},
+        "tags": {{ product.tags | json }},
+        "available": {{ product.available | json }},
+        "featured_image": {{ product.featured_image | json }},
+        "variants": [
+          {%- for option in product.options_by_name['Size'].values -%}
+            {{ option | json }},
+          {%- endfor -%}
+        ],
+        "available_variant": {{ product.selected_or_first_available_variant.id | json }}
+      },
+    {%- endfor -%}
+  ]
+  {%- endcapture -%}
+
+  {%- capture lowwestPrice -%}
+    {% for product in collection.products %}
+      {% if forloop.first %}
+        {% assign lowest_price = product.price %}
+      {% endif %}
+      {% assign new_lowest_price = product.price %}
+      {% if new_lowest_price < lowest_price and new_lowest_price != 0 %}
+        {% assign lowest_price = new_lowest_price %}
+      {% endif %}
+    {% endfor %}
+    {{ lowest_price }}
+  {%- endcapture -%}
+
+  {%- capture highestPrice -%}
+    {% for product in collection.products %}
+      {% if forloop.first %}
+        {% assign highest_price = product.price %}
+      {% endif %}
+      {% assign new_highest_price = product.price %}
+      {% if new_highest_price > highest_price and new_highest_price != 0 %}
+        {% assign highest_price = new_highest_price %}
+      {% endif %}
+    {% endfor %}
+    {{ highest_price }}
+  {%- endcapture -%}
+{% endpaginate %}
+
+{% comment %} Vue {% endcomment %}
+<script>
+var { createApp } = Vue;
+const appCollection = createApp({
+    delimiters: ['${', '}'],
+    data() {
+      const
+      products = {{ allProducts }},
+      paginate = "",
+      collection = "",
+      vendors = {{ collection.all_vendors | json }},
+      tags = {{ collection.all_tags | json }},
+      types = {{ collection.all_types | json }},
+      minPrice = {{ lowwestPrice }},
+      maxPrice = {{ highestPrice }},
+      selectedShip = "",
+      selectedSize = "",
+      selectedPrice = {
+          "min": {{ lowwestPrice }},
+          "max": {{ highestPrice }}
+        },
+      selectedVendors = [],
+      selectedTypes = [],
+      selectedTags = [],
+      selectedComfortFeel = ""
+      addingToCart = false;
+
+      return {
+        products,
+        paginate,
+        collection,
+        vendors,
+        tags,
+        types,
+        minPrice,
+        maxPrice,
+        selectedShip,
+        selectedSize,
+        selectedPrice,
+        selectedVendors,
+        selectedTypes,
+        selectedTags,
+        selectedComfortFeel,
+        addingToCart
+      }
+    },
+
+    created() {
+        const formatter = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2, });
+        const formatter2 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0,   useGrouping: false, roundingMode: 'halfEven' });
+        const productArray = this.products;
+        productArray.forEach((item, index) => {
+            item.savePercent = (((item.compare_at_price - item.price) / item.compare_at_price ) * 100).toFixed(0);
+            item.price2 = item.price;
+            item.price = formatter.format((item.price/100));
+            item.compare_at_price = formatter.format((item.compare_at_price/100));
+        });
+        this.products.sort(function(a, b){return b.savePercent - a.savePercent});
+        this.selectedPrice.min = formatter2.format((this.selectedPrice.min/100));
+        this.selectedPrice.max = formatter2.format((this.selectedPrice.max/100));
+        this.minPrice = formatter2.format((this.minPrice/100));
+        this.maxPrice = formatter2.format((this.maxPrice/100));
+    },
+    methods: {
+      //Add to cart funtion
+      addToCart(e, index) {
+        e.preventDefault();
+        e.target.innerHTML = '<div class="animate-spin rounded-full border-[6px] border-t-primary border-b-secondary border-x-secondary h-8 w-8"></div>';
+        this.addingToCart = true;
+        const variantId = this.products[index].available_variant;
+
+        var data = {
+          'items': [{
+            id: variantId,
+            quantity: 1
+          }]
+        };
+        var options = {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        fetch('/cart/add.js', options)
+          .then(response => {
+            if (response.ok) {
+              return response.json()
+            } else {
+              throw new Error(response.status);
+            }
+          })
+          .then(data => {
+            const options = {
+              method: "GET"
+            };
+            fetch("/cart.js", options)
+              .then( response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(response.status);
+                }
+              })
+              .then(data => {
+                const cartData = data;
+                const counter = document.getElementById('cart-counter');
+                const counterMb = document.getElementById('cart-counter-mb');
+                counter.textContent = cartData.item_count;
+                counterMb.textContent = cartData.item_count;
+              })
+              .catch(err => {
+                console.error("Error:", err)
+              });
+            this.addingToCart = false;
+            const mainDiv = document.getElementById('MainContent');
+            mainDiv.insertAdjacentHTML( 'beforeend', `<div id="confirmation-toast" class="flex justify-center items-center gap-2 fixed right-0 left-0 bottom-10 z-[100] text-text bg-white shadow-lp rounded-cl mx-5 p-4 mm:w-max mm:m-auto">
+                                          {% render 'icons', icon: 'blue-rounded-check' %}
+                                          <p>The product has been added to your cart</p>
+                                        </div>`);
+            setTimeout(() => {
+              document.getElementById('confirmation-toast').remove();
+            }, 3000);
+            e.target.innerHTML = 'ADD TO CART';
+          })
+          .catch(error => {
+            console.log(error)
+          });
+      },
+      
+      addToFilter(e, filter) {
+        
+        if (e.target.name == 'shipping') {
+          if (e.target.checked) {
+            this.selectedShip = e.target.value;
+          }
+        }
+
+        if (e.target.name == 'size') {
+          if (e.target.checked) {
+            this.selectedSize = e.target.value;
+          }
+        }
+
+        if (e.target.name == 'price') {
+          if (e.target.id == 'lowest_price' || e.target.id == 'mob-lowest_price' ) {
+            this.selectedPrice.min = e.target.value;
+          }
+          if (e.target.id == 'highest_price' || e.target.id == 'mob-highest_price') {
+            this.selectedPrice.max = e.target.value;
+          }
+        }
+
+        if (e.target.name == "comfort-feel") {
+          if (e.target.checked) {
+            this.selectedComfortFeel = e.target.value;
+          }
+        }
+
+        if (e.target.name == "brand") {
+          if (e.target.checked) {
+            this.selectedVendors.push(filter);
+          } else {
+            const vendorIndex = this.selectedVendors.indexOf(filter);
+            this.selectedVendors.splice(vendorIndex, 1);
+          }
+        }
+
+        if (e.target.name == "type") {
+          if (e.target.checked) {
+            this.selectedTypes.push(filter);
+          } else {
+            const typeIndex = this.selectedTypes.indexOf(filter);
+            this.selectedTypes.splice(typeIndex, 1);
+          }
+        }
+
+        if (e.target.name == "tag") {
+          if (e.target.checked) {
+            this.selectedTags.push(filter);
+          } else {
+            const tagIndex = this.selectedTags.indexOf(filter);
+            this.selectedTags.splice(tagIndex, 1);
+          }
+        }
+      },
+
+      sortBy(e) {
+        if (document.getElementById('sortSelector').value == 'a-z' || document.getElementById('mob_sortSelector').value == 'a-z') {
+          this.products.sort((a, b) => {
+            const nameA = a.title.toUpperCase();
+            const nameB = b.title.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        if (document.getElementById('sortSelector').value == 'z-a' || document.getElementById('mob_sortSelector').value == 'z-a') {
+          this.products.sort((a, b) => {
+            const nameA = a.title.toUpperCase();
+            const nameB = b.title.toUpperCase();
+            if (nameA < nameB) {
+              return 1;
+            }
+            if (nameA > nameB) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+        if (document.getElementById('sortSelector').value == 'price-lth' || document.getElementById('mob_sortSelector').value == 'price-lth') {
+          this.products.sort((a, b) => {
+            let priceA = a.price2;
+            let priceB = b.price2;
+            if (priceA < priceB) {
+              return -1;
+            }
+            if (priceA > priceB) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        if (document.getElementById('sortSelector').value == 'price-htl' || document.getElementById('mob_sortSelector').value == 'price-htl') {
+          this.products.sort((a, b) => {
+            let priceA = a.price2;
+            let priceB = b.price2;
+            if (priceA < priceB) {
+              return 1;
+            }
+            if (priceA > priceB) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+        if (document.getElementById('sortSelector').value == 'discount-lth' || document.getElementById('mob_sortSelector').value == 'discount-lth') {
+          this.products.sort(function(a, b){return a.savePercent - b.savePercent});
+        }
+        if (document.getElementById('sortSelector').value == 'discount-htl' || document.getElementById('mob_sortSelector').value == 'discount-htl') {
+          this.products.sort(function(a, b){return b.savePercent - a.savePercent});
+        }
+      },
+
+      includeProductShip(product) {
+        const ship = this.selectedShip;
+        if (ship != "") {
+          if (product.tags.includes(`${ship}`)) {
+            return true
+          } else {
+            return false
+          }
+        } else {
+          return true
+        }
+      },
+
+      includeProductSize(product) {
+        const size = this.selectedSize;
+        if (size != "") {
+          if (product.variants.includes(`${size}`)) {
+            return true
+          } else {
+            return false
+          }          
+        } else {
+          return true
+        }
+      },
+
+      includeProductPrice(product) {
+          const formatter = new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2, useGrouping: false, roundingMode: 'halfEven' });
+          const minPrice = Number(this.minPrice),
+                maxPrice = Number(this.maxPrice),
+                selectedMin = Number(this.selectedPrice.min),
+                selectedMax = Number(this.selectedPrice.max),
+                productPrice = Number(parseFloat(product.price.replace(/,/g, '')));
+
+          if (selectedMin != minPrice || selectedMax != maxPrice ) {
+            if (productPrice >= selectedMin && productPrice <= selectedMax ) {
+              return true
+            } else {
+              return false
+            }
+          } else {
+            return true
+          }
+      },
+
+      includeProductFeel(product) {
+        const comfort = this.selectedComfortFeel;
+        if (comfort != "") {
+          if (product.tags.includes(`${comfort}`)) {
+            return true
+          } else {
+            return false
+          }          
+        } else {
+          return true
+        }
+      },
+
+      includeProductVendor(product) {
+        const vendors = this.selectedVendors;
+
+        if (vendors.length > 0) {
+          if (vendors.includes(`${product.vendor}`)) {
+            return true
+          } else {
+            return false
+          }
+        } else {
+          return true
+        }        
+      },
+
+      includeProductTypes(product) {
+        const types = this.selectedTypes;
+
+        if (types.length > 0) {
+          if (types.includes(`${product.type}`)) {
+            return true
+          } else {
+            return false
+          }
+        } else {
+          return true
+        }
+      },
+
+      includeProductTags(product) {
+        const tags = this.selectedTags;
+        let ret;
+
+        if (tags.length > 0) {
+          tags.forEach(tag => {
+            if (product.tags.includes(`${tag}`)) {
+             ret = true; 
+            }
+          });
+          return ret
+        } else {
+          return true
+        }
+      },
+
+      clearFilter(e) {
+        if (e.target.name == 'shipping') {
+          this.selectedShip = "";
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'size') {
+          this.selectedSize = "";
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'price') {
+          this.selectedPrice.min = this.minPrice;
+          this.selectedPrice.max = this.maxPrice;
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'comfort-feel') {
+          this.selectedComfortFeel = "";
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'brand') {
+          this.selectedVendors = [];
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'type') {
+          this.selectedTypes = [];
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+
+        if (e.target.name == 'tag') {
+          this.selectedTags = [];
+          document.getElementById(e.target.name).reset();
+          document.getElementById('mob_' + e.target.name).reset();
+        }
+      },
+
+      clearAllFilters() {
+          this.selectedShip = "";
+          document.getElementById('shipping').reset();
+          this.selectedSize = "";
+          document.getElementById('size').reset();
+          this.selectedPrice.min = this.minPrice;
+          this.selectedPrice.max = this.maxPrice;
+          document.getElementById('price').reset();
+          this.selectedComfortFeel = "";
+          document.getElementById('comfort-feel').reset();
+          this.selectedVendors = [];
+          document.getElementById('brand').reset();
+          this.selectedTypes = [];
+          document.getElementById('type').reset();
+      }
+    }
+});
+appCollection.mount('#collection-page')
+</script>
+
+{% comment %} Js {% endcomment %}
+<script>
+  function myFunctionFlex(id) {
+      var x = document.getElementById(id);
+      var y = document.getElementById(id + 'icon');
+      if (x.classList.contains('hidden')) {
+          x.classList.remove('hidden');
+          x.classList.add('flex');
+      } else {
+          x.classList.remove('flex');
+          x.classList.add('hidden');
+      }
+      if (y.classList.contains('rotate-0')) {
+          y.classList.remove('rotate-0');
+          y.classList.add('rotate-180');
+      } else {
+          y.classList.remove('rotate-180');
+          y.classList.add('rotate-0');
+      }
+  }
+  function myFunctionFilters(id) {
+      var x = document.getElementById(id);
+      const y = document.getElementById('extDiv');
+      const z = document.getElementById('ext_filters');
+      if (x.classList.contains('invisible')) {
+          x.classList.remove('invisible');
+          x.classList.add('visible');
+          x.classList.remove('opacity-0');
+          x.classList.add('opacity-100');
+          z.classList.remove('invisible');
+          z.classList.add('visible');
+          z.classList.remove('opacity-0');
+          z.classList.add('opacity-100');
+      } else {
+          x.classList.remove('visible');
+          x.classList.add('invisible');
+          x.classList.remove('opacity-100');
+          x.classList.add('opacity-0');
+          z.classList.remove('visible');
+          z.classList.add('invisible');
+          z.classList.remove('opacity-100');
+          z.classList.add('opacity-0');
+      }
+      if (y.classList.contains('z-30')) {
+          y.classList.remove('z-30');
+          y.classList.add('z-50');
+      } else {
+          y.classList.remove('z-50');
+          y.classList.add('z-30');
+      }
+  }
+  function showLocatorPopup(id) {
+      var x = document.getElementById(id);
+      const y = document.getElementById('store-locator-background');
+      if (x.classList.contains('invisible')) {
+          x.classList.remove('invisible');
+          x.classList.add('visible');
+          x.classList.remove('opacity-0');
+          x.classList.add('opacity-100');
+          y.classList.remove('invisible');
+          y.classList.add('visible');
+          y.classList.remove('opacity-0');
+          y.classList.add('opacity-100');
+      } else {
+          x.classList.remove('visible');
+          x.classList.add('invisible');
+          x.classList.remove('opacity-100');
+          x.classList.add('opacity-0');
+          y.classList.remove('visible');
+          y.classList.add('invisible');
+          y.classList.remove('opacity-100');
+          y.classList.add('opacity-0');
+      }
+  }
+</script>
+
+
+{% schema %}
+  {
+    "name": "Collection Nectar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "button",
+        "label": "Show 'Add to Cart' Button",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_page_card",
+        "label": "Show section with page card",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "brand1",
+        "label": "Page Card First Brand Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Page Card Middle Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand2",
+        "label": "Page Card Second Brand Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Page Card Heading"
+      },        
+      {
+        "type": "text",
+        "id": "pre_heading",
+        "label": "Page Card Pre-Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Page Card Content",
+        "default": "<p>Content</p>"
+      },
+      {
+        "type": "text",
+        "id": "page_button",
+        "label": "Page Card Button",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "page_button_url",
+        "label": "Page Card Button URL"
+      }
+    ]
+  }
+{% endschema %}

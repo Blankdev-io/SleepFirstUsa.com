@@ -1,0 +1,386 @@
+{% liquid 
+    assign introduction = section.settings.introduction
+    assign recap = section.settings.recap
+    assign posts_heading = section.settings.posts_heading
+%}
+
+<div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"> 
+    <div id="article-introduction" class="py-8 ts:py-20">{{ introduction }}</div>
+    <div class="flex flex-col ds:flex-row ds:justify-between">
+        <article id="article-content" class="ds:w-[700px] dm:w-[750px] dl:w-[800px]">
+            {% for block in section.blocks %}
+                {% if block.type == "section" %}
+                    {% liquid
+                        assign index_div = block.settings.index_div
+                        assign divider_color = block.settings.divider_color
+                        assign top = block.settings.top
+                        assign bottom = block.settings.bottom
+                    %}
+                    <div id="#{{ index_div | handleize }}" class="w-full h-1 {% if top == true %}mt-7 ds:mt-10{% endif %} {% if bottom == true %}mb-7 ds:mb-10{% endif %}" style="background: {{ divider_color }};"></div>
+                {% endif %}
+                {% if block.type == "menu" %}
+                    <div class="flex flex-col gap-4 ts:gap-6">
+                        {% for block in section.blocks %}
+                            {% if block.type == "section" %}
+                                {% liquid 
+                                    assign index_div = block.settings.index_div
+                                %}
+                                {% if index_div != blank %}
+                                    <a href="#{{ index_div | handleize }}" title="{{ index_div }}" class="!font-bold !text-text max-w-max ts:text-2xl">{{ index_div }}</a>
+                                {% endif %}
+                            {% elsif block.type == "image" %}
+                                {% liquid 
+                                    assign index_img = block.settings.index_img
+                                %}
+                                {% if index_img != blank %}
+                                    <a href="#{{ index_img | handleize }}" title="{{ index_img }}" class="!font-bold !text-text max-w-max ts:text-2xl">{{ index_img }}</a>
+                                {% endif %}
+                            {% elsif block.type == "text" %}
+                                {% liquid 
+                                    assign index_par = block.settings.index_par
+                                %}
+                                {% if index_par != blank %}
+                                    <a href="#{{ index_par | handleize }}" title="{{ index_par }}" class="!font-bold !text-text max-w-max ts:text-2xl">{{ index_par }}</a>
+                                {% endif %}
+                            {% elsif block.type == "slide" %}
+                                {% liquid 
+                                    assign index_fra = block.settings.index_fra
+                                %}
+                                {% if index_fra != blank %}
+                                    <a href="#{{ index_fra | handleize }}" title="{{ index_fra }}" class="!font-bold !text-text max-w-max ts:text-2xl">{{ index_fra }}</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if block.type == "image" %}
+                    {% liquid
+                        assign index_img = block.settings.index_img
+                        assign image = block.settings.image
+                        assign title = block.settings.title
+                        assign img_color = block.settings.img_color
+                        assign top_i = block.settings.top_i
+                        assign bottom_i = block.settings.bottom_i
+                        assign size = block.settings.size
+                    %}
+                    <div id="{{ index_img | handleize }}" class="relative w-full {% if size == true %}h-auto{% else %}h-[416px]{% endif %} {% if top_i == true %}mt-7 ds:mt-10{% endif %} {% if bottom_i == true %}mb-7 ds:mb-10{% endif %}">
+                        <h2 class="absolute bottom-7 left-5 z-20 font-bold text-[32px] text-white border-l-4 border-white pl-4 ts:bottom-12 ts:left-12 ts:!text-[48px] ds:w-3/4">{{ title }}</h2>
+                        <div class="absolute w-full h-full bg-gradient-to-t" style="--tw-gradient-from: {{ img_color }}; --tw-gradient-to: rgb(59 130 246 / 0); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);"></div>
+                        <img class="object-cover w-full h-full" src="{{ image | image_url }}" alt="{{ image.alt }}" loading="lazy">
+                    </div>
+                {% endif %}
+                {% if block.type == "text" %}
+                    {% liquid
+                        assign index_par = block.settings.index_par
+                        assign content = block.settings.content
+                    %}
+                    <span id="{{ index_par | handleize }}"></span>
+                    {{ content }}
+                {% endif %}
+                {% if block.type == "slide" %}
+                    {% liquid
+                        assign index_fra = block.settings.index_fra
+                        assign icon = block.settings.icon
+                        assign frameText = block.settings.frameText
+                        assign top_f = block.settings.top_f
+                        assign bottom_f = block.settings.bottom_f
+                    %}
+                    <div id="{{ index_fra | handleize }}" class="flex flex-col items-center gap-8 text-center text-primary p-[10px] {% if top_f == true %}mt-7 ds:mt-10{% endif %} {% if bottom_f == true %}mb-7 ds:mb-10{% endif %} ds:flex-row ds:text-left">
+                        <img class="h-[140px]" src="{{ icon }}" alt="Icon" title="{{ frameText }}" loading="lazy">
+                        <p class="text-[24px] ds:text-[32px]">{{ frameText }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="block w-full py-8 ds:hidden">{{ recap }}</div>
+        </article>
+        <div class="ds:w-[210px] dm:w-[250px] dl:w-[300px]">
+            <h4 class="font-bold text-2xl text-center text-text mb-8">{{ posts_heading }}</h4>
+            <div class="grid gap-8 mb-14 mm:grid-cols-2 mm:gap-5 ts:gap-x-20 ts:gap-y-10 tl:grid-cols-4 tl:gap-4 ds:grid-cols-1 ds:gap-8 ds:mb-20">
+                {% for article in blog.articles limit: 4 %}
+                    {% liquid
+                        assign image_art = article.image
+                        assign title_art = article.title
+                        assign author_art = article.author
+                        assign url_art = article.url
+                        assign totalWords_art = article.content | split: ' '
+                        assign totalReadTime_art = totalWords_art.size | divided_by: 270.0
+                    %}
+                    <div class="grid grid-rows-2 rounded-cl shadow-sp h-[340px] tl:w-auto">
+                        <a href="{{ url_art }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ image_art | image_url: width: 260 }}">
+                            <source media="(min-width: 768px)" srcset="{{ image_art | image_url: width: 380 }}">
+                            <source media="(min-width: 480px)" srcset="{{ image_art | image_url: width: 360 }}">
+                            <img class="object-cover rounded-t-cl w-full h-full" src="{{ image_art | image_url: width: 450 }}" title="{{ title_art }}" alt="{{ image_art.alt }}" loading="lazy">
+                        </picture></a>
+                        <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-3">
+                            <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a href="{{ url_art }}" title="{{ title_art }}">{{ title_art }}</a></h3>
+                            <div class="grid grid-cols-2 items-start mm:items-center">
+                                <p class="text-xs text-text">by {{ author_art }}</p>
+                                <p class="text-xs text-right">{{ totalReadTime_art | ceil }} min read</p>
+                            </div>
+                            <a class="font-bold text-base text-primary self-center" href="{{ url_art }}" title="{{ title_art }}">Read More</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <h4 class="font-bold text-2xl text-center text-text mb-8">{{ sales_heading }}</h4>
+            {% if blog.metafields.custom.sale_banner_images != blank %}    
+                <div class="flex flex-col gap-8 mb-14 ts:flex-row ts:gap-4 ds:flex-col ds:gap-8 ds:mb-20">
+                    {% for url in blog.metafields.custom.sale_banner_urls.value %}
+                        {% if forloop.index == 1 %}
+                            <div class="w-full ml:w-1/3 ds:w-full">
+                                <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                    {% for imag in blog.metafields.custom.sale_banner_images.value %}
+                                        {% if forloop.index == 1 %}
+                                            <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                        {% endif %}
+                                    {% endfor %}
+                                </picture></a>
+                            </div>
+                        {% elsif forloop.index == 2 %}
+                            <div class="w-full ml:w-1/3 ds:w-full">
+                                <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                    {% for imag in blog.metafields.custom.sale_banner_images.value %}
+                                        {% if forloop.index == 2 %}
+                                            <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                        {% endif %}
+                                    {% endfor %}
+                                </picture></a>
+                            </div>
+                        {% elsif forloop.index == 3 %}
+                            <div class="w-full ml:w-1/3 ds:w-full">
+                                <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
+                                    {% for imag in blog.metafields.custom.sale_banner_images.value %}
+                                        {% if forloop.index == 3 %}
+                                            <img class="object-cover rounded-cl w-full h-full" src="{{ imag | image_url: width: 800 }}" alt="{{ imag.alt }}" title="{{ imag.title }}">
+                                        {% endif %}
+                                    {% endfor %}
+                                </picture></a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="article-recap" class="hidden ds:block ds:py-20">{{ recap }}</div>
+</div>
+
+<style>
+    #article-content h1,
+    #article-content h2,
+    #article-content h3,
+    #article-content h4,
+    #article-content h5,
+    #article-content h6 {
+        font-weight: bold;
+    }
+    #article-content h1 {
+        font-size: 48px;
+    }
+    #article-content h2 {
+        font-size: 32px;
+    }
+    #article-content h3 {
+        font-size: 24px;
+    }
+    #article-content h4 {
+        font-size: 20px;
+    }
+    #article-content h5 {
+        font-size: 18px;
+    }
+    #article-content h6 {
+        font-size: 16px;
+    }
+    #article-content ol,
+    #article-introduction ol,
+    #article-recap ol,
+    #article-content ul,
+    #article-introduction ul,
+    #article-recap ul,
+    #article-content menu,
+    #article-introduction menu,
+    #article-recap menu {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+    #article-content a, 
+    #article-introduction a, 
+    #article-recap a {
+        color: #384FAE;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    #article-content a:hover, 
+    #article-introduction a:hover, 
+    #article-recap a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+{% schema %}
+{
+    "name": "Article Content",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "introduction",
+            "label": "Introduction"
+        },
+        {
+            "type": "richtext",
+            "id": "recap",
+            "label": "Recap"
+        },
+        {
+            "type": "text",
+            "id": "posts_heading",
+            "label": "Related Posts Heading"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Divider",
+            "type": "section",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "index_div",
+                    "label": "Index ID"
+                },
+                {
+                    "type": "color",
+                    "id": "divider_color",
+                    "label": "Divider Color"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "top",
+                    "label": "Margin Top",
+                    "default": true,
+                    "info": "Add margin above the section (40px on Desktop and 28px on Mobile)."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "bottom",
+                    "label": "Margin Bottom",
+                    "default": true,
+                    "info": "Add margin under the section (40px on Desktop and 28px on Mobile)."
+                }
+            ]
+        },
+        {
+            "name": "Image",
+            "type": "image",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "index_img",
+                    "label": "Index ID"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Section Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Section Title"
+                },
+                {
+                    "type": "color",
+                    "id": "img_color",
+                    "label": "Image Gradient Color"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "top_i",
+                    "label": "Margin Top",
+                    "default": true,
+                    "info": "Add margin above the section (40px on Desktop and 28px on Mobile)."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "bottom_i",
+                    "label": "Margin Bottom",
+                    "default": true,
+                    "info": "Add margin under the section (40px on Desktop and 28px on Mobile)."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "size",
+                    "label": "Original size",
+                    "default": false,
+                    "info": "Removes the default image size setting and uses the original image size."
+                }
+            ]
+        },
+        {
+            "name": "Paragraph",
+            "type": "text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "index_par",
+                    "label": "Index ID"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Paragraph"
+                }
+            ]
+        },
+        {
+            "name": "Frame",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "index_fra",
+                    "label": "Index ID"
+                },
+                {
+                    "type": "url",
+                    "id": "icon",
+                    "label": "Frame Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "frameText",
+                    "label": "Frame Text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "top_f",
+                    "label": "Margin Top",
+                    "default": true,
+                    "info": "Add margin above the section (40px on Desktop and 28px on Mobile)."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "bottom_f",
+                    "label": "Margin Bottom",
+                    "default": true,
+                    "info": "Add margin under the section (40px on Desktop and 28px on Mobile)."
+                }
+            ]
+        },
+        {
+            "name": "Index",
+            "type": "menu",
+            "settings": [
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Article Content"
+        }
+    ]
+}
+{% endschema %}

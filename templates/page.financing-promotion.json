@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "text": {
+      "type": "text",
+      "disabled": true,
+      "settings": {
+        "pre_heading": "Sleep First",
+        "heading": "Furnish your space with an easy Lease-to-Own program.",
+        "content": "<p>Apply online for no-credit lease to own purchase options. It's a fast and secure process!<br\/><br\/>If your application has been approved, simply print your approval confirmation and bring it to any Sleep First store location.<\/p>",
+        "font_size": 16,
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "double": {
+      "type": "double",
+      "settings": {
+        "heading": "Furnish your space with an easy Lease-to-Own program.",
+        "hierarchy": "h2",
+        "content": "<p>Buying a bed shouldn't be something you lose sleep over.<br\/><br\/>That's why we offer a NO CREDIT NEEDED lease-to-own option powered by Progressive Leasing™. From 23rd to 29th May.<br\/><\/p>",
+        "button": "APPLY",
+        "url": "https:\/\/approve.me\/s\/sleepfirst\/67253#\/marketing",
+        "image": "shopify:\/\/shop_images\/Progressive_Leasing.png",
+        "order": false
+      }
+    },
+    "1a77161b-2b77-456d-85c8-c7338697b8e5": {
+      "type": "steps",
+      "settings": {
+        "heading": "Key Benefits",
+        "hierarchy": "h2",
+        "sub": "",
+        "image1": "shopify:\/\/shop_images\/credit-card.png",
+        "heading1": "No Credit Needed",
+        "content1": "<p>There's no credit needed to apply for the lease-to-own purchase option.<\/p>",
+        "image2": "shopify:\/\/shop_images\/discount-check.png",
+        "heading2": "Instant Decision",
+        "content2": "<p>Apply now for an instant decision. Approvals up to $3000.<\/p>",
+        "image3": "shopify:\/\/shop_images\/cash.png",
+        "heading3": "Flexible Payments",
+        "content3": "<p>Simple weekly, biweekly or monthly payment options make it simple to use.<\/p>",
+        "image4": "shopify:\/\/shop_images\/calendar-star.png",
+        "heading4": "90-Day Option",
+        "content4": "<p>Save money when you pay off your lease early using our 90-day and early purchase options.<\/p><p><\/p>"
+      }
+    },
+    "3399b8da-d4be-4f9c-9ccf-61b5145395d4": {
+      "type": "image-with-title",
+      "settings": {
+        "heading": "",
+        "hierarchy": "h2",
+        "sub": "",
+        "imageDesk": "shopify:\/\/shop_images\/Prog_NMG_retailers_flyer_page2_-_RA23-2702_Progressive_Leasing_Exclusive_1_Initial_Payment_Labor_Day_Promotion_072523A_NMG_Promo_pages-to-jpg-0001.jpg",
+        "imageMob": "shopify:\/\/shop_images\/Prog_NMG_retailers_flyer_page2_-_RA23-2702_Progressive_Leasing_Exclusive_1_Initial_Payment_Labor_Day_Promotion_072523A_NMG_Promo_pages-to-jpg-0001.jpg",
+        "url": ""
+      }
+    },
+    "cb159133-0a2e-4c80-b04c-a224aa69a6ae": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "",
+        "heading": "Purchase In-Store",
+        "content": "<p>Find your nearest store<\/p>",
+        "font_size": 24,
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "f92d86de-4a74-46e2-869d-a29effbd610f": {
+      "type": "html",
+      "settings": {
+        "custom_html": "<!-- Start Stockist.co widget -->\n        <div data-stockist-widget-tag=\"u7981\">Loading store locator\n        from <a href=\"https:\/\/stockist.co\">Stockist store locator<\/a>...<\/div>\n        <script>\n        (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n        k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n        })(document,'script','\/\/stockist.co\/embed\/v1\/widget.min.js');\n        <\/script>\n        <!-- End Stockist.co widget -->"
+      }
+    },
+    "460c66ad-c493-41c5-87c2-00dbbb9a9e25": {
+      "type": "faq-new",
+      "blocks": {
+        "d5b2464e-d232-49cb-a1b3-c2ef3080d00c": {
+          "type": "slide",
+          "settings": {
+            "question": "What is lease-to-own purchase program?",
+            "answer": "<p>Lease-to-own is a convenient way to get the items you want now – without a big upfront payment or a long-term commitment. Progressive Leasing offers a great selection of retailers, affordable payments and flexible choices on how to purchase your items.<\/p>"
+          }
+        },
+        "f169b4e9-bc3c-4dc0-852a-df5c36d447f0": {
+          "type": "slide",
+          "settings": {
+            "question": "What do I need to apply and how long does my approval last?",
+            "answer": "<p>You must be 18 years or older (19 in AL), have a valid Social Security Number or ITIN, routing and account numbers for an open and active checking account, and a credit or debit card.<br\/><br\/>Your approval is valid for 90 days. If you have not signed a lease-to-own agreement within 90 days, your approval expires, and you can reapply with Progressive Leasing. At some retailers, if you do not sign your lease-to-own agreement that day, the order is cancelled. However, you can still create a new order if it is within the 90 days of your original approval.<\/p>"
+          }
+        },
+        "64c9806b-fa24-4f37-b94b-521cb4445571": {
+          "type": "slide",
+          "settings": {
+            "question": "Who do I contact if I have a question about my lease?",
+            "answer": "<p>Contact a Progressive Leasing customer service representative at (877) 898-1970. Customer Service agents are available Monday through Friday from 10 a.m. to 7 p.m. (EST), Saturdays from 10 a.m. to 6 p.m. (EST) and closed Sunday. You may also access your account online via the customer portal, 24 hours a day 7 days a week at: <a href=\"https:\/\/myaccount.progleasing.com\/\" target=\"_blank\">https:\/\/myaccount.progleasing.com\/<\/a>.<\/p>"
+          }
+        },
+        "a3bd65a0-3ba4-4453-a170-69282c0c0cad": {
+          "type": "slide",
+          "settings": {
+            "question": "What if I can no longer afford my payments and can I cancel my lease?",
+            "answer": "<p>We understand that unexpected situations come up that may prevent you from continue to lease-to-own your merchandise. If you find yourself unable to continue with your lease-to-own agreement, please feel free to call Customer Service to discuss your options. You can cancel your lease at any time. You have the right to return the items to Progressive Leasing without additional charge or penalty, and you will owe nothing further except unpaid lease-to-own costs. To cancel your lease call us at <a href=\"tel:+18778981970\" title=\"tel:+18778981970\">(877) 898-1970<\/a>.<\/p>"
+          }
+        },
+        "47066cfe-b92f-4047-834f-4af645dd8861": {
+          "type": "slide",
+          "settings": {
+            "question": "Where can I access my lease agreement and how do I make payments?",
+            "answer": "<p>Full terms are in your lease-to-own agreement, which will be mailed and emailed to you. Your lease-to-own agreement is also available at <a href=\"https:\/\/myaccount.progleasing.com\/\" target=\"_blank\">https:\/\/myaccount.progleasing.com\/<\/a>. Copies sent are computer-generated and include a digital signature.<br\/><br\/>During you lease signing, you agree for payments to be deducted automatically from your bank account and\/or charged to your card you provided during the application process. Charges will appear on your statement as Progressive Leasing or Prog Lease, not the store where you selected your items.<\/p>"
+          }
+        },
+        "68633de2-1a8a-4a4d-a1e5-8ea58fcec40e": {
+          "type": "slide",
+          "settings": {
+            "question": "What is meant by “No Credit Needed”?",
+            "answer": "<p>“No Credit Needed” means that you don’t necessarily need to have credit history or a strong credit score to be approved for lease-to-own. We do check credit bureau reports; however, we look at many other data points to make a final decision, and we regularly approve customers with less than perfect credit or very little credit history.<br\/><br\/><em>Progressive Leasing obtains information from credit bureaus. Not all applicants are approved.<\/em><\/p>"
+          }
+        },
+        "ba1b58e4-d4a5-4bc6-8f6c-e6f9a2191651": {
+          "type": "slide",
+          "settings": {
+            "question": "Does Progressive report to credit bureaus? Can I build up my credit by doing a successful lease?",
+            "answer": "<p>No. We do not currently report to credit bureaus. Progressive Leasing provides a lease-to-own purchase program, not credit.<\/p>"
+          }
+        },
+        "b5c36094-ef79-49cd-aef0-3ca198056d4b": {
+          "type": "slide",
+          "settings": {
+            "question": "What if I need to change my payments or my payday changes?",
+            "answer": "<p>We are happy to work with you to find a payment schedule that works. If you need to discuss potential changes to your payments, please call us at least three business days before your next scheduled payment.<\/p>"
+          }
+        },
+        "09fbd0f8-e76c-43fb-92d2-64da25d69c85": {
+          "type": "slide",
+          "settings": {
+            "question": "Are returns allowed?",
+            "answer": "<p>To return your item, contact Progressive Leasing customer service at <a href=\"tel:+18778981970\" title=\"tel:+18778981970\">(877) 898-1970<\/a>. Progressive will evaluate the product to determine the proper course of action. The item could be returned through the retailer you select or sent directly to Progressive. You can cancel your lease at any time. You have the right to return the items to Progressive Leasing without additional charge or penalty, and you will owe nothing further except unpaid lease-to-own costs. To cancel your lease call us at <a href=\"tel:+18778981970\" title=\"tel:+18778981970\">(877) 898-1970<\/a>.<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d5b2464e-d232-49cb-a1b3-c2ef3080d00c",
+        "f169b4e9-bc3c-4dc0-852a-df5c36d447f0",
+        "64c9806b-fa24-4f37-b94b-521cb4445571",
+        "a3bd65a0-3ba4-4453-a170-69282c0c0cad",
+        "47066cfe-b92f-4047-834f-4af645dd8861",
+        "68633de2-1a8a-4a4d-a1e5-8ea58fcec40e",
+        "ba1b58e4-d4a5-4bc6-8f6c-e6f9a2191651",
+        "b5c36094-ef79-49cd-aef0-3ca198056d4b",
+        "09fbd0f8-e76c-43fb-92d2-64da25d69c85"
+      ],
+      "settings": {
+        "heading": "Financing FAQs",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    },
+    "75c77d12-5e3d-4a5f-90bb-75d8692109d5": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "",
+        "heading": "Starting August 30th",
+        "content": "<p>No credit needed!<\/p><p><\/p>",
+        "font_size": 24,
+        "button1": "APPLY",
+        "url1": "https:\/\/approve.me\/s\/sleepfirst\/67253#\/marketing",
+        "button2": "",
+        "url2": "",
+        "button3": "",
+        "url3": ""
+      }
+    }
+  },
+  "order": [
+    "text",
+    "double",
+    "1a77161b-2b77-456d-85c8-c7338697b8e5",
+    "3399b8da-d4be-4f9c-9ccf-61b5145395d4",
+    "cb159133-0a2e-4c80-b04c-a224aa69a6ae",
+    "f92d86de-4a74-46e2-869d-a29effbd610f",
+    "460c66ad-c493-41c5-87c2-00dbbb9a9e25",
+    "75c77d12-5e3d-4a5f-90bb-75d8692109d5"
+  ]
+}

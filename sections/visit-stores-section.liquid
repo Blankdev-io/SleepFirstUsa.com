@@ -1,0 +1,137 @@
+<div class="w-[1440px] h-[656px]" style="max-width: 1200px;">
+  <div class="w-[1200px] h-[656px] left-[120px] top-0">
+    <div class="w-[1200px] h-[656px] left-[-1px] top-[-1px]"></div>
+    <div class="w-[1200px] h-10 left-0 top-0">
+      <div class="w-[1200px] h-10 left-[-1px] top-[-1px]"></div>
+      <p class="w-[321px] left-[440px] top-[-7px] text-[40px] text-center text-[#231f20]">
+        Visit Our Stores
+      </p>
+    </div>
+    <div class="w-[1200px] h-[600px] left-0 top-14">
+      {% for block in section.blocks %}
+        <div class="w-[379px] h-[600px] left-0 top-0">
+          <div class="w-[379px] h-[300px] left-0 top-[300px]">
+            <div
+              class="w-[379px] h-[300px] left-[-1px] top-[-1px] rounded-bl-[20px] rounded-br-[20px]"
+            ></div>
+            <div class="w-[347px] h-9 left-4 top-[43px]">
+              <div class="w-[347px] h-9 left-[-1px] top-[-1px]"></div>
+              <div class="w-[347px] h-9 left-0 top-0">
+                <div class="w-[347px] h-9 left-[-1px] top-[-1px]"></div>
+                <p class="w-[229px] left-[59px] top-[-3px] text-3xl text-center text-black">
+                  {{ block.settings.store_title }}
+                </p>
+              </div>
+            </div>
+            <div class="w-[347px] h-[70px] left-4 top-[204px]">
+              <div class="w-[347px] h-[70px] left-[-1px] top-[-1px]"></div>
+              <div class="w-[81px] h-6 left-[133px] top-0">
+                <div class="w-[81px] h-6 left-[-1px] top-[-1px]"></div>
+                <p class="w-[81px] left-0 top-0 text-[15px] text-center text-black">
+                  Click to call:
+                </p>
+              </div>
+              <div class="w-[231px] h-[42px] left-[58px] top-7">
+                <div
+                  class="w-[231px] h-[42px] left-[-1px] top-[-1px] rounded-full border border-[#384fae]"
+                ></div>
+                <svg
+                  width="16"
+                  height="32"
+                  viewBox="0 0 16 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-8 left-[17px] top-[5px]"
+                  preserveAspectRatio="none"
+                >
+                  <g clip-path="url(#clip0_1_463)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.83777 9.16189L6.33903 11.6685C6.64899 11.9793 6.64921 12.4664 6.33952 12.7774L5.1304 13.992C5.88961 16.1841 7.58746 17.9379 9.73928 18.7672L9.98022 18.8554L11.1263 17.7042C11.4483 17.3808 11.9848 17.3668 12.325 17.6729L14.8262 20.1795C15.1362 20.4903 15.1364 20.9774 14.8267 21.2885L14.2047 21.9133C13.0687 23.0544 11.3386 23.376 9.81919 22.7286C7.6713 21.8133 5.93816 20.6946 4.61976 19.3725C3.30135 18.0503 2.18529 16.3119 1.27157 14.1569C0.651022 12.6934 0.920176 11.0344 1.94777 9.8944L2.08016 9.75466L2.63916 9.19315C2.96107 8.86978 3.49771 8.85579 3.83777 9.16189Z"
+                      stroke="#384FAE"
+                      stroke-width="1.40625"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_463">
+                      <rect width="16" height="16" fill="white" transform="translate(0 8)"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div class="w-[173px] h-8 left-[41px] top-[5px]">
+                  <div class="w-[173px] h-8 left-[-1px] top-[-1px]"></div>
+                  <p class="w-[173px] left-0 top-0 text-[23px] text-center text-black">
+                    {{ block.settings.store_number }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-[347px] h-[84px] left-4 top-[108px]">
+              <div class="w-[347px] h-[84px] left-[-1px] top-[-1px]"></div>
+              <div class="w-[347px] h-[84px] left-0 top-0">
+                <div class="w-[347px] h-[84px] left-[-1px] top-[-1px]"></div>
+                {{ block.settings.store_content }}
+              </div>
+            </div>
+          </div>
+          <div class="w-[379px] h-[300px] left-0 top-0">
+            <div class="w-[379px] h-[300px] left-[-1px] top-[-1px]"></div>
+            <div class="w-[379px] h-[300px] left-0 top-0">
+              <div class="w-[379px] h-[300px] left-[-1px] top-[-1px]"></div>
+              <img
+                src="{{ block.settings.store_image | img_url: '400x'}}"
+                class="w-[379px] h-[300px] left-[-1px] top-[-1px] rounded-tl-[20px] rounded-tr-[20px] object-cover"
+                style="box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);"
+              />
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Visit Stores",
+    "settings": [
+      
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Store",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Page Url"
+          },
+          {
+            "type": "text",
+            "id": "store_title",
+            "label": "Store Title"
+          },
+          {
+            "type": "richtext",
+            "id": "store_content",
+            "label": "Store Content"
+          },
+          {
+            "type": "text",
+            "id": "store_number",
+            "label": "Store Number"
+          },
+          {
+            "type": "image_picker",
+            "id": "store_image",
+            "label": "Store Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

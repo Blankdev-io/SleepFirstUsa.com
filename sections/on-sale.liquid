@@ -1,0 +1,55 @@
+{% assign heading = section.settings.heading %}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <h1 class="text-title text-center text-text mb-8 ds:mb-10">{{ heading }}</h1>
+    <div class="flex flex-wrap justify-center gap-x-3 gap-y-6 mb-8 mm:gap-x-4 mm:gap-y-9 ds:gap-x-8 ds:gap-y-12 ds:mb-10">
+        {% for block in section.blocks %}
+            {% liquid 
+                assign brand = block.settings.brand
+                assign url = block.settings.url
+            %}
+            <a href="{{ url }}" title="{{ brand }}">
+                <span class="text-text bg-white shadow-sp rounded-cl px-4 py-2 mm:px-8 mm:py-3 ds:py-4">{{ brand }}</span>
+            </a>           
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "On Sale Title",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        }
+    ],
+    "max_blocks": 18,
+    "blocks": [
+        {
+            "name": "Brands",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "brand",
+                    "label": "Brand Name"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Brand Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "On Sale Title"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,58 @@
+{% liquid
+    assign title = section.settings.title
+    assign content = section.settings.content
+    assign button = section.settings.button
+    assign message = section.settings.message
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-text bg-white shadow-sp rounded-cl h-auto py-10 px-4 ds:py-12 ds:px-10">
+        <h1 class="text-title mb-12">{{ title }}</h1>
+        <div class="mb-10">{{ content }}</div>
+        {% form 'contact' %}
+            {{ form.errors | default_errors }}
+            <div class="flex flex-col gap-4 mb-10 tl:w-1/2">
+                <input type="text" name="contact[title]" id="title" value="Foundraising Contact Form" class="hidden border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <input type="text" name="contact[name]" id="name" placeholder="Name" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <input type="email" name="contact[email]" id="email" placeholder="Email Address" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <input type="tel" name="contact[phone]" id="phone" placeholder="Phone Number" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <textarea name="contact[body]" id="message" rows="2" placeholder="Please briefly describe your fundraising goals" class="border-[0.5px] border-secondary rounded-cl px-4 py-2"></textarea>
+                <input type="submit" value="{{ button }}" class="button self-start cursor-pointer">
+            </div>
+        {% if posted_successfully? %}
+        <div>{{ message }}</div>
+        {% endif %}
+        {% endform %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Contact",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "type": "richtext",
+            "id": "message",
+            "label": "Final Message",
+            "default": "<p>Final Message</p>"
+        }
+    ]
+}
+{% endschema %}

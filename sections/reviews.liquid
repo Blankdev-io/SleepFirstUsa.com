@@ -1,0 +1,104 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign left_logo = section.settings.left_logo
+    assign principal_logo = section.settings.principal_logo
+    assign right_logo = section.settings.right_logo
+%}
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="flex justify-center mb-4 ds:mb-6">
+        <img src="{{ left_logo | image_url: width: 100 }}" class="self-end w-12 mm:w-20 ds:w-[86px]" alt="{{ left_logo.alt }}" loading="lazy">
+        <img src="{{ principal_logo | image_url: width: 200 }}" class="w-32 mx-5 mm:w-44 ds:w-52 ds:mx-7" alt="{{ principal_logo.alt }}" loading="lazy">
+        <img src="{{ right_logo | image_url: width: 100 }}" class="self-end w-12 mm:w-20 ds:w-[86px]" alt="{{ right_logo.alt }}" loading="lazy">
+    </div>
+    <h2 class="text-title text-center text-text mb-4">{{ heading }}</h2>
+    <div class="flex justify-center mb-4">
+        {% render 'five-sharp-stars.svg' %}
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide grid relative h-full max-w-[375px] pt-10">
+                <div class="flex flex-col justify-between self-end text-sm text-text bg-white shadow-sp rounded-cl h-full px-6 pb-6 pt-12 mm:text-base">
+                    <p class="mb-2">“Had an amazing experience shopping at Sleep First! A local company with great selection of brands. One stop shop. The sales team is amazing, very helpful throughout the whole process, no pressure at all. Highly recommend!”</p>
+                    <div>
+                        <p class="font-semibold text-right">Maria & Jose Garcia</p>
+                        <p class="font-light text-right">Longview, Texas</p>
+                    </div>
+                </div>
+                <img class="absolute left-6" src="{{ 'review-MariaAndJose.png' | asset_url }}" alt="Couple" loading="lazy">
+            </div>
+            <div class="swiper-slide grid relative h-full max-w-[375px] pt-10">
+                <div class="flex flex-col justify-between self-end text-sm text-text bg-white shadow-sp rounded-cl h-full px-6 pb-6 pt-12 mm:text-base">
+                    <p class="mb-2">“Customer service is the only reason I ever bother to leave reviews. This place was super helpful, patient, and just overall really nice. I definitely will be back for my next mattress and would recommend friends and family to visit Sleep First.”</p>
+                    <div>
+                        <p class="font-semibold text-right">KC Stephens</p>
+                        <p class="font-light text-right">Tyler, Texas</p>
+                    </div>
+                </div>
+                <img class="absolute left-6" src="{{ 'review-KCStephens.png' | asset_url }}" alt="Women and little girl" loading="lazy">
+            </div>
+            <div class="swiper-slide grid relative h-full max-w-[375px] pt-10">
+                <div class="flex flex-col justify-between self-end text-sm text-text bg-white shadow-sp rounded-cl h-full px-6 pb-6 pt-12 mm:text-base">
+                    <p class="mb-2">“We came in right before closing not knowing what we wanted. The salesperson was exceptionally helpful and graciously spent the time needed to help us. He got us a great deal on a fabulous mattress! Would definitely recommend!!”</p>
+                    <div>
+                        <p class="font-semibold text-right">Kelly Quinn</p>
+                        <p class="font-light text-right">Tyler, Texas</p>
+                    </div>
+                </div>
+                <img class="absolute left-6" src="{{ 'review-KellyQuinn.png' | asset_url }}" alt="Portrait of a happy woman" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const swiper = new Swiper(".swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    breakpoints: {
+        1024: {       
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: false
+        },     
+    } 
+});
+
+</script>
+
+
+{% schema %}
+{
+    "name": "Reviews",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Reviews"
+        }, 
+        {
+            "type": "image_picker",
+            "id": "principal_logo",
+            "label": "Principal logo"
+        }, 
+        {
+            "type": "image_picker",
+            "id": "left_logo",
+            "label": "Left logo"
+        }, 
+        {
+            "type": "image_picker",
+            "id": "right_logo",
+            "label": "Right logo"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Reviews"
+        }
+    ]
+}
+{% endschema %}

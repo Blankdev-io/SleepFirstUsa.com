@@ -1,0 +1,87 @@
+{% liquid 
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign sub = section.settings.sub
+    assign imageDesk = section.settings.imageDesk
+    assign imageMob = section.settings.imageMob
+    assign url = section.settings.url
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    {% if heading != blank %}
+        {% if hierarchy == "h2" %}
+            <h2 class="text-title text-center text-text mb-8">{{ heading }}</h2>  
+        {% else %}
+            <h1 class="text-title text-center text-text mb-8">{{ heading }}</h1>   
+        {% endif %}  
+    {% endif %}
+    {% if sub != blank %}
+        <div class="text-center text-text mb-8">{{ sub }}</div>
+    {% endif %}
+    {% if url != blank %}
+        <a href="{{ url }}"><picture>
+            <source media="(min-width: 768px)" srcset="{{ imageDesk | image_url }}">
+            <img class="rounded-cl w-full" src="{{ imageMob | image_url }}" alt="{{ imageMob.alt }}" loading="lazy">
+        </picture></a>
+    {% else %}
+        <picture>
+            <source media="(min-width: 768px)" srcset="{{ imageDesk | image_url }}">
+            <img class="rounded-cl w-full" src="{{ imageMob | image_url }}" alt="{{ imageMob.alt }}" loading="lazy">
+        </picture>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Image with title",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "richtext",
+            "id": "sub",
+            "label": "Sub-title"
+        },
+        {
+            "type": "image_picker",
+            "id": "imageDesk",
+            "label": "Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "imageMob",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Image with title"
+        }
+    ]
+}
+{% endschema %}

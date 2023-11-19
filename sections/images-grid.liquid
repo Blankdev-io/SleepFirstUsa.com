@@ -1,0 +1,46 @@
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-cols-1 gap-0 w-full mm:grid-cols-2 tl:grid-cols-4">
+        {% for block in section.blocks %}
+            {% liquid 
+                assign image = block.settings.image
+            %}
+            {% if forloop.index == 1 %}
+                <img src="{{ image | image_url }}" alt="{{ image.alt }}" class="rounded-t-cl w-full h-full mm:rounded-r-none tl:rounded-l-cl" loading="lazy">
+            {% elsif forloop.index == 2 %}
+                <img src="{{ image | image_url }}" alt="{{ image.alt }}" class="w-full h-full mm:rounded-tr-cl tl:rounded-none" loading="lazy">
+            {% elsif forloop.index == 3 %}
+                <img src="{{ image | image_url }}" alt="{{ image.alt }}" class="w-full h-full mm:rounded-bl-cl tl:rounded-none" loading="lazy">
+            {% elsif forloop.index == 4 %}
+                <img src="{{ image | image_url }}" alt="{{ image.alt }}" class="rounded-b-cl w-full h-full mm:rounded-l-none tl:rounded-r-cl" loading="lazy">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Images grid",
+    "settings": [
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "name": "Images",
+            "type": "image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "Images grid"
+        }
+    ]
+}
+{% endschema %}

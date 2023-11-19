@@ -1,0 +1,25 @@
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-text bg-white shadow-sp rounded-cl mb-10 py-6 px-5 ds:py-10 ds:px-10">
+        {{ section.settings.custom_html }}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Custom HTML",
+        "settings": [
+            {
+                "type": "html",
+                "id": "custom_html",
+                "label": "Custom HTML",
+                "default": "<div></div>"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom HTML"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,129 @@
+{% liquid
+    assign title = section.settings.title
+    assign content = section.settings.content
+    assign pre_heading = section.settings.pre_heading
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="text-center text-text bg-white shadow-sp rounded-cl h-auto mb-10 px-8 pt-5 pb-8 ds:py-10">        
+        <p class="font-bold mb-3 ds:mb-4">{{ pre_heading }}</p>
+        <h1 class="text-title mb-8 ds:mb-14">{{ title }}</h1>
+        <p class="font-bold mb-12">{{ content }}</p>
+        <div class="grid grid-cols-2 justify-center divide-primary ts:grid-cols-3 ds:grid-cols-6 ds:divide-x">
+            {% for block in section.blocks %}
+                {% liquid
+                    assign name = block.settings.size_name
+                    assign inches = block.settings.inches
+                    assign cms = block.settings.cms
+                    assign url = block.settings.url
+                %}
+                {% if forloop.index == 2 %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between border-l border-primary px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>
+                {% elsif forloop.index == 3 %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between border-t border-primary ts:border-l ts:border-t-0 px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>  
+                {% elsif forloop.index == 4 %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between border-t border-l border-primary ts:border-l-0 ds:border-t-0 px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>
+                {% elsif forloop.index == 5 %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between border-t border-primary ts:border-l ds:border-t-0 px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>
+                {% elsif forloop.index == 6 %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between border-t border-l border-primary ds:border-t-0 px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>                                      
+                {% else %}
+                    <a href="{{ url }}" title="{{ name }}" class="flex flex-col justify-between px-2 py-5 ds:py-0">
+                        <h2 class="font-bold mb-8">{{ name }}</h2>
+                        <div>
+                            <p class="mb-3">{{ inches }}</p>
+                            <p>{{ cms }}</p>
+                        </div>
+                    </a>                    
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Size Guide",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "text",
+            "id": "pre_heading",
+            "label": "Pre Heading",
+            "default": "Pre Heading"
+        }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Size",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "size_name",
+                    "label": "Size name",
+                    "default": "Size name"
+                },
+                {
+                    "type": "text",
+                    "id": "inches",
+                    "label": "Size in inches",
+                    "default": "Inches"
+                },
+                {
+                    "type": "text",
+                    "id": "cms",
+                    "label": "Size in centimeters",
+                    "default": "Centimeters"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Link"
+                }                                          
+            ]
+        }
+    ]       
+}
+{% endschema %}

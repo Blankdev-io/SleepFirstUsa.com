@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-coupons",
+      "blocks": {
+        "144faf6f-7123-4335-91ea-e953614d54f5": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "FREE",
+            "t_col": "#ffffff",
+            "t_bcol": "#db0032",
+            "coupon_sub": "Two Pillows With Any Purchase Over $599",
+            "s_col": "#000000",
+            "s_bcol": "#fafafa",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-bedding-deal-1",
+            "disclaimer": ""
+          }
+        },
+        "5945cbac-c789-489b-b56b-36d155e1bbfb": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "FREE",
+            "t_col": "#ffffff",
+            "t_bcol": "#384fae",
+            "coupon_sub": "Sheet Set With Any Purchase Over $599",
+            "s_col": "#000000",
+            "s_bcol": "#fafafa",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#384fae",
+            "url": "shopify:\/\/pages\/mailer-special-bedding-deal-2",
+            "disclaimer": ""
+          }
+        }
+      },
+      "block_order": [
+        "144faf6f-7123-4335-91ea-e953614d54f5",
+        "5945cbac-c789-489b-b56b-36d155e1bbfb"
+      ],
+      "settings": {
+        "title": "Choose Your Bedding Deal!",
+        "description": "<p>CLIP YOUR INSTORE COUPON<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,166 @@
+<div id="search-page" class="text-text mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+
+    <div class="bg-white rounded-cl shadow-sp mb-10 p-6 ds:p-8">
+      <h1 class="text-title text-center mb-8">Search</h1>
+      <form action="{{ routes.search_url }}" class="flex justify-items-center relative w-full mx-auto mm:w-2/3">
+        <input class="border border-text rounded-full focus:border-secondary focus:outline-none w-full py-1 pl-4 pr-8" type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}">
+        <button type="submit" class="flex items-center absolute inset-y-0 right-0 pr-4" title="search"> 
+            {% render 'icons', icon: 'search' %}
+        </button>
+      </form>
+    </div>
+
+    {% paginate search.results by 24 %}
+      {% if search.performed %}
+      <div class="grid grid-cols-1 gap-4 h-full mb-10 mm:grid-cols-2 ts:grid-cols-4">
+
+      {% capture products %}
+        {% for type in search.types %}
+          {% if type == 'product' %}
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}
+                <h2 class="col-span-1 text-title text-center mb-8 mm:col-span-2 ts:col-span-4">{{ type | capitalize }}s</h2>
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}
+                <div class="grid grid-rows-4 group rounded-cl shadow-sp h-[320px] ds:grid-rows-5 ds:h-[340px] ds:w-auto">
+                    <div class="row-span-2 relative ds:row-span-3">
+                        {% if item.compare_at_price != blank %}
+                            <div class="flex absolute left-4 top-4 bg-accent rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+                                <p class="self-center font-bold text-xs text-center text-white">Sale</p>
+                            </div>
+                        {% endif %}
+                        <a href="{{ item.url }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ item.featured_image.src | image_url: width: 260 }}">
+                            <source media="(min-width: 768px)" srcset="{{ item.featured_image.src | image_url: width: 380 }}">
+                            <source media="(min-width: 480px)" srcset="{{ item.featured_image.src | image_url: width: 360 }}">
+                            <img class="object-cover rounded-t-cl w-full h-full" src="{{ item.featured_image.src | image_url: width: 450 }}" title="{{ item.title | remove: '"' }}" alt="{{ item.featured_image.alt | remove: '"' }}" loading="lazy">                         
+                        </picture></a>
+                    </div>
+                    <div class="row-span-2 grid grid-rows-2 text-text bg-white rounded-b-cl p-4 ds:py-3">
+                        <h3 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a></h3>
+                        <div class="grid grid-cols-2 self-center">
+                            <div class="ds:self-center">
+                                {% if item.compare_at_price != blank %}
+                                    <p class="font-bold text-[14px] text-accent-2 line-through">{{ item.compare_at_price | money }}</p>
+                                {% endif %}
+                                <p class="font-bold text-[14px] text-accent">{{ item.price | money }}</p>     
+                            </div>
+                            <div class="grid justify-items-end ds:justify-items-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% capture articles %}
+        {% for type in search.types %}
+          {% if type == 'article' %}
+            {% for item in search.results %}
+              {% if item.object_type == 'article' %}
+                <h2 class="col-span-1 text-title text-center mb-8 mm:col-span-2 ts:col-span-4">{{ type | capitalize }}s</h2>
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% for item in search.results %}
+              {% if item.object_type == 'article' %}
+                <div class="grid grid-rows-2 rounded-cl shadow-sp h-[340px] tl:w-auto">
+                    <a href="{{ item.url }}"><picture>
+                        <source media="(min-width: 868px)" srcset="{{ item.image.src | image_url: width: 260 }}">
+                        <source media="(min-width: 768px)" srcset="{{ item.image.src | image_url: width: 380 }}">
+                        <source media="(min-width: 480px)" srcset="{{ item.image.src | image_url: width: 360 }}">
+                        <img class="object-cover rounded-t-cl w-full h-full" src="{{ item.image.src | image_url: width: 450 }}" title="{{ item.title }}" alt="{{ item.image.alt }}" loading="lazy">
+                    </picture></a>
+                    <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-4 mm:p-3">
+                        <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a></h3>
+                        <div class="grid grid-cols-2 items-center">
+                            <p class="text-xs text-text">by {{ item.author }}</p>
+                        </div>
+                        <a class="font-bold text-base text-primary self-center" href="{{ item.url }}" title="{{ item.title }}">Read More</a>
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% capture pages %}
+        {% for type in search.types %}
+          {% if  type == 'page' %}
+            {% for item in search.results %}
+              {% if item.object_type == 'page' %}
+                <h2 class="col-span-1 text-title text-center mb-8 mm:col-span-2 ts:col-span-4">{{ type | capitalize }}s</h2>
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% for item in search.results %}
+              {% if item.object_type == 'page' %}
+                <div class="flex flex-col gap-2 bg-primary shadow-sp rounded-full"><a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
+                  <span class="flex justify-center items-center font-bold text-center text-white p-2">{{ item.title }}</span>
+                </a></div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {{ products }}
+      {{ articles }}
+      {{ pages }}
+
+      </div>
+      {% else %}
+        <div class="flex justify-center">
+          <span class="font-bold text-lg shadow-mp bg-white rounded-cl py-3 px-5">No results</span>
+        </div>
+      {% endif %}
+
+      {%- if paginate.pages > 1 -%}
+        <nav role="navigation">
+          <ol class="flex justify-center items-center gap-3 mx-auto">
+            {%- if paginate.previous-%}
+              <a href="{{ paginate.previous.url }}" class="bg-white shadow-sp rounded-cs py-1 px-3"><li>Prev</li></a>
+            {%- else -%}
+              <li class="hidden">Prev</li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+            {% if condition %}
+              
+            {% endif %}
+              {%- if part.is_link -%}
+                <a href="{{ part.url }}" class="hidden bg-white shadow-sp rounded-cs py-1 px-3 ml:inline"><li>{{ part.title }}</li></a>
+              {%- else -%}
+                {%- if part.title == paginate.current_page -%}
+                  <li class="active text-white bg-primary shadow-sp rounded-cs py-1 px-3" aria-current="page">{{ part.title }}</li>
+                {%- else -%}
+                  <li class="hidden bg-white shadow-sp rounded-cs py-1 px-3 ml:inline">{{ part.title }}</li>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="bg-white shadow-sp rounded-cs py-1 px-3"><li>Next</li></a>
+            {%- else -%}
+              <li class="hidden">Next</li>
+            {%- endif -%}
+          </ol>
+        </nav>
+      {%- endif -%}
+
+    {% endpaginate %}
+</div>
+
+{% schema %}
+  {
+    "name": "Search",
+    "settings": []
+  }
+{% endschema %}

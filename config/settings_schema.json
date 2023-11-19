@@ -1,0 +1,21 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "SleepFirst Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Carlos Blank",
+    "theme_documentation_url": "https:\/\/shopify.dev\/",
+    "theme_support_url": "https:\/\/shopify.dev\/"
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "64 x 64px required"
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "404",
+      "settings": {
+        "title": "Page Not Found",
+        "content": "<p>We're sorry, but the page you requested could not be found.<br\/><br\/><\/p>",
+        "button": "CONTINUE SHOPPING",
+        "url": "shopify:\/\/collections\/all"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

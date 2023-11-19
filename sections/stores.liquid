@@ -1,0 +1,278 @@
+{% liquid
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign sub1 = section.settings.sub_title1
+    assign label = section.settings.lab
+    assign number = section.settings.number
+    assign number_url = section.settings.number_url
+    assign sub2 = section.settings.sub_title2
+    assign content1 = section.settings.content1
+    assign content2 = section.settings.content2
+    assign sub3 = section.settings.sub_title3
+    assign option1 = section.settings.option1
+    assign option2 = section.settings.option2
+    assign option3 = section.settings.option3
+    assign image = section.settings.image
+    assign order = section.settings.order
+    assign button = section.settings.button
+    assign url = section.settings.url
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-flow-row text-text bg-white shadow-sp rounded-cl h-auto mb-10 tl:grid-cols-2">
+        {% if order == false %}
+            <div class="tl:order-2">
+                {% if image != blank %}
+                    <picture>
+                        <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 565 }}">
+                        <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
+                        <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                        <img class="object-cover rounded-t-cl w-full h-full tl:rounded-r-cl tl:rounded-l-none" src="{{ image | image_url: width: 440 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
+                    </picture>      
+                {% else %}
+                    <div class="flex items-center justify-center bg-black/50 rounded-t-cl w-full h-24 tl:rounded-r-cl tl:rounded-l-none tl:h-full">
+                        <p class="font-bold text-2xl text-center text-white">Image</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex flex-col justify-between gap-4 text-center px-4 pt-5 pb-12 tl:order-1 tl:px-14 tl:py-10">
+                {% if hierarchy == "h2" %}
+                    <h2 class="text-title">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="text-title">{{ heading }}</h1>
+                {% endif %}
+                <div>{{ sub1 }}</div>
+                <div class="flex flex-col">
+                    <p class="font-semibold text-2xl mb-2">{{ label }}</p>
+                    <a class="self-center flex gap-2 justify-center rounded-full px-4 py-1 border border-primary" href="{{ number_url }}" title="{{ number_url.title }}">
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'phone' %}
+                        </div>
+                        <p class="self-center font-semibold text-2xl text-center">{{ number }}</p>
+                    </a>   
+                </div> 
+                <div>
+                    {% if hierarchy == "h2" %}
+                        <h3 class="font-semibold text-2xl mb-4">{{ sub2 }}</h3>
+                    {% else %}
+                        <h2 class="font-semibold text-2xl mb-4">{{ sub2 }}</h2>
+                    {% endif %}
+                    <div class="flex justify-center text-left">{{ content1 }}</div>
+                </div>
+                <div class="self-center flex flex-col">
+                    {% if hierarchy == "h2" %}
+                        <h3 class="font-semibold text-2xl mb-4">{{ sub3 }}</h3>
+                    {% else %}
+                        <h2 class="font-semibold text-2xl mb-4">{{ sub3 }}</h2>
+                    {% endif %}
+                    <div class="flex gap-2">                
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div>
+                        {{ option1 }}                              
+                    </div> 
+                    <div class="flex gap-2">     
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div> 
+                        {{ option2 }}
+                    </div>   
+                    <div class="flex gap-2">         
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div> 
+                        {{ option3 }}  
+                    </div> 
+                </div>
+                <a href="{{ url }}" title="{{ url.title }}" class="button tl:self-center">{{ button }}</a>
+            </div>            
+        {% else %}
+            <div>
+                {% if image != blank %}
+                    <picture>
+                        <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 565 }}">
+                        <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
+                        <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                        <img class="object-cover rounded-t-cl w-full h-full tl:rounded-r-none tl:rounded-l-cl" src="{{ image | image_url: width: 440 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">           
+                    </picture>
+                {% else %}
+                    <div class="flex items-center justify-center bg-black/50 rounded-t-cl w-full h-24 tl:rounded-r-none tl:rounded-l-cl tl:h-full">
+                        <p class="font-bold text-2xl text-center text-white">Image</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex flex-col justify-between gap-4 text-center px-4 pt-5 pb-12 tl:px-14 tl:py-10">
+                {% if hierarchy == "h2" %}
+                    <h2 class="text-title">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="text-title">{{ heading }}</h1>
+                {% endif %}
+                <p>{{ sub1 }}</p>
+                <div class="flex flex-col">
+                    <p class="font-semibold text-2xl mb-2">{{ label }}</p>
+                    <a class="self-center flex gap-2 justify-center rounded-full px-4 py-1 border border-primary" href="{{ number_url }}" title="{{ number_url.title }}">
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'phone' %}
+                        </div>
+                        <p class="self-center font-semibold text-2xl text-center">{{ number }}</p>
+                    </a>   
+                </div> 
+                <div>
+                    {% if hierarchy == "h2" %}
+                        <h3 class="font-semibold text-2xl mb-4">{{ sub2 }}</h3>
+                    {% else %}
+                        <h2 class="font-semibold text-2xl mb-4">{{ sub2 }}</h2>
+                    {% endif %}
+                    <div class="flex justify-center text-left divide-x divide-primary">
+                        <span class="pr-6">{{ content1 }}</span>
+                        <span class="pl-6">{{ content2 }}</span>
+                    </div>
+                </div>
+                <div class="self-center flex flex-col">
+                    {% if hierarchy == "h2" %}
+                        <h3 class="font-semibold text-2xl mb-4">{{ sub3 }}</h3>
+                    {% else %}
+                        <h2 class="font-semibold text-2xl mb-4">{{ sub3 }}</h2>
+                    {% endif %}
+                    <div class="flex gap-2">                
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div>
+                        {{ option1 }}                              
+                    </div> 
+                    <div class="flex gap-2">     
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div> 
+                        {{ option2 }}
+                    </div>   
+                    <div class="flex gap-2">         
+                        <div class="flex items-center">
+                            {% render 'icons', icon: 'check' %}
+                        </div> 
+                        {{ option3 }}  
+                    </div> 
+                </div>
+                <a href="{{ url }}" title="{{ url.title }}" class="button tl:self-center">{{ button }}</a>
+            </div>            
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Store",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Welcome to SleepFirst!"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },        
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "order",
+            "label": "Change order",
+            "default": false
+        },
+        {
+            "type": "richtext",
+            "id": "sub_title1",
+            "label": "Sub-title 1",
+            "default": "<p>Sub-title 1</p>"
+        },
+        {
+            "type": "text",
+            "id": "lab",
+            "label": "Button label",
+            "default": "Click to call any store:"
+        },
+        {
+            "type": "text",
+            "id": "number",
+            "label": "Number",
+            "default": "(000) 000-0000"
+        },
+        {
+            "type": "url",
+            "id": "number_url",
+            "label": "Number link"
+        },
+        {
+            "type": "text",
+            "id": "sub_title2",
+            "label": "Sub-title 2",
+            "default": "Hours of operation:"
+        },
+        {
+            "type": "richtext",
+            "id": "content1",
+            "label": "Content 1",
+            "default": "<p>Content 1</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "content2",
+            "label": "Content 2",
+            "default": "<p>Content 2</p>"
+        },
+        {
+            "type": "text",
+            "id": "sub_title3",
+            "label": "Sub-title 3",
+            "default": "Parking Available"
+        },
+        {
+            "type": "text",
+            "id": "option1",
+            "label": "Option 1",
+            "default": "Private lots"
+        },
+        {
+            "type": "text",
+            "id": "option2",
+            "label": "Option 2",
+            "default": "Plenty of parking"
+        },
+        {
+            "type": "text",
+            "id": "option3",
+            "label": "Option 3",
+            "default": "Wheelchair accessible"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button",
+            "default": "Get Directions"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Button link"
+        }
+    ]   
+}
+{% endschema %}

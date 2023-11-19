@@ -1,0 +1,110 @@
+{% liquid 
+    assign image = article.image
+    assign title = article.title
+    assign content = article.content
+    assign author = article.author
+    assign published_at = article.published_at
+    assign totalWords = article.content | split: ' '
+    assign totalReadTime = totalWords.size | divided_by: 270.0
+    assign pre-title =section.settings.pre-title
+    assign checkAuthor = section.settings.checkAuthor
+    assign checkDate = section.settings.checkDate
+    assign checkReadTime = section.settings.checkReadTime
+    assign icon = section.settings.icon
+    assign frameText = section.settings.frameText
+%}
+
+<div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    {% if blog.metafields.custom.banner_images != blank %}    
+        <div class="mb-6">
+            <a href="{{ blog.metafields.custom.banner_url }}"><picture>
+            {% for elem in blog.metafields.custom.banner_images.value %}
+                {% if forloop.index == 1 %}
+                    <source media="(min-width: 568px)" srcset="{{ elem | image_url }}">
+                {% else %}
+                    <img class="rounded-cl w-full h-full" src="{{ elem | image_url }}" alt="{{ elem.alt }}" title="{{ title }}" loading="lazy">
+                {% endif %}
+            {% endfor %}
+            </picture></a>
+        </div>
+    {% endif %}
+</div>
+
+<div class="bg-primary ts:h-[500px]">
+    <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+        <div class="flex flex-col ts:flex-row ts:justify-between ts:gap-2">
+            <div class="ts:order-2 ts:pb-10">
+                <img class="object-cover rounded-b-cl w-full h-[360px] ts:h-[460px]" src="{{ image | image_url }}" alt="{{ image.alt }}" loading="lazy">
+            </div>
+            <div class="flex flex-col gap-8 text-white py-8 ts:justify-center ts:gap-12 ts:order-1">
+                <h4>{{ pre-title }}</h4>
+                <div class="flex flex-col gap-4">
+                    {% assign phrases = article.title | split: ': ' %}
+                    {% for phrase in phrases %}
+                        {% if forloop.index == 1 %}
+                            <h1 class="font-extrabold text-[40px] ts:text-[48px]">{{ phrase }}:</h1>
+                        {% else %}
+                            <h2 class="text-[24px] ts:text-[32px]">{{ phrase }}</h2>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="flex items-center whitespace-pre-wrap divide-x divide-white py-1">{% if checkAuthor %}<span>By <span class="font-bold">{{ author }}</span>     </span>{% endif %}{% if checkDate %}<span>     {{ published_at | date: '%B %d, %Y' }}     </span>{% endif %}{% if checkReadTime %}<span>     {{ totalReadTime | ceil }} min read{% endif %}</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if frameText != blank %}
+    <div class="bg-white shadow-mn">
+        <div class="flex flex-col justify-center items-center gap-8 text-primary py-8 mx-5 ts:flex-row ts:gap-14 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+            <img class="h-[140px]" src="{{ icon }}" alt="Icon" title="{{ frameText }}" loading="lazy">
+            <p class="font-bold text-[32px] max-w-[800px] ts:text-[40px]">{{ frameText }}</p>
+        </div>
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "Article Header",
+    "settings": [
+        {
+            "type": "text",
+            "id": "pre-title",
+            "label": "Pre-Title"
+        },
+        {
+            "type": "checkbox",
+            "id": "checkAuthor",
+            "label": "Show Author",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "checkDate",
+            "label": "Show Date",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "checkReadTime",
+            "label": "Show Reading Time",
+            "default": true
+        },
+        {
+            "type": "url",
+            "id": "icon",
+            "label": "Frame Icon"
+        },
+        {
+            "type": "text",
+            "id": "frameText",
+            "label": "Frame Text"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Article Header"
+        }
+    ]
+}
+{% endschema %}

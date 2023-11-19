@@ -1,0 +1,11 @@
+{
+    "liquid.format.enable": false,
+    "emmet.includeLanguages": {
+        "liquid": "html"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.experimental.configFile": null,
+    "tailwindCSS.includeLanguages": {
+        "liquid": "html"
+    }
+}

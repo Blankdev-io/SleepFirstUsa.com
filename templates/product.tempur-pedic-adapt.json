@@ -1,0 +1,416 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-tempur",
+      "blocks": {
+        "60146cfd-1257-414c-8964-50e83187a8a2": {
+          "type": "model",
+          "settings": {
+            "model_name": "Adapt",
+            "model_list": [
+              "tempurpedic-adapt-mattress",
+              "tempuradapt-medium-hybrid-mattress",
+              "tempurpedic-adapt-medium-mattress"
+            ],
+            "model_url": "shopify:\/\/products\/tempurpedic-adapt-mattress"
+          }
+        },
+        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0": {
+          "type": "model",
+          "settings": {
+            "model_name": "ProAdapt",
+            "model_list": [
+              "tempurpedic-proadapt-mattress",
+              "tempurpedic-proadapt-soft-mattress",
+              "tempurpedic-proadapt-medium-mattress",
+              "tempurpedic-proadapt-medium-hybrid-mattress",
+              "tempurpedic-proadapt-firm-mattress"
+            ],
+            "model_url": "shopify:\/\/products\/tempurpedic-proadapt-mattress"
+          }
+        },
+        "0c067a14-9f95-4045-8bfd-d921a8319ad4": {
+          "type": "model",
+          "settings": {
+            "model_name": "LuxeAdapt",
+            "model_list": [
+              "tempurpedic-luxeadapt-mattress",
+              "tempurpedic-luxeadapt-firm-mattress",
+              "tempurpedic-luxeadapt-soft-mattress"
+            ],
+            "model_url": "shopify:\/\/products\/tempurpedic-luxeadapt-mattress"
+          }
+        }
+      },
+      "block_order": [
+        "60146cfd-1257-414c-8964-50e83187a8a2",
+        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0",
+        "0c067a14-9f95-4045-8bfd-d921a8319ad4"
+      ],
+      "settings": {
+        "desk_banner": "shopify:\/\/shop_images\/tempur-ad.png",
+        "mob_banner": "shopify:\/\/shop_images\/tempur-ad-mobile.png",
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "upsell_title": "Choose Your Base",
+        "product_list": [
+          "tempurpedic-flat-foundation",
+          "tempur-ergo-adjustable-power_base",
+          "tempur-ergo-smartbase-adjustable-power-base"
+        ],
+        "quantity": false,
+        "pre_title": "Select a Gift",
+        "gift_title1": "YETI Tundra® 35 Hard Cooler",
+        "gift_color1": "#006481",
+        "gift_text1": "YETI Tundra 35",
+        "gift_img1": "shopify:\/\/shop_images\/W-Tundra_35_White_Front_33582_B.png",
+        "gift_title2": "$300 Amazon.com Gift Card",
+        "gift_color2": "#231f20",
+        "gift_text2": "$300",
+        "gift_img2": "shopify:\/\/shop_images\/Amazon_Gift.png",
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it."
+      }
+    },
+    "ed8b1338-abfc-4583-b374-d7000316eec4": {
+      "type": "full-page-banner",
+      "settings": {
+        "heading": "TEMPUR-PEDIC® QUALITY",
+        "hierarchy": "h2",
+        "sub": "<p>The Most Highly Recommended Bed In America<\/p>",
+        "imageDesk": "shopify:\/\/shop_images\/Tempur-Pedic_Dog.png",
+        "imageMob": "shopify:\/\/shop_images\/Tempur-Pedic_Dog.png",
+        "frameImage": "shopify:\/\/shop_images\/Tempur-Pedic_Trophies.png",
+        "frameHeading": "#1 In Customer Satisfaction With Mattresses Purchased Online",
+        "frameSubheading": "— Awarded by J.D. Power in 2022 & 2021+",
+        "url": ""
+      }
+    },
+    "e7b8af51-f6a1-445e-bf6d-541de0773baf": {
+      "type": "product-feel",
+      "blocks": {
+        "203686c9-2008-42de-98cd-4cc951694cda": {
+          "type": "slide",
+          "settings": {
+            "title": "Soft",
+            "option1": "ProAdapt",
+            "option2": "LuxeAdapt",
+            "image1": "shopify:\/\/shop_images\/Soft_layer_image.png",
+            "image2": "shopify:\/\/shop_images\/LuxeAdapt_Soft.original.webp",
+            "layersDescription1": "<h4>A. TEMPUR-ES® Comfort Layer - 5cm<\/h4><p><strong><br\/><\/strong>Our softest material quickly begins conforming to your body to soothe and relax<br\/><br\/><\/p><h4>B. TEMPUR-APR™ Support Layer - 5cm<\/h4><p><strong><br\/><\/strong>Our most pressure-relieving material ever — made for deeper, more rejuvenating sleep<\/p>",
+            "layersDescription2": "<h4>A. TEMPUR-ES® Comfort Layer - 9cm<\/h4><p><strong><br\/><\/strong>Our softest material quickly begins conforming to your body to soothe and relax<br\/><br\/><\/p><h4>B. TEMPUR-APR+™ Support Layer - 3cm<\/h4><p><strong><br\/><\/strong>All the pressure relief of APR Material, plus 30% more ultra-conforming comfort<\/p>",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "6512b9b4-f28c-42fb-bfa0-a5a65ebebf8c": {
+          "type": "slide",
+          "settings": {
+            "title": "Medium Hybrid",
+            "option1": "Adapt",
+            "option2": "ProAdapt",
+            "image1": "shopify:\/\/shop_images\/Adapt_Hybrid.original.webp",
+            "image2": "shopify:\/\/shop_images\/ProAdapt_Hybrid.original.webp",
+            "layersDescription1": "<h4>A. TEMPUR-ES® Comfort Layer - 3cm<\/h4><p><strong><br\/><\/strong>Softer feel works in combination with other materials to support and relax<br\/><br\/><\/p><h4>B. Original TEMPUR® Support Layer - 5cm<\/h4><p><strong><br\/><\/strong>Advanced, all-night adaptability for truly personalized comfort and support<br\/><br\/><\/p><h4>C. Proprietary Hybrid Technology<\/h4><p><strong><br\/><\/strong>1,000+ premium spring coils provide additional edge support and easier movement<\/p>",
+            "layersDescription2": "<h4>A. TEMPUR-ES® Comfort Layer - 6cm<\/h4><p><strong><br\/><\/strong>Softer feel works in combination with other materials to support and relax<br\/><br\/><\/p><h4>B. TEMPUR-APR™ Support Layer - 4cm<\/h4><p><strong><br\/><\/strong>Our most pressure-relieving material ever — made for deeper, more rejuvenating sleep<br\/><br\/><\/p><h4>C. Proprietary Hybrid Technology<\/h4><p><strong><br\/><\/strong>1,000+ premium spring coils provide additional edge support & easier movement<\/p>",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "823f74f4-bd30-497a-b0dc-431535ce9400": {
+          "type": "slide",
+          "settings": {
+            "title": "Medium",
+            "option1": "Adapt",
+            "option2": "ProAdapt",
+            "image1": "shopify:\/\/shop_images\/Adapt_Medium.original.webp",
+            "image2": "shopify:\/\/shop_images\/ProAdapt_Medium.original.webp",
+            "layersDescription1": "<h4>A. TEMPUR-ES® Comfort Layer - 4cm<\/h4><p><strong><br\/><\/strong>Softer feel works in combination with other materials to support and relax<br\/><br\/><\/p><h4>B. Original TEMPUR® Support Layer - 4cm<\/h4><p><strong><br\/><\/strong>Advanced, all-night adaptability for truly personalized comfort and support<\/p>",
+            "layersDescription2": "<h4>A. Original TEMPUR® Comfort Layer - 5cm<\/h4><p><strong><br\/><\/strong>Advanced, all-night adaptability for truly personalized comfort and support<br\/><br\/><\/p><h4>B. TEMPUR-APR™ Support Layer - 5cm<\/h4><p><strong><br\/><\/strong>Our most pressure-relieving material ever — made for deeper, more rejuvenating sleep<\/p>",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        },
+        "4c5257f1-e85f-4372-8d22-a0e7766ec6c2": {
+          "type": "slide",
+          "settings": {
+            "title": "Firm",
+            "option1": "ProAdapt",
+            "option2": "LuxeAdapt",
+            "image1": "shopify:\/\/shop_images\/ProAdapt_Firm.original.webp",
+            "image2": "shopify:\/\/shop_images\/LuxeAdapt_Firm.original.webp",
+            "layersDescription1": "<h4>A. TEMPUR-APR™ Comfort Layer - 3cm<\/h4><p><strong><br\/><\/strong>Our most pressure-relieving material ever — made for deeper, more rejuvenating sleep<br\/><br\/><\/p><h4>B. Original TEMPUR® Support Layer - 5cm<\/h4><p><strong><br\/><\/strong>Advanced, all-night adaptability for truly personalized comfort and support<\/p>",
+            "layersDescription2": "<h4>A. Original TEMPUR® Comfort Layer - 7cm<\/h4><p><strong><br\/><\/strong>Advanced, all-night adaptability for truly personalized comfort and support<br\/><br\/><\/p><h4>B. TEMPUR-APR+™ Support Layer - 5cm<\/h4><p><strong><br\/><\/strong>All the pressure relief of APR Material, plus 30% more ultra-conforming comfort<\/p>",
+            "background": "shopify:\/\/shop_images\/Layers_background.png",
+            "background_mobile": "shopify:\/\/shop_images\/Layers_background_Mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "203686c9-2008-42de-98cd-4cc951694cda",
+        "6512b9b4-f28c-42fb-bfa0-a5a65ebebf8c",
+        "823f74f4-bd30-497a-b0dc-431535ce9400",
+        "4c5257f1-e85f-4372-8d22-a0e7766ec6c2"
+      ],
+      "settings": {
+        "heading": "Find Your Perfect Feel",
+        "hierarchy": "h2",
+        "sub": "<p>Sink Into Ultimate Comfort With Our Plush Bedding Layers.<\/p>"
+      }
+    },
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd": {
+      "type": "product-materials",
+      "blocks": {
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Materials_1.png",
+            "select": "image",
+            "title": "All-Night Adaptive Support",
+            "description": "<p>The advanced cellular structure of TEMPUR® Material is precision-engineered to adapt and respond to your weight, shape, and temperature while you sleep for truly personalized comfort.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        },
+        "87fe9299-2a0d-484b-938f-f16a1877f948": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Materials_2.png",
+            "select": "image",
+            "title": "Unparalleled Pressure Relief",
+            "description": "<p>Through a unique viscous response, the force of your body and its pressure points are fully absorbed by the mattress — reducing tossing and turning and helping you sleep more deeply.<\/p>",
+            "disclaimer": "",
+            "switch": true,
+            "button": "",
+            "url": ""
+          }
+        },
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Materials_3.png",
+            "select": "image",
+            "title": "Superior Motion Absorption",
+            "description": "<p>Unlike other mattresses, our one-of-a-kind materials isolate movements and motions in the bed, so you and your partner can sleep undisturbed longer — and wake up feeling rejuvenated.<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "cd0fc6bd-1602-43c7-900f-37dcb9a09e2f",
+        "87fe9299-2a0d-484b-938f-f16a1877f948",
+        "bb707bc2-8418-45b1-9119-82d2b7e0984c"
+      ],
+      "settings": {
+        "heading": "How TEMPUR® Material Works",
+        "hierarchy": "h2",
+        "sub": "<p>We’ve Evolved Our Proprietary Technology Over Decades To Precisely Conform To Your Unique Body, Relieve Pressure Points, And Reduce Motion Transfer.<\/p>"
+      }
+    },
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0": {
+      "type": "full-page-video",
+      "settings": {
+        "heading": "Experience The Difference",
+        "hierarchy": "h2",
+        "sub": "<p>96% Of Sleepers Agree That The TEMPUR-Adapt® Collection Conforms To Their Shape, Relieves Pressure, And Helps Them Feel More Refreshed.<\/p>",
+        "video": "shopify:\/\/files\/videos\/T1_foamHybrid_noCopy_V01_251218004715561245.mp4"
+      }
+    },
+    "1820005c-aacb-411e-afb3-aac55d57568c": {
+      "type": "compare-chart",
+      "blocks": {
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "model": "<p>Mattress Models<\/p>",
+            "technology": "<p>TEMPUR® Technology<\/p>",
+            "relief": "<p>Pressure Relief<\/p>",
+            "height": "<p>Profile Height<\/p>",
+            "cancellation": "<p>Motion Cancellation<\/p>",
+            "feel": "<p>Available Feels<\/p>",
+            "pricing": "<p>Pricing<\/p>"
+          }
+        },
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae": {
+          "type": "slide",
+          "settings": {
+            "title": "CLASSIC",
+            "image": "shopify:\/\/shop_images\/Tempur-Pedic_Classic.png",
+            "model": "<p><strong>Adapt®<\/strong><\/p>",
+            "technology": "<p>Original<br\/>Material<\/p>",
+            "relief": "<p><strong>Legendary<\/strong><\/p>",
+            "height": "<p><strong>11”<\/strong><\/p>",
+            "cancellation": "<p>Unmatched Motion<br\/>Cancellation<\/p>",
+            "feel": "<p>Med. Hybrid<br\/>Medium<\/p>",
+            "pricing": "<p>$1,699<\/p>"
+          }
+        },
+        "cd434804-c29c-4f4f-ad02-b09bbf743203": {
+          "type": "slide",
+          "settings": {
+            "title": "MOST POPULAR",
+            "image": "shopify:\/\/shop_images\/Tempur-Pedic_Most_Popular.png",
+            "model": "<p><strong>ProAdapt®<\/strong><\/p>",
+            "technology": "<p>APR™<br\/>Material<\/p>",
+            "relief": "<p><strong>Advanced<\/strong><br\/>20% More TEMPUR®<\/p>",
+            "height": "<p><strong>12”<\/strong><\/p>",
+            "cancellation": "<p>Unmatched Motion<br\/>Cancellation<\/p>",
+            "feel": "<p>Soft<br\/>Med. Hybrid<br\/>Medium<br\/>Firm<\/p>",
+            "pricing": "<p>$2,899<\/p>"
+          }
+        },
+        "10784e95-13b7-4ac6-9359-ad687fbc535f": {
+          "type": "slide",
+          "settings": {
+            "title": "MOST ADVANCED",
+            "image": "shopify:\/\/shop_images\/Tempur-Pedic_Most_Advanced.png",
+            "model": "<p><strong>LuxeAdapt®<\/strong><\/p>",
+            "technology": "<p> APR+™<br\/>Material<\/p>",
+            "relief": "<p><strong>Ultimate<\/strong><br\/>40% More TEMPUR®<\/p>",
+            "height": "<p><strong>13”<\/strong><\/p>",
+            "cancellation": "<p>Unmatched Motion<br\/>Cancellation<\/p>",
+            "feel": "<p>Soft<br\/>Firm<\/p>",
+            "pricing": "<p>$3,699<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6c94b33a-82e9-4cee-864b-6862f14e91b5",
+        "3774f4af-6cd4-447c-bb9f-f0a64d7233ae",
+        "cd434804-c29c-4f4f-ad02-b09bbf743203",
+        "10784e95-13b7-4ac6-9359-ad687fbc535f"
+      ],
+      "settings": {
+        "heading": "Compare TEMPUR-Adapt®",
+        "hierarchy": "h2",
+        "sub": "<p>Superior Pressure Relief And Motion Cancellation For Deeper, More Rejuvenating Sleep.<\/p>"
+      }
+    },
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce": {
+      "type": "product-materials",
+      "blocks": {
+        "2e061d6a-98df-4f67-9959-5493a59d92f8": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ST_SR_SK2.width-500.webp",
+            "select": "image",
+            "title": "Responds to Snoring, Automatically.",
+            "description": "<p>When your TEMPUR-Ergo® Smart Base senses snoring from you or your partner, it automatically adjusts the bed* to raise your head to a position that may reduce snoring.<\/p>",
+            "disclaimer": "*Bed raises once approximately 12 degrees in response to snoring. This may help reduce snoring in otherwise healthy individuals who snore due to body positioning.",
+            "switch": false,
+            "button": "LEARN MORE",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e061d6a-98df-4f67-9959-5493a59d92f8"
+      ],
+      "settings": {
+        "heading": "TEMPUR-Ergo® Smart Base",
+        "hierarchy": "h2",
+        "sub": "<p>Powered by Sleeptracker®-AI Technology<\/p>"
+      }
+    },
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c": {
+      "type": "faq-new",
+      "blocks": {
+        "73cb9943-c6aa-41b9-8f85-ea62250b2dff": {
+          "type": "slide",
+          "settings": {
+            "question": "What's the difference between the Medium and Medium Hybrid feels?",
+            "answer": "<p>While the medium hybrid will be slightly softer in feel, the biggest difference is that our medium is made entirely of TEMPUR® material — and our medium hybrid is made with TEMPUR-ES™ material, plus 1000+ premium spring coils in the base layer. People who have trouble getting out of bed or turning over in bed may like the hybrid because it makes it a bit easier, but still allows you to have the comfort, support, and conformity of a Tempur-Pedic.<br\/><\/p>"
+          }
+        },
+        "e1a94c15-edbf-492f-8844-26e28618344b": {
+          "type": "slide",
+          "settings": {
+            "question": "Will a TEMPUR-Adapt® mattress fit in my existing bed frame?",
+            "answer": "<p>All of our mattresses and power bases are designed to be used with most modern bed frames. However, they may not fit inside antique bed frames or other non-standard furniture. If you’re concerned about compatibility, please measure the inside of your current bed frame and compare the measurements with our mattress size specifications.<\/p>"
+          }
+        },
+        "fabc8769-d786-4789-8b23-1f28d5facb02": {
+          "type": "slide",
+          "settings": {
+            "question": "Do I need to rotate my new Tempur-Pedic® mattress?",
+            "answer": "<p>No, you do not. Our mattresses feature a top side designed specifically for sleeping, so you’ll never have to face the backbreaking task of flipping or rotating.<\/p>"
+          }
+        },
+        "66812a79-d8a9-4b35-b8df-415b15b0c744": {
+          "type": "slide",
+          "settings": {
+            "question": "Could you explain the 10-Year mattress warranty?",
+            "answer": "<p>Simply put, for a full decade after you purchase your new Tempur-Pedic®, if the mattress has a defect covered under the warranty guidelines, we’ll replace or repair it. This includes all parts of the mattress. Note that there are certain circumstances that will automatically void the manufacturer’s warranty, including inappropriate foundation use and physical damage.<\/p>"
+          }
+        },
+        "5aaff8d9-eb5b-4740-992d-76ad06913cf1": {
+          "type": "slide",
+          "settings": {
+            "question": "What are the best sheets to use with a Tempur-Pedic® mattress?",
+            "answer": "<p>Most sheet sets are compatible, but we recommend checking the pocket depth of the fitted sheet to ensure it will properly cover your mattress. To guarantee a perfect fit, you can also purchase our sheet sets designed specifically to use on Tempur-Pedic mattresses. These premium combed cotton sheets feature patented DreamFlex™ bands that hold tight all night long, and Firstfit® straps that help you secure the fitted sheet on the mattress correctly the first time.<br\/><br\/><a href=\"\/collections\/bedding\" target=\"_blank\" title=\"Bedding\">Shop<\/a> our available sheet sets.<\/p>"
+          }
+        },
+        "755f9d2d-0ab4-4d07-98f8-027d9422b5be": {
+          "type": "slide",
+          "settings": {
+            "question": "Do Tempur-Pedic® mattresses “sleep hot”?",
+            "answer": "<p>This is a common question and misconception but sleeping warm on a Tempur-Pedic® mattress is not an issue for most of our customers. The open-cell structure of TEMPUR® material is superior to ordinary memory foam and provides increased comfort and breathability. In addition, the high-performance fibers of the TEMPUR-Adapt’s outer layers  provide cool-to-touch comfort. <\/p><p>62% of households report at least one hot sleeper. If you feel that sleeping hot is a problem you experience frequently, you may want to consider one of our TEMPUR-Breeze® mattresses. Our proven cooling materials create an all-night cooling experience that lasts from the minute you lay down to the moment you wake up. The TEMPUR-Breeze® collection helps you experience measurably cooler sleep—all night, every night.++ <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "73cb9943-c6aa-41b9-8f85-ea62250b2dff",
+        "e1a94c15-edbf-492f-8844-26e28618344b",
+        "fabc8769-d786-4789-8b23-1f28d5facb02",
+        "66812a79-d8a9-4b35-b8df-415b15b0c744",
+        "5aaff8d9-eb5b-4740-992d-76ad06913cf1",
+        "755f9d2d-0ab4-4d07-98f8-027d9422b5be"
+      ],
+      "settings": {
+        "heading": "Mattress FAQs",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    },
+    "7996d260-f64c-433a-a489-d1afc2d611ba": {
+      "type": "product-reviews",
+      "settings": {
+      }
+    },
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "0b0a5b06-dd56-4248-aaed-547c378784de": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ed8b1338-abfc-4583-b374-d7000316eec4",
+    "e7b8af51-f6a1-445e-bf6d-541de0773baf",
+    "db6f38ff-36d9-44f3-ab04-5a3224fc6cdd",
+    "ef7faa74-1bdb-4139-a5de-d95e9ac3d6b0",
+    "1820005c-aacb-411e-afb3-aac55d57568c",
+    "1b9d91a3-b09f-420a-9f1f-a4dc00535cce",
+    "0b42ea98-4400-4d15-a230-78b0739b2f1c",
+    "7996d260-f64c-433a-a489-d1afc2d611ba",
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5",
+    "0b0a5b06-dd56-4248-aaed-547c378784de"
+  ]
+}

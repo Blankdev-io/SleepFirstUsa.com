@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-landing-section",
+      "settings": {
+        "heading": "View Your Local Deals!",
+        "hierarchy": "h1",
+        "button1": "MATTRESS",
+        "url1": "shopify:\/\/pages\/mailer-special-mattress",
+        "button2": "BEDDING",
+        "url2": "shopify:\/\/pages\/mailer-special-bedding",
+        "button3": "MASSAGE CHAIRS",
+        "url3": "shopify:\/\/pages\/mailer-special-massage"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

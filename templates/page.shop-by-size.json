@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "main": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "CALIFORNIA KING",
+        "heading": "25% OFF",
+        "content": "<p><strong>Vacation Sleep Magnolia Hybrid<\/strong><\/p><p><\/p>",
+        "font_size": 16,
+        "button1": "View Deal",
+        "url1": "shopify:\/\/products\/magnolia-hybrid-mattress",
+        "button2": "",
+        "url2": "",
+        "button3": "",
+        "url3": ""
+      }
+    },
+    "collections-list": {
+      "type": "collections-list",
+      "settings": {
+        "heading": "Shop by Size",
+        "collection_list": [
+          "twin",
+          "twin-long",
+          "double",
+          "queen",
+          "king",
+          "cal-king",
+          "split-cal-king-2-pieces"
+        ]
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collections-list"
+  ]
+}

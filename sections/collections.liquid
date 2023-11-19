@@ -1,0 +1,91 @@
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-rows-5 gap-4 h-[850px] mm:grid-cols-2 mm:grid-rows-4 mm:h-[1000px] tl:grid-cols-7 tl:grid-rows-2 tl:gap-8 tl:h-[600px]">
+        {% for block in section.blocks %}
+            {% liquid  
+                assign image = block.settings.collection.featured_image
+                assign title = block.settings.collection.title
+                assign url = block.settings.collection.url
+            %}
+            {% if forloop.index == 1 %}
+                <div class="row-span-2 relative group shadow-sp mm:col-span-2 tl:col-span-3 tl:row-span-2">
+                    {% if block != blank %}
+                        <a href="{{ url }}" title="{{ title }}"><h2 class="absolute top-4 left-4 font-extrabold text-3xl text-white text-shadow mm:text-4xl ds:top-6 ds:left-6 ds:group-hover:text-[40px]">{{ title }}</h2></a>
+                        <a href="{{ url }}" title="{{ title }}" class="button-blur absolute bottom-4 right-4 shadow-sp ds:bottom-6 ds:right-6">VIEW ALL</a>
+                        <a href="{{ url }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 470 }}">
+                            <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
+                            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                            <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">                        
+                        </picture></a>
+                    {% else %}
+                        <div class="flex items-center justify-center rounded-cl bg-black/50 w-full h-full tl:col-span-2">
+                            <p class="font-bold text-2xl text-center text-white">Collection</p>
+                        </div>
+                    {% endif %}
+                </div>             
+            {% elsif forloop.index == 2 %}
+                <div class="relative group rounded-cl mm:col-span-2 tl:col-span-4 ">
+                    {% if block != blank %}
+                        <a href="{{ url }}" title="{{ title }}"><h2 class="absolute top-4 left-4 font-extrabold text-3xl text-white text-shadow pr-4 mm:text-4xl ds:top-6 ds:left-6 ds:group-hover:text-[40px]">{{ title }}</h2></a>
+                        <a href="{{ url }}" title="{{ title }}" class="button-blur absolute bottom-4 right-4 shadow-sp ds:bottom-6 ds:right-6">VIEW ALL</a>
+                        <a href="{{ url }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 630 }}">
+                            <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
+                            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                            <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">                        
+                        </picture></a>
+                    {% else %}
+                        <div class="flex items-center justify-center rounded-cl bg-black/50 w-full h-full tl:col-span-2">
+                            <p class="font-bold text-2xl text-center text-white">Collection</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% elsif forloop.index >= 3 %}
+                <div class="relative group rounded-cl tl:col-span-2">
+                    {% if block != blank %}
+                        <a href="{{ url }}" title="{{ title }}"><h2 class="absolute top-4 left-4 font-extrabold text-3xl text-white text-shadow ds:top-6 ds:left-6 ds:text-4xl ds:group-hover:text-[40px]">{{ title }}</h2></a>
+                        <a href="{{ url }}" title="{{ title }}" class="button-blur flex absolute bottom-4 right-4 shadow-sp mm:inset-x-4 ts:right-6 ts:left-auto ds:bottom-6">VIEW ALL</a>
+                        <a href="{{ url }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 300 }}">
+                            <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 410 }}">
+                            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 360 }}">
+                            <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">                        
+                        </picture></a>
+                    {% else %}
+                        <div class="flex items-center justify-center rounded-cl bg-black/50 w-full h-full tl:col-span-2">
+                            <p class="font-bold text-2xl text-center text-white">Collection</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "List of Collections",
+    "settings": [
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "name": "Collections",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections"
+        }
+    ]
+}
+{% endschema %}

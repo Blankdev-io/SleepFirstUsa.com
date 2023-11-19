@@ -1,0 +1,53 @@
+{% liquid
+    assign article = section.settings.article
+    assign image = section.settings.article.image
+    assign title = section.settings.article.title
+    assign content = section.settings.article.content
+    assign url = section.settings.article.url
+%}
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-flow-row bg-white shadow-sp rounded-cl h-auto tl:grid-cols-7 ds:grid-cols-5">
+        {% if article != blank %}
+            <div class="h-[316px] tl:col-span-3 tl:h-[600px] ds:col-span-2">
+                <a href="{{ url }}"><picture>
+                    <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 450 }}">
+                    <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
+                    <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                    <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
+                </picture></a>
+            </div>
+            <div class="p-4 tl:col-span-4 tl:flex tl:flex-col tl:justify-between tl:p-6 ds:col-span-3 ds:p-10">
+                <h2 class="font-extrabold text-3xl text-text mb-4 mm:text-title tl:mb-0"><a href="{{ url }}" title="{{ title }}">{{ title }}</a></h2>
+                <div class="text-sm text-text mb-4 mm:text-base tl:row-span-3 tl:mb-0">{{ content | strip_html | newline_to_br | truncatewords: 100 }}</div>
+                <a href="{{ url }}" title="{{ title }}" class="button ds:w-max">READ MORE</a>
+            </div>
+        {% else %}
+            <div class="flex items-center justify-center bg-black/50 rounded-cl h-[316px] tl:col-span-3 tl:h-auto ds:col-span-2">
+                <p class="font-bold text-2xl text-center text-white">Image</p>
+            </div>
+            <div class="p-4 tl:col-span-4 tl:p-10 ds:col-span-3">
+                <p class="text-title text-text">Content</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Post preview",
+    "settings": [
+        {
+            "type": "article",
+            "id": "article",
+            "label": "Article"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Post preview"
+        }
+    ]
+}
+{% endschema %}

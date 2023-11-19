@@ -1,0 +1,134 @@
+{% liquid
+    assign image = article.image
+    assign title = article.title
+    assign content = article.content
+    assign author = article.author
+    assign url = article.url
+    assign published_at = article.published_at
+    assign totalWords = article.content | split: ' '
+    assign totalReadTime = totalWords.size | divided_by: 270.0
+    assign previous = blog.previous_article
+    assign next = blog.next_article
+    assign articles = blog.articles
+    assign checkAuthor = section.settings.checkAuthor
+    assign checkDate = section.settings.checkDate
+    assign checkReadTime = section.settings.checkReadTime
+    assign heading = section.settings.heading
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="relative h-[500px] mb-4 mm:h-[600px] ds:mb-5">
+        <h1 class="absolute inset-x-4 inset-y-44 font-extrabold text-3xl text-center text-white text-shadow mm:inset-x-5 mm:inset-y-60 mm:text-title">{{ title }}</h1>
+        <picture class="row-span-3 mm:row-span-1">
+            <source media="(min-width: 1024px)" srcset="{{ image | image_url: width: 1120 }}">
+            <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 990 }}">
+            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+            <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
+        </picture>
+    </div>
+    <div class="flex justify-center">
+        <p class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl divide-x divide-primary mx-auto mb-4 px-6 py-4 ds:mb-5">{% if checkAuthor %}<span> by {{ author }}  </span>{% endif %}{% if checkDate %}<span>  {{ published_at | date: '%B %d, %Y' }}  </span>{% endif %}{% if checkReadTime %}<span>  {{ totalReadTime | ceil }} min read{% endif %}</span></p>
+    </div>
+    <div class="justify-center bg-white shadow-sp rounded-cl mb-4 py-6 px-5 ds:mb-5 ds:py-12 ds:px-10">
+        <div id="article-content" class="text-text">{{ content }}</div>
+    </div>
+    <div class="flex justify-center mb-10">
+        <div class="grid grid-cols-2 gap-8 text-text mx-auto">
+            <a href="{{ previous }}" title="{{ previous.title }}" class="text-center bg-white shadow-sp rounded-cl w-[100px] py-3">Previous</a>
+            <a href="{{ next }}" title="{{ next.title }}" class="text-center bg-white shadow-sp rounded-cl w-[100px] py-3">Next</a>
+        </div>
+    </div>
+    <h2 class="text-title text-center text-text mb-6 ds:mb-12">{{ heading }}</h2>
+    <div class="grid gap-5 mm:grid-cols-2 ts:gap-x-20 ts:gap-y-10 tl:grid-cols-4 tl:gap-4 ds:gap-7">
+        {% for article in articles limit: 4 %}
+            {% liquid
+                assign image_art = article.image
+                assign title_art = article.title
+                assign author_art = article.author
+                assign url_art = article.url
+                assign totalWords_art = article.content | split: ' '
+                assign totalReadTime_art = totalWords.size | divided_by: 270.0
+            %}
+            <div class="grid grid-rows-2 shadow-sp h-[340px] tl:w-auto">
+                <a href="{{ url_art }}"><picture>
+                    <source media="(min-width: 868px)" srcset="{{ image_art | image_url: width: 260 }}">
+                    <source media="(min-width: 768px)" srcset="{{ image_art | image_url: width: 380 }}">
+                    <source media="(min-width: 480px)" srcset="{{ image_art | image_url: width: 360 }}">
+                    <img class="object-cover rounded-t-cl w-full h-full" src="{{ image_art | image_url: width: 450 }}" title="{{ title_art }}" alt="{{ image_art.alt }}" loading="lazy">
+                </picture></a>
+                <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-3">
+                    <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a href="{{ url_art }}" title="{{ title_art }}">{{ title_art }}</a></h3>
+                    <div class="grid grid-cols-2 items-start mm:items-center">
+                        <p class="text-xs text-text">by {{ author_art }}</p>
+                        <p class="text-xs text-right">{{ totalReadTime_art | ceil }} min read</p>
+                    </div>
+                    <a class="font-bold text-base text-primary self-center" href="{{ url_art }}" title="{{ title_art }}">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    #article-content h1,
+    #article-content h2, 
+    #article-content h3, 
+    #article-content h4, 
+    #article-content h5, 
+    #article-content h6 {
+        font-weight: revert;
+        font-size: revert;
+        margin: revert;
+    }
+    #article-content ol, 
+    #article-content ul, 
+    #article-content menu {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+    #article-content img {
+        margin: auto;
+    }
+    #article-content a {
+        color: #384FAE;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    #article-content a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+{% schema %}
+    {
+        "name": "Article",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "checkAuthor",
+                "label": "Author",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "checkDate",
+                "label": "Date",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "checkReadTime",
+                "label": "Read Time",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Related Blog Posts"
+            }
+        ]
+    }
+{% endschema %}

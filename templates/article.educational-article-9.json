@@ -1,0 +1,422 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-header",
+      "settings": {
+        "pre-title": "Mattress Bases",
+        "checkAuthor": true,
+        "checkDate": true,
+        "checkReadTime": false,
+        "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/bed_1.svg?v=1689284737",
+        "frameText": "A solid base provides better support and helps extend the lifespan of your mattress."
+      }
+    },
+    "17e412db-3680-4e78-8669-fb18b9a93869": {
+      "type": "article-content",
+      "blocks": {
+        "1a590ddc-2ad7-46f6-9d96-57c79b562975": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": false,
+            "bottom": true
+          }
+        },
+        "0bde299d-d2ed-4afa-8d44-dde79fc1bde8": {
+          "type": "menu",
+          "settings": {
+          }
+        },
+        "00c5c3c8-f44e-4fff-8011-b53508dad711": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "2d486f16-edcc-45ec-ab0a-54b4402f750e": {
+          "type": "image",
+          "settings": {
+            "index_img": "Ease Power Base",
+            "image": "shopify:\/\/shop_images\/Ease4_0_Queen_Photography_Silo_ThreeQuarter_Jul2021_5x7_130422085035848144.jpg",
+            "title": "Ease Power Base",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "7864ce1f-275d-420f-b8dc-534cbfd3ee27": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>By enabling you to change the head and foot positions of your bed, this is the most basic and cost-effective model of Tempur base. It offers individualized comfort. You can easily adjust your bed's angle to suit your preferences and needs with a wireless remote control. <br\/><br\/>The Ease Power Base can assist you in achieving your ideal sleep posture whether you want to raise your feet for relaxing, soothing, or improving circulation or elevate your head for reading, watching TV, or reducing snoring. Neither you nor your partner will be bothered by the Ease Power Base's quiet motor or straightforward design.<br\/><br\/><\/p><h3>Starting at:<\/h3><p><br\/><strong>$899 <br\/><br\/><\/strong><a href=\"\/products\/ease-4-power-base\" target=\"_blank\" title=\"EASE® 4.0 Power Base\">See Product<\/a><\/p>"
+          }
+        },
+        "b8fd90d0-3e78-4ccc-a185-296e2920e666": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        },
+        "1237f54d-a7a4-422d-aeb7-64a41f0013d5": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/bed.svg?v=1689284737",
+            "frameText": "An adjustable base improves the comfort of your mattress by allowing you to sleep in a position that relieves the most pressure on your body.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "5de6ed68-0f91-4379-9133-f941cd3d01f2": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        },
+        "842f4b51-90e0-4073-8f01-c6606fa2a60f": {
+          "type": "image",
+          "settings": {
+            "index_img": "TEMPUR-Ergo™ Power Base",
+            "image": "shopify:\/\/shop_images\/TempurPedic_ErgoBase_Queen_Silo_Badge_Sep2022_5x7_180123161847981794_e942b5f4-75ec-4895-a241-2f4f42d3c80d.jpg",
+            "title": "Ergo Power Base",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "6cee24f4-e060-464c-a4ac-62572890b55f": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>This is a more advanced model of Tempur bases, which offers more features and benefits than the Ease Power Base. In addition to adjusting the head and foot positions of your bed, the Ergo Power Base also provides lumbar support, which can help you maintain a healthy spine alignment and reduce back pain.<\/p><p><br\/>The Ergo Power Base also has a QuietMode™ feature, which gently tilts your mattress to an anti-snore position with a press of a button on the wireless remote control. This can help you breathe easier and sleep more peacefully. Additionally, the Ergo Power Base includes USB ports, massage, and under-bed illumination features which can increase your comfort and satisfaction. With the Ergo Power Base, you can rest your muscles, charge your devices, and make your bedroom feel pleasant.<br\/><\/p><h3><br\/>Core Features:<br\/><\/h3><ul><li>Head & Foot Lifts<\/li><li> Zero Gravity<\/li><li> Lumbar Support<\/li><li> QuietMode<strong>™<\/strong><\/li><li> Underbed Lighting<\/li><li> USB & USB-C Ports<\/li><li> 1-Zone Massage<br\/><\/li><\/ul><h3>Starting at:<\/h3><p><br\/><strong>$1,499<br\/><br\/><\/strong><a href=\"\/products\/tempur-ergo-adjustable-power_base\" target=\"_blank\" title=\"TEMPUR-Ergo® Power Base\">See Product<\/a><\/p>"
+          }
+        },
+        "957bd5cb-e030-4c8c-a4d7-22a255ca3a4d": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "6880c3b9-9924-4b14-bf2a-f7fc1ed73dd6": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/day.svg?v=1689284737",
+            "frameText": "Adjustable base provides customized support to ease pressure on the back, help stimulate blood circulation, and feel almost weightless.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "cbed33c1-94c0-4361-83c7-6cc50a56d9ab": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        },
+        "87cff16e-9a8c-49aa-8c73-77835dd48650": {
+          "type": "image",
+          "settings": {
+            "index_img": "TEMPUR-Ergo Smart™ Base",
+            "image": "shopify:\/\/shop_images\/TempurPedic_ErgoSmartBase_Queen_Silo_LightBadge_Sep2022_5x7_180123161853841015_e697c041-0de9-4221-8aa6-8164c3ebddea.jpg",
+            "title": "Ergo Smart Base",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "8be88665-1ec5-4c9d-968b-45b004da9495": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>This is a smart model of Tempur bases, which has all the features of the Ergo Power Base, plus smart technology that can track your sleep, respond to snoring, and provide personalized coaching. <br\/><br\/>The Ergo Smart Base uses a pair of non-intrusive sleep monitoring sensors to capture your sleep data, without the use of wearables, microphones, or cameras. You can opt-out or pause your sleep tracking at any time with a single tap. The Ergo Smart Base can sense snoring and automatically raise your head to a position that may reduce snoring with the Snore Response™ feature. You can also use the QuietMode™ feature to manually adjust your bed to an anti-snore position. The Ergo Smart Base can provide you with a customized sleep report and coaching every morning, based on your sleep patterns and quality. You can see how well you slept, how long you spent in different sleep stages, and what factors affected your sleep quality. You can also get tips and insights on how to improve your sleep habits and achieve your sleep goals. The Ergo Smart Base can also connect with compatible Google Home and Amazon Alexa devices, allowing you to use voice commands to control the base, get your daily sleep reports, and receive personalized sleep tips. You can also control the base with your smartphone app or wireless remote control.<br\/><\/p><h3><br\/>Core Features:<br\/><\/h3><ul><li>Head & Foot Lifts<\/li><li> Zero Gravity<\/li><li> Lumbar Support<\/li><li> QuietMode<strong>™<\/strong><\/li><li> Underbed Lighting<\/li><li> USB & USB-C Ports<\/li><li> 2-Zone Massage<\/li><li> Snore Response™<\/li><li> Sleep Coaching<\/li><li> Smart Alarm<br\/><\/li><\/ul><h3>Starting at:<\/h3><p><br\/><strong>$1,899 <br\/><br\/><\/strong><a href=\"\/products\/tempur-ergo-smartbase-adjustable-power-base\" target=\"_blank\" title=\"TEMPUR-Ergo® Smart Base\">See Product<\/a><\/p>"
+          }
+        },
+        "7a97534c-f2d9-4c10-984f-7c264268f19e": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "c3ed2990-04cd-46a3-8133-d418a9aa1395": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/space-suit.svg?v=1689284737",
+            "frameText": "The TEMPUR-Ergo® adjustable base has zero gravity presets – hoists you to weightlessness while alleviating the tension off your back.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "11c7870f-5eaa-452f-9a8b-6a5254147137": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "d1d09c80-00ff-4830-83b9-ec134522fc78": {
+          "type": "image",
+          "settings": {
+            "index_img": "TEMPUR-Ergo™ ProSmart™ Base",
+            "image": "shopify:\/\/shop_images\/TempurPedic_ErgoProSmartBase_Queen_Silo_LightBadge_Sep2022_5x7_180123151532147998_2c102517-e2c1-4f87-963c-f37113549e9b.jpg",
+            "title": "Ergo ProSmart Base",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "ea7dc0f3-4121-4870-b688-f10f3897d52f": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>This is a new model of Tempur bases, which offers an innovative sleep solution that can detect snoring and automatically respond, which may help reduce it, so you don’t have to be disturbed during the night.  The Ergo ProSmart Base also provides the Wave Form™ Massage, which uses sound waves to transmit vibrations from the base throughout the mattress to help promote relaxation by easing muscle tension.  It has all the features of the Ergo Extend Smart Base, plus a SoundScape™ Mode, which is an immersive experience that allows you to both hear and feel sound through the mattress. By connecting devices that use Bluetooth® wireless technology, you can choose sounds or even songs to help you relax for sleep. The Ergo ProSmart Base also has a Wind Down™ feature, which is a preset program option that cycles through different base positions and soothing massage types so you can calmly and comfortably drift off to sleep.<br\/><\/p><h3><br\/>Core Features:<br\/><\/h3><ul><li>Head & Foot Lifts<\/li><li> Zero Gravity<\/li><li> Lumbar Support<\/li><li> QuietMode<strong>™<\/strong><\/li><li> Underbed Lighting<\/li><li> USB & USB-C Ports<\/li><li> Wave Form<strong>™<\/strong> Massage<\/li><li> Snore Response™<\/li><li> Sleep Coaching<\/li><li> Smart Alarm<\/li><li> SoundScape™ mode<\/li><li> Wind Down™ Program<br\/><\/li><\/ul><h3>Starting at:<\/h3><p><br\/><strong>$2,399 <br\/><br\/><\/strong><a href=\"\/products\/tempur-ergo-extend\" target=\"_blank\" title=\"TEMPUR-Ergo® ProSmart™ Base\">See Product<\/a><\/p>"
+          }
+        },
+        "2a2646d8-7a76-441d-b4f4-a79415458f69": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        },
+        "849b813e-31fb-45c8-834c-3a83cebf0f6b": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/remote-control.svg?v=1689284737",
+            "frameText": "The TEMPUR-Ergo® adjustable base has a wireless remote for easy angle adjustments.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "54968714-1032-4e00-a585-84f99e296bfc": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        }
+      },
+      "block_order": [
+        "1a590ddc-2ad7-46f6-9d96-57c79b562975",
+        "0bde299d-d2ed-4afa-8d44-dde79fc1bde8",
+        "00c5c3c8-f44e-4fff-8011-b53508dad711",
+        "2d486f16-edcc-45ec-ab0a-54b4402f750e",
+        "7864ce1f-275d-420f-b8dc-534cbfd3ee27",
+        "b8fd90d0-3e78-4ccc-a185-296e2920e666",
+        "1237f54d-a7a4-422d-aeb7-64a41f0013d5",
+        "5de6ed68-0f91-4379-9133-f941cd3d01f2",
+        "842f4b51-90e0-4073-8f01-c6606fa2a60f",
+        "6cee24f4-e060-464c-a4ac-62572890b55f",
+        "957bd5cb-e030-4c8c-a4d7-22a255ca3a4d",
+        "6880c3b9-9924-4b14-bf2a-f7fc1ed73dd6",
+        "cbed33c1-94c0-4361-83c7-6cc50a56d9ab",
+        "87cff16e-9a8c-49aa-8c73-77835dd48650",
+        "8be88665-1ec5-4c9d-968b-45b004da9495",
+        "7a97534c-f2d9-4c10-984f-7c264268f19e",
+        "c3ed2990-04cd-46a3-8133-d418a9aa1395",
+        "11c7870f-5eaa-452f-9a8b-6a5254147137",
+        "d1d09c80-00ff-4830-83b9-ec134522fc78",
+        "ea7dc0f3-4121-4870-b688-f10f3897d52f",
+        "2a2646d8-7a76-441d-b4f4-a79415458f69",
+        "849b813e-31fb-45c8-834c-3a83cebf0f6b",
+        "54968714-1032-4e00-a585-84f99e296bfc"
+      ],
+      "settings": {
+        "introduction": "<p>A Tempur base might be something to think about if you want to improve your sleep quality. Any Tempur-Pedic mattress can be combined with a Tempur adjustable power base, to create a custom sleeping arrangement. You may adjust your bed's position, massage your body, and use smart technologies to manage your sleeping environment if you have a Tempur foundation. I'll evaluate and contrast the four Tempur bases types available in this blog post to assist you in selecting the one that best suits your requirements and budget.<\/p>",
+        "recap": "<p>You can see that Tempur bases are more than just power bases with changeable heights. They are intelligent sleep systems that let you change your bed position, give yourself a massage, and use technology to manage your sleeping environment. This can help you sleep better and more comfortably. You can have a customized sleeping experience that fits your needs and budget whether you select the Ease Power Base, the Ergo Power Base, the Ergo Smart Base, or the Ergo ProSmart Base.<br\/><br\/>If you are interested in buying or learning more about the Tempur bases, you can take a look to our <a href=\"\/products\/tempur-ergo-base-collection\" title=\"TEMPUR-Ergo® Base Collection\">website <\/a>or contact our customer service. You can also check out some of the reviews and testimonials from satisfied customers who have tried the Tempur bases. Don’t wait any longer and get ready to transform your sleep with a Tempur base today!<\/p>",
+        "posts_heading": "Related Posts"
+      }
+    },
+    "ffcf12ce-200c-46b6-bd64-1d670bd4e304": {
+      "type": "compare-chart",
+      "blocks": {
+        "e4f850bf-463b-4061-9fe2-b3a35421bc5c": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "model": "<p><strong>Bases Models<\/strong><\/p>",
+            "technology": "<p><strong>Type<\/strong><\/p>",
+            "relief": "<p><strong>Lifts<\/strong><\/p>",
+            "height": "<p><strong>Massage Zones<\/strong><\/p>",
+            "cancellation": "<p><strong>Snore Response™<\/strong><\/p>",
+            "feel": "<p><strong>Warranty<\/strong><\/p>",
+            "pricing": "<p><strong>Pricing<\/strong><\/p>"
+          }
+        },
+        "7cb937e9-05fd-4176-91cf-79d2a982b31e": {
+          "type": "slide",
+          "settings": {
+            "title": "PREMIUM",
+            "image": "shopify:\/\/shop_images\/Tempurpedic_ErgoBase_Queen_Silo_HeadOn_Jul2022_5x7_180123161849091132_df9af897-02c1-4bcb-9a4e-0c2a40110405.jpg",
+            "model": "<p><strong>TEMPUR-Ergo™ Power Base<\/strong><\/p>",
+            "technology": "<p>Power Base<\/p>",
+            "relief": "<p>Power Base<\/p>",
+            "height": "<p>Power Base<\/p>",
+            "cancellation": "<p>No<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$1,499<\/p>"
+          }
+        },
+        "71129ef3-8ad1-4ba7-a119-dbf682a2b40d": {
+          "type": "slide",
+          "settings": {
+            "title": "AVANCED",
+            "image": "shopify:\/\/shop_images\/TempurPedic_ErgoSmartBase_Queen_Silo_Profile_Sep2022_5x7_180123161857372172_a7d2b7bd-8985-408d-82a8-c6aa287602a9.jpg",
+            "model": "<p><strong>TEMPUR-Ergo™ Smart Base<\/strong><\/p>",
+            "technology": "<p>Smart Base<\/p>",
+            "relief": "<p>Smart Base<\/p>",
+            "height": "<p>Two massage zones. One at the head and one at the foot.<\/p>",
+            "cancellation": "<p>Yes<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$1,899<\/p>"
+          }
+        },
+        "d2304f57-1ab5-4360-acc3-e150f2962cd5": {
+          "type": "slide",
+          "settings": {
+            "title": "MOST AVANCED",
+            "image": "shopify:\/\/shop_images\/Tempurpedic_ErgoProSmartBase_Queen_Silo_ThreeQuarter_Jul2022_5x7_180123151534366717.jpg",
+            "model": "<p><strong>TEMPUR-Ergo™ ProSmart™ Base<\/strong><\/p>",
+            "technology": "<p>Smart Base<\/p>",
+            "relief": "<p>Head & Foot<\/p>",
+            "height": "<p>Sound waves to transmit vibrations from the base throughout the mattress.<\/p>",
+            "cancellation": "<p>Yes<\/p>",
+            "feel": "<p>25-Year Limited Warranty<\/p>",
+            "pricing": "<p>$2,399<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e4f850bf-463b-4061-9fe2-b3a35421bc5c",
+        "7cb937e9-05fd-4176-91cf-79d2a982b31e",
+        "71129ef3-8ad1-4ba7-a119-dbf682a2b40d",
+        "d2304f57-1ab5-4360-acc3-e150f2962cd5"
+      ],
+      "settings": {
+        "heading": "TEMPUR-Ergo™ Comparison table",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    },
+    "dc3e18b1-42b2-4cb2-b2e1-73e77834153a": {
+      "type": "faq-new",
+      "blocks": {
+        "29d3aa83-fb55-4c3a-a5b0-05007300d81d": {
+          "type": "slide",
+          "settings": {
+            "question": "What are the Tempur-Pedic® Sleeptracker-AI® system requirements?",
+            "answer": "<p>The Tempur-Pedic® Sleeptracker-AI® system requires: <br\/><br\/><\/p><ul><li>A 110-240v power adapter (included) <\/li><li>2.4GHz or 5GHz Wi-Fi router connected to an active home Internet <\/li><li>An iOS device operating on OS 15.0 or later <strong>or<\/strong> an Android device operating on OS 9.0 or later. <\/li><\/ul>"
+          }
+        },
+        "fe66127a-31b8-4d55-a5df-bd41f2b4e095": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the Sleeptracker-AI® Sleep Coach? ",
+            "answer": "<p>The Sleeptracker-AI® sleep coach in the app generates a personal sleep rating each night (for up to two individual sleepers). The app tracks improvement over time and offers easy-to-implement, personal sleep tips based on an analysis of individual sleep patterns. The advice is always informed by your personal sleep behavior. Your sleep coach may react to something that worked well like hitting your sleep goal or a high percentage of deep sleep. You will get tips that have the potential to raise your sleep quality rating in the coming nights.<\/p>"
+          }
+        },
+        "ce3d39d9-7286-41d5-85c5-3031f0c3acf6": {
+          "type": "slide",
+          "settings": {
+            "question": "Which smart home devices are compatible with the Tempur-Pedic® Sleeptracker-AI® app?",
+            "answer": "<p>The Tempur-Pedic® Sleeptracker-AI® app is compatible with the following smart home devices: <\/p><p><br\/><\/p><ul><li><strong>Any Amazon Alexa-enabled device<\/strong> — just set up the Sleeptracker-AI® skill in your Amazon Alexa app. This includes smart speakers like the Amazon Echo and Echo Dot, any other Alexa-enabled devices in your home, as well as third-party smart home products that include speakers, televisions, appliances, etc. <\/li><li><strong>Any Google Assistant-enabled device<\/strong> — just set up the Sleeptracker-AI® skill in your Google Assistant app. This includes smart speakers and connected home devices like Google Home and Nest, any other Google Assistant-enabled devices in your home, as well as third-party smart home products that include speakers, televisions, appliances, etc. <\/li><\/ul><p><br\/>Additionally, the Tempur-Pedic® Sleeptracker-AI® app is compatible with <strong>all mobile phones and tablets<\/strong> running Android OS 9.0 and later or iOS 15.0 and later. You can ask any of these devices<br\/><br\/>Sleeptracker-AI® -related questions, including \"Ask Sleeptracker to set my bed to the TV position.\"<\/p>"
+          }
+        },
+        "4ebc81ca-01dd-4e22-9747-84601a16196f": {
+          "type": "slide",
+          "settings": {
+            "question": "Does the Tempur-Pedic® Sleeptracker-AI® system store sleep data for both my partner and myself?",
+            "answer": "<p>Yes, you and your partner will each have unique Sleeptracker-AI® accounts that monitor and store sleep data. During the app setup, you will be asked to specify which side of the bed you sleep on, allowing the system to distinguish you from your partner. If you switch sides of the bed, simply update this information in the app at Menu &gt; My Sleeptracker-AI® Monitor &gt; Bed & Sleeper Setup &gt; Change Your Side of Bed.<\/p>"
+          }
+        },
+        "7c36db95-855d-4f11-92cc-977da76c35d1": {
+          "type": "slide",
+          "settings": {
+            "question": "What if I have a pet that sleeps on the bed?",
+            "answer": "<p>Generally, the Sleeptracker-AI® sensors are designed to ignore pets at the foot of the bed and should not affect your heart rate or respiratory rate data, but if the pet gets up and move during the night, it could affect the recorded data.Select Menu -&gt; My Smart Bed -&gt; Smart Bed Details and ensure that you have “Yes” selected for “Are pets allowed on your smart bed?”<\/p>"
+          }
+        },
+        "fab9b0a8-f9a0-4fce-a506-37ee95c25372": {
+          "type": "slide",
+          "settings": {
+            "question": "How are mattresses\/foundations\/power bases delivered?",
+            "answer": "<p>We use an in-home delivery service to deliver these products. Once you place your order, they will call you to schedule your delivery. Delivery is typically within a few weeks from the day you placed your order, with metro areas usually faster than rural areas. When they deliver your new bed, they will set it up in your bedroom and remove the packing materials. They will even remove your old mattress and box spring, unless you ask them not to.*TEMPUR-Cloud® ships via UPS Ground and does not include in-home set-up or mattress removal services.<\/p>"
+          }
+        },
+        "a87483ab-2199-4125-b53e-dc230e511f8f": {
+          "type": "slide",
+          "settings": {
+            "question": "Will your power base fit inside my existing bed frame?",
+            "answer": "<p>We have found that the power bases fit inside most modern bed frames. However, they may not fit inside antique bed frames or other non-standard frames. We recommend you measure the inside of the bed frame and compare to the measurements below to be sure the power base will fit.<\/p>"
+          }
+        },
+        "d955f1c8-d1ab-4b93-b849-9b7f13a17ff9": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the weight limit of your power base?",
+            "answer": "<p>Our power bases support up to 650 lbs. each (Twin, Twin Long, Double, Queen, and Split\/Dual CA King bases).All power bases will structurally support the recommended weight distributed evenly across the head and foot sections. Power base products are not designed to support or lift this amount of weight in the head or foot sections alone.<\/p>"
+          }
+        },
+        "b3beb0db-6a96-466a-bd08-34641e5492f9": {
+          "type": "slide",
+          "settings": {
+            "question": "Can I use two remotes with one adjustable base?",
+            "answer": "<p>For Twin, Twin XL, Full\/Double, Queen, and King size power bases, you cannot pair two separate remotes with the one power base. If you purchase a Split King or Split California King power base, your base will come with two separate remotes as each side can function individually.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "29d3aa83-fb55-4c3a-a5b0-05007300d81d",
+        "fe66127a-31b8-4d55-a5df-bd41f2b4e095",
+        "ce3d39d9-7286-41d5-85c5-3031f0c3acf6",
+        "4ebc81ca-01dd-4e22-9747-84601a16196f",
+        "7c36db95-855d-4f11-92cc-977da76c35d1",
+        "fab9b0a8-f9a0-4fce-a506-37ee95c25372",
+        "a87483ab-2199-4125-b53e-dc230e511f8f",
+        "d955f1c8-d1ab-4b93-b849-9b7f13a17ff9",
+        "b3beb0db-6a96-466a-bd08-34641e5492f9"
+      ],
+      "settings": {
+        "heading": "Power Base & Sleeptracker-AI® App FAQs",
+        "hierarchy": "h2",
+        "sub": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17e412db-3680-4e78-8669-fb18b9a93869",
+    "ffcf12ce-200c-46b6-bd64-1d670bd4e304",
+    "dc3e18b1-42b2-4cb2-b2e1-73e77834153a"
+  ]
+}

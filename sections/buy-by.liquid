@@ -1,0 +1,159 @@
+{% liquid 
+    assign heading = section.settings.heading
+    assign brand = section.settings.brand
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="flex justify-center mb-6">
+        <h2 class="font-extrabold text-title text-center text-text">
+            {% if heading == blank %}
+                Title
+            {% else %}
+                {{ heading }}
+            {% endif %}
+        </h2>
+    </div>
+    <div class="grid grid-cols-3 gap-4 justify-items-center ts:gap-6 ds:grid-cols-6 ds:gap-8 dm:gap-10">
+        {% for block in section.blocks %}
+            {% liquid 
+                assign logo_image = block.settings.logo_image
+                assign product_name = block.settings.product_name
+                assign logo_svg = block.settings.logo_svg
+                assign logo_check = block.settings.logo_check
+                assign description = block.settings.description
+                assign collection = block.settings.collection
+            %}
+            {% if brand == false %}
+            <div class="group relative">
+                <a href="{{ collection.url }}" title="{{ collection.title }}"><div class="grid gap-1 bg-white shadow-sp rounded-cs aspect-square h-24 p-3 mx-auto mm:h-[135px] ts:h-44 ds:grid-cols-2 ds:gap-2 ds:h-32 dm:h-[165px]">
+                    <div class="self-end justify-self-center ds:self-center ds:justify-self-end">
+                        {% if logo_image or logo_svg != blank %}
+                            {% if logo_check == false %}
+                                <img class="max-w-2/5 h-[45px] mm:h-[60px] ts:h-[70px] ds:h-[60px]" src="{{ logo_image | image_url: width: 100 }}" alt="{{ logo_image.alt }}" loading="lazy">
+                            {% else %}
+                                <img class="max-w-2/5 h-[45px] mm:h-[60px] ts:h-[70px] ds:h-[60px]" src="{{ logo_svg }}" alt="{{ product_name }}" loading="lazy">
+                            {% endif %}
+                        {% else %}
+                            <div class="flex items-center justify-center bg-black/50 rounded-cs aspect-square h-11 mm:h-20 ts:h-24 ds:h-12 dm:h-16">
+                                <p class="font-bold text-xs text-center text-white mm:text-base ts:text-lg ds:text-xs dm:text-sm">Image</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="self-start justify-self-center ds:self-center ds:justify-self-start">
+                        <p class="font-bold text-sm text-text mm:text-xl ts:text-2xl ds:text-xs dm:text-sm">
+                            {% if product_name == blank %}
+                                Product
+                            {% else %}
+                                {{ product_name }}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div></a>
+                <div class="hidden items-center absolute z-10 {% if forloop.index == 5 or forloop.index == 6 or forloop.index == 11 or forloop.index == 12 %}-right-6{% else %}-left-6{% endif %} transition-all duration-300 ease-in-out invisible opacity-0 group-hover:visible group-hover:opacity-100 bg-white shadow-mp rounded-cl w-[172px] ds:block dm:w-[213px]">
+                    <a href="{{ collection.url }}" title="{{ collection.title }}">
+                        <img src="{{ collection.featured_image | image_url: width: 500 }}" alt="{{ collection.featured_image.alt }}" class="object-cover object-center aspect-square rounded-t-cl w-full" loading="lazy">
+                    </a>
+                    <div class="flex flex-col justify-evenly gap-2 py-3 px-2">
+                        <a href="{{ collection.url }}" title="{{ collection.title }}" class="self-center font-bold text-2xl">{{ product_name }}</a>
+                        {% if description %}<div class="text-center">{{ description }}</div>{% endif %}
+                        <a href="{{ collection.url }}" title="{{ collection.title }}" class="button">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="group relative">
+                <a href="{{ collection.url }}" title="{{ collection.title }}"><div class="grid bg-white shadow-sp rounded-cs aspect-square h-24 p-3 mx-auto mm:h-[135px] ts:h-44 ds:h-32 dm:h-[165px]">
+                    <div class="place-self-center">
+                        {% if logo_image or logo_svg != blank %}
+                            {% if logo_check == false %}
+                                <img class="h-full w-full" src="{{ logo_image | image_url: width: 200 }}" alt="{{ logo_image.alt }}" loading="lazy">
+                            {% else %}
+                                <img class="h-4/5" src="{{ logo_svg }}" alt="{{ product_name }}" loading="lazy">
+                            {% endif %}
+                        {% else %}
+                            <div class="flex items-center justify-center bg-black/50 rounded-cs aspect-square h-14 mm:h-20 ts:h-28 dm:h-24">
+                                <p class="font-bold text-sm text-center text-white mm:text-base ts:text-xl ds:text-lg dm:text-xl">Image</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div></a>
+                <div class="hidden items-center absolute z-10 {% if forloop.index == 5 or forloop.index == 6 or forloop.index == 11 or forloop.index == 12 %}-right-6{% else %}-left-6{% endif %} transition-all duration-300 ease-in-out invisible opacity-0 group-hover:visible group-hover:opacity-100 bg-white shadow-mp rounded-cl w-[172px] ds:block dm:w-[213px]">
+                    <a href="{{ collection.url }}" title="{{ collection.title }}">
+                        <img src="{{ collection.featured_image | image_url: width: 500 }}" alt="{{ collection.featured_image.alt }}" class="object-cover object-center aspect-square rounded-t-cl w-full" loading="lazy">
+                    </a>
+                    <div class="flex flex-col justify-evenly gap-2 py-3 px-2">
+                        <a href="{{ collection.url }}" title="{{ collection.title }}" class="self-center font-bold text-2xl">{{ product_name }}</a>
+                        {% if description %}<div class="text-center">{{ description }}</div>{% endif %}
+                        <a href="{{ collection.url }}" title="{{ collection.title }}" class="button">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Buy By",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }, 
+        {
+            "type": "checkbox",
+            "id": "brand",
+            "label": "Sort by brand",
+            "default": false
+        }
+    ],
+    "max_blocks": 12,
+    "blocks": [
+        {
+            "name": "Image",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "logo_image",
+                    "label": "Image"
+                }, 
+                {
+                    "type": "url",
+                    "id": "logo_svg",
+                    "label": "SVG link"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "logo_check",
+                    "label": "Use SVG",
+                    "default": false
+                }, 
+                {
+                    "type": "text",
+                    "id": "product_name",
+                    "label": "Product Name"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Select Collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "Buy By"
+        }
+    ]
+}
+{% endschema %}

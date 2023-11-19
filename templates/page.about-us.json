@@ -1,0 +1,374 @@
+{
+  "sections": {
+    "welcome": {
+      "type": "welcome",
+      "settings": {
+        "heading": "Welcome to SleepFirst!",
+        "hierarchy": "h1",
+        "image": "shopify:\/\/shop_images\/Rocklin_West_Sleep_First_Mattress_Store_April_19_3.jpg",
+        "order": true,
+        "sub_title1": "Our mission is to make mattress shopping a better experience.",
+        "lab": "Click to call any store:",
+        "button": "(888) 975-3371",
+        "url": "tel:+18889753371",
+        "sub_title2": "Hours of operation:",
+        "content1": "",
+        "content2": "<p><strong>Texas Store Hours<\/strong><\/p><p>Mon-Sat 10am-7pm<\/p><p>Sun 12pm-5pm<\/p>",
+        "content_extra": "",
+        "sub_title3": "Parking Available",
+        "option1": "Private lots",
+        "option2": "Plenty of parking",
+        "option3": "Wheelchair accessible"
+      }
+    },
+    "text-with-buttons": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "Your #1 Locally Owned",
+        "heading": "Mattress Retailer",
+        "content": "<p>It all started with a passion for people and their sleep.<\/p><p>At Sleep First, our number one priority is YOU!<\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p>We're proud to have been serving our local community in Texas since 2017<\/p>",
+        "font_size": 16,
+        "button1": "FIND A STORE",
+        "url1": "shopify:\/\/pages\/store-locator",
+        "button2": "VIEW PROMOS",
+        "url2": "shopify:\/\/pages\/mattress-sale",
+        "button3": "",
+        "url3": ""
+      }
+    },
+    "text-banner1": {
+      "type": "text-banner",
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/Sleep_First_Mattress_Florin_Exterior_1.jpg",
+        "heading": "WHEN SHOPPING FOR A MATTRESS, WE KNOW THAT IT'S NOT JUST WHAT YOU BUY, BUT WHO YOU BUY IT FROM.",
+        "font_size": 16,
+        "hierarchy": "h2",
+        "order": true,
+        "content": "<p>Unlike other mattress stores our number one priority is our customers, not our bottom line.<br\/><br\/><\/p><p>At Sleep First, we’re committed to providing you with the best deals and the most genuine service. We understand your desire for a zero-pressure mattress shopping experience, and specialize in serving your needs rather than forcing you into something you don’t want. Our knowledgeable mattress team will take the time to listen to your needs and find the right bed for you, so you can walk away knowing you made the right choice.<\/p>",
+        "button": "SHOP NOW",
+        "url": "shopify:\/\/collections"
+      }
+    },
+    "text": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "",
+        "heading": "We treat you like a friend, not a dollar sign.",
+        "content": "<p>We treat you like a friend, not a dollar sign.<\/p><p>We understand that choosing a mattress is a big decision.<br\/><br\/> The Sleep First team is committed to listening, to understand your individual needs above all else, while creating an environment that is 0% pressureand 100% support.<br\/><br\/> Your experience is important to us, and it’s important that you walk away feeling completely satisfied.<br\/><br\/> Our highly trained mattress specialists are experts at accommodating your unique preferences and guiding you through the process of finding your perfect fit, at the perfect price.<\/p>",
+        "font_size": 16,
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "text-banner2": {
+      "type": "text-banner",
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/Private_Mattress_Shopping_at_Sleep_First_Mobile.jpeg",
+        "heading": "At Sleep First, we believe in the power of keeping it local",
+        "font_size": 16,
+        "hierarchy": "h2",
+        "order": false,
+        "content": "<p>We’re proud to offer the same deals as huge chains, while remaining locally owned and operated.<br\/><br\/>We combine the best of both worlds: we offer the significant savings of big name stores and the friendly service and people-first policies of a local business.<br\/><br\/>When you choose Sleep First, you’re getting the best deal while also supporting your local community.<\/p>",
+        "button": "SHOP NOW",
+        "url": "shopify:\/\/collections"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "556ce431-17b5-4ac4-9988-45defc2450a3": {
+          "type": "slide",
+          "settings": {
+            "question": "What Makes Sleep First Different?",
+            "answer": "<p>We're Passionate About Helping You Find Your Best Mattress- And We Have The Knowledge To Back It Up.<br\/><br\/>Upon Arrival To Any Sleep First Showroom. Our Zero-Pressure Sales Team Will Quickly Help Your Understand Which Mattresses Have Exactly What Your Body Wants And Needs.<br\/><br\/>We Can Custom-Fit Your Mattress For Your Unique Body And Sleeping Habits.<\/p>"
+          }
+        },
+        "293fa83e-7f62-4eec-a9c7-21c4afb6a47c": {
+          "type": "slide",
+          "settings": {
+            "question": "Do You Charge For Delivery?",
+            "answer": "<p>Nope. Unlike our competitors, we are happy to offer fast & free delivery.<\/p>"
+          }
+        },
+        "a3320380-45bc-4486-85ba-6ac0d3ebd75d": {
+          "type": "slide",
+          "settings": {
+            "question": "What Is The Sleep First 365 Day Happiness Guarantee?",
+            "answer": "<p>At Sleep First you'll get one FULL year exchange on your mattress policy. <br\/><br\/>Our exchange policy is around 200+ days longer than anywhere else, giving  you the advantage of helping you to solve your pain problems in the long term.<br\/><br\/>If your first choice of mattress isn't working for you, just reach out and we'll help you with a second try. <\/p>"
+          }
+        },
+        "75297374-10f0-4196-b36d-2601374966de": {
+          "type": "slide",
+          "settings": {
+            "question": "What Is Your Warranty On Tempur-Pedic?",
+            "answer": "<p>Sleep First offers a 20 Year Warranty on Tempur-Pedic mattresses.<\/p><p>When you buy from Sleep First, you get an exclusive 20 year warranty on any Tempur-Pedic® mattress.<br\/><br\/>Yes, really!<br\/><br\/>Here’s how it works:<br\/>The first 10 years of the warranty are covered directly by Tempur-Pedic® themselves. After that, Sleep First offers you an EXTRA TEN YEARS covered directly by ServeCo, a global leader serving huge companies and their customers for more than three decades.<br\/><br\/>That means no matter what happens, you're covered and can sleep soundly knowing that your investment is comfortable and protected!<br\/><br\/>And because we’re a Tempur-Pedic Elite Retailer, we’re able to offer this exceptional warranty on a wide selection of Tempur-Pedic® mattresses and adjustable bases. <\/p>"
+          }
+        },
+        "9ccf1a75-d954-4064-bd71-b834af4e83ee": {
+          "type": "slide",
+          "settings": {
+            "question": "What Happens If I Don't Like My New Mattress?",
+            "answer": "<p>As a locally owned small business, we're proud to offer even better guarantees than our competitors. We work really hard to keep every single customer happy.<br\/><br\/>Sleep First has a 365 night comfort guarantee and price guarantee. That's around 120 days longer than any other mattress store!<br\/><br\/>If your mattress is advertised lower than you paid, we'll refund the difference. If you don't love the comfort, just let us know and we'll be more than happy to switch out for a different model.<\/p>"
+          }
+        },
+        "af8fe037-bc6f-408b-b724-9f7b431e4b01": {
+          "type": "slide",
+          "settings": {
+            "question": "What Are Your Promotions This Week?",
+            "answer": "<p>We've got a ton of deals for you this week! <a href=\"https:\/\/sleepfirstusa.com\/pages\/mattress-sale\" title=\"Mattress Sale\">Check them out here<\/a>.<\/p>"
+          }
+        },
+        "d70020d5-933f-495a-93eb-6ad98860cb9d": {
+          "type": "slide",
+          "settings": {
+            "question": "Are You Hiring?",
+            "answer": "<p>Sleep First is growing! You can find all current job openings listed on our <a href=\"https:\/\/sleepfirstusa.com\/pages\/careers\" title=\"Careers at Sleep First | Management Roles\">Careers page<\/a>.<\/p>"
+          }
+        },
+        "595dce3f-3811-417a-98d7-00cf1a6930a0": {
+          "type": "slide",
+          "settings": {
+            "question": "What Brands Do You Carry?",
+            "answer": "<p>We have ALL the brands!<\/p><p>Mattress brands include Tempur-Pedic, Purple Mattress, Nectar Mattress, DreamCloud, AWARA, Lull, Beautyrest, Beautyrest Black, Sealy, Sealy Hybrid, Serta, iComfort, Simmons, Stearns & Foster and Kingsdown.<br\/><br\/>We also carry massage and office chairs: X Chair, Kahuna, Osaki, Cozzia, JP Medics, Titan, ErgoTech and Svago.<\/p>"
+          }
+        },
+        "394146a6-24d7-4e9c-bf83-960fd53277eb": {
+          "type": "slide",
+          "settings": {
+            "question": "How's Your Customer Service?",
+            "answer": "<p>We have over 2,500+ five-star reviews on Google, and we've made it our business to make sure you end up with exactly the right bed.<br\/><br\/>If anything at all is not going smoothly, just text us and we'll find a quick solution.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "556ce431-17b5-4ac4-9988-45defc2450a3",
+        "293fa83e-7f62-4eec-a9c7-21c4afb6a47c",
+        "a3320380-45bc-4486-85ba-6ac0d3ebd75d",
+        "75297374-10f0-4196-b36d-2601374966de",
+        "9ccf1a75-d954-4064-bd71-b834af4e83ee",
+        "af8fe037-bc6f-408b-b724-9f7b431e4b01",
+        "d70020d5-933f-495a-93eb-6ad98860cb9d",
+        "595dce3f-3811-417a-98d7-00cf1a6930a0",
+        "394146a6-24d7-4e9c-bf83-960fd53277eb"
+      ],
+      "settings": {
+        "heading": "Sleep First FAQs",
+        "hierarchy": "h2"
+      }
+    },
+    "double1": {
+      "type": "double",
+      "settings": {
+        "heading": "Home of free delivery",
+        "hierarchy": "h2",
+        "content": "<p>Unlike our competitors, we offer free delivery, both locally and nationwide.<br\/><br\/>We are currently able to deliver same-day or next-day, with 100% contact-free delivery, including drop-off at the door.<br\/><br\/>White glove setup service is also an option in most areas.<br\/><br\/>Oh - and we'll haul away your old mattress too.<\/p>",
+        "button": "SHOP NOW",
+        "url": "shopify:\/\/collections\/ships-nationwide",
+        "image": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "order": false
+      }
+    },
+    "double2": {
+      "type": "double",
+      "settings": {
+        "heading": "CLean Shop Promise",
+        "hierarchy": "h2",
+        "content": "<p>Unlike our competitors, we offer free delivery, both locally and nationwide.<br\/><br\/>We are currently able to deliver same-day or next-day, with 100% contact-free delivery, including drop-off at the door. <br\/><br\/>White glove setup service is also an option in most areas.<br\/><br\/>Oh - and we'll haul away your old mattress too. <\/p>",
+        "button": "VIEW OUR PROMOTIONS",
+        "url": "shopify:\/\/pages\/mattress-sale",
+        "image": "shopify:\/\/shop_images\/clean-shop-promise.png",
+        "order": true
+      }
+    },
+    "double3": {
+      "type": "double",
+      "settings": {
+        "heading": "#ShopLocal",
+        "hierarchy": "h2",
+        "content": "<p>Here at Sleep First we offer the same amazing deals as huge mattress chains.<br\/><br\/>As a proudly locally owned and operated business, our team has a deep love for the local community, and we understand your desire for a supportive and pressure-free shopping environment.<br\/><br\/>We’re dedicated to listening to your needs and helping you find the right mattress. We’re here to listen to you and guide you towards the best sleep solutions for the best possible price.<br\/><br\/>Thank you for choosing to #ShopLocal and support our small business!<\/p>",
+        "button": "FIND A STORE",
+        "url": "shopify:\/\/pages\/store-locator",
+        "image": "shopify:\/\/shop_images\/Shop_Local_Sleep_First_1024-High-Quality.jpg",
+        "order": false
+      }
+    },
+    "buy-by": {
+      "type": "buy-by",
+      "blocks": {
+        "a52921af-d1b3-4b83-923a-e54176466bbe": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Beautyrest_Logo_Bar_02e35210-fbca-4766-adce-ee8ecfa81959.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "simmons-beautyrest"
+          }
+        },
+        "b3e7a157-cd28-474d-a20f-3a216ec9988c": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Tempurpedic_Logo_Bar_248e83f0-9c0b-4ce3-a7cc-b527acf9def9.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "tempurpedic"
+          }
+        },
+        "08474315-f859-4bb3-94f5-c2e770209296": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Nectar_Logo_Bar_ee45c2b3-27ff-4bbd-aed9-e978aedf054a.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "nectar-mattress"
+          }
+        },
+        "79caba5c-6e55-4aa7-8cbb-7a00a389b5ff": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Purple_Mattress_Logo_800x800-Max-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "purple"
+          }
+        },
+        "e15b5053-3c25-40dd-81c8-76cf833eceeb": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/AWARA_Mattress_Logo_800x800-High-Quality.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "awara"
+          }
+        },
+        "1225637b-bad0-4b2e-a25b-efa16a95e4e7": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/DreamCloud_Mattress_Logo_800x800-High-Quality_6634957a-de20-47ca-9c60-0e06f50519d7.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "dreamcloud"
+          }
+        },
+        "21d49bab-24bb-44b6-8849-8539979973f9": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sealy_Logo_Bar_46668c26-7339-4b45-9f64-566cfa8ce208.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "sealy-mattress-collection"
+          }
+        },
+        "a7b4aba7-3b1a-4d16-8905-6ac8bdb3e72d": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Sherwood-Bedding-TempurSealy.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "sherwood"
+          }
+        },
+        "138f575a-bdf6-4b29-af00-1e8b66fc04e5": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/osakimassagechair-logo2-1-copy_1.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "osaki"
+          }
+        },
+        "92eff438-c805-47ae-b439-6bfc6f3e4f72": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Serta_Mattress_Logo_800x800-High-Quality_bab59d56-f454-4323-8042-e4a10cf2f2a1.jpg",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "serta-mattresses"
+          }
+        },
+        "65c469b5-7fcb-4523-b8af-4e5afcf3abac": {
+          "type": "slide",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/infinity-logo.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "infinity"
+          }
+        },
+        "b51338fb-b2a8-44a4-9837-e339b6b2ebd2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/brand-x-chair.png",
+            "logo_svg": "",
+            "logo_check": false,
+            "product_name": "",
+            "description": "",
+            "collection": "xchair"
+          }
+        }
+      },
+      "block_order": [
+        "a52921af-d1b3-4b83-923a-e54176466bbe",
+        "b3e7a157-cd28-474d-a20f-3a216ec9988c",
+        "08474315-f859-4bb3-94f5-c2e770209296",
+        "79caba5c-6e55-4aa7-8cbb-7a00a389b5ff",
+        "e15b5053-3c25-40dd-81c8-76cf833eceeb",
+        "1225637b-bad0-4b2e-a25b-efa16a95e4e7",
+        "21d49bab-24bb-44b6-8849-8539979973f9",
+        "a7b4aba7-3b1a-4d16-8905-6ac8bdb3e72d",
+        "138f575a-bdf6-4b29-af00-1e8b66fc04e5",
+        "92eff438-c805-47ae-b439-6bfc6f3e4f72",
+        "65c469b5-7fcb-4523-b8af-4e5afcf3abac",
+        "b51338fb-b2a8-44a4-9837-e339b6b2ebd2"
+      ],
+      "settings": {
+        "heading": "Brands We Carry",
+        "brand": true
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "4,500+ Five Star Reviews",
+        "principal_logo": "shopify:\/\/shop_images\/logo-sleepfirst_medal.png",
+        "left_logo": "shopify:\/\/shop_images\/logo-google.png",
+        "right_logo": "shopify:\/\/shop_images\/logo-facebook.png"
+      }
+    }
+  },
+  "order": [
+    "welcome",
+    "text-with-buttons",
+    "text-banner1",
+    "text",
+    "text-banner2",
+    "faq",
+    "double1",
+    "double2",
+    "double3",
+    "buy-by",
+    "reviews"
+  ]
+}

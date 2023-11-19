@@ -1,0 +1,73 @@
+<div class="h-[3036px] relative overflow-hidden bg-neutral-50 flex flex-row flex-wrap  justify-center m-auto" style="border-radius: 10px; max-width: 1200px; gap: 15px; width: 90%;">
+  <div>
+    <img
+      src="{{section.settings.image_1 | img_url: ''}}"
+      class="w-[1200px] h-[175.44px] left-[119px] top-[353px] rounded-[10px] object-cover w-full"
+      style="border-radius: 10px;"
+    />
+  </div>
+  <div class="flex flex-col justify-center items-center w-full px-4 py-6 bg-white rounded-md shadow-lg text-center">
+    <h2 style="font-size: 35px; line-height: normal;"class="text-xl font-bold mb-2">Score Big With Sleep First!</h2>
+    <h3 style="font-size: 24px;margin: 20px;"class="text-lg mb-4">Win Your Entire Mattress Purchase Back If Dallas WINS IT ALL!</h3>
+    <p class="text-base mb-2">Sleep First is your trusted local mattress retailer in Tyler and Longview, and we’re celebrating our love of football by giving you the win. Don't miss this limited-time offer exclusively for Texas residents!</p>
+    <p class="text-base mb-2">We’ll give back 100% of your Tempurpedic mattress purchase back if Dallas clinches the victory in February!</p>
+    <p class="text-base mb-2">Rest easy knowing that if Dallas win it all, you'll win too. Imagine enjoying blissful sleep on your new mattress, knowing you scored an unforgettable deal.</p>
+    <p class="text-base">Scroll down to find a store location in Tyler or Longview, and secure your chance for a 100% mattress refund!</p>
+  </div>
+
+  <div class="flex flex-col" style="gap: 10px;">
+    <img
+    src="{{section.settings.image_2 | img_url: ''}}"
+    class="w-[673px] h-[145px]  left-[147px] top-[541px] rounded-[10px] object-cover"
+    /><img
+      src="{{section.settings.image_3 | img_url: ''}}"
+      class="w-[676px] h-[560px] left-[147px] top-[697px] rounded-[20px] object-none"
+    />
+  </div>
+  
+  <img
+    src="{{section.settings.image_4 | img_url: ''}}"
+    class="w-[455px] h-[716px] left-[835px] top-[541px] rounded-[10px] object-cover"
+  />
+  {% comment %}  
+  <div class="w-[180px] h-[180px] absolute left-[62px] top-[1214px]">
+    <div class="w-[180px] h-[180px] absolute left-[-1px] top-[-1px]"></div>
+    <img src="image.png" class="w-[180px] h-[180px] absolute left-[-1px] top-[-1px] object-cover" />
+  </div>
+  {% endcomment %}
+</div>
+
+{% schema %}
+  {
+    "name": "Promo Page",
+    "class": "my-50px",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "Image 4"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "private-mattress-shopping",
+      "blocks": {
+        "1406a9c7-adc2-41cf-a533-fbccaf95a372": {
+          "type": "slide",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rocklin_Five_Star_Exterior_1.jpg"
+          }
+        },
+        "4d1318f9-ae86-4465-8922-f290ddd095c5": {
+          "type": "slide",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Sleep_First_Mattress_Lodi_Exterior_1_b62139ff-2d1f-42c6-9be5-b9f015c30ad2.jpg"
+          }
+        },
+        "ba0c8aeb-277f-4490-910e-9651f536f7cd": {
+          "type": "slide",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Sleep_First_Mattress_Stores_600x600_7b7e6e26-8554-4e7d-ae6c-bf84f2483ac6.jpg"
+          }
+        },
+        "1a8392b6-fd2e-4d80-81a9-b9c26b266b4a": {
+          "type": "slide",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Arden-Arcade_Exterior_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1406a9c7-adc2-41cf-a533-fbccaf95a372",
+        "4d1318f9-ae86-4465-8922-f290ddd095c5",
+        "ba0c8aeb-277f-4490-910e-9651f536f7cd",
+        "1a8392b6-fd2e-4d80-81a9-b9c26b266b4a"
+      ],
+      "settings": {
+        "stores": "Longview,Tyler (Kinsey Crossing),Tyler (Cumberland),Vacaville,Lodi",
+        "button": "Submit",
+        "message": "<p><strong>Book a private mattress shopping appointment at your <\/strong><a href=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\" title=\"Sleep First Mattress Store Locator\">local Sleep First <\/a><strong>mattress store. <\/strong><\/p>"
+      }
+    },
+    "best-selling": {
+      "type": "best-selling",
+      "settings": {
+        "heading": "You may also like",
+        "collection": "tempurpedic"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "best-selling"
+  ]
+}

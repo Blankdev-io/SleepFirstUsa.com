@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-screenshot",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

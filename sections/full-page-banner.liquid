@@ -1,0 +1,113 @@
+{% liquid 
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign sub = section.settings.sub
+    assign imageDesk = section.settings.imageDesk
+    assign imageMob = section.settings.imageMob
+    assign frameImage = section.settings.frameImage
+    assign frameHeading = section.settings.frameHeading
+    assign frameSubheading = section.settings.frameSubheading
+    assign url = section.settings.url
+%}
+
+<div class="mb-10">
+    <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-10 dl:px-0">
+        {% if heading != blank %}
+            {% if hierarchy == "h2" %}
+                <h2 class="font-extrabold text-[24px] text-center text-text mb-4 ts:text-[28px] ds:text-[32px]">{{ heading }}</h2>  
+            {% else %}
+                <h1 class="font-extrabold text-[24px] text-center text-text mb-4 ts:text-[28px] ds:text-[32px]">{{ heading }}</h1>
+            {% endif %}  
+        {% endif %}
+        {% if sub != blank %}
+            <div class="font-medium text-center text-text mb-10">{{ sub }}</div>
+        {% endif %}
+    </div>
+    {% if imageDesk != blank %}
+        <picture>
+            <source media="(min-width: 768px)" srcset="{{ imageDesk | image_url }}">
+            <img class="object-cover w-full h-[360px] mm:h-[400px] ts:h-[500px] ds:h-[720px]" src="{{ imageMob | image_url }}" alt="{{ imageMob.alt }}" loading="lazy">
+        </picture>
+    {% endif %}
+    {% if frameHeading != blank %}
+        <div class="bg-primary">
+            <div class="flex flex-col justify-center items-center gap-10 text-center text-white p-4 mx-5 ts:flex-row ts:text-left ts:gap-20 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+                <img class="h-[130px]" src="{{ frameImage | image_url }}" alt="{{ frameImage.alt }}" loading="lazy">
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-xl ts:text-2xl">{{ frameHeading }}</p>
+                    <p class="font-medium text-base ts:text-xl">{{ frameSubheading }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Full page banner",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "richtext",
+            "id": "sub",
+            "label": "Sub-title"
+        },
+        {
+            "type": "image_picker",
+            "id": "imageDesk",
+            "label": "Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "imageMob",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "frameImage",
+            "label": "Frame Image"
+        },
+        {
+            "type": "text",
+            "id": "frameHeading",
+            "label": "Frame Heading"
+        },
+        {
+            "type": "text",
+            "id": "frameSubheading",
+            "label": "Frame Sub-Heading"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Full page banner"
+        }
+    ]
+}
+{% endschema %}

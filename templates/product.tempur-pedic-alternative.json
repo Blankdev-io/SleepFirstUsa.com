@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-tempur-alternative",
+      "settings": {
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "upsell_title": "Choose Your Mattress",
+        "product_list": [
+          "tempurpedic-luxeadapt-mattress",
+          "tempurpedic-breeze-mattress",
+          "tempurpedic-proadapt-mattress"
+        ],
+        "quantity": false,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it."
+      }
+    },
+    "55d7aea0-d02c-4f6d-901c-9d6d5615ca44": {
+      "type": "full-page-banner",
+      "settings": {
+        "heading": "Elevate Your Sleep Experience",
+        "hierarchy": "h2",
+        "sub": "<p>Customize your comfort with an adjustable Power Base. From automatic snore response to sleep sensing, our innovative Smart Bases track and respond to you and your partner.<\/p>",
+        "imageDesk": "shopify:\/\/shop_images\/TempurPedic_DiamondDarkBlue_TempurCloudMattress_Photography_Lifestyle_Profile_66490_MON_190513_D5_602-1_5x7_130123132758039340.jpg",
+        "imageMob": "shopify:\/\/shop_images\/TempurPedic_DiamondDarkBlue_TempurCloudMattress_Photography_Lifestyle_Profile_66490_MON_190513_D5_602-1_5x7_130123132758039340.jpg",
+        "frameHeading": "",
+        "frameSubheading": "",
+        "url": ""
+      }
+    },
+    "a9aa3934-e615-4585-83eb-80319ace63d4": {
+      "type": "product-materials",
+      "blocks": {
+        "449b926a-0498-4341-a8bd-542b762103b5": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tempurpedic_T1_Adapt_Medium_SILO_9Inch_Billboa.width-500.webp",
+            "select": "image",
+            "title": "9\" HIGH",
+            "description": "<p>Matches a traditional<br\/>box-spring height<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        },
+        "8acd602f-ac07-4703-803c-7f41cc79c639": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tempurpedic_T1_Adapt_Medium_SILO_5Inch_Billboa.width-500.webp",
+            "select": "image",
+            "title": "5\" LOW",
+            "description": "<p>A more modern look that easily fits through narrow stairways<\/p>",
+            "disclaimer": "",
+            "switch": true,
+            "button": "",
+            "url": ""
+          }
+        },
+        "ec463414-da77-4383-befd-e03f4e015549": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tempurpedic_T1_Adapt_Medium_SILO_2Inch_Billboa.width-500.webp",
+            "select": "image",
+            "title": "2\" ULTRA LOW",
+            "description": "<p>Sleek profile perfect for platform-style bed frames<\/p>",
+            "disclaimer": "",
+            "switch": false,
+            "button": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "449b926a-0498-4341-a8bd-542b762103b5",
+        "8acd602f-ac07-4703-803c-7f41cc79c639",
+        "ec463414-da77-4383-befd-e03f4e015549"
+      ],
+      "settings": {
+        "heading": "Choose Your Perfect Foundation",
+        "hierarchy": "h2",
+        "sub": "<p>Engineered to be a strong and durable platform to support your Tempur-Pedic® mattress for years to come, at a height that's right for you.<\/p>"
+      }
+    },
+    "9d3cb654-ac6b-4f0c-a588-9dcfd8c78a94": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "7b45f3fd-7c38-4dff-ba17-c9d3fc5ac4f7": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "55d7aea0-d02c-4f6d-901c-9d6d5615ca44",
+    "a9aa3934-e615-4585-83eb-80319ace63d4",
+    "9d3cb654-ac6b-4f0c-a588-9dcfd8c78a94",
+    "7b45f3fd-7c38-4dff-ba17-c9d3fc5ac4f7"
+  ]
+}

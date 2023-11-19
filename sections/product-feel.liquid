@@ -1,0 +1,391 @@
+{% liquid 
+    assign heading = section.settings.heading
+    assign hierarchy = section.settings.hierarchy
+    assign sub = section.settings.sub
+    assign imageDesk = section.settings.imageDesk
+    assign imageMob = section.settings.imageMob
+    assign frameImage = section.settings.frameImage
+    assign frameHeading = section.settings.frameHeading
+    assign frameSubheading = section.settings.frameSubheading
+    assign url = section.settings.url
+%}
+
+<style>
+    input[name=productFeel]:checked + label {
+        color: #384FAE;
+        border-bottom-width: 1px;
+        border-bottom-color: #384FAE;
+    }
+    input[name=modelOption]:checked + label {
+        color: white;
+        background-color: #384FAE;
+    }
+    #feelDiscription h4 {
+        color: #384FAE;
+        font-weight: 600;
+    }
+</style>
+
+<div class="mb-10">
+    <div class="mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 ds:py-10 dl:px-0">
+        {% if heading != blank %}
+            {% if hierarchy == "h2" %}
+                <h2 class="font-extrabold text-[24px] text-center text-text mb-4 ts:text-[28px] ds:text-[32px]">{{ heading }}</h2>  
+            {% else %}
+                <h1 class="font-extrabold text-[24px] text-center text-text mb-4 ts:text-[28px] ds:text-[32px]">{{ heading }}</h1>   
+            {% endif %}  
+        {% endif %}
+        {% if sub != blank %}
+            <div class="font-medium text-center text-text mb-10">{{ sub }}</div>
+        {% endif %}
+    </div>
+    <div class="bg-white shadow-sp">
+        <div class="flex justify-center items-center flex-wrap gap-4 py-4 ds:gasp-y-16">
+            {% for block in section.blocks %}
+                {% liquid 
+                    assign title = block.settings.title
+                %}
+                {% if forloop.index == 1 %}
+                    <input type="radio" name="productFeel" id="productFeel{{ forloop.index }}" value="productFeel{{ title }}" class="hidden" checked onclick="checkedFunction()">
+                {% else %}
+                    <input type="radio" name="productFeel" id="productFeel{{ forloop.index }}" value="productFeel{{ title }}" class="hidden" onclick="checkedFunction()">
+                {% endif %}
+                <label for="productFeel{{ forloop.index }}" class="flex justify-center items-center cursor-pointer h-[42px] w-[120px] ds:w-[152px]">{{ title }}</label>
+            {% endfor %}
+        </div>
+        <div>
+            {% for block in section.blocks %}
+                {% liquid 
+                    assign option1 = block.settings.option1
+                    assign option2 = block.settings.option2
+                %}
+                {% if forloop.index == 1 %}
+                    <div id="options1" class="flex justify-center items-center gap-4 py-2 ds:gap-10">
+                        <input type="radio" name="modelOption" id="model{{ forloop.index }}Option1" value="modelOption{{ forloop.index }}{{ option1 }}" class="hidden" checked onclick="optionFunction()">
+                        {% if option1 != blank %}
+                        <label for="model{{ forloop.index }}Option1" class="button-white cursor-pointer">{{ option1 }}</label>
+                        {% endif %}
+                        <input type="radio" name="modelOption" id="model{{ forloop.index }}Option2" value="modelOption{{ forloop.index }}{{ option2 }}" class="hidden" onclick="optionFunction()">
+                        {% if option2 != blank %}
+                        <label for="model{{ forloop.index }}Option2" class="button-white cursor-pointer">{{ option2 }}</label>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div id="options{{ forloop.index }}" class="hidden justify-center items-center gap-4 py-2 ds:gap-10">
+                        <input type="radio" name="modelOption" id="model{{ forloop.index }}Option1" value="modelOption{{ forloop.index }}{{ option1 }}" class="hidden" onclick="optionFunction()">
+                        {% if option1 != blank %}
+                        <label for="model{{ forloop.index }}Option1" class="button-white cursor-pointer">{{ option1 }}</label>
+                        {% endif %}
+                        <input type="radio" name="modelOption" id="model{{ forloop.index }}Option2" value="modelOption{{ forloop.index }}{{ option2 }}" class="hidden" onclick="optionFunction()">
+                        {% if option2 != blank %}
+                        <label for="model{{ forloop.index }}Option2" class="button-white cursor-pointer">{{ option2 }}</label>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div id="feelDiscription">
+            {% for block in section.blocks %}
+                {% liquid 
+                    assign title = block.settings.title
+                    assign option1 = block.settings.option1
+                    assign option2 = block.settings.option2
+                    assign image1 = block.settings.image1
+                    assign image2 = block.settings.image2
+                    assign layersDescription1 = block.settings.layersDescription1
+                    assign layersDescription2 = block.settings.layersDescription2
+                    assign background = block.settings.background
+                    assign background_mobile = block.settings.background_mobile
+                %}
+                {% if forloop.index == 1 %}
+                    <div id="content{{ forloop.index }}option1" class="flex flex-col justify-between items-center gap-4 ts:flex-row ts:gap-0">
+                        <img class="self-start ts:self-center ts:max-w-[350px] dm:max-w-[450px] dl:max-w-none dl:h-full" src="{{ image1 | image_url: width: 450 }}" title="{{ title }}" alt="{{ image1.alt }}" loading="lazy">
+                        <div class="flex flex-col justify-center w-full ts:grow-0 ts:h-full ts:w-[300px] ds:w-[400px] dl:w-[500px]">
+                            <div class="max-w-[325px] pl-5 mm:max-w-max ds:text-lg ds:pl-4 ds:py-6 dl:text-xl">{{ layersDescription1 }}</div>
+                        </div>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="{{ background | image_url: width: 150 }}">
+                            <img class="ts:max-w-[150px] ds:max-w-none" src="{{ background_mobile | image_url: width: 150 }}" title="{{ title }}" alt="{{ background.alt }}" loading="lazy">
+                        </picture>
+                    </div>
+                    <div id="content{{ forloop.index }}option2" class="hidden flex-col justify-between items-center gap-4 ts:flex-row ts:gap-0">
+                        {% if option2 != blank %}
+                        <img class="self-start ts:self-center ts:max-w-[350px] dm:max-w-[450px] dl:max-w-none dl:h-full" src="{{ image2 | image_url: width: 450 }}" title="{{ title }}" alt="{{ image2.alt }}" loading="lazy">
+                        {% endif %}
+                        <div class="flex flex-col justify-center w-full ts:grow-0 ts:h-full ts:w-[300px] ds:w-[400px] dl:w-[500px]">
+                            <div class="max-w-[325px] pl-5 mm:max-w-max ds:text-lg ds:pl-4 ds:py-6 dl:text-xl">{{ layersDescription2 }}</div>
+                        </div>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="{{ background | image_url: width: 150 }}">
+                            <img class="ts:max-w-[150px] ds:max-w-none" src="{{ background_mobile | image_url: width: 150 }}" title="{{ title }}" alt="{{ background.alt }}" loading="lazy">
+                        </picture>
+                    </div>
+                {% else %}
+                    <div id="content{{ forloop.index }}option1" class="hidden flex-col justify-between items-center gap-4 ts:flex-row ts:gap-0">
+                        <img class="self-start ts:self-center ts:max-w-[350px] dm:max-w-[450px] dl:max-w-none dl:h-full" src="{{ image1 | image_url: width: 450 }}" title="{{ title }}" alt="{{ image1.alt }}" loading="lazy">
+                        <div class="flex flex-col justify-center w-full ts:grow-0 ts:h-full ts:w-[300px] ds:w-[400px] dl:w-[500px]">
+                            <div class="max-w-[325px] pl-5 mm:max-w-max ds:text-lg ds:pl-4 ds:py-6 dl:text-xl">{{ layersDescription1 }}</div>
+                        </div>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="{{ background | image_url: width: 150 }}">
+                            <img class="ts:max-w-[150px] ds:max-w-none" src="{{ background_mobile | image_url: width: 150 }}" title="{{ title }}" alt="{{ background.alt }}" loading="lazy">
+                        </picture>
+                    </div>
+                    <div id="content{{ forloop.index }}option2" class="hidden flex-col justify-between items-center gap-4 ts:flex-row ts:gap-0">
+                        {% if option2 != blank %}
+                        <img class="self-start ts:self-center ts:max-w-[350px] dm:max-w-[450px] dl:max-w-none dl:h-full" src="{{ image2 | image_url: width: 450 }}" title="{{ title }}" alt="{{ image2.alt }}" loading="lazy">
+                        {% endif %}
+                        <div class="flex flex-col justify-center w-full ts:grow-0 ts:h-full ts:w-[300px] ds:w-[400px] dl:w-[500px]">
+                              <div class="max-w-[325px] pl-5 mm:max-w-max ds:text-lg ds:pl-4 ds:py-6 dl:text-xl">{{ layersDescription2 }}</div>
+                        </div>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="{{ background | image_url: width: 150 }}">
+                            <img class="ts:max-w-[150px] ds:max-w-none" src="{{ background_mobile | image_url: width: 150 }}" title="{{ title }}" alt="{{ background.alt }}" loading="lazy">
+                        </picture>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkedFunction() {
+        var input1 = document.getElementById("productFeel1");
+        var input2 = document.getElementById("productFeel2");
+        var input3 = document.getElementById("productFeel3");
+        var input4 = document.getElementById("productFeel4");
+        var input5 = document.getElementById("productFeel5");
+        var div1 = document.getElementById("options1");
+        var div2 = document.getElementById("options2");
+        var div3 = document.getElementById("options3");
+        var div4 = document.getElementById("options4");
+        var div5 = document.getElementById("options5");
+        if (input1.checked == true){
+            div1.classList.remove('hidden');
+            div1.classList.add('flex');
+            document.getElementById('model1Option1').click();
+        } else {
+            div1.classList.remove('flex');
+            div1.classList.add('hidden');
+        }
+        if (input2.checked == true){
+            div2.classList.remove('hidden');
+            div2.classList.add('flex');
+            document.getElementById('model2Option1').click();
+        } else {
+            div2.classList.remove('flex');
+            div2.classList.add('hidden');
+        }
+        if (input3.checked == true){
+            div3.classList.remove('hidden');
+            div3.classList.add('flex');
+            document.getElementById('model3Option1').click();
+        } else {
+            div3.classList.remove('flex');
+            div3.classList.add('hidden');
+        }
+        if (input4.checked == true){
+            div4.classList.remove('hidden');
+            div4.classList.add('flex');
+            document.getElementById('model4Option1').click();
+        } else {
+            div4.classList.remove('flex');
+            div4.classList.add('hidden');
+        }
+        if (input5.checked == true){
+            div5.classList.remove('hidden');
+            div5.classList.add('flex');
+            document.getElementById('model5Option1').click();
+        } else {
+            div5.classList.remove('flex');
+            div5.classList.add('hidden');
+        }
+    }
+    function optionFunction() {
+        var option1 = document.getElementById("model1Option1");
+        var option2 = document.getElementById("model1Option2");
+        var option3 = document.getElementById("model2Option1");
+        var option4 = document.getElementById("model2Option2");
+        var option5 = document.getElementById("model3Option1");
+        var option6 = document.getElementById("model3Option2");
+        var option7 = document.getElementById("model4Option1");
+        var option8 = document.getElementById("model4Option2");
+        var option9 = document.getElementById("model5Option1");
+        var option10 = document.getElementById("model5Option2");
+        var div1 = document.getElementById("content1option1");
+        var div2 = document.getElementById("content1option2");
+        var div3 = document.getElementById("content2option1");
+        var div4 = document.getElementById("content2option2");
+        var div5 = document.getElementById("content3option1");
+        var div6 = document.getElementById("content3option2");
+        var div7 = document.getElementById("content4option1");
+        var div8 = document.getElementById("content4option2");
+        var div9 = document.getElementById("content5option1");
+        var div10 = document.getElementById("content5option2");
+        if (option1.checked == true){
+            div1.classList.remove('hidden');
+            div1.classList.add('flex');
+        } else {
+            div1.classList.remove('flex');
+            div1.classList.add('hidden');
+        }
+        if (option2.checked == true){
+            div2.classList.remove('hidden');
+            div2.classList.add('flex');
+        } else {
+            div2.classList.remove('flex');
+            div2.classList.add('hidden');
+        }
+        if (option3.checked == true){
+            div3.classList.remove('hidden');
+            div3.classList.add('flex');
+        } else {
+            div3.classList.remove('flex');
+            div3.classList.add('hidden');
+        }
+        if (option4.checked == true){
+            div4.classList.remove('hidden');
+            div4.classList.add('flex');
+        } else {
+            div4.classList.remove('flex');
+            div4.classList.add('hidden');
+        }
+        if (option5.checked == true){
+            div5.classList.remove('hidden');
+            div5.classList.add('flex');
+        } else {
+            div5.classList.remove('flex');
+            div5.classList.add('hidden');
+        }
+        if (option6.checked == true){
+            div6.classList.remove('hidden');
+            div6.classList.add('flex');
+        } else {
+            div6.classList.remove('flex');
+            div6.classList.add('hidden');
+        }
+        if (option7.checked == true){
+            div7.classList.remove('hidden');
+            div7.classList.add('flex');
+        } else {
+            div7.classList.remove('flex');
+            div7.classList.add('hidden');
+        }
+        if (option8.checked == true){
+            div8.classList.remove('hidden');
+            div8.classList.add('flex');
+        } else {
+            div8.classList.remove('flex');
+            div8.classList.add('hidden');
+        }
+        if (option9.checked == true){
+            div9.classList.remove('hidden');
+            div9.classList.add('flex');
+        } else {
+            div9.classList.remove('flex');
+            div9.classList.add('hidden');
+        }
+        if (option10.checked == true){
+            div10.classList.remove('hidden');
+            div10.classList.add('flex');
+        } else {
+            div10.classList.remove('flex');
+            div10.classList.add('hidden');
+        }
+    }
+</script>
+
+
+{% schema %}
+{
+    "name": "Product Feel",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "richtext",
+            "id": "sub",
+            "label": "Sub-title"
+        }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+        {
+            "name": "Feel",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Feel Title"
+                },
+                {
+                    "type": "text",
+                    "id": "option1",
+                    "label": "First Model Option"
+                },
+                {
+                    "type": "text",
+                    "id": "option2",
+                    "label": "Second Model Option"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image1",
+                    "label": "Option 1 Model Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image2",
+                    "label": "Option 2 Model Image"
+                },
+                {
+                    "type": "richtext",
+                    "id": "layersDescription1",
+                    "label": "Option 1 Layers Description"
+                },
+                {
+                    "type": "richtext",
+                    "id": "layersDescription2",
+                    "label": "Option 2 Layers Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "background",
+                    "label": "Background Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "background_mobile",
+                    "label": "Background Image Mobile"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+        "name": "Product Feel"
+        }
+    ]
+}
+{% endschema %}

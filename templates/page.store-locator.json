@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "find": {
+      "type": "find-store",
+      "settings": {
+        "heading": "Find A Store",
+        "content": "<p>Thank you for supporting our locally owned small business!<br\/>Sleep First is the home of fast free delivery and payment plans for everyone.<br\/><br\/><br\/><strong>Texas Store Hours<\/strong><br\/>Monday-Saturday: 10am-7:30pm<br\/>Sunday: 12pm-5pm<\/p>",
+        "hours1": "",
+        "hours2": ""
+      }
+    }
+  },
+  "order": [
+    "find"
+  ]
+}

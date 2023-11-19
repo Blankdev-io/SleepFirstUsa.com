@@ -1,0 +1,223 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/602397_Shopify_Favicon_SF__120619.png",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "color": "#384fae",
+          "ann_enable": true,
+          "ann_text": "$300 Amazon.com gift card with any TEMPUR or PURPLE mattress",
+          "mess_color": "#ffffff",
+          "url": "shopify:\/\/collections\/tempurpedic",
+          "btn_color": "#ffffff",
+          "custom_url_1": "shopify:\/\/pages\/store-locator",
+          "custom_text_1": "Find A Store",
+          "text_color1": "#384fae",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "text_color2": "#384fae"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_url": "\/",
+          "custom_url_1": "shopify:\/\/pages\/store-locator",
+          "custom_text_1": "Find A Store",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "button_label": "PROMOTIONS!",
+          "button_url": "shopify:\/\/pages\/mattress-sale",
+          "nav_menu": "header-menu",
+          "bar_menu": "navigation-bar",
+          "banner": "shopify:\/\/shop_images\/SleepFirst_Texas_Clearance_On_Sale_Banner_Desktop.png",
+          "banner_mobile": "shopify:\/\/shop_images\/SleepFirst_Texas_Clearance_On_Sale_Banner_Mobile.png",
+          "banner_url": "shopify:\/\/pages\/clearance-outlet",
+          "banner_1": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-19739.jpg",
+          "banner_1_url": "shopify:\/\/collections\/nectar-mattress",
+          "banner_2": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-197834.jpg",
+          "banner_2_url": "shopify:\/\/collections\/purple"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "38ae3ed4-b6af-4f14-bc39-c9614ad068aa": {
+            "type": "slide",
+            "settings": {
+              "title": "Resources",
+              "menu": "footer",
+              "message": "<p><\/p>"
+            }
+          },
+          "880f0b7e-88ea-413d-9c98-ab4111594c4e": {
+            "type": "slide",
+            "settings": {
+              "title": "Brands",
+              "menu": "by-brand",
+              "message": ""
+            }
+          }
+        },
+        "block_order": [
+          "38ae3ed4-b6af-4f14-bc39-c9614ad068aa",
+          "880f0b7e-88ea-413d-9c98-ab4111594c4e"
+        ],
+        "settings": {
+          "logo_url": "\/",
+          "text": "<p>Home of fast free shipping and payment plans for everyone.<\/p><p><br\/><a href=\"\/pages\/shop-by-size\" title=\"Shop By Size\">SHOP BY SIZE<\/a><\/p><p><br\/><a href=\"\/pages\/contact-us\" title=\"Contact Us\">CONTACT US<\/a><\/p><p><br\/><a href=\"tel:+18889753371\" title=\"tel:+18889753371\">SPEAK TO A TRAINED MATTRESS EXPERT<br\/>(888) 975-3371<\/a><\/p><p><\/p><p><br\/>DID YOU KNOW?<\/p><p><br\/>We offer virtual assistance and shopping consultations if you're just browsing and have a few questions.<\/p><p><br\/>Feel free to contact us with any questions you may have about our products and how they fit into your bedroom and budget!<\/p>",
+          "social_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-facebook-white.svg?v=1664926803",
+          "social_check1": false,
+          "social_media_url1": "https:\/\/www.facebook.com\/SleepFirstUSA\/",
+          "social_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-instagram-white.svg?v=1664926803",
+          "social_check2": false,
+          "social_media_url2": "https:\/\/www.instagram.com\/sleepfirstusa\/",
+          "social_svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-youtube-white.svg?v=1664926803",
+          "social_check3": false,
+          "social_media_url3": "https:\/\/www.youtube.com\/channel\/UCAy4upqyXysFhl5s7qIhNRQ",
+          "store_head": "Store Locations",
+          "store_loc1": "Texas Stores",
+          "addresses1": "<p><a href=\"\/pages\/longview-tx\" title=\"Longview | Sleep First Mattress Store\"><strong>Longview<\/strong><\/a><strong><br\/><\/strong>106 E Loop 281<br\/>Longview, Texas 75605<br\/>USA<\/p><p><a href=\"tel:(903)%20220-0704\">(903) 220-0704<\/a><br\/> <\/p><p><br\/><a href=\"\/pages\/tyler-tx-kinsey\" title=\"Tyler Kinsey Crossing | Sleep First Mattress\"><strong>Tyler<\/strong><\/a><strong><br\/><\/strong>Kinsey Shopping Center<br\/>1400 W SW Loop 323<br\/>Tyler, Texas 75703<br\/>USA<\/p><p><a href=\"tel:(903)%20707-2000\">(903) 707-2000<\/a><br\/> <\/p><p><br\/><a href=\"\/pages\/tyler-tx-cumberland\" title=\"Tyler Cumberland | Sleep First Mattress\"><strong>Tyler<\/strong><\/a><strong><br\/><\/strong>Cumberland Shopping Center<br\/>8982 S Broadway Ave<br\/>Tyler, Texas 75703<br\/>USA<br\/><a href=\"tel:+19039447820\" title=\"tel:+19039447820\">(903) 944-7820<\/a><\/p>",
+          "store_loc2": "",
+          "addresses2": "",
+          "copyright": "© 2023 Sleep First"
+        }
+      },
+      "footer-alt": {
+        "type": "footer-alt",
+        "settings": {
+          "social_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-facebook-white.svg?v=1664926803",
+          "social_check1": false,
+          "social_media_url1": "https:\/\/www.facebook.com\/SleepFirstUSA\/",
+          "social_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-instagram-white.svg?v=1664926803",
+          "social_check2": false,
+          "social_media_url2": "https:\/\/www.instagram.com\/sleepfirstusa\/",
+          "social_svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/logo-youtube-white.svg?v=1664926803",
+          "social_check3": false,
+          "social_media_url3": "https:\/\/www.youtube.com\/channel\/UCAy4upqyXysFhl5s7qIhNRQ",
+          "copyright": "© 2023 Sleep First",
+          "disclaimer": "<p>*Does not apply to past purchases, clearance models or floor samples.<\/p>"
+        }
+      },
+      "header-bar-alt": {
+        "type": "header-bar-alt",
+        "settings": {
+          "color": "#ffffff",
+          "ann_enable": true,
+          "url": "\/",
+          "btn_color": "#384fae",
+          "custom_url_1": "mailto:molly@sleepfirstusa.com",
+          "custom_text_1": "Contact Us",
+          "text_color1": "#ffffff",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "text_color2": "#ffffff"
+        }
+      },
+      "announcement-bar-tempur": {
+        "type": "announcement-bar-tempur",
+        "settings": {
+          "color": "#006481",
+          "ann_enable": true,
+          "ann_text": "<p><strong>FREE YETI TUNDRA® 35 HARD COOLER<\/strong> or <strong>$300 AMAZON.COM GIFT CARD<\/strong> with any <strong>TEMPUR<\/strong> mattres<\/p>",
+          "mess_color": "#ffffff",
+          "url": "shopify:\/\/collections\/tempurpedic",
+          "btn_color": "#ffffff",
+          "custom_url_1": "shopify:\/\/pages\/store-locator",
+          "custom_text_1": "Find A Store",
+          "text_color1": "#384fae",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "text_color2": "#384fae"
+        }
+      },
+      "navigation-bar": {
+        "type": "navigation-bar",
+        "settings": {
+          "bar_menu": "navigation-bar"
+        }
+      },
+      "fixed-logo": {
+        "type": "fixed-logo",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/Price_Match_Logo.png",
+          "url": "shopify:\/\/pages\/price-match"
+        }
+      },
+      "announcement-bar-purple": {
+        "type": "announcement-bar-purple",
+        "settings": {
+          "color": "#1f1a5e",
+          "ann_enable": true,
+          "ann_text": "<p><strong>$300 AMAZON.COM GIFT CARD<\/strong> with any <strong>PURPLE<\/strong> mattres<\/p>",
+          "mess_color": "#ffffff",
+          "url": "shopify:\/\/collections\/purple",
+          "btn_color": "#ffffff",
+          "custom_url_1": "shopify:\/\/pages\/store-locator",
+          "custom_text_1": "Find A Store",
+          "text_color1": "#384fae",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "text_color2": "#384fae"
+        }
+      },
+      "announcement-bar-nectar": {
+        "type": "announcement-bar-nectar",
+        "settings": {
+          "color": "#133ebf",
+          "ann_enable": true,
+          "ann_text": "<p><strong>33% OFF<\/strong> any <strong>NECTAR<\/strong> mattres<\/p>",
+          "mess_color": "#FFF",
+          "url": "shopify:\/\/pages\/store-locator",
+          "btn_color": "#FFF",
+          "custom_url_1": "shopify:\/\/pages\/store-locator",
+          "custom_text_1": "Find A Store",
+          "text_color1": "#384FAE",
+          "custom_url_2": "tel:+18889753371",
+          "custom_text_2": "(888) 975-3371",
+          "text_color2": "#384FAE"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "3847134708050210359": {
+        "type": "shopify:\/\/apps\/transcy-ai-language-translate\/blocks\/switcher_embed_block\/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "17992116214976573926": {
+        "type": "shopify:\/\/apps\/seo-manager-venntov\/blocks\/seomanager\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "8232603958289840080": {
+        "type": "shopify:\/\/apps\/seo-manager-venntov\/blocks\/seomanager-404\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "15573056287721514228": {
+        "type": "shopify:\/\/apps\/json-ld-for-seo\/blocks\/app-embed\/3fcb4f45-bdde-43fd-84ae-8006cdcd1028",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

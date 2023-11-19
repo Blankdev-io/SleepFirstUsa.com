@@ -1,0 +1,243 @@
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    {% for block in section.blocks %}
+        {% liquid
+            assign desk_banner = block.settings.desk_banner
+            assign mob_banner = block.settings.mob_banner
+            assign collection = block.settings.collection
+            assign product = block.settings.product
+            assign url = block.settings.url
+            assign select = block.settings.select
+            assign button = block.settings.button
+            assign description = block.settings.description
+            assign btn_label = block.settings.btn_label
+            assign label_color = block.settings.label_color
+            assign btn_color = block.settings.btn_color
+        %}
+        <div class="bg-white shadow-sp rounded-cl">
+            <a href="{% if select == 'collection' %}{{ collection.url }}{% elsif select == 'product' %}{{ product.url }}{% else %}{{ url }}{% endif %}" title="{% if select == 'collection' %}{{ collection.title }}{% elsif select == 'product' %}{{ product.title }}{% else %}{{ url.title }}{% endif %}"><picture>
+                <source media="(min-width: 568px)" srcset="{{ desk_banner | image_url }}">
+                <img class="rounded-cl w-full h-full" src="{{ mob_banner | image_url }}" alt="{{ mob_banner | escape }}" title="{{ mob_banner.alt | escape }}" loading="lazy">
+            </picture></a>
+            <div id="{{ block.id }}" class="hidden py-6 px-8">
+                <div class="text-center text-text mb-6">
+                    {{ description }}
+                </div>
+                <div class="flex justify-center relative {% if select == 'collection' %}mb-10{% endif %}">
+                    {% if select == 'collection' %}
+                        <hr class="absolute top-[22.5px] w-4/5 h-0.5 mx-auto" style="background-color:{{ btn_color }}; color:{{ btn_color }};">
+                    {% endif %}
+                    <a class="button-custom z-10" href="{% if select == 'collection' %}{{ collection.url }}{% elsif select == 'product' %}{{ product.url }}{% else %}{{ url }}{% endif %}" style="background-color:{{ btn_color }}; color:{{ label_color }};" title="{% if select == 'collection' %}{{ collection.title }}{% elsif select == 'product' %}{{ product.title }}{% else %}{{ url.title }}{% endif %}">{{ btn_label }}</a>
+                </div>
+                {% if select == 'collection' %}
+                    <div class="swiper">
+                        <div class="swiper-wrapper py-2 ds:px-0.5">
+                        {% for product in collection.products limit: 4 %}
+                            {% liquid
+                                assign backg = product.featured_image
+                                assign name = product.title
+                                assign price = product.price
+                                assign compare = product.compare_at_price
+                                assign url = product.url
+                                assign substract = compare | minus: price | divided_by: 100.0
+                                assign div = substract | divided_by: compare
+                                assign savePercent = div | times: 10000 | floor
+                            %}
+                            <div class="swiper-slide max-w-[268px] ds:w-auto">
+                                <div class="grid grid-rows-4 group rounded-cl shadow-mp {% if button %}h-[470px]{% else %}h-[400px]{% endif %} {% if button %}max-h-[470px]{% else %}max-h-[400px]{% endif %} ds:grid-rows-5 ds:h-[400px] ds:max-h-[400px]">
+                                    <div class="row-span-2 relative ds:row-span-3">
+                                        {% if compare != blank %}
+                                            <div class="flex absolute left-4 top-4 bg-accent-4 rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+                                                <p class="self-center font-bold text-xs text-center text-white">{{ savePercent }}% OFF</p>
+                                            </div>
+                                        {% endif %}
+                                        {% for tag in product.tags %}
+                                            {% if tag == "sold out" %}
+                                                <div class="flex absolute right-4 top-4 bg-[#800007] rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                                    <p class="self-center font-bold text-xs text-center text-white">SOLD OUT</p>
+                                                </div>
+                                            {% elsif tag == "new" %}
+                                                <div class="flex absolute right-4 top-4 bg-secondary rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                                    <p class="self-center font-bold text-xs text-center text-white">NEW!</p>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if button %}
+                                            <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button-hidden absolute bottom-4 inset-x-6" data-id="add-btn">ADD TO CART</a>
+                                        {% endif %}
+                                        <a href="{{ url }}"><picture>
+                                            <source media="(min-width: 868px)" srcset="{{ backg | image_url: width: 260 }}">
+                                            <source media="(min-width: 768px)" srcset="{{ backg | image_url: width: 380 }}">
+                                            <source media="(min-width: 480px)" srcset="{{ backg | image_url: width: 360 }}">
+                                            <img class="object-cover rounded-t-cl w-full h-full" src="{{ backg | image_url: width: 450 }}" title="{{ name }}" alt="{{ backg.alt }}" loading="lazy">                         
+                                        </picture></a>
+                                    </div>
+                                    <div class="row-span-2 grid {% if button %}grid-rows-3{% else %}grid-rows-2{% endif %} text-text bg-white rounded-b-cl p-3 ds:grid-rows-2 ds:py-3">
+                                        <h3 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a href="{{ url }}" title="{{ name }}">{{ name }}</a></h3>
+                                        <div class="grid grid-cols-2 self-center">
+                                            <div class="ds:self-center">
+                                                <p class="text-[12px]">Starting at</p>
+                                                <p class="font-bold text-[14px] text-primary">{{ price | money }}</p>
+                                                {% if compare != blank %}
+                                                    <p class="font-bold text-[14px] text-accent-2 line-through">{{ compare | money }}</p>
+                                                {% endif %}
+                                            </div>
+                                            <div class="grid justify-items-end ds:justify-items-center ds:items-center">
+                                                {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+                                            </div>
+                                        </div>
+                                        {% if button %}
+                                            <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button w-full ds:hidden" data-id="add-btn">ADD TO CART</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% if product.metafields.custom.promotion != blank %}
+                                    <div class="flex justify-center px-5">
+                                        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ product.metafields.custom.promotion_tag_color }};">
+                                        <span class="self-center">{{ product.metafields.custom.promotion }}</span>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="flex justify-center mb-10">
+            <button onclick="showHide('{{ block.id }}')" class="flex justify-center items-center z-20 font-bold text-center rounded-b-cl h-[45px] px-6 mm:px-8" style="background-color:{{ btn_color }}; color:{{ label_color }};"><span id="{{ block.id }}more" class="inline">SHOW MORE</span><span id="{{ block.id }}less" class="hidden">SHOW LESS</span></button>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    function showHide(id) {
+        var x = document.getElementById(id);
+        var y = document.getElementById(id + 'less');
+        var z = document.getElementById(id + 'more');
+        if (x.classList.contains('hidden')) {
+            x.classList.remove('hidden');
+            x.classList.add('block');
+            y.classList.remove('hidden');
+            y.classList.add('inline');
+            z.classList.remove('inline');
+            z.classList.add('hidden');
+        } else {
+            x.classList.remove('block');
+            x.classList.add('hidden');
+            y.classList.remove('inline');
+            y.classList.add('hidden');
+            z.classList.remove('hidden');
+            z.classList.add('inline');
+        }
+    };
+
+    const swiper = new Swiper(".swiper", {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        breakpoints: {
+            1024: {       
+                slidesPerView: 4,
+                spaceBetween: 20
+            },     
+        } 
+    });
+</script>
+
+
+{% schema %}
+{
+    "name": "Banner dropdowns",
+    "settings": [
+    ],
+    "blocks": [
+        {
+            "type": "banners",
+            "name": "Banners",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "desk_banner",
+                    "label": "Desktop banner image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mob_banner",
+                    "label": "Mobile banner image"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Select Collection"
+                },
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select Product"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Select custom URL"
+                },
+                {
+                    "type": "select",
+                    "id": "select",
+                    "label": "Use Collection, Product or custom URL",
+                    "options": [
+                        {
+                        "value": "collection",
+                        "label": "Collection"
+                        },
+                        {
+                        "value": "product",
+                        "label": "Product"
+                        },
+                        {
+                        "value": "url",
+                        "label": "Custom URL"
+                        }
+                    ],
+                    "default": "collection"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "button",
+                    "label": "Show 'Add to Cart' Button",
+                    "default": false
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description",
+                    "default": "<p></p>"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_label",
+                    "label": "Button Label",
+                    "default": "SHOP NOW"
+                },
+                {
+                    "type": "color",
+                    "id": "label_color",
+                    "label": "Label color",
+                    "default": "#231f20"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_color",
+                    "label": "Button background color",
+                    "default": "#ffffff"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner dropdowns"
+        }
+    ] 
+}
+{% endschema %}

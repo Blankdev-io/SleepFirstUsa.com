@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-nectar",
+      "settings": {
+        "button": false,
+        "show_page_card": true,
+        "brand1": "shopify:\/\/shop_images\/logo-offer-tempur.png",
+        "image": "shopify:\/\/shop_images\/versus.png",
+        "brand2": "shopify:\/\/shop_images\/Purple_Logo.png",
+        "heading": "Sleep Comparison",
+        "pre_heading": "Choose Wisely, Sleep Better",
+        "content": "<p>Discover the ideal mattress for you. Compare brands and make the best decision.<\/p>",
+        "page_button": "PICK YOUR BRANDS",
+        "page_button_url": "shopify:\/\/pages\/brand-comparison"
+      }
+    },
+    "d5331a2e-502b-4efd-bafd-8ba0a97bda9a": {
+      "type": "features",
+      "settings": {
+        "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/calendar.svg?v=1689608702",
+        "heading1": "365-Night In Home Trial",
+        "content1": "",
+        "button1": "TRY NOW",
+        "url1": "#collection-page",
+        "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/number-1.svg?v=1689608702",
+        "heading2": "One Year Price & Comfort Guarantee",
+        "content2": "",
+        "button2": "SHOP NOW",
+        "url2": "#collection-page",
+        "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/Delivery.svg?v=1676482442",
+        "heading3": "Fast Free Shipping",
+        "content3": "",
+        "button3": "SHOP NOW",
+        "url3": "#collection-page"
+      }
+    },
+    "3587363d-aae8-41d2-87c1-ea99705aae31": {
+      "type": "collection-recomendations",
+      "blocks": {
+        "d1d1205b-cc05-42b9-afef-aa16a9f1ff46": {
+          "type": "slide",
+          "settings": {
+            "collection": "adjustable-bases"
+          }
+        },
+        "062168e4-6168-4347-ae43-8db1f5d8f529": {
+          "type": "slide",
+          "settings": {
+            "collection": "pillow-cube"
+          }
+        },
+        "d668f6df-d3c0-4a91-9e22-c4e4daca6bf4": {
+          "type": "slide",
+          "settings": {
+            "collection": "sheets"
+          }
+        }
+      },
+      "block_order": [
+        "d1d1205b-cc05-42b9-afef-aa16a9f1ff46",
+        "062168e4-6168-4347-ae43-8db1f5d8f529",
+        "d668f6df-d3c0-4a91-9e22-c4e4daca6bf4"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "d5331a2e-502b-4efd-bafd-8ba0a97bda9a",
+    "3587363d-aae8-41d2-87c1-ea99705aae31"
+  ]
+}

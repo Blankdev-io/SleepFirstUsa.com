@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "4ddbad6d-434a-4997-915d-934451d767fa": {
+      "type": "text-banner",
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/IMC-Banner_feature_Gen-Max_May_yw0suc.webp",
+        "heading": "Infinity",
+        "font_size": 40,
+        "hierarchy": "h1",
+        "order": true,
+        "content": "<p><strong>Massage Chair Promotion<br\/><br\/><\/strong>The Infinity massage chair is designed to help you stay at the top of your game.<br\/><br\/>With features like zero gravity, air compression technology and reflexology, this chair has everything to relax, recover, and re-set for tomorrow.<\/p>",
+        "button": "SHOP NOW",
+        "url": "#product-grid"
+      }
+    },
+    "features": {
+      "type": "features",
+      "settings": {
+        "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/delivery-box.svg?v=1670003151",
+        "heading1": "FREE CLEANING KIT",
+        "content1": "<p><strong>With the purchase of any Infinity Chair you will receive a Cleaning Kit valued at $199.99 totally FREE!<\/strong><\/p><p><\/p>",
+        "button1": "SHOP NOW",
+        "url1": "#product-grid",
+        "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/blue-star.svg?v=1670003151",
+        "heading2": "FREE 5-YEAR WARRANTY EXTEND",
+        "content2": "<p><strong>Right now, for a limited time only, Get a FREE 5-year warranty upgrade valued at $399!<\/strong><\/p><p><\/p>",
+        "button2": "SHOP NOW",
+        "url2": "#product-grid",
+        "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/Delivery.svg?v=1669937242",
+        "heading3": "FREE SHIPPING",
+        "content3": "<p><strong>At Sleep First we offer free delivery, both locally and nationwide.<\/strong><\/p><p><\/p>",
+        "button3": "SHOP NOW",
+        "url3": "#product-grid"
+      }
+    },
+    "collection-offer": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "Save BIG on Infinity massage chair!",
+        "collection": "infinity",
+        "button": false
+      }
+    },
+    "double": {
+      "type": "double",
+      "settings": {
+        "heading": "FREE delivery, both locally and nationwide",
+        "hierarchy": "h2",
+        "content": "<p>Unlike our competitors, we offer free delivery, both locally and nationwide.<br\/><\/p><p>We are currently able to deliver same-day or next-day, with 100% contact-free delivery, including drop-off at the door. <\/p><p>White glove setup service is also an option in most areas.<\/p>",
+        "button": "READ MORE",
+        "url": "shopify:\/\/policies\/shipping-policy",
+        "image": "shopify:\/\/shop_images\/Fast-Free-Delivery_8bb586c2-cc14-43ea-b1d4-5b62759c1044.png",
+        "order": false
+      }
+    },
+    "double2": {
+      "type": "double",
+      "settings": {
+        "heading": "Try all Infinity Chairs at your local Sleep First.",
+        "hierarchy": "h2",
+        "content": "<p><strong>As a proudly locally owned and operated business, our team has a deep love for the local community, and we understand your desire for a supportive and pressure-free shopping environment. Infinity massage chairs are available in our East Texas stores.<\/strong><\/p>",
+        "button": "READ MORE",
+        "url": "shopify:\/\/pages\/store-locator",
+        "image": "shopify:\/\/shop_images\/Shop_Local_Sleep_First_1024-High-Quality.jpg",
+        "order": true
+      }
+    },
+    "b5d4752e-8488-49bd-8831-31b779e2cf92": {
+      "type": "featured-product",
+      "settings": {
+        "invert": false,
+        "product_ann": true,
+        "ann_text": "Include: Free cleaning kit, Free 5-year warranty extend and Free shipping",
+        "product": "infinity-aura-massage-chair",
+        "accent_color": "#91846c"
+      }
+    },
+    "bc81ed8a-ef68-4319-9400-10c92d8f7a8b": {
+      "type": "featured-product",
+      "settings": {
+        "invert": true,
+        "product_ann": true,
+        "ann_text": "Include: Free cleaning kit, Free 5-year warranty extend and Free shipping",
+        "product": "infinity-it-8500-plus-massage-chair",
+        "accent_color": "#91846c"
+      }
+    },
+    "8e5d9e8b-8155-4d83-9a15-9f35224c6008": {
+      "type": "featured-product",
+      "settings": {
+        "invert": false,
+        "product_ann": true,
+        "ann_text": "Include: Free cleaning kit, Free 5-year warranty extend and Free shipping",
+        "product": "infinity-gen-max-4d-massage-chair",
+        "accent_color": "#91846c"
+      }
+    },
+    "bd0b6eef-d2aa-4a39-b13a-8671bc2f0621": {
+      "type": "featured-product",
+      "settings": {
+        "invert": true,
+        "product_ann": true,
+        "ann_text": "Include: Free cleaning kit, Free 5-year warranty extend and Free shipping",
+        "product": "infinity-smart-chair-x3-massage-chair",
+        "accent_color": "#91846c"
+      }
+    },
+    "4cf74d03-7e97-4a63-9ef7-647b8302e75f": {
+      "type": "featured-product",
+      "settings": {
+        "invert": false,
+        "product_ann": true,
+        "ann_text": "Include: Free cleaning kit, Free 5-year warranty extend and Free shipping",
+        "product": "infinity-prelude-massage-chair",
+        "accent_color": "#91846c"
+      }
+    },
+    "double3": {
+      "type": "double",
+      "settings": {
+        "heading": "Save up to 25% on the BEST in massage chair technology for a limited time only!",
+        "hierarchy": "h2",
+        "content": "<p>Stay ready for max performance with the chair that features:<\/p><p>✅ Zero gravity capabilities<br\/>✅ Air compression technology<br\/>✅ Integration with your phone<br\/>✅ Reflexology<br\/>✅ And more!<\/p><p>Plus, get a FREE 5-year warranty upgrade and a FREE cleaning kit<\/p>",
+        "button": "SHOP NOW",
+        "url": "#product-grid",
+        "image": "shopify:\/\/shop_images\/infinity-logo.png",
+        "order": false
+      }
+    },
+    "2a42ec60-76bd-426b-bde9-b50f35794e32": {
+      "type": "collection-recomendations",
+      "blocks": {
+        "cb743e79-b6a4-4350-96fb-c87caa229b3c": {
+          "type": "slide",
+          "settings": {
+            "collection": "nectar-mattress"
+          }
+        },
+        "3fbde46c-512c-47a2-94f1-e68d6fb10eae": {
+          "type": "slide",
+          "settings": {
+            "collection": "queen"
+          }
+        },
+        "7ad397ca-1ca9-4197-95ea-9756fc53a585": {
+          "type": "slide",
+          "settings": {
+            "collection": "dreamcloud"
+          }
+        }
+      },
+      "block_order": [
+        "cb743e79-b6a4-4350-96fb-c87caa229b3c",
+        "3fbde46c-512c-47a2-94f1-e68d6fb10eae",
+        "7ad397ca-1ca9-4197-95ea-9756fc53a585"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4ddbad6d-434a-4997-915d-934451d767fa",
+    "features",
+    "collection-offer",
+    "double",
+    "double2",
+    "b5d4752e-8488-49bd-8831-31b779e2cf92",
+    "bc81ed8a-ef68-4319-9400-10c92d8f7a8b",
+    "8e5d9e8b-8155-4d83-9a15-9f35224c6008",
+    "bd0b6eef-d2aa-4a39-b13a-8671bc2f0621",
+    "4cf74d03-7e97-4a63-9ef7-647b8302e75f",
+    "double3",
+    "2a42ec60-76bd-426b-bde9-b50f35794e32"
+  ]
+}

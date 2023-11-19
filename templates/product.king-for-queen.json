@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-card",
+      "settings": {
+        "desk_banner": "shopify:\/\/shop_images\/kfq-qft-add.png",
+        "mob_banner": "shopify:\/\/shop_images\/kfq-qft-add-2.png",
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "quantity": false,
+        "img": "shopify:\/\/shop_images\/WK-N50-White-3qtLift1649180114_original_2.webp",
+        "pre_title": "Included FREE",
+        "content": "Adjustable Power Base",
+        "product_included": "sleep-first-head-up-adjustable-power-base",
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it.",
+        "description_order": false,
+        "details_order": false
+      }
+    },
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "d2d5b332-17c8-450b-817d-d29133630274": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5",
+    "d2d5b332-17c8-450b-817d-d29133630274"
+  ]
+}

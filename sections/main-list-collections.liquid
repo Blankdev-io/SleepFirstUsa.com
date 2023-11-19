@@ -1,0 +1,60 @@
+<div id="search-page" class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+{% paginate collections by 24 %}
+    <h1 class="text-title text-center mb-8">Collections</h1>
+    <div class="grid grid-cols-1 gap-8 mb-10 mm:grid-cols-2 tl:grid-cols-3 tl:gap-12">
+        {% for collection in collections %}
+        {% unless collection.title == 'Flash Sale' %}
+            <div class="relative group rounded-cl aspect-square shadow-sp">
+                <a href="{{ collection.url }}" title="{{ collection.title }}"><h2 class="absolute top-4 left-4 font-extrabold text-3xl text-white text-shadow line-clamp-3 pr-4 ds:top-6 ds:left-6 ds:text-5xl ds:group-hover:text-[50px]">{{ collection.title }}</h2></a>
+                <a href="{{ collection.url }}" title="{{ collection.title }}" class="button-blur flex absolute bottom-4 right-4 shadow-sp mm:inset-x-4 ts:right-6 ts:left-auto ds:bottom-6">VIEW ALL</a>
+                <a href="{{ collection.url }}"><picture>
+                    <source media="(min-width: 868px)" srcset="{{ collection.featured_image.src | image_url: width: 300 }}">
+                    <source media="(min-width: 768px)" srcset="{{ collection.featured_image.src | image_url: width: 410 }}">
+                    <source media="(min-width: 480px)" srcset="{{ collection.featured_image.src | image_url: width: 360 }}">
+                    <img class="object-cover rounded-cl w-full h-full" src="{{ collection.featured_image.src | image_url: width: 440 }}" title="{{ collection.title }}" alt="{{ collection.featured_image.alt }}" loading="lazy">                        
+                </picture></a>
+            </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+    {%- if paginate.pages > 1 -%}
+    <nav role="navigation">
+        <ol class="flex justify-center items-center gap-3 mx-auto">
+        {%- if paginate.previous-%}
+            <a href="{{ paginate.previous.url }}" class="bg-white shadow-sp rounded-cs py-1 px-3"><li>Prev</li></a>
+        {%- else -%}
+            <li class="hidden">Prev</li>
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+        {% if condition %}
+            
+        {% endif %}
+            {%- if part.is_link -%}
+            <a href="{{ part.url }}" class="hidden bg-white shadow-sp rounded-cs py-1 px-3 ml:inline"><li>{{ part.title }}</li></a>
+            {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+                <li class="active text-white bg-primary shadow-sp rounded-cs py-1 px-3" aria-current="page">{{ part.title }}</li>
+            {%- else -%}
+                <li class="hidden bg-white shadow-sp rounded-cs py-1 px-3 ml:inline">{{ part.title }}</li>
+            {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}" class="bg-white shadow-sp rounded-cs py-1 px-3"><li>Next</li></a>
+        {%- else -%}
+            <li class="hidden">Next</li>
+        {%- endif -%}
+        </ol>
+    </nav>
+    {%- endif -%}
+{% endpaginate %}
+</div>
+
+{% schema %}
+  {
+    "name": "Main list collections",
+    "settings": []
+  }
+{% endschema %}

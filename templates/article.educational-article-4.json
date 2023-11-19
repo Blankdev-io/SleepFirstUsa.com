@@ -1,0 +1,275 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-header",
+      "settings": {
+        "pre-title": "MATTRESS TYPES",
+        "checkAuthor": true,
+        "checkDate": true,
+        "checkReadTime": false,
+        "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/soft-mattress.svg?v=1683602198",
+        "frameText": "Memory foam mattresses mold to the body and provide excellent pressure relieve."
+      }
+    },
+    "17e412db-3680-4e78-8669-fb18b9a93869": {
+      "type": "article-content",
+      "blocks": {
+        "1a590ddc-2ad7-46f6-9d96-57c79b562975": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": false,
+            "bottom": true
+          }
+        },
+        "0bde299d-d2ed-4afa-8d44-dde79fc1bde8": {
+          "type": "menu",
+          "settings": {
+          }
+        },
+        "00c5c3c8-f44e-4fff-8011-b53508dad711": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "7864ce1f-275d-420f-b8dc-534cbfd3ee27": {
+          "type": "text",
+          "settings": {
+            "index_par": "What is memory foam?",
+            "content": "<h2>What is memory foam?<\/h2><p><br\/>Memory foam is a type of mattress material that was first developed by NASA in the 1960s for use in space travel. It is made from a viscoelastic material that is sensitive to temperature and pressure, meaning that it can conform to the shape of a person's body when they lie down on it.<br\/> <br\/>When pressure is applied, the foam molds to the body, distributing weight evenly and providing a supportive, comfortable sleeping surface. When the pressure is removed, the foam slowly returns to its original shape.<br\/><\/p>"
+          }
+        },
+        "cbed33c1-94c0-4361-83c7-6cc50a56d9ab": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": false
+          }
+        },
+        "2d486f16-edcc-45ec-ab0a-54b4402f750e": {
+          "type": "image",
+          "settings": {
+            "index_img": "Types of Memory Foam",
+            "image": "shopify:\/\/shop_images\/AdobeStock_234643250.jpg",
+            "title": "Types of Memory Foam",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "6cee24f4-e060-464c-a4ac-62572890b55f": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>When it comes to memory foam mattresses, there are several different types to choose from. Each type has its own unique characteristics and benefits. Here are four of the most common types of memory foam:<\/p><h3><br\/>Traditional memory foam<\/h3><p><br\/>Traditional memory foam is made from a viscoelastic material that responds to heat and pressure. When you lie down on a traditional memory foam mattress, the foam compresses and molds to your body, providing customized support and pressure relief. When you get up, the foam slowly regains its original shape.<\/p><p><br\/>Traditional memory foam mattresses are known for their ability to provide excellent pressure relief and motion isolation, making them a popular choice for people with back pain or other discomforts. However, they can also be associated with heat retention, as the foam can trap body heat and make sleepers feel uncomfortably warm.<\/p><h3><br\/>Open-cell memory foam<\/h3><p><br\/>Open-cell memory foam is designed to be more breathable and responsive than traditional memory foam. It is made by creating small, open pockets or cells in the foam. These pockets allow air to flow through the foam, helping to dissipate heat and keeping sleepers cooler and more comfortable. Additionally, the open-cell structure of the foam allows it to respond more quickly to changes in pressure, making it easier to move around on and get in and out of bed.<\/p><h3><br\/>Gel-infused memory foam<\/h3><p><br\/>Gel-infused memory foam is a newer type of memory foam that is designed to address the issue of heat retention. The foam is infused with tiny gel beads that helps to draw heat away from the body and keep sleepers cooler and more comfortable all night. <\/p><p><br\/>Gel-infused memory foam mattresses are a great option for people who tend to sleep hot or who live in warmer climates. They provide all the benefits of traditional memory foam, but with the added bonus of temperature regulation.<\/p><h3><br\/>Plant-based memory foam<\/h3><p><br\/>Plant-based memory foam is a type of memory foam created from natural, renewable ingredients such as soy, bamboo, or castor oil rather than petroleum-derived chemicals. This makes it a more environmentally friendly option than regular memory foam.<\/p><p><br\/>Additionally, plant-based memory foam has an open structure that improves airflow, which aids in temperature regulation. It also feels more natural and has a higher responsiveness than normal memory foam.<br\/><\/p>"
+          }
+        },
+        "d44d7692-57b0-49fb-8ca5-1732c9a2bf83": {
+          "type": "image",
+          "settings": {
+            "index_img": "",
+            "image": "shopify:\/\/shop_images\/Memory_foam_mattress_comparison.png",
+            "title": "",
+            "img_color": "",
+            "top_i": true,
+            "bottom_i": true,
+            "size": true
+          }
+        },
+        "0e01238e-139a-43ef-81d4-fc19ba39d742": {
+          "type": "image",
+          "settings": {
+            "index_img": "Benefits and Drawbacks",
+            "image": "shopify:\/\/shop_images\/AdobeStock_532702193.jpg",
+            "title": "Benefits and Drawbacks",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "87bee2ea-a497-4e20-a3ae-356b49b4fb0b": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<h3>Benefits<\/h3><p><br\/><\/p><ul><li><strong>Pressure relief:<\/strong> Memory foam mattresses are designed to conform to the shape of your body, providing customized support and reducing pressure points. This can help to alleviate pain and discomfort in areas like the neck, shoulders, hips, and back.<\/li><\/ul><p><\/p><ul><li><strong>Motion isolation: <\/strong>Memory foam mattresses are also known for their ability to isolate motion, meaning that when one person moves on the bed, the motion is less likely to be felt by their partner on the other side of the bed. This can be a significant benefit for couples who are easily disturbed by each other's movements during sleep.<\/li><\/ul><p><\/p><ul><li><strong>Body contouring:<\/strong> Memory foam mattresses are designed to mold to the shape of your body, providing a comfortable and supportive sleeping surface. This can help to promote spinal alignment and reduce the risk of developing back pain or other sleep-related issues.<\/li><\/ul><p><\/p><ul><li><strong>Durability:<\/strong> Memory foam mattresses are typically more durable than other types of mattresses, thanks to their dense and resilient foam construction. This means that they are less likely to sag or lose their shape over time, providing a longer-lasting and more comfortable sleeping surface.<\/li><\/ul><p><\/p><ul><li><strong>Health benefits:<\/strong> Sleeping on a memory foam mattress can have a number of health benefits, including reduced pain, improved sleep quality, and even improved circulation. Some people with chronic pain conditions or sleep disorders may find that a memory foam mattress helps to alleviate their symptoms and improve their overall quality of life.<\/li><\/ul><p><\/p><ul><li><strong>Allergy relief: <\/strong>Memory foam mattresses are resistant to dust mites and other allergens, making them a great choice for people who suffer from allergies or asthma. The dense foam material is not a hospitable environment for these allergens to thrive, reducing the risk of allergic reactions while sleeping.<\/li><\/ul><p><\/p><ul><li><strong>Reduced snoring: <\/strong>Memory foam mattresses can also help to reduce snoring by promoting better breathing during sleep. The foam's ability to contour to the body and provide even support can help to keep airways open, reducing the likelihood of snoring and sleep apnea.<\/li><\/ul><p><br\/><\/p>"
+          }
+        },
+        "3ce7b1ce-8489-4771-b9be-9b9f4dddd5a4": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<h3>Drawbacks<\/h3><p><br\/><\/p><ul><li><strong>Heat retention:<\/strong> Memory foam mattresses are known for their ability to retain heat, which can be uncomfortable for some people, especially those who tend to sleep hot. While many newer memory foam mattresses are designed to address this issue, it's still important to consider the foam's temperature-regulating properties before making a purchase.<\/li><\/ul><p><\/p><ul><li><strong>Off-gassing: <\/strong>When memory foam is manufactured, it can release volatile organic compounds (VOCs) into the air, a process known as off-gassing. These chemicals can have a strong odor and may cause respiratory irritation or other health issues for some people. While off-gassing typically dissipates over time, it's important to air out a new memory foam mattress before sleeping on it.<\/li><\/ul><p><\/p><ul><li><strong>Slow response time:<\/strong> Memory foam mattresses can be slow to respond to pressure changes, making it difficult to move around on the bed or change positions while sleeping. While this may be positive for some people who prefer a more stable sleeping surface, it may be negative for others who have difficulty getting comfortable.<\/li><\/ul><p><\/p><ul><li><strong>Weight and density:<\/strong> Because memory foam mattresses are heavy and dense, they might be difficult to move or transport. Besides, because of the density of the foam, the mattress may feel firmer than other types of mattresses, which may not be to everyone's liking.<\/li><\/ul><p><\/p><ul><li><strong>Cost:<\/strong> Memory foam mattresses can be pricier than other types of mattresses, especially if they incorporate newer, more sophisticated technology such as gel-infused or plant-based foam. While many people believe that the benefits of memory foam mattresses are worth the price, it is critical to keep in mind your budget when making a purchase.<br\/><\/li><\/ul>"
+          }
+        },
+        "67efd1ed-6129-43aa-b602-5e3db51afa08": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/cool-mattress.svg?v=1683602198",
+            "frameText": "New technologies are making memory foam mattresses cooler and more eco-friendly.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "11c7870f-5eaa-452f-9a8b-6a5254147137": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "eb6f94c5-072c-46c2-9a15-e8b5d7414d57": {
+          "type": "text",
+          "settings": {
+            "index_par": "Choosing the Right MemoryFoam Mattress",
+            "content": "<h2>Choosing the Right Memory Foam Mattress<\/h2><p><br\/><\/p><h3>Factors to consider<\/h3><p><br\/>When choosing a memory foam mattress, there are several factors to consider:<\/p><p><\/p><ul><li><strong>Density: <\/strong>One of the most significant elements to consider when purchasing a memory foam mattress is the density of the foam. Higher-density foams last longer and provide greater support, but lower-density foams are softer and less supporting.<\/li><\/ul><p><\/p><ul><li><strong>Mattress thickness:<\/strong> <a href=\"\/blogs\/your-mattress-matters\/buying-guide-does-bed-height-really-matter-hint-it-does\" target=\"_blank\" title=\"Buying Guide: Does bed height really matter? (hint: it does!)\">The thickness of the mattress can also affect its overall comfort and support.<\/a> Thicker mattresses may provide more cushioning, whilst thinner mattresses may provide greater support.<\/li><\/ul><p><\/p><ul><li><strong>Firmness level: <\/strong>Memory foam mattresses come in a variety of hardness degrees, ranging from gentle to exceptionally firm. The appropriate amount of firmness will be determined by your own sleeping habits as well as any special health problems you may have.<\/li><\/ul><p><\/p><ul><li><strong>Support:<\/strong> In addition to firmness, the level of support provided by the mattress is also important. Look for a mattress that offers even support throughout the body, with no sagging or sinking.<\/li><\/ul><h3><br\/>Budget considerations<\/h3><p><br\/>Memory foam mattresses may be rather expensive, so when making a purchase, keep your budget in mind. While more expensive memory foam mattresses may have more advanced features and technology, there are also many less expensive options. Remember that a big price tag does not necessarily imply the highest quality or comfort, so do your homework and compare costs before making a purchase.<\/p><h3><br\/>Comparison with other types of mattresses<\/h3><p><br\/>When choosing a memory foam mattress, it's also important to consider how it compares to other types of mattresses. You can use this comparison chart to get a general idea of ​​how mattresses of different types perform.<br\/><\/p>"
+          }
+        },
+        "8ae816f8-814d-43fd-90de-f18cff56df42": {
+          "type": "image",
+          "settings": {
+            "index_img": "",
+            "image": "shopify:\/\/shop_images\/Mattress_materials_comparison.png",
+            "title": "",
+            "img_color": "",
+            "top_i": true,
+            "bottom_i": true,
+            "size": true
+          }
+        },
+        "76bc9ec7-4c02-45c8-83f6-c3242fc15aa9": {
+          "type": "image",
+          "settings": {
+            "index_img": "Maintenance",
+            "image": "shopify:\/\/shop_images\/AdobeStock_260306099.jpg",
+            "title": "Maintenance",
+            "img_color": "#384fae",
+            "top_i": true,
+            "bottom_i": true,
+            "size": false
+          }
+        },
+        "a34f76af-7fde-41f1-ab8c-1adbc41f7406": {
+          "type": "text",
+          "settings": {
+            "index_par": "",
+            "content": "<p>Cleaning, rotating, and <a href=\"\/blogs\/your-mattress-matters\/how-to-clean-your-mattress\" target=\"_blank\" title=\"How to Clean Your Mattress\">caring for your memory foam mattress<\/a> may help it last longer. Here are some recommendations to help you get started:<\/p><h3><br\/>Cleaning and caring for your mattress<\/h3><p><\/p><ul><li><strong>Use a mattress protector:<\/strong> A <a href=\"\/collections\/mattress-protectors\" target=\"_blank\" title=\"Mattress Protectors\">mattress protector<\/a> can assist to protect your mattress from spills, stains, and other damage. For best protection, look for a protector that is both breathable and waterproof.<\/li><\/ul><p><\/p><ul><li><strong>Vacuum on a regular basis: <\/strong>To remove dust, grime, and other debris from your mattress, use a handheld vacuum or a vacuum with a soft brush attachment. Vacuum the mattress on all sides, including the crevices and edges.<\/li><\/ul><p><\/p><ul><li><strong>Spot-clean stains:<\/strong> If you spill something on your mattress, wipe it up with a clean towel and then use a mild detergent and warm water to spot-clean the damaged area. Harsh chemicals and abrasive cleansers should be avoided as they might harm the foam.<\/li><\/ul><h3><br\/>Rotating and flipping your mattress<\/h3><p><\/p><ul><li><strong>Rotate your mattress: <\/strong>To promote even wear and prevent sagging, rotate your mattress every 3-6 months. This means turning the mattress 180 degrees so that the head of the mattress is now at the foot of the bed.<\/li><\/ul><p><\/p><ul><li><strong>Flip your mattress:<\/strong> Some memory foam mattresses are designed to be flipped, while others are not. Check the manufacturer's instructions to determine whether or not your mattress should be flipped. If it can be flipped, do so every 6-12 months to promote even wear.<\/li><\/ul><h3><br\/>Addressing common issues<\/h3><p><\/p><ul><li><strong>Odor:<\/strong> Memory foam mattresses can have a strong odor when they are first unpacked. To reduce the odor, allow the mattress to air out in a well-ventilated area for 24-48 hours before using it.<\/li><\/ul><p><\/p><ul><li><strong>Heat retention:<\/strong> If you find that your memory foam mattress is retaining too much heat, try using a cooling mattress pad or breathable sheets. You can also adjust the temperature in your bedroom or use a fan to help keep you cool while you sleep.<\/li><\/ul><p><\/p><ul><li><strong>Sinking or sagging:<\/strong> If you notice that your mattress is sinking or sagging in certain areas, try rotating or flipping the mattress to promote even wear. If the problem persists, it may be time to replace the mattress.<\/li><\/ul><p><br\/>If you are still unsure about memory foam mattresses, you might want to look at different types of mattresses.  Here is an article on <a href=\"\/blogs\/your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress\" target=\"_blank\" title=\"Better Sleep Starts Here: A Step-by-Step Guide to Choosing the Best Mattress\">how to choose the best mattress for your needs<\/a>.<\/p>"
+          }
+        },
+        "eb7a9787-94c4-4353-b1a7-e4f83ab9e851": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/vacuum.svg?v=1683602198",
+            "frameText": "Cleaning, rotating and ventilating your mattress will help it keep its quality and last longer.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "a3e7355f-5386-4e86-a811-149f9fba50a6": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "28a9d9bf-ea40-44e4-9be7-05b0ed2c1161": {
+          "type": "text",
+          "settings": {
+            "index_par": "FAQ",
+            "content": "<h2>FAQ about memory foam mattresses<\/h2><h3><br\/>How long do memory foam mattresses last?<\/h3><p><br\/>The lifespan of a memory foam mattress can vary depending on factors like usage, care, and the specific materials used. On average, memory foam mattresses can last 10-15 years with proper care and maintenance.<\/p><h3><br\/>What does density mean in memory foam mattresses?<\/h3><p><br\/>Density refers to the weight of the foam per cubic foot. Higher density foams are typically more supportive and durable, but they may also be more expensive and have a longer break-in period. Lower density foams may be softer and more conforming but may not provide as much support or durability.<\/p><h3><br\/>How much are memory foam mattresses?<\/h3><p><br\/>The price of a memory foam mattress can vary widely depending on factors such as the brand, size, and features. Generally, you can expect to pay anywhere from a few hundred to several thousand dollars for a high-quality memory foam mattress. Here we have a list of <a href=\"\/blogs\/your-mattress-matters\/7-best-mattresses-under-1000-in-2023\" target=\"_blank\" title=\"7 Best Mattresses Under $1000 in 2023\">high-quality mattresses under $1000 in 2023<\/a>.<\/p><h3><br\/>How are memory foam mattresses shipped?<\/h3><p><br\/>Memory foam mattresses are typically shipped compressed and rolled up in a box for convenience and ease of shipping. Once the mattress is removed from the box and unrolled, it will gradually expand to its full size over the course of a few hours to a few days.<\/p><h3><br\/>How long do memory foam mattresses take to expand?<\/h3><p><br\/>Memory foam mattresses typically take several hours to a few days to fully expand after being removed from their packaging. The exact amount of time can vary depending on factors like room temperature and humidity.<\/p><h3><br\/>How thick are memory foam mattresses?<\/h3><p><br\/>Memory foam mattresses are available in a variety of thicknesses, ranging from 6 inches to 14 inches or more. The ideal thickness will depend on your personal preferences and needs for support and comfort.<\/p><h3><br\/>Do memory foam mattresses sleep hot?<\/h3><p><br\/>Some memory foam mattresses can retain heat, which can make them uncomfortable for some people. However, many newer models are designed with cooling technologies such as gel infusions or open-cell foam to help regulate temperature like the Tempur’s <a href=\"\/products\/tempur-luxebreeze-soft-mattress\" target=\"_blank\" title=\"Tempur-Pedic LuxeBreeze Soft Mattress\">LuxeBreeze<\/a> and <a href=\"\/products\/tempurpedic-probreeze-medium-mattress\" target=\"_blank\" title=\"Tempur-Pedic ProBreeze Medium Mattress\">ProBreeze<\/a> models.<\/p><h3><br\/>What type of foundation to use on memory foam mattresses?<\/h3><p><br\/>Memory foam mattresses can be used with a variety of <a href=\"\/collections\/bases\" target=\"_blank\" title=\"Bases\">foundations<\/a>, including platform beds, adjustable bases, and box springs. However, it's important to choose a foundation that provides adequate support and does not void the mattress warranty. Be sure to check the manufacturer's instructions before using any specific type of foundation.<\/p><h3><br\/>Can memory foam mattresses be used with adjustable beds?<\/h3><p><br\/>Yes, many memory foam mattresses are compatible with adjustable beds. However, it's important to check with the manufacturer to ensure that the mattress you choose is suitable for use with an adjustable bed.<\/p><h3><br\/>Can memory foam mattresses be flipped?<\/h3><p><br\/>Most memory foam mattresses cannot be flipped, as they are designed to have a specific top and bottom. However, some mattresses can be rotated to promote even wear and prolong their lifespan.<\/p><h3><br\/>Are memory foam mattresses good for side sleepers?<\/h3><p><br\/>Memory foam mattresses can be a good choice for side sleepers, as they can provide pressure relief and support for the hips and shoulders. However, the ideal firmness level may vary depending on the individual, so it's important to try out different mattresses and consult with a healthcare professional if you have specific concerns. If you are a side sleeper check out our blog post about <a href=\"\/blogs\/your-mattress-matters\/buying-guide-the-best-mattresses-for-side-sleepers\" target=\"_blank\" title=\"Buying Guide: The Best Mattresses For Side Sleepers\">the best mattresses for side sleepers<\/a>.<\/p><h3><br\/>Do memory foam mattresses have fiberglass?<\/h3><p><br\/>Not all memory foam mattresses have fiberglass, but some low-quality or older models may use fiberglass as a fire retardant. It's important to choose a mattress that meets safety standards without compromising your health and safety.<\/p><h3><br\/>The firmness of a memory foam mattress can be changed?<\/h3><p><br\/>It is generally not recommended to alter the firmness of a memory foam mattress once it has been manufactured, as doing so can damage the foam or void the warranty. However, some companies offer <a href=\"\/collections\/mattress-toppers\" target=\"_blank\" title=\"Mattress Toppers\">mattress toppers<\/a> or inserts that can be added to the mattress to adjust the firmness level.<\/p>"
+          }
+        },
+        "91d4c3c8-994f-48d4-8abd-726388081101": {
+          "type": "slide",
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/pose.svg?v=1683602199",
+            "frameText": "Memory foam mattresses are great for people who suffer from chronic pain or are sensitive to motion.",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "5f8558f5-f603-49f3-a3c1-32da6b42b445": {
+          "type": "section",
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        },
+        "1237f54d-a7a4-422d-aeb7-64a41f0013d5": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "index_fra": "",
+            "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/Person.svg?v=1682014048",
+            "frameText": "Asthma and chronic pain are two illnesses that can be made worse by poor sleep hygiene. ",
+            "top_f": true,
+            "bottom_f": true
+          }
+        },
+        "25553a50-961f-47bd-9a8f-7b4964be2912": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "index_div": "",
+            "divider_color": "#7992eb",
+            "top": true,
+            "bottom": true
+          }
+        }
+      },
+      "block_order": [
+        "1a590ddc-2ad7-46f6-9d96-57c79b562975",
+        "0bde299d-d2ed-4afa-8d44-dde79fc1bde8",
+        "00c5c3c8-f44e-4fff-8011-b53508dad711",
+        "7864ce1f-275d-420f-b8dc-534cbfd3ee27",
+        "cbed33c1-94c0-4361-83c7-6cc50a56d9ab",
+        "2d486f16-edcc-45ec-ab0a-54b4402f750e",
+        "6cee24f4-e060-464c-a4ac-62572890b55f",
+        "d44d7692-57b0-49fb-8ca5-1732c9a2bf83",
+        "0e01238e-139a-43ef-81d4-fc19ba39d742",
+        "87bee2ea-a497-4e20-a3ae-356b49b4fb0b",
+        "3ce7b1ce-8489-4771-b9be-9b9f4dddd5a4",
+        "67efd1ed-6129-43aa-b602-5e3db51afa08",
+        "11c7870f-5eaa-452f-9a8b-6a5254147137",
+        "eb6f94c5-072c-46c2-9a15-e8b5d7414d57",
+        "8ae816f8-814d-43fd-90de-f18cff56df42",
+        "76bc9ec7-4c02-45c8-83f6-c3242fc15aa9",
+        "a34f76af-7fde-41f1-ab8c-1adbc41f7406",
+        "eb7a9787-94c4-4353-b1a7-e4f83ab9e851",
+        "a3e7355f-5386-4e86-a811-149f9fba50a6",
+        "28a9d9bf-ea40-44e4-9be7-05b0ed2c1161",
+        "91d4c3c8-994f-48d4-8abd-726388081101",
+        "5f8558f5-f603-49f3-a3c1-32da6b42b445",
+        "1237f54d-a7a4-422d-aeb7-64a41f0013d5",
+        "25553a50-961f-47bd-9a8f-7b4964be2912"
+      ],
+      "settings": {
+        "introduction": "<p>If you're here, chances are you're in the market for a new mattress, or you're simply fascinated by the world of sleep and health. Either way, you've come to the right place! In this article, we'll be taking a deep dive into the world of <a href=\"\/collections\/memory-foam\" target=\"_blank\" title=\"Memory Foam\">memory foam mattresses<\/a> - what they are, how they work, and why they just might be the key to a better night's sleep (and happier mornings). We'll also answer some common questions about memory foam and offer tips for choosing, caring for, and enjoying your new mattress.<br\/><br\/>So sit back, relax, and get ready to dive into the world of memory foam mattresses - we promise you won't regret it.<br\/><\/p>",
+        "recap": "<p>To sum up, memory foam mattresses are a great option for those who want a comfortable and supportive surface to sleep on. They provide many benefits such as reducing pressure, motion isolation, and allergy relief. However, it's crucial to think about some of the downsides of memory foam, such as getting too hot or emitting a smell when new. By understanding the different types of memory foam, how to choose the right mattress, and how to care for it properly, you can enjoy the many benefits of memory foam for years to come.<\/p>",
+        "posts_heading": "Related Posts"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17e412db-3680-4e78-8669-fb18b9a93869"
+  ]
+}

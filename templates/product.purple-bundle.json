@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details-bundle",
+      "blocks": {
+        "399cdb1a-c1be-40b5-a4d7-f7e63c3b631a": {
+          "type": "banner",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Amazon_Gift_Card.png",
+            "pre_title": "Included",
+            "title": "$300 Amazon.com Gift Card",
+            "price": "",
+            "url": "shopify:\/\/products\/300-amazon-gift-card"
+          }
+        },
+        "d5a2373d-4aa6-4a9b-b002-9b4e677070bb": {
+          "type": "banner",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/WK-N50-White-3qtLift1649180114_original_2.webp",
+            "pre_title": "Included",
+            "title": "Adjustable Power Base",
+            "price": "",
+            "url": "shopify:\/\/products\/sleep-first-head-up-adjustable-power-base"
+          }
+        }
+      },
+      "block_order": [
+        "399cdb1a-c1be-40b5-a4d7-f7e63c3b631a",
+        "d5a2373d-4aa6-4a9b-b002-9b4e677070bb"
+      ],
+      "settings": {
+        "desk_banner": "shopify:\/\/shop_images\/purple-luxe-ad.png",
+        "mob_banner": "shopify:\/\/shop_images\/purple-luxe-ad-2.png",
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "quantity": false,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it.",
+        "description_order": false,
+        "details_order": false
+      }
+    },
+    "bcc6799f-5729-4595-9dbc-d698b4398304": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "bcc6799f-5729-4595-9dbc-d698b4398304"
+  ]
+}

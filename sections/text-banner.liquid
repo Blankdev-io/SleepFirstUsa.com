@@ -1,0 +1,117 @@
+{% liquid 
+    assign banner = section.settings.banner
+    assign heading = section.settings.heading
+    assign font_size = section.settings.font_size
+    assign hierarchy = section.settings.hierarchy
+    assign content = section.settings.content
+    assign button = section.settings.button
+    assign url = section.settings.url
+    assign order = section.settings.order
+ %}
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="relative">
+        <div class="absolute h-full w-full p-3 mm:p-4 ts:grid ts:grid-cols-5 ds:p-8 ds:grid-cols-11">
+        {% if order == false %}
+            <div class="flex flex-col justify-between text-text backdrop-blur-[6px] bg-body/50 rounded-cl h-full p-4 mm:p-5 ts:col-span-3 ds:col-span-5">
+                {% if hierarchy == "h2" %}
+                    <h2 class="font-bold" style="font-size:{{ font_size }}px;">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="font-bold" style="font-size:{{ font_size }}px;">{{ heading }}</h1>
+                {% endif %}
+                <div class="text-sm mm:text-base whitespace-pre-wrap">{{ content }}</div>
+                <a href="{{ url }}" title="{{ heading }}" class="button mm:w-max">{{ button }}</a>
+            </div>
+        {% else %}
+            <div class="flex flex-col justify-between text-text backdrop-blur-[6px] bg-body/50 rounded-cl h-full p-4 mm:p-5 ts:col-span-3 ts:col-start-3 ds:col-span-5 ds:col-start-7">
+                {% if hierarchy == "h2" %}
+                    <h2 class="font-bold" style="font-size:{{ font_size }}px;">{{ heading }}</h2>
+                {% else %}
+                    <h1 class="font-bold" style="font-size:{{ font_size }}px;">{{ heading }}</h1>
+                {% endif %}
+                <div class="text-sm mm:text-base whitespace-pre-wrap">{{ content }}</div>
+                <a href="{{ url }}" title="{{ heading }}" class="button mm:w-max">{{ button }}</a>
+            </div>            
+        {% endif %}                   
+        </div>
+        <picture>
+            <source media="(min-width: 1024px)" srcset="{{ banner | image_url: width: 1120 }}">
+            <source media="(min-width: 768px)" srcset="{{ banner | image_url: width: 990 }}">
+            <source media="(min-width: 480px)" srcset="{{ banner | image_url: width: 730 }}">
+            <img class="object-cover rounded-cl w-full h-[600px]" src="{{ banner | image_url: width: 440 }}" alt="{{ banner.alt }}" title="{{ title }}" loading="lazy">
+        </picture>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Text banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "banner",
+            "label": "Banner"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 40,
+            "step": 2,
+            "unit": "px",
+            "label": "Font size",
+            "default": 16
+        },
+        {
+            "type": "radio",
+            "id": "hierarchy",
+            "label": "Title hierarchy",
+            "options": [
+                {
+                "value": "h1",
+                "label": "H1"
+                },
+                {
+                "value": "h2",
+                "label": "H2"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "checkbox",
+            "id": "order",
+            "label": "Change order",
+            "default": false
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Content</p>"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Button link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Text banner"
+        }
+    ]
+}
+{% endschema %}

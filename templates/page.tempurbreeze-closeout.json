@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "text_align": "left"
+      }
+    },
+    "8beeeb92-857c-4904-8600-247fbc2450ce": {
+      "type": "offer-banner",
+      "blocks": {
+        "a8878b2d-5de9-4d7f-9879-0c4f03b65757": {
+          "type": "text",
+          "settings": {
+            "text": "<p>CLOSEOUT<\/p>",
+            "font_size": 48,
+            "font_weight": "900",
+            "text_color": "#231f20"
+          }
+        },
+        "e46c80a1-6e5d-4595-904b-62c35932fa24": {
+          "type": "text",
+          "settings": {
+            "text": "<p>50% OFF<\/p>",
+            "font_size": 80,
+            "font_weight": "900",
+            "text_color": "#384fae"
+          }
+        },
+        "320ed6dd-76c1-4a29-81eb-32120062d59e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Select TEMPUR-breeze°<\/p><p>floormodel mattresses<\/p>",
+            "font_size": 28,
+            "font_weight": "700",
+            "text_color": "#231f20"
+          }
+        }
+      },
+      "block_order": [
+        "a8878b2d-5de9-4d7f-9879-0c4f03b65757",
+        "e46c80a1-6e5d-4595-904b-62c35932fa24",
+        "320ed6dd-76c1-4a29-81eb-32120062d59e"
+      ],
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/EC_Luxe_Breeze_Soft_King_Ergo_1885-v1_5x7_060219005914094379.jpg",
+        "logo": "shopify:\/\/shop_images\/logo-offer-tempur.png",
+        "button": "FIND MY STORE",
+        "button_link": "shopify:\/\/pages\/store-locator",
+        "label_color": "#ffffff",
+        "btn_color": "#384fae"
+      }
+    },
+    "3470bf1a-2e40-43fa-8025-37699cb09012": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "",
+        "heading": "TEMPURbreeze° Closeout",
+        "content": "<p>Save Up To 50% On Select TEMPUR-Breeze° Floor Model Mattresses<br\/><br\/>Find your perfect mattress at any of our stores<\/p>",
+        "font_size": 24,
+        "text_align": "center",
+        "hierarchy": "h1"
+      }
+    },
+    "e2ce6487-7a25-4480-b096-916106f631ab": {
+      "type": "html",
+      "settings": {
+        "custom_html": "<!-- Start Stockist.co widget -->\n        <div data-stockist-widget-tag=\"u7981\">Loading store locator\n        from <a href=\"https:\/\/stockist.co\">Stockist store locator<\/a>...<\/div>\n        <script>\n        (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n        k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n        })(document,'script','\/\/stockist.co\/embed\/v1\/widget.min.js');\n        <\/script>\n        <!-- End Stockist.co widget -->"
+      }
+    },
+    "d84b2abb-84cd-446a-a45a-193253996325": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "",
+        "heading": "Texas Stores",
+        "content": "<p>Find your closest store!<\/p>",
+        "font_size": 20,
+        "button1": "Longview",
+        "url1": "shopify:\/\/pages\/longview-tx",
+        "button2": "Tyler (Kinsey Crossing)",
+        "url2": "shopify:\/\/pages\/tyler-tx-kinsey",
+        "button3": "Tyler (Cumberland)",
+        "url3": "shopify:\/\/pages\/tyler-tx-cumberland"
+      }
+    },
+    "c62067f3-7b99-4c1b-98da-9c6405e7b871": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "",
+        "heading": "California Stores",
+        "content": "<p>Find your closest store!<\/p><p><\/p>",
+        "font_size": 20,
+        "button1": "Lodi",
+        "url1": "shopify:\/\/pages\/lodi-ca",
+        "button2": "Vacaville",
+        "url2": "shopify:\/\/pages\/vacaville-ca",
+        "button3": "",
+        "url3": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8beeeb92-857c-4904-8600-247fbc2450ce",
+    "3470bf1a-2e40-43fa-8025-37699cb09012",
+    "e2ce6487-7a25-4480-b096-916106f631ab",
+    "d84b2abb-84cd-446a-a45a-193253996325",
+    "c62067f3-7b99-4c1b-98da-9c6405e7b871"
+  ]
+}

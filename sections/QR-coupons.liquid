@@ -1,0 +1,159 @@
+{% liquid 
+    assign title = section.settings.title
+    assign description = section.settings.description
+%}
+
+<div class="mb-24 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="flex flex-col justify-between gap-4 text-center text-text bg-white shadow-sp rounded-cl w-full p-5 ds:gap-5">
+        <div class="self-center flex flex-col items-center ts:w-1/2">
+            <h1 class="font-black text-3xl mb-3 mm:text-4xl mm:mb-4 ts:mb-5 ts:text-5xl ds:mb-6">{{ title }}</h1>
+            <div class="font-bold text-lg mm:text-xl ts:text-2xl">{{ description }}</div>
+        </div>
+        <div class="grid grid-cols-1 justify-items-center items-center gap-y-10 w-full ts:grid-cols-2 ts:items-start ts:justify-between ts:gap-x-4 ds:gap-x-6">
+            {% for block in section.blocks %}
+                {% liquid
+                    assign coupon_title = block.settings.coupon_title
+                    assign t_col = block.settings.t_col
+                    assign t_bcol = block.settings.t_bcol
+                    assign coupon_sub = block.settings.coupon_sub
+                    assign coupon_img = block.settings.coupon_img
+                    assign coupon_check = block.settings.coupon_check
+                    assign s_col = block.settings.s_col
+                    assign s_bcol = block.settings.s_bcol
+                    assign c_icon = block.settings.c_icon
+                    assign button = block.settings.button
+                    assign b_col = block.settings.b_col
+                    assign b_bcol = block.settings.b_bcol
+                    assign url = block.settings.url
+                    assign disclaimer = block.settings.disclaimer
+                %}
+
+                <div class="flex flex-col justify-start items-center gap-2 w-full mm:w-[400px] {% if forloop.index == 3 and section.blocks.size == 3 %}ts:col-span-2{% endif %} ts:w-full ts:max-w-[385px] tl:max-w-[465px] ds:max-w-[530px] dl:max-w-[560px]">
+                    <div class="rounded-cl border-4 border-dashed border-black w-full h-[125px] mm:h-[150px] ts:h-[175px] dl:h-[200px]">
+                        <div class="flex justify-center items-center font-black text-[20px] rounded-t-cl p-1 h-[30%] w-full mm:text-[24px] tl:text-[28px] ds:text-[32px] dl:text-[40px]" style="color:{{ t_col }}; background-color:{{ t_bcol }};">{{ coupon_title }}</div>
+                        <div class="grid grid-rows-4 justify-items-center gap-1 rounded-b-cl p-2 h-[70%] w-full" style="background-color:{{ s_bcol }};">
+                            {% if coupon_check %}
+                                <img src="{{ coupon_img | image_url: height: 50 }}" alt="{{ coupon_img.alt }}" title="{{ coupon_img.title }}" class="row-span-2 self-start grow-0 h-[25px] mm:h-[35px] ts:h-[45px]" loading="lazy">
+                                <div class="row-span-2 self-center font-black text-xl mm:text-2xl ds:text-3xl dl:text-4xl" style="color:{{ s_col }};">{{ coupon_sub }}{% if disclaimer != blank %}<span class="text-sm align-top mm:text-base tl:text-lg dl:text-xl">*</span>{% endif %}</div>
+                            {% else %}
+                                <div class="row-span-3 self-center font-black text-xl mm:text-2xl ds:text-3xl dl:text-4xl" style="color:{{ s_col }};">{{ coupon_sub }}{% if disclaimer != blank %}<span class="text-sm align-top mm:text-base tl:text-lg dl:text-xl">*</span>{% endif %}</div>
+                                <img src="{{ c_icon }}" alt="{{ c_icon.alt }}" title="{{ c_icon.title }}" class="self-end grow-0 h-[10px] mm:h-[15px] ts:h-[20px]" loading="lazy">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <a id="{{ page.title }} {{ forloop.index }}" href="{{ url }}" title="{{ button }}" class="flex items-center justify-center gap-2 rounded-full w-[225px] mb-1 py-1 px-3 ts:mb-2" style="background-color:{{ b_bcol }};">
+                        <div class="flex items-center h-6">
+                            {% render 'icons', icon: 'save-white' %}
+                        </div>
+                        <p class="text-base ts:text-xl font-semibold" style="color:{{ b_col }};">{{ button }}</p>
+                    </a>
+                    <div class="font-bold text-xs mm:text-sm tl:text-base dl:text-lg">{{ disclaimer }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "QR Coupons",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Coupons",
+            "type": "Coupon",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "coupon_title",
+                    "label": "Coupon Title"
+                },
+                {
+                    "type": "color",
+                    "id": "t_col",
+                    "label": "Title Font Color"
+                },
+                {
+                    "type": "color",
+                    "id": "t_bcol",
+                    "label": "Title Background Color"
+                },
+                {
+                    "type": "text",
+                    "id": "coupon_sub",
+                    "label": "Coupon Sub-title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "coupon_img",
+                    "label": "Coupon Product Image (If Necessary)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "coupon_check",
+                    "label": "Use Product Image",
+                    "default": false
+                },
+                {
+                    "type": "color",
+                    "id": "s_col",
+                    "label": "Sub-title Font Color"
+                },
+                {
+                    "type": "color",
+                    "id": "s_bcol",
+                    "label": "Sub-title Background Color"
+                },
+                {
+                    "type": "url",
+                    "id": "c_icon",
+                    "label": "Coupon Icon Asset URL"
+                },
+                {
+                    "type": "text",
+                    "id": "button",
+                    "label": "Button Label",
+                    "default": "Clip This Coupon"
+                },
+                {
+                    "type": "color",
+                    "id": "b_col",
+                    "label": "Button Font Color"
+                },
+                {
+                    "type": "color",
+                    "id": "b_bcol",
+                    "label": "Button Background Color"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Coupon URL"
+                },
+                {
+                    "type": "text",
+                    "id": "disclaimer",
+                    "label": "Disclaimer Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "QR Coupons"
+        }
+    ]
+}
+{% endschema %}

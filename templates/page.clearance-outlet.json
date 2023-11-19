@@ -1,0 +1,546 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "text_align": "left"
+      }
+    },
+    "8beeeb92-857c-4904-8600-247fbc2450ce": {
+      "type": "offer-banner",
+      "blocks": {
+        "a8878b2d-5de9-4d7f-9879-0c4f03b65757": {
+          "type": "text",
+          "settings": {
+            "text": "<p>CLEARANCE<br\/>VALUE DEALS<\/p>",
+            "font_size": 48,
+            "font_weight": "900",
+            "text_color": "#231f20"
+          }
+        },
+        "e46c80a1-6e5d-4595-904b-62c35932fa24": {
+          "type": "text",
+          "settings": {
+            "text": "<p>East Texas<br\/>Clearance Inventory<\/p>",
+            "font_size": 36,
+            "font_weight": "900",
+            "text_color": "#384fae"
+          }
+        },
+        "320ed6dd-76c1-4a29-81eb-32120062d59e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Huge mattress discounts<br\/>on discontinued models,<br\/>floor models and scratch & dent.<\/p>",
+            "font_size": 22,
+            "font_weight": "700",
+            "text_color": "#231f20"
+          }
+        }
+      },
+      "block_order": [
+        "a8878b2d-5de9-4d7f-9879-0c4f03b65757",
+        "e46c80a1-6e5d-4595-904b-62c35932fa24",
+        "320ed6dd-76c1-4a29-81eb-32120062d59e"
+      ],
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/Sleep_First_Mattress_Tyler_Kinsey_Exterior_1.jpg",
+        "logo": "shopify:\/\/shop_images\/Sleep_First_Logo_-_White_Outline.png",
+        "button": "NEXT DAY DELIVERY",
+        "button_link": "shopify:\/\/pages\/store-locator",
+        "label_color": "#ffffff",
+        "btn_color": "#384fae"
+      }
+    },
+    "692e58fe-e434-457f-b3d3-5504c2700368": {
+      "type": "stores-banner",
+      "blocks": {
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Longview_Mattress_Clearance_Center.jpg",
+            "name": "Longview, Texas",
+            "address": "<p>106 E Loop 281<br\/>Longview, Texas 75605<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 220-0704",
+            "button_url": "tel:+19032200704",
+            "url": "shopify:\/\/pages\/longview-tx"
+          }
+        },
+        "9c7f6458-58ea-4621-b53c-187de15dd063": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Sleep_First_Mattress_Tyler_Kinsey_Exterior_1.jpg",
+            "name": "Tyler, Texas <br>(Kinsey Crossing)",
+            "address": "<p>1400 W SW Loop 323<br\/>Tyler, Texas 75701<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 707-2000",
+            "button_url": "tel:+19037072000",
+            "url": "shopify:\/\/pages\/tyler-tx-kinsey"
+          }
+        },
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Cumberland_Exterior_1_8771146d-2ab6-4261-ae6e-44eef9687ce0.jpg",
+            "name": "Tyler, Texas <br>(Cumberland)",
+            "address": "<p>8982 S Broadway Ave<br\/>Tyler, Texas 75703<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 944-7820",
+            "button_url": "tel:+19039447820",
+            "url": "shopify:\/\/pages\/tyler-tx-cumberland"
+          }
+        }
+      },
+      "block_order": [
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a",
+        "9c7f6458-58ea-4621-b53c-187de15dd063",
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1"
+      ],
+      "settings": {
+        "heading": "Visit Our Stores"
+      }
+    },
+    "6c9e33bf-4e46-44ee-81cd-8c170c5bcfb0": {
+      "type": "flag-headline",
+      "settings": {
+        "heading": "30% - 70% OFF",
+        "font_size": 48,
+        "hierarchy": "h2",
+        "color": "#384fae",
+        "text_color": "#ffffff"
+      }
+    },
+    "b8f1356a-ae60-4121-bd30-5212297cf5b0": {
+      "type": "products-sheet",
+      "blocks": {
+        "42a92edc-07b8-4726-94bf-dbaa4f0a341a": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Beautyrest Black Hybrid X-Class Plush",
+            "url": "",
+            "compare_at_price": "$4,299.99",
+            "price": "$1,505",
+            "discount": "65%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "cbfe5006-2c28-4639-a437-f572986fbaa8": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Beautyrest Harmony Carbon Lux Medium",
+            "url": "shopify:\/\/products\/beautyrest-harmony-carbon-lux-medium-mattress",
+            "compare_at_price": "$1,799.99",
+            "price": "$989.99",
+            "discount": "45%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "2aee90d0-d224-4ce9-8b90-53af22b02dea": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Beautyrest Harmony Carbon Lux Plush Pillowtop",
+            "url": "shopify:\/\/products\/beautyrest-harmony-carbon-lux-plush-pillowtop-mattress",
+            "compare_at_price": "$2,199.99",
+            "price": "$1,209.99",
+            "discount": "45%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "ffd5266b-0e45-4304-9047-bdf5b0a0410d": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Beautyrest Premium Select Hybrid Medium",
+            "url": "shopify:\/\/products\/beautyrest-select-premium-hybrid-medium-mattress",
+            "compare_at_price": "$2,399.99",
+            "price": "$960",
+            "discount": "60%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "4190ef65-05bd-41bc-8851-67062dba559d": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Dreamcloud Mattress",
+            "url": "shopify:\/\/products\/dreamcloud-mattress",
+            "compare_at_price": "$1,299.99",
+            "price": "$714.99",
+            "discount": "45%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "b246b664-0ac2-4287-9ea4-b6d1b3f61814": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Nectar Premier Copper",
+            "url": "shopify:\/\/products\/nectar-premier-copper-mattress",
+            "compare_at_price": "$1,599.99",
+            "price": "$879.99",
+            "discount": "45%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "1a1cd8a2-8b0b-4ec4-8816-f0d5a893de08": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Purple Luxe Grand",
+            "url": "",
+            "compare_at_price": "$9,999.99",
+            "price": "$3,000",
+            "discount": "70%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "ccbefcf4-1d93-4a8d-81c1-bae73f5e3feb": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Purple Mattress",
+            "url": "shopify:\/\/products\/purple-mattress",
+            "compare_at_price": "$1,799.99",
+            "price": "$989.99",
+            "discount": "45%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "a711aff7-8e00-427a-a74d-04997282563c": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Sealy Testimony Plush",
+            "url": "",
+            "compare_at_price": "$1,599.99",
+            "price": "$800",
+            "discount": "50%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "67ff1bcb-a1b9-4f0a-a4f7-66d3a4f22d21": {
+          "type": "slide",
+          "settings": {
+            "size": "King",
+            "name": "Tempur-Luxe Adapt Soft",
+            "url": "shopify:\/\/products\/tempurpedic-luxeadapt-soft-mattress",
+            "compare_at_price": "$4,899.99",
+            "price": "$3,184.99",
+            "discount": "35%",
+            "details": true,
+            "flag": true
+          }
+        },
+        "1d89bbd0-06cb-4382-b506-0f6aa4058373": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Beautyrest 800 Firm",
+            "url": "",
+            "compare_at_price": "$999.99",
+            "price": "$400",
+            "discount": "60%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "883165c3-651a-4533-93d0-36b9880e72b4": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Beautyrest Black Hybrid KX-Class Plush",
+            "url": "shopify:\/\/products\/beautyrest-black-hybrid-kx-class-plush-mattress",
+            "compare_at_price": "$5,099.99",
+            "price": "$1,785",
+            "discount": "65%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "5f0a3713-2619-464a-9d57-ed1b2e773749": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Purple Hybrid P3",
+            "url": "",
+            "compare_at_price": "$2,999.99",
+            "price": "$1,350",
+            "discount": "55%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "6ad27cc6-53f9-4958-b52d-a30c3eb893b1": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Purple Hybrid P4",
+            "url": "",
+            "compare_at_price": "$4,399.99",
+            "price": "$1,980",
+            "discount": "55%",
+            "details": false,
+            "flag": true
+          }
+        },
+        "b75b278f-19f0-4635-bc07-387c22c8afe4": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Sherwood Promo Villa",
+            "url": "shopify:\/\/products\/sherwood-promo-villa-firm-hybrid-mattress",
+            "compare_at_price": "$299.99",
+            "price": "$164.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "aac5a86b-9c84-47d8-8ab3-decf92f1782b": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Sherwood Sunrise FM 2.0",
+            "url": "shopify:\/\/products\/sherwood-sunrise-mattress",
+            "compare_at_price": "$699.99",
+            "price": "$384.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "34345d8a-b195-4031-b2f5-67bc5b41bc83": {
+          "type": "slide",
+          "settings": {
+            "size": "Queen",
+            "name": "Tempur-Pro Adapt Firm",
+            "url": "shopify:\/\/products\/tempurpedic-proadapt-firm-mattress",
+            "compare_at_price": "$3,449.99",
+            "price": "$2,242.49",
+            "discount": "35%",
+            "details": true,
+            "flag": true
+          }
+        },
+        "99581403-9fb2-4c9f-8279-004ffd1e960e": {
+          "type": "slide",
+          "settings": {
+            "size": "Full",
+            "name": "8'' B2G Cooling Memory Foam",
+            "url": "",
+            "compare_at_price": "$299.99",
+            "price": "$164.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "909e0c81-90e7-4c99-9725-938931587d08": {
+          "type": "slide",
+          "settings": {
+            "size": "Full",
+            "name": "Sherwood Ocean View Lux Firm",
+            "url": "",
+            "compare_at_price": "$499.99",
+            "price": "$299.99",
+            "discount": "40%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "b3702a7c-c825-49ce-a557-e5c6c10fd08c": {
+          "type": "slide",
+          "settings": {
+            "size": "Full",
+            "name": "Sherwood Promo Villa",
+            "url": "shopify:\/\/products\/sherwood-promo-villa-firm-hybrid-mattress",
+            "compare_at_price": "$279.99",
+            "price": "$153.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "d9fdf27e-b3a2-425e-915a-5f9772be71f6": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Auburnwood Tightop",
+            "url": "",
+            "compare_at_price": "$1,499.99",
+            "price": "$450",
+            "discount": "70%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "86adab9f-c2ff-41c2-ad34-da1f08582c6e": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "10'' B2G Cooling Memory Foam",
+            "url": "",
+            "compare_at_price": "$579.99",
+            "price": "$318.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "259a9490-2491-4558-9458-4459a1d7f0d9": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Nectar 3.0",
+            "url": "",
+            "compare_at_price": "$899.99",
+            "price": "$494.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "3452798d-b294-47eb-a769-3d0b78650b1c": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Sherwood Ocean View Lux Firm",
+            "url": "",
+            "compare_at_price": "$399.99",
+            "price": "$239.99",
+            "discount": "40%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "9ef9fa4d-3b0e-4a39-964a-9a6461028775": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Tempur-Luxe Adapt Soft",
+            "url": "shopify:\/\/products\/tempurpedic-luxeadapt-soft-mattress",
+            "compare_at_price": "$3,699.99",
+            "price": "$2,404.99",
+            "discount": "35%",
+            "details": true,
+            "flag": true
+          }
+        },
+        "f797456c-d095-4e5e-9414-5d18d6c4d916": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Tempur-Luxe Breeze Firm",
+            "url": "shopify:\/\/products\/tempur-luxebreeze-firm-mattress",
+            "compare_at_price": "$5,099.99",
+            "price": "$3,314.99",
+            "discount": "35%",
+            "details": true,
+            "flag": true
+          }
+        },
+        "4836be86-a5fe-46c0-86f1-16a0f087878e": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin XL",
+            "name": "Tempur-Pro Adapt Soft",
+            "url": "shopify:\/\/products\/tempurpedic-proadapt-soft-mattress",
+            "compare_at_price": "$2,849.99",
+            "price": "$1,852.49",
+            "discount": "35%",
+            "details": true,
+            "flag": true
+          }
+        },
+        "4b8ad273-6ae2-4e25-91da-1df56a16c903": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin",
+            "name": "Sherwood Villa Pillowtop",
+            "url": "shopify:\/\/products\/sherwood-villa-pillowtop-plush-mattress",
+            "compare_at_price": "$479.99",
+            "price": "$263.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        },
+        "f373543f-7375-47fa-bc06-1e2572af6643": {
+          "type": "slide",
+          "settings": {
+            "size": "Twin",
+            "name": "Sherwood Villa Euro 2.0",
+            "url": "shopify:\/\/products\/sherwood-villa-euro-top-plush-mattress",
+            "compare_at_price": "$179.99",
+            "price": "$98.99",
+            "discount": "45%",
+            "details": false,
+            "flag": false
+          }
+        }
+      },
+      "block_order": [
+        "42a92edc-07b8-4726-94bf-dbaa4f0a341a",
+        "cbfe5006-2c28-4639-a437-f572986fbaa8",
+        "2aee90d0-d224-4ce9-8b90-53af22b02dea",
+        "ffd5266b-0e45-4304-9047-bdf5b0a0410d",
+        "4190ef65-05bd-41bc-8851-67062dba559d",
+        "b246b664-0ac2-4287-9ea4-b6d1b3f61814",
+        "1a1cd8a2-8b0b-4ec4-8816-f0d5a893de08",
+        "ccbefcf4-1d93-4a8d-81c1-bae73f5e3feb",
+        "a711aff7-8e00-427a-a74d-04997282563c",
+        "67ff1bcb-a1b9-4f0a-a4f7-66d3a4f22d21",
+        "1d89bbd0-06cb-4382-b506-0f6aa4058373",
+        "883165c3-651a-4533-93d0-36b9880e72b4",
+        "5f0a3713-2619-464a-9d57-ed1b2e773749",
+        "6ad27cc6-53f9-4958-b52d-a30c3eb893b1",
+        "b75b278f-19f0-4635-bc07-387c22c8afe4",
+        "aac5a86b-9c84-47d8-8ab3-decf92f1782b",
+        "34345d8a-b195-4031-b2f5-67bc5b41bc83",
+        "99581403-9fb2-4c9f-8279-004ffd1e960e",
+        "909e0c81-90e7-4c99-9725-938931587d08",
+        "b3702a7c-c825-49ce-a557-e5c6c10fd08c",
+        "d9fdf27e-b3a2-425e-915a-5f9772be71f6",
+        "86adab9f-c2ff-41c2-ad34-da1f08582c6e",
+        "259a9490-2491-4558-9458-4459a1d7f0d9",
+        "3452798d-b294-47eb-a769-3d0b78650b1c",
+        "9ef9fa4d-3b0e-4a39-964a-9a6461028775",
+        "f797456c-d095-4e5e-9414-5d18d6c4d916",
+        "4836be86-a5fe-46c0-86f1-16a0f087878e",
+        "4b8ad273-6ae2-4e25-91da-1df56a16c903",
+        "f373543f-7375-47fa-bc06-1e2572af6643"
+      ],
+      "settings": {
+        "heading": "Clearance Mattress Inventory",
+        "sub_heading": "Last Updated:"
+      }
+    },
+    "e2ce6487-7a25-4480-b096-916106f631ab": {
+      "type": "html",
+      "settings": {
+        "custom_html": "<!-- Start Stockist.co widget -->\n        <div data-stockist-widget-tag=\"u7981\">Loading store locator\n        from <a href=\"https:\/\/stockist.co\">Stockist store locator<\/a>...<\/div>\n        <script>\n        (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n        k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n        })(document,'script','\/\/stockist.co\/embed\/v1\/widget.min.js');\n        <\/script>\n        <!-- End Stockist.co widget -->"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8beeeb92-857c-4904-8600-247fbc2450ce",
+    "692e58fe-e434-457f-b3d3-5504c2700368",
+    "6c9e33bf-4e46-44ee-81cd-8c170c5bcfb0",
+    "b8f1356a-ae60-4121-bd30-5212297cf5b0",
+    "e2ce6487-7a25-4480-b096-916106f631ab"
+  ]
+}

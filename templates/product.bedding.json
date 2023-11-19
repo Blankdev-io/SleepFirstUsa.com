@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-details",
+      "settings": {
+        "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
+        "stamp_message": "FAST FREE DELIVERY",
+        "stamp_url": "shopify:\/\/policies\/shipping-policy",
+        "quantity": true,
+        "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
+        "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it.",
+        "description_order": false,
+        "details_order": false
+      }
+    },
+    "b0ebdca7-9c38-4910-a05d-c4b2fdd321ca": {
+      "type": "product-recomendations",
+      "settings": {
+        "title": "You May Also Like",
+        "button": false
+      }
+    },
+    "e2cb29a6-bdfd-4454-800e-db0f4e952b25": {
+      "type": "article-recomendations",
+      "settings": {
+        "title": "See This Articles",
+        "article1": "your-mattress-matters\/mastering-sleep-hygiene",
+        "article2": "your-mattress-matters\/better-sleep-starts-here-a-step-by-step-guide-to-choosing-the-best-mattress"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b0ebdca7-9c38-4910-a05d-c4b2fdd321ca",
+    "e2cb29a6-bdfd-4454-800e-db0f4e952b25"
+  ]
+}

@@ -1,0 +1,154 @@
+{% liquid
+  assign title = page.title
+  assign content = page.content
+  assign words = section.settings.stores | split: ','
+  assign button = section.settings.button
+  assign message = section.settings.message
+%}
+
+<div id="product" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+  <div class="flex flex-col gap-6 ds:flex-row ds:gap-8">
+    <div class="ds:sticky ds:top-44 ds:h-max ds:pr-3 ds:w-1/2">
+
+      <div class="swiper swiper1 bg-white shadow-sp rounded-cl w-full mb-6">
+        <div class="swiper-wrapper items-center">
+
+          {% for block in section.blocks %}
+            {% assign image = block.settings.images %}
+            <picture class="swiper-slide swiper-lazy">
+                <source media="(min-width: 1024px)" srcset="{{ image | image_url: width: 550 }}">
+                <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 990 }}">
+                <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                <img class="w-full max-h-[500px] tl:max-h-[700px] ds:max-h-[600px]" src="{{ image | image_url: width: 440 }}" alt="{{ image.alt | escape  }}" title="{{ product.alt | escape }}" id="ProductPhotoImg">
+            </picture>
+          {% endfor %}    
+
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
+          {% for block in section.blocks %}
+            {% assign image = block.settings.images %}
+            <span class="swiper-pagination-bullet"></span>
+          {% endfor %}
+        </div>              
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <div class="swiper swiper2 h-24">
+        <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign image = block.settings.images %}  
+          <div class="swiper-slide flex items-center bg-white rounded-cl" >
+            <img class="shadow-sp rounded-cl object-cover mx-auto h-24" src="{{ image | image_url: height: 100 }}" title="{{ product.title | escape }}" alt="{{ image.alt | escape }}">
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-sp rounded-cl p-4 ds:p-6 ds:w-1/2">
+        <h1 class="font-extrabold text-3xl text-text mb-4 ds:text-title ds:mb-6">{{ title }}</h1>
+        {% form 'contact' %}
+            {{ form.errors | default_errors }}
+            <div class="flex flex-col gap-4">
+                <input type="text" name="contact[name]" id="name" placeholder="First Name" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <input type="email" name="contact[email]" id="email" placeholder="Email Address" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <input type="tel" name="contact[phone]" id="phone" placeholder="Phone Number" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <label for="location">Location</label>
+                <select name="contact[location]" id="location" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                    {% for word in words %}
+                      <option value="{{ word }}">{{ word }}</option>
+                    {% endfor %}
+                </select>
+                <label for="time">Select Time</label>
+                <input type="datetime-local" name="contact[time]" id="time" class="border-[0.5px] border-secondary rounded-full px-4 py-2" required="required">
+                <textarea name="contact[body]" id="message" rows="2" placeholder="Your Message" class="border-[0.5px] border-secondary rounded-cl px-4 py-2"></textarea>
+                <input type="submit" value="{{ button }}" class="button self-start cursor-pointer">
+                <div>{{ message }}</div>
+            </div>
+        {% endform %}
+    </div>
+  </div>
+</div>
+
+{% if content != blank %}  
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+  <div class="text-text bg-white shadow-sp rounded-cl mb-10 py-6 px-5 ds:py-10 ds:px-10">
+  {{ content }}
+  </div>
+</div>
+{% endif %}
+
+
+<script>
+//Product gallery slider
+
+//Thumbs images
+const swiper2 = new Swiper('.swiper2', {
+    slidesPerView: 3,
+    spaceBetween: 12,
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      480: {
+        slidesPerView: 5,
+      },
+    }     
+});
+
+//Main gallery
+const swiper = new Swiper('.swiper1', {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },  
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  thumbs: {
+    swiper: swiper2,
+  },
+});
+</script>
+
+
+{% schema %}
+{   
+    "name": "Private Mattress Shopping",
+    "settings": [
+        {
+          "type": "textarea",
+          "id": "stores",
+          "label": "Stores (separate each with ',')"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "type": "richtext",
+            "id": "message",
+            "label": "Final Message",
+            "default": "<p>Final Message</p>"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "images",
+                    "label": "Image"
+                }                                     
+            ]
+        }
+    ]    
+}
+{% endschema %}

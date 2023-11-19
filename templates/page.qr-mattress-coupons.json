@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "main": {
+      "type": "QR-coupons",
+      "blocks": {
+        "144faf6f-7123-4335-91ea-e953614d54f5": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "EXTRA $100 OFF",
+            "t_col": "#fafafa",
+            "t_bcol": "#db0032",
+            "coupon_sub": "Sale Price On Mattresses Storewide",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#fafafa",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-1",
+            "disclaimer": "*Excludes Tempur-Pedic, Purple, Nectar and Sealy Hybrid"
+          }
+        },
+        "5945cbac-c789-489b-b56b-36d155e1bbfb": {
+          "type": "Coupon",
+          "disabled": true,
+          "settings": {
+            "coupon_title": "83% OFF BUNDLE",
+            "t_col": "#ffffff",
+            "t_bcol": "#db0032",
+            "coupon_sub": "$99 Bedding Bundle<br>With Any Bed, Any Size",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#fafafa",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-2",
+            "disclaimer": ""
+          }
+        },
+        "dc58e18c-8d48-4ab7-ba44-9d523f58292f": {
+          "type": "Coupon",
+          "disabled": true,
+          "settings": {
+            "coupon_title": "SAVE $300",
+            "t_col": "#fafafa",
+            "t_bcol": "#384fae",
+            "coupon_sub": "Adding An Adjustable Base With Your Mattress",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#fafafa",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#384fae",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-3",
+            "disclaimer": "*Excluding Head-Up Only"
+          }
+        },
+        "3ed9d51f-d73a-4b3c-bbec-ae9003af6082": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "$200 AMAZON GIFT CARD",
+            "t_col": "#f5f5f5",
+            "t_bcol": "#384fae",
+            "coupon_sub": "With Any Sealy Hybrid Or Simmons Beautyrest",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#f5f5f5",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#384fae",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-4",
+            "disclaimer": ""
+          }
+        },
+        "fa5555b0-d121-41c9-bb2f-1853103c2faf": {
+          "type": "Coupon",
+          "disabled": true,
+          "settings": {
+            "coupon_title": "FREE",
+            "t_col": "#f5f5f5",
+            "t_bcol": "#db0032",
+            "coupon_sub": "5-Year Extended Mattress Warranty",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#f5f5f5",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-5",
+            "disclaimer": ""
+          }
+        },
+        "5415f058-c674-4733-a443-8eb8b71f2d59": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "FREE",
+            "t_col": "#f5f5f5",
+            "t_bcol": "#db0032",
+            "coupon_sub": "White Glove Delivery With In-Home Setup",
+            "coupon_check": false,
+            "s_col": "#000000",
+            "s_bcol": "#f5f5f5",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#ffffff",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-6",
+            "disclaimer": ""
+          }
+        },
+        "9b19ac02-d95b-4926-a6b0-2706888cc184": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "GIFT WITH PURCHASE",
+            "t_col": "#f5f5f5",
+            "t_bcol": "#384fae",
+            "coupon_sub": "$300 Gift Card With Any TEMPUR Mattress",
+            "coupon_img": "shopify:\/\/shop_images\/Amazon-gift-cad-logo-short.png",
+            "coupon_check": true,
+            "s_col": "#000000",
+            "s_bcol": "#f5f5f5",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#f5f5f5",
+            "b_bcol": "#384fae",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-7",
+            "disclaimer": ""
+          }
+        },
+        "10dd629a-a497-4d99-9a32-a0a89f7b1a37": {
+          "type": "Coupon",
+          "settings": {
+            "coupon_title": "GIFT WITH PURCHASE",
+            "t_col": "#f5f5f5",
+            "t_bcol": "#db0032",
+            "coupon_sub": "YETI Cooler With Any TEMPUR Mattress",
+            "coupon_img": "shopify:\/\/shop_images\/Yeti_Tundra_35.png",
+            "coupon_check": true,
+            "s_col": "#000000",
+            "s_bcol": "#f5f5f5",
+            "c_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/sleep_first_logo.svg?v=1676480327",
+            "button": "Clip This Coupon",
+            "b_col": "#f5f5f5",
+            "b_bcol": "#db0032",
+            "url": "shopify:\/\/pages\/mailer-special-mattress-deal-8",
+            "disclaimer": ""
+          }
+        }
+      },
+      "block_order": [
+        "144faf6f-7123-4335-91ea-e953614d54f5",
+        "5945cbac-c789-489b-b56b-36d155e1bbfb",
+        "dc58e18c-8d48-4ab7-ba44-9d523f58292f",
+        "3ed9d51f-d73a-4b3c-bbec-ae9003af6082",
+        "fa5555b0-d121-41c9-bb2f-1853103c2faf",
+        "5415f058-c674-4733-a443-8eb8b71f2d59",
+        "9b19ac02-d95b-4926-a6b0-2706888cc184",
+        "10dd629a-a497-4d99-9a32-a0a89f7b1a37"
+      ],
+      "settings": {
+        "title": "Choose Your Mattress Deal!",
+        "description": "<p>CLIP YOUR INSTORE COUPON <\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,147 @@
+{% liquid
+    assign svg1 = section.settings.svg1
+    assign heading1 = section.settings.heading1
+    assign content1 = section.settings.content1
+    assign button1 = section.settings.button1
+    assign url1 = section.settings.url1
+    assign svg2 = section.settings.svg2
+    assign heading2 = section.settings.heading2
+    assign content2 = section.settings.content2
+    assign button2 = section.settings.button2
+    assign url2 = section.settings.url2
+    assign svg3 = section.settings.svg3
+    assign heading3 = section.settings.heading3
+    assign content3 = section.settings.content3
+    assign button3 = section.settings.button3
+    assign url3 = section.settings.url3
+%}
+
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid grid-cols-1 gap-6 text-text bg-white shadow-sp rounded-cl py-10 px-4 ts:grid-cols-3 ts:gap-3 ds:gap-8 ds:px-10">
+        <div class="flex flex-col justify-between items-center text-center h-full">
+            <img src="{{ svg1 }}" alt="{{ svg1.title }}" title="{{ svg1.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading1 }}</h2>
+            {% if content1 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content1 }}</div>
+            {% endif %}
+            <div class="flex gap-2 justify-center ds:gap-8">
+                <a href="{{ url1 }}" title="{{ url1.title }}" class="button mm:w-max">{{ button1 }}</a>
+            </div>
+        </div>
+        <div class="flex flex-col justify-between items-center text-center h-full">
+            <img src="{{ svg2 }}" alt="{{ svg2.title }}" title="{{ svg2.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading2 }}</h2>
+            {% if content2 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content2 }}</div>
+            {% endif %}
+            <div class="flex gap-2 justify-center ds:gap-8">
+                <a href="{{ url2 }}" title="{{ url2.title }}" class="button mm:w-max">{{ button2 }}</a>
+            </div>
+        </div>
+        <div class="flex flex-col justify-between items-center text-center h-full">
+            <img src="{{ svg3 }}" alt="{{ svg3.title }}" title="{{ svg3.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading3 }}</h2>
+            {% if content3 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content3 }}</div>
+            {% endif %}
+            <div class="flex gap-2 justify-center ds:gap-8">
+                <a href="{{ url3 }}" title="{{ url3.title }}" class="button mm:w-max">{{ button3 }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Features",
+    "settings": [
+        {
+            "type": "url",
+            "id": "svg1",
+            "label": "SVG 1"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "Heading 1"
+        },
+        {
+            "type": "richtext",
+            "id": "content1",
+            "label": "Content 1",
+            "default": "<p>Content 1<p>"
+        },
+        {
+            "type": "text",
+            "id": "button1",
+            "label": "Button 1"
+        },
+        {
+            "type": "url",
+            "id": "url1",
+            "label": "Button URL 1"
+        },
+        {
+            "type": "url",
+            "id": "svg2",
+            "label": "SVG 2"
+        },
+        {
+            "type": "text",
+            "id": "heading2",
+            "label": "Heading 2",
+            "default": "Heading 2"
+        },
+        {
+            "type": "richtext",
+            "id": "content2",
+            "label": "Content 2",
+            "default": "<p>Content 2<p>"
+        },
+        {
+            "type": "text",
+            "id": "button2",
+            "label": "Button 2"
+        },
+        {
+            "type": "url",
+            "id": "url2",
+            "label": "Button URL 2"
+        },
+        {
+            "type": "url",
+            "id": "svg3",
+            "label": "SVG 3"
+        },
+        {
+            "type": "text",
+            "id": "heading3",
+            "label": "Heading 3",
+            "default": "Heading 3"
+        },
+        {
+            "type": "richtext",
+            "id": "content3",
+            "label": "Content 3",
+            "default": "<p>Content 3<p>"
+        },
+        {
+            "type": "text",
+            "id": "button3",
+            "label": "Button 3"
+        },
+        {
+            "type": "url",
+            "id": "url3",
+            "label": "Button URL 3"
+        }   
+    ],
+    "presets": [
+        {
+            "name": "Features"
+        }
+    ]
+}
+{% endschema %}

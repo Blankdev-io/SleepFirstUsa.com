@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "main": {
+      "type": "dallas-football-promo",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/ifdallaswin.jpg",
+        "image_2": "shopify:\/\/shop_images\/image_124.png",
+        "image_3": "shopify:\/\/shop_images\/image_120.png",
+        "image_4": "shopify:\/\/shop_images\/image_123.png"
+      }
+    },
+    "visit-stores-section": {
+      "type": "visit-stores-section",
+      "blocks": {
+        "f229e136-4f3e-4905-b62a-520478fb9f66": {
+          "type": "block",
+          "settings": {
+            "page": "longview-tx",
+            "store_title": "Longview, Texas",
+            "store_content": "<p>106 E Loop 281<\/p><p>Longview, Texas 75605<\/p><p>USA<\/p>",
+            "store_number": ""
+          }
+        }
+      },
+      "block_order": [
+        "f229e136-4f3e-4905-b62a-520478fb9f66"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "871231b0-e37c-45d7-8421-24cbc38c8d23": {
+      "type": "stores-banner",
+      "blocks": {
+        "ef4e8efb-29c6-440f-9f3c-375b2cdf1d93": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/image.png",
+            "name": "Longview, Texas",
+            "address": "<p>106 E Loop 281<\/p><p>Longview, Texas 75605<\/p><p>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 220-0704",
+            "button_url": "",
+            "url": "shopify:\/\/pages\/longview-tx"
+          }
+        },
+        "9d0c0a4f-8fea-4918-9bea-1190aa12df6a": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/image_3f499d19-4697-4380-b441-d8a8f44dbb1f.png",
+            "name": "Tyler, Texas<br>(Kinsey Crossing)",
+            "address": "<p>1400 W SW Loop 323<\/p><p>Tyler, Texas 75701<\/p><p>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 707-2000",
+            "button_url": "",
+            "url": ""
+          }
+        },
+        "12c22673-8b1b-413e-95c8-31a7885c01e3": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/image_b42da10a-948c-465d-83b7-2093cd71cacb.jpg",
+            "name": "Tyler, Texas(Cumberland)",
+            "address": "<p>8982 S Broadway Ave<\/p><p>Tyler, Texas 75703<\/p><p>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 944-7820",
+            "button_url": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ef4e8efb-29c6-440f-9f3c-375b2cdf1d93",
+        "9d0c0a4f-8fea-4918-9bea-1190aa12df6a",
+        "12c22673-8b1b-413e-95c8-31a7885c01e3"
+      ],
+      "settings": {
+        "heading": "Stores"
+      }
+    },
+    "f330a83d-e17f-4b45-bc92-f0c02d8a7c8a": {
+      "type": "products-list",
+      "settings": {
+        "heading": "Tempur-Pedic® Matresses",
+        "url": "",
+        "product_list": [
+          "tempurpedic-adapt-mattress",
+          "tempurpedic-proadapt-mattress",
+          "tempurpedic-breeze-mattress"
+        ],
+        "button": false
+      }
+    },
+    "info-promo-section": {
+      "type": "info-promo-section",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "visit-stores-section",
+    "871231b0-e37c-45d7-8421-24cbc38c8d23",
+    "f330a83d-e17f-4b45-bc92-f0c02d8a7c8a",
+    "info-promo-section"
+  ]
+}

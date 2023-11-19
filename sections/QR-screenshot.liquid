@@ -1,0 +1,69 @@
+{% liquid
+    assign coupon = section.settings.coupon
+    assign coupon_mobile = section.settings.coupon_mobile
+    assign message = section.settings.message
+    assign button = section.settings.button
+    assign url = section.settings.url
+    assign b_col = section.settings.b_col
+    assign b_bcol = section.settings.b_bcol
+%}
+
+<div class="mx-5 my-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="flex flex-col items-center gap-3 text-center text-text py-10 px-4 ds:px-10">
+        <picture>
+            <source media="(min-width: 768px)" srcset="{{ coupon | image_url }}">
+            <img src="{{ coupon_mobile | image_url }}" alt="{{ coupon.alt }}" title="{{ coupon.title }}">
+        </picture>
+        <div class="font-bold text-sm mm:text-base ts:text-lg ts:w-3/5 ds:text-xl dl:text-2xl">{{ message }}</div>
+        <a href="{{ url }}" title="{{ button }}" class="flex items-center justify-center gap-2 rounded-full w-[225px] py-1 px-3" style="background-color:{{ b_bcol }};">
+            <div class="flex items-center h-6">
+                {% render 'icons', icon: 'locator-white' %}
+            </div>
+            <p class="text-base ts:text-xl font-semibold" style="color:{{ b_col }};">{{ button }}</p>
+        </a>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "QR Screenshot",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "coupon",
+            "label": "Coupon Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "coupon_mobile",
+            "label": "Coupon Mobile Image"
+        },
+        {
+            "type": "text",
+            "id": "message",
+            "label": "Message"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Label"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Button URL"
+        },
+        {
+            "type": "color",
+            "id": "b_col",
+            "label": "Button Font Color"
+        },
+        {
+            "type": "color",
+            "id": "b_bcol",
+            "label": "Button Background Color"
+        }
+    ]
+}
+{% endschema %}

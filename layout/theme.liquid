@@ -1,0 +1,1413 @@
+<!doctype html>
+<html class="no-js scroll-smooth scroll-pt-32 ds:scroll-pt-40" lang="{{ request.locale.iso_code }}">
+  <head>
+<script async="async"
+        src="https://static.mobilemonkey.com/js/mm_621fe147-f0a1-4a42-9d49-3f4de539db54-71583605.js">
+        </script>
+<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+
+    <script>
+/* >> TriplePixel :: start*/
+~function(W,H,A,L,E,_,B,N){function O(U,T,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,H.open("GET",U,!0),H.send(null),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):N[B]=R):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}A.getItem('"!nC`')||(A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return W=L(),(E._q=E._q||[]).push([W,t,e]),W},E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",0),O("//triplewhale-pixel.web.app/triplefw.txt?",5)))}}("K","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+
+<script async referrerpolicy="no-referrer-when-downgrade" src='https://tag.simpli.fi/sifitag/be10c060-7758-0138-f8ce-06a9ed4ca31b'></script>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    {% if page.title contains 'Mailer Special' %}
+      <meta name="robots" content="noindex">
+    {% else %}
+      <meta name="robots" content="index,follow">
+    {% endif %}
+
+    {% comment %} Preload {% endcomment %}
+    <link rel="preload" href="https:{{ 'theme.css' | asset_url }}" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" as="style">
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      as="style"
+    >
+    <link rel="preload" href="https://unpkg.com/vue@3/dist/vue.global.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" as="script">
+    <link rel="preload" href="https://cdn1.stamped.io/files/widget.min.css" as="style">
+    {% comment %} <link rel="preload" href="https://cdn.shopify.com/extensions/a128435f-195f-475d-86c5-725cf7f4d7fc/0.17.0/assets/advanced-product-options.css" as="style"> {% endcomment %}
+    {% comment %} <link rel="preload" href="main.js" as="script" /> {% endcomment %}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {% comment %} Canonical Tag {% endcomment %}
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% comment %} HREF Lang Taga SEO {% endcomment %}
+    {% if request.page_type != 'index' %}
+      <link rel="alternate" href="{{ canonical_url | replace: '.com/es/', '.com/' }}" hreflang="x-default">
+      <link rel="alternate" href="{{ canonical_url | replace: '.com/es/', '.com/' }}" hreflang="en-us">
+      <link
+        rel="alternate"
+        href="{{ canonical_url | remove_first: '/es' | replace: '.com', '.com/es' }}"
+        hreflang="es-us"
+      >
+    {% else %}
+      <link rel="alternate" href="{{ canonical_url | replace: '.com/es', '.com/' }}" hreflang="x-default">
+      <link rel="alternate" href="{{ canonical_url | replace: '.com/es', '.com/' }}" hreflang="en-us">
+      <link
+        rel="alternate"
+        href="{{ canonical_url | remove_first: 'es' | replace: '.com/', '.com/es/' }}"
+        hreflang="es-us"
+      >
+    {% endif %}
+    {% comment %} End  {% endcomment %}
+
+    {% comment %} Theme CSS {% endcomment %}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} Google Fonts {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    >
+    {% comment %} Vue.js {% endcomment %}
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    {% comment %} Swiper Slider {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" type="text/javascript" async></script>
+    {% comment %} Metricool {% endcomment %}
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"f7889c01d56d50bed4ea312481256139"})});</script>
+
+    <title>
+      {{ page_title }}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% else %}
+      <meta name="description" content="{{ page.title | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <!-- Google Tag Manager -->
+    <script src="{{ 'gtm.js' | asset_url }}" type="text/javascript" defer></script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Microsoft Clarity -->
+    <script src="{{ 'clarity.js' | asset_url }}" type="text/javascript" defer></script>
+    <!-- End Microsoft Clarity -->
+
+    {{ content_for_header }}
+
+    {% render 'judgeme_core' %}
+</head>
+  <body class="gradient font-body bg-body">
+    <style>
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
+    <style>
+      {% if template.name == 'product' %}
+        .stockist-horizontal {
+          display: none !important;
+        }
+      {% endif %}
+      ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7992EB;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #384FAE;
+      }
+      .shopify-policy__container {
+          max-width: unset;
+          max-width: unset;
+          margin: unset;
+          padding-left: unset;
+          padding-right: unset;
+      }
+      .shopify-policy__title {
+          display: none;
+      }
+      #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image img {
+        display: none !important;
+      }
+      #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image a {
+        display: unset !important;
+      }
+      #stamped-reviews-widget[data-widget-type=carousel] .stamped-carousel-scroll .stamped-reviews-image {
+        border: unset !important;
+      }
+      .stamped-badge-starrating {
+        display: flex !important;
+      }
+      .STP-table-cross-sell__button-add-to-cart {
+          border-radius: 999px !important;
+      }
+      .STP-table-cross-sell__select-dropdown-icon {
+          display: none !important;
+      }
+      .STP-table-cross-sell__select-input {
+          width: 100px !important;
+          border-radius: 999px !important;
+          border: 1px solid #384FAE !important;
+      }
+      .STP-table-cross-sell__inner {
+          border: unset !important;
+          box-shadow: 0 0 15px rgb(0 0 0 / 10%) !important;
+          margin-bottom: 16px !important;
+          padding: 16px 12px !important;
+      }
+      .STP-table-cross-sell__quantity-inner {
+          display: none !important;
+          border-radius: 999px !important;
+          border: 1px solid #384FAE !important;
+          max-width: fit-content !important;
+      }
+      .STP-table-cross-sell__quantity-button {
+          width: 24px !important;
+          height: 24px !important;
+          border: unset !important;
+          background: unset !important;
+      }
+      .STP-table-cross-sell__quantity-input {
+          background: #FFF !important;
+          border: unset !important;
+      }
+      .STP-table-cross-sell {
+          min-width: unset !important;
+      }
+      .STP-table-cross-sell__save-text-inner {
+          width: 100px !important;
+          min-width: unset !important;
+      }
+      .STP-table-cross-sell.STP-table-cross-sell--small .STP-table-cross-sell__item-inner {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+      .STP-table-cross-sell__checkbox label {
+          cursor: pointer !important;
+          width: 32px !important;
+          height: 32px !important;
+          background: #d9d9d9 !important;
+          border: 3px solid #d9d9d9 !important;
+          border-radius: 99px !important;
+      }
+      .STP-table-cross-sell__checkbox input[type=checkbox]:checked + label {
+          background: #377DFF !important;
+          border: 3px solid #377DFF !important;
+      }
+      .STP-table-cross-sell__checkbox label > span > svg {
+          opacity: 1 !important;
+          height: 16px !important;
+          width: 16px !important;
+      }
+      .STP-table-cross-sell__right {
+          justify-items: end !important;
+      }
+      .STP-tier-block-wrapper {
+          box-shadow: 0 0 15px rgb(0 0 0 / 10%) !important;
+          border-radius: 20px !important;
+          width: 100% !important;
+      }
+      .STP-tiers {
+          margin: 0px 0px 16px 0px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+      }
+      .sac_embed {
+          margin: 0px !important;
+      }
+      .sac_h5 {
+        font-weight: 700;
+        padding-bottom: 16px;
+        margin-top: 8px;
+      }
+      .sac_h5 img {
+        display: none;
+      }
+      .sac_embed .sac_btn-primary-outlined {
+        background: #384fae;
+        font-weight: 700;
+        border: none;
+        color: white;
+        height: 44px;
+        padding: 0 34px 0 34px;
+        margin-bottom: 8px;
+      }
+      .sac_embed #sac_zincode {
+        border-color: #384fae;
+        margin-bottom: 8px;
+      }
+      .jdgm-prev-badge {
+        display: flex !important;
+        flex-flow: column !important;
+      }
+      #product .jdgm-prev-badge, .featured-product .jdgm-prev-badge {
+        flex-flow: unset !important;
+        gap: 8px !important;
+      }
+      input[type=file] #file {
+        color: #231F20 !important;
+      }
+      input[type=file]::file-selector-button {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        color: white !important;
+        background: #384fae !important;
+        border-radius: 9999px !important;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        border-style: none;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        height: 45px !important;
+        width: max-content !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+      }
+      input[type=file]::file-selector-button:hover {
+        background: #27387A !important;
+      }
+      input[type=file]::file-selector-button:active {
+        color: #384fae !important;
+        background: white !important;
+        border-color: #384fae !important;
+        border-width: 2px !important;
+      }
+      @media (min-width: 480px) {
+        .STP-table-cross-sell.STP-table-cross-sell--small .STP-table-cross-sell__item-inner {
+          grid-auto-flow: column !important;
+          grid-template-columns: unset !important;
+          gap: 12px !important;
+        }
+        .STP-table-cross-sell__right {
+          width: 120px !important;
+        }
+        .STP-table-cross-sell__image {
+          width: 130px !important;
+        }
+        input[type=file]::file-selector-button {
+          padding-left: 2rem !important;
+          padding-right: 2rem !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .sac_embed {
+          padding-top: 32px;
+        }
+      }
+    </style>
+    <main id="MainContent" class="" role="main">
+      {% if page.title contains 'Mailer Special Bedding Deal' or page.title contains 'Mailer Special Mattress Deal' or page.title contains 'Mailer Special Massage Chairs Deal' %}
+        {{ content_for_layout }}
+      {% elsif page.title contains 'Mailer Special' or page.title contains 'Closeout' %}
+        {% section 'header-bar-alt' %}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer-alt' %}
+      {% elsif collection.all_vendors.size == 1 and collection.all_vendors contains 'Tempur-Pedic' %}
+        {% section 'announcement-bar-tempur' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif product.vendor == 'Tempur-Pedic' %}
+        {% section 'announcement-bar-tempur' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif collection.all_vendors.size == 1 and collection.all_vendors contains 'Purple' %}
+        {% section 'announcement-bar-purple' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif product.vendor == 'Purple' %}
+        {% section 'announcement-bar-purple' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif collection.all_vendors.size == 1 and collection.all_vendors contains 'Nectar' %}
+        {% section 'announcement-bar-nectar' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif product.vendor == 'Nectar' %}
+        {% section 'announcement-bar-nectar' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% elsif template == 'index' %}
+        {% section 'announcement-bar' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% else %}
+        {% section 'announcement-bar' %}
+        {% section 'header' %}
+        {% section 'navigation-bar' %}
+        {%- unless template == 'index' or template == '404' or template == 'page.compare-brands' -%}
+          {%- assign t = template | split: '.' | first -%}
+
+          <nav
+            role="navigation"
+            aria-label="breadcrumbs"
+            class="font-bold text-text mb-5 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0"
+          >
+            <ol class="list-none">
+              <li class="inline-block mr-1">
+                <a class="hover:text-primary hover:underline" href="/">Home</a>
+                <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+              </li>
+              {%- case t -%}
+                {%- when 'page' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                  </li>
+                {%- when 'cart' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/cart" aria-current="page">Cart</a>
+                  </li>
+                {%- when 'list-collections' -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="/collections" aria-current="page">Collections</a>
+                  </li>
+                {%- when 'product' -%}
+                  {% for collection in product.collections %}
+                    {% if collection.title contains product.vendor %}
+                      <li class="inline-block mr-1">
+                        <span class="hover:text-primary hover:underline">
+                          {{- collection.title | link_to: collection.url -}}
+                        </span>
+                        <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                      </li>
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ product.url }}" aria-current="page">
+                      {{- product.title -}}
+                    </a>
+                  </li>
+                {%- when 'collection' and collection.handle -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">
+                        {{- collection.title | link_to: collection.url -}}
+                      </span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ collection.url }}" aria-current="page">
+                        {{- collection.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'blog' -%}
+                  {%- if current_tags -%}
+                    <li class="inline-block mr-1">
+                      <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                      <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                    </li>
+                    <li class="inline-block">
+                      {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                      <a class="text-primary hover:underline" href="{{ tag_url }}" aria-current="page">
+                        {{- current_tags | join: ' + ' -}}
+                      </a>
+                    </li>
+                  {%- else -%}
+                    <li class="inline-block">
+                      <a class="text-primary hover:underline" href="{{ blog.url }}" aria-current="page">
+                        {{- blog.title -}}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- when 'article' -%}
+                  <li class="inline-block mr-1">
+                    <span class="hover:text-primary hover:underline">{{ blog.title | link_to: blog.url }}</span>
+                    <span class="inline-block -rotate-90 pt-1">{% render 'icons', icon: 'blue-down' %}</span>
+                  </li>
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ article.url }}" aria-current="page">
+                      {{- article.title -}}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="inline-block">
+                    <a class="text-primary hover:underline" href="{{ request.path }}" aria-current="page">
+                      {{- page_title -}}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            </ol>
+          </nav>
+        {%- endunless -%}
+        {% section 'fixed-logo' %}
+        {{ content_for_layout }}
+        {% section 'footer' %}
+      {% endif %}
+    </main>
+{% comment %}
+    <!-- Gorgias Chat Widget Start -->
+    <script
+      id="gorgias-chat-widget-install-v2"
+      src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=4004"
+      type="text/javascript"
+      defer
+    ></script>
+{% endcomment %}
+    {% comment %} <script
+      id="gorgias-chat-shopify-install"
+      src="{{ 'georgias-chat.js' | asset_url }}"
+      type="text/javascript"
+      defer
+    ></script> {% endcomment %}
+    <!-- Gorgias Chat Widget End -->
+
+    <!-- Klaviyo main script -->
+    <script
+      defer
+      type="text/javascript"
+      src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WHVWA6"
+    ></script>
+    <!-- Klaviyo main script end -->
+    <script>
+      function closeIframeTagLinePopup() {
+        let body = document.getElementsByTagName('body')[0];
+        let iframeWrapper = document.getElementById('iframeWrapperTagLine');
+        let nav = document.getElementById('shopify-section-header');
+        let iframe = document.getElementById('taglinePopupIframe');
+        let logoContainer = document.getElementById('logoContainer');
+
+        logoContainer.remove()
+
+        
+        body.style.removeProperty('overflow-y')
+        iframeWrapper.style.removeProperty('top')
+        iframeWrapper.style.removeProperty('left')
+        iframeWrapper.style.width = '100%'
+        iframeWrapper.style.height = '90px'
+        iframeWrapper.style.removeProperty('background')
+        iframeWrapper.style.removeProperty('display')
+        iframeWrapper.style.removeProperty('flex-direction')
+        iframeWrapper.style.removeProperty('align-items')
+        iframeWrapper.style.removeProperty('justify-content')
+        iframeWrapper.style.removeProperty('position')
+        
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.style.removeProperty('background')
+
+        iframe.contentWindow.postMessage('Hello from iframe', 'https://sleepfirstfinancing.com');
+      }
+      
+      function openIframePopup() {
+          // Display the spinner
+          // document.getElementById('iframeSpinner').style.display = 'block';
+  
+          // Create a wrapper div
+          let iframeWrapper = document.createElement('div');
+          iframeWrapper.setAttribute('id', 'iframeWrapper');
+          iframeWrapper.style.position = 'fixed';
+          iframeWrapper.style.top = '50%';
+          iframeWrapper.style.left = '50%';
+          iframeWrapper.style.transform = 'translate(-50%, -50%)';
+          iframeWrapper.style.zIndex = '1000';
+  
+          // Check if the iframe already exists
+          let iframe = document.getElementById('popupIframe');
+          if (!iframe) {
+              const pay_button = document.getElementsByClassName('pay-button')[0]
+              const url = pay_button.getAttribute('href')
+              let priceDataDiv = document.getElementById('priceData');
+              let montPrice = ''
+              let variantPrice = ''
+              if (priceDataDiv) {
+                montPrice = priceDataDiv.getAttribute('data-month-price');
+                unformatedVariantPrice = Math.ceil(parseFloat(priceDataDiv.getAttribute('data-unformated-price')));
+                variantPrice = priceDataDiv.getAttribute('data-variant-price');
+                // ... rest of the code
+              } else {
+                console.warn("priceData element not found!");
+              }
+              iframe = document.createElement('iframe');
+              iframe.setAttribute('src', `https://sleepfirstfinancing.com/index-fullworkflow?amount_payment=${unformatedVariantPrice}`);
+              iframe.setAttribute('id', 'popupIframe');
+  
+              
+              // Base styles
+              iframe.style.width = '80vw';
+              iframe.style.height = '80vh';
+              iframe.style.border = 'none';
+              iframe.style.background = 'white';
+  
+              // Apply media query for desktop
+              const mediaQuery = window.matchMedia('(min-width: 768px)');
+              if (mediaQuery.matches) { // If it's desktop
+                  iframe.style.maxWidth = '1138px';
+              }
+  
+              iframe.onload = function() {
+                  // Hide the spinner when iframe content is loaded
+                  document.getElementById('iframeSpinner').style.display = 'none';
+              };
+              
+
+              const logo_container = document.createElement('DIV')
+              logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
+              logo_container.style.background = 'white'
+              logo_container.innerHTML = `
+                <div class="image_logo flex justify-between w-full">
+                  {% render 'icons', icon: 'logo' %}
+                  <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframePopup()">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
+                  </div>
+                </div>
+              `
+              const spinner = document.createElement('div')
+              spinner.id = 'iframeSpinner'
+              spinner.style.position = 'absolute'
+              spinner.style.top = '0'
+              spinner.style.width = '100%'
+              spinner.style.height = '100%'
+              spinner.style.zIndex = '2000'
+              spinner.style.textAlign = 'center'
+              spinner.innerHTML = `
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <!-- You can use an image, SVG, or CSS-based spinner here. I'm using a basic CSS spinner as an example. -->
+                    <div style="border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
+                </div>
+              `
+
+              iframeWrapper.appendChild(logo_container); // Append close button to the wrapper
+              
+              iframeWrapper.appendChild(spinner); // Append close button to the wrapper
+              
+              iframeWrapper.appendChild(iframe); // Append iframe to the wrapper
+              
+
+              // Listen for a message from the iframe
+              window.addEventListener('message', function(event) {
+                  if (event.origin !== "https://sleepfirstfinancing.com") return;
+  
+                  if (event.data.ready) {
+                      event.source.postMessage({
+                        montPrice: montPrice,
+                        variantPrice: variantPrice
+                      }, event.origin);
+                  }
+              });
+  
+  
+              document.body.appendChild(iframeWrapper); // Append wrapper to the body
+  
+              // Add an overlay behind the iframe
+              let overlay = document.createElement('div');
+              overlay.setAttribute('id', 'iframeOverlay');
+              overlay.style.position = 'fixed';
+              overlay.style.top = '0';
+              overlay.style.left = '0';
+              overlay.style.width = '100vw';
+              overlay.style.height = '100vh';
+              overlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+              overlay.style.zIndex = '999';
+              overlay.onclick = function() {
+                  closeIframePopup();
+              };
+              document.body.appendChild(overlay);
+          }
+      }
+  
+      function closeIframePopup() {
+          let iframeWrapper = document.getElementById('iframeWrapper'); // New
+          let overlay = document.getElementById('iframeOverlay');
+  
+          if (iframeWrapper) {
+              document.body.removeChild(iframeWrapper);
+          }
+          if (overlay) {
+              document.body.removeChild(overlay);
+          }
+      }
+      
+    </script>
+    <script>
+      window.onload = () => {
+        function openTagLineIframePopup() {
+          const tagline_item = document.getElementById('tagline-item')
+          let iframeWrapper = document.createElement('div');
+          iframeWrapper.setAttribute('id', 'iframeWrapperTagLine');
+          iframeWrapper.setAttribute('onclick', 'closeIframeTagLinePopup()');
+          iframeWrapper.style.width = '100%'
+          iframeWrapper.style.height = '90px'
+          iframeWrapper.style.zIndex = '10200932018309823'
+          let iframe = document.getElementById('taglinePopupIframe');
+
+          if (!iframe) {          
+            const link_iframe = document.createElement('a')
+            link_iframe.classList.add('link-iframe','ml-2')
+            link_iframe.setAttribute('href', 'javascript:void(0);')
+            link_iframe.setAttribute('onclick', 'openIframePopup()')
+            link_iframe.innerHTML = 'Learn More'
+            let priceDataDiv = document.getElementById('priceData');
+            let unformatedVariantPrice = 0
+            
+            if (priceDataDiv) {
+              unformatedVariantPrice = Math.ceil(parseFloat(priceDataDiv.getAttribute('data-unformated-price')));
+            } else {
+              console.warn("priceData element not found!");
+              return
+            }
+
+            iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${unformatedVariantPrice}`);
+            iframe.setAttribute('id', 'taglinePopupIframe');
+
+            
+            // Base styles
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframeWrapper.appendChild(iframe); // Append iframe to the wrapper
+            // iframeWrapper.appendChild(link_iframe); // Append iframe to the wrapper
+            
+
+            // Listen for a message from the iframe
+            window.addEventListener('message', function(event) {
+              if (event.origin !== "https://sleepfirstfinancing.com") return;
+
+              if (event.data.ready) {
+                event.source.postMessage({
+                  montPrice: montPrice,
+                  variantPrice: variantPrice
+                }, event.origin);
+              }
+            });
+            tagline_item.appendChild(iframeWrapper);
+          }
+        }
+        
+        window.addEventListener('message', function(event) {
+           // Check the origin of the message to ensure it's from a trusted source
+          if (event.origin !== 'https://sleepfirstfinancing.com') return;
+
+          // Handle the message
+          let body = document.getElementsByTagName('body')[0];
+          let nav = document.getElementById('shopify-section-header');
+          let iframeWrapper = document.getElementById('iframeWrapperTagLine');
+          let iframe = document.getElementById('taglinePopupIframe');
+          iframeWrapper.style.position = 'fixed'
+
+          const logo_container = document.createElement('DIV')
+          logo_container.setAttribute('id', 'logoContainer');
+          logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
+          logo_container.style.background = 'white'
+          logo_container.style.width = '80%'
+          logo_container.innerHTML = `
+            <div class="image_logo flex justify-between w-full">
+              {% render 'icons', icon: 'logo' %}
+              <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframeTagLinePopup()">
+                <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
+              </div>
+            </div>
+          `
+
+          nav.classList.remove('sticky')
+          body.style.overflowY = 'hidden'
+          
+          iframeWrapper.style.top = '0'
+          iframeWrapper.style.left = '0'
+          iframeWrapper.style.width = '100vw'
+          iframeWrapper.style.height = '100vh'
+          iframeWrapper.style.background = 'rgba(0,0,0,0.4)'
+          iframeWrapper.style.display = 'flex'
+          iframeWrapper.style.flexDirection = 'column'
+          iframeWrapper.style.alignItems = 'center'
+          iframeWrapper.style.justifyContent = 'center'
+          iframeWrapper.style.zIndex = '1237128931298378912'
+
+          iframe.style.width = '80%'
+          iframe.style.height= '80%'
+          iframe.style.background = 'white'
+
+          iframeWrapper.prepend(logo_container)
+        });
+        openTagLineIframePopup()
+      }
+    </script>
+    <!--  -->
+    <!--  -->
+
+    <script data-b8-data>
+      window.B8_CUSTOMER_ID = {{ customer.id | json }};
+      window.B8_CUSTOMER_TAGS = {{ customer.tags | json }};
+    </script>
+    {% render 'amai_stp-theme-snippet' %}
+    {% render 'amai_stp-cart-snippet' %}
+    {% render 'amai_stp-product-snippet' %}
+
+
+    {% render 'structured-data' %}
+  </body>
+</html>

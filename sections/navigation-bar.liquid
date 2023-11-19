@@ -1,0 +1,43 @@
+{% liquid 
+    assign bar_menu = linklists[section.settings.bar_menu.handle]
+%}
+
+<div id="navigation" class="hidden z-10 text-text bg-white border-t-2 border-t-secondary shadow-sp mb-5 ds:block">
+    <div class="pt-5 pb-4 ds:mx-9 dm:mx-auto dm:max-w-screen-dm dm:px-10 dl:px-4">
+        {% if bar_menu != blank %}
+            <ul class="flex justify-evenly items-center">
+                {% for link in bar_menu.links %}
+                    {% if link.title == "15% OFF VIP" %}
+                        <li>
+                            <button title="{{ link.title }}" class="button-white cursor-pointer klaviyo_form_trigger2">{{ link.title }}</button>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ link.url }}" title="{{ link.title }}" class="button-white">{{ link.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+<script type="text/javascript">
+	document.querySelector('.klaviyo_form_trigger2').addEventListener('click', function (){
+		window._klOnsite = window._klOnsite || []; 
+		window._klOnsite.push(['openForm', 'TvPzMH']);
+	});
+</script>
+
+{% schema %}
+{
+    "name": "Navigation Bar",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "bar_menu",
+            "label": "Navigation bar menu"
+        }
+    ]
+}
+{% endschema %}

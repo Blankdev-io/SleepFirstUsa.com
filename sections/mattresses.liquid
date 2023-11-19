@@ -1,0 +1,166 @@
+<div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <div class="grid gap-x-6 gap-y-8 font-semibold text-text ts:grid-cols-2 ds:grid-cols-4">
+        {% for block in section.blocks %}
+            {% liquid
+                assign name1 = block.settings.name1
+                assign name2 = block.settings.name2
+                assign url1 = block.settings.url1
+                assign url2 = block.settings.url2
+                assign inches1 = block.settings.inches1
+                assign inches2 = block.settings.inches2
+                assign logo_image1 = block.settings.logo_image1
+                assign logo_svg1 = block.settings.logo_svg1
+                assign logo_check1 = block.settings.logo_check1
+                assign logo_image2 = block.settings.logo_image2
+                assign logo_svg2 = block.settings.logo_svg2
+                assign logo_check2 = block.settings.logo_check2
+                assign sub = block.settings.sub
+                assign option1 = block.settings.option1
+                assign option2 = block.settings.option2
+                assign option3 = block.settings.option3           
+            %}
+            <div class="bg-white shadow-sp rounded-cl py-6 ds:py-10">
+                <div class="grid grid-cols-2 text-center divide-x divide-primary mb-5 px-3 ds:h-40 ds:mb-7">
+                    <a href="{{ url1 }}" title="{{ name1 }}" class="flex flex-col gap-6 items-center justify-between px-2 ds:gap-0">
+                        <h2>{{ name1 }}</h2>
+                        <div class="flex flex-col items-center">
+                            {% if logo_check1 == false %}
+                                <img class="mb-6" src="{{ logo_image1 | image_url: width: 100 }}" alt="{{ logo_image1.alt }}" loading="lazy">
+                            {% else %}
+                                <img class="mb-6" src="{{ logo_svg1 }}" alt="{{ logo_svg1.title }}" loading="lazy">
+                            {% endif %}
+                            <p>{{ inches1 }}</p>
+                        </div>
+                    </a>
+                    <a href="{{ url2 }}" title="{{ name2 }}" class="flex flex-col gap-6 items-center justify-between px-2 ds:gap-0">
+                        <h2>{{ name2 }}</h2>
+                        <div class="flex flex-col items-center">
+                            {% if logo_check2 == false %}
+                                <img class="mb-6" src="{{ logo_image2 | image_url: width: 100 }}" alt="{{ logo_image2.alt }}" loading="lazy">
+                            {% else %}
+                                <img class="mb-6" src="{{ logo_svg2 }}" alt="{{ logo_svg2.title }}" loading="lazy">
+                            {% endif %}
+                            <p>{{ inches2 }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="font-bold text-2xl text-center text-white bg-primary mb-7 py-2">{{ sub }}</div>
+                <div class="px-6">
+                    <ul role="list" class="marker:text-secondary marker:text-xl list-disc pl-5 space-y-2">
+                        <li>{{ option1 }}</li>
+                        <li>{{ option2 }}</li>
+                        <li>{{ option3 }}</li>
+                    </ul>
+                </div>
+            </div>        
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Mattresses",
+    "settings": [
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Mattresses",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "name1",
+                    "label": "Name 1",
+                    "default": "Name 1"
+                },
+                {
+                    "type": "text",
+                    "id": "name2",
+                    "label": "Name 2",
+                    "default": "Name 2"
+                },
+                {
+                    "type": "url",
+                    "id": "url1",
+                    "label": "Link 1"
+                },
+                {
+                    "type": "url",
+                    "id": "url2",
+                    "label": "Link 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "logo_image1",
+                    "label": "Image 1"
+                }, 
+                {
+                    "type": "url",
+                    "id": "logo_svg1",
+                    "label": "SVG link 1"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "logo_check1",
+                    "label": "Use SVG 1",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "logo_image2",
+                    "label": "Image 2"
+                }, 
+                {
+                    "type": "url",
+                    "id": "logo_svg2",
+                    "label": "SVG link 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "logo_check2",
+                    "label": "Use SVG 2",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "inches1",
+                    "label": "Size in inches 1",
+                    "default": "Inches 1"
+                },
+                {
+                    "type": "text",
+                    "id": "inches2",
+                    "label": "Size in inches 2",
+                    "default": "Inches 2"
+                },
+                {
+                    "type": "text",
+                    "id": "sub",
+                    "label": "Sub-title",
+                    "default": "BEST FOR"
+                },
+                {
+                    "type": "text",
+                    "id": "option1",
+                    "label": "Option 1",
+                    "default": "Children"
+                },
+                {
+                    "type": "text",
+                    "id": "option2",
+                    "label": "Option 2",
+                    "default": "Adolescents"
+                },
+                {
+                    "type": "text",
+                    "id": "option3",
+                    "label": "Option 3",
+                    "default": "People with Pets or Children"
+                }
+            ]
+        }
+    ]       
+}
+{% endschema %}

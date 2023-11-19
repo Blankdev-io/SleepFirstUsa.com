@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "Collection",
+      "settings": {
+        "button": false,
+        "show_page_card": true,
+        "brand1": "shopify:\/\/shop_images\/logo-offer-tempur.png",
+        "image": "shopify:\/\/shop_images\/versus.png",
+        "brand2": "shopify:\/\/shop_images\/Purple_Logo.png",
+        "heading": "Sleep Comparison",
+        "pre_heading": "Choose Wisely, Sleep Better",
+        "content": "<p>Discover the ideal mattress for you. Compare brands and make the best decision.<\/p>",
+        "page_button": "PICK YOUR BRANDS",
+        "page_button_url": "shopify:\/\/pages\/brand-comparison"
+      }
+    },
+    "d70403d5-492c-46c8-8397-def3960cae7d": {
+      "type": "features",
+      "settings": {
+        "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/calendar.svg?v=1689608702",
+        "heading1": "365-Night In Home Trial",
+        "content1": "",
+        "button1": "TRY NOW",
+        "url1": "#collection-page",
+        "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/number-1.svg?v=1689608702",
+        "heading2": "One Year Price & Comfort Guarantee",
+        "content2": "",
+        "button2": "SHOP NOW",
+        "url2": "#collection-page",
+        "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/Delivery.svg?v=1676482442",
+        "heading3": "Fast Free Shipping",
+        "content3": "",
+        "button3": "SHOP NOW",
+        "url3": "#collection-page"
+      }
+    },
+    "21073891-0005-4e7a-9215-27ef759aa8cb": {
+      "type": "collection-recomendations",
+      "blocks": {
+        "6c3e24e3-db26-4cf3-8c4e-710829234070": {
+          "type": "slide",
+          "settings": {
+            "collection": "adjustable-bases"
+          }
+        },
+        "649b11cf-6723-485e-8911-35e917ae0716": {
+          "type": "slide",
+          "settings": {
+            "collection": "pillow-cube"
+          }
+        },
+        "89553e83-3955-4b90-be2b-23ad5e0feda5": {
+          "type": "slide",
+          "settings": {
+            "collection": "sheets"
+          }
+        }
+      },
+      "block_order": [
+        "6c3e24e3-db26-4cf3-8c4e-710829234070",
+        "649b11cf-6723-485e-8911-35e917ae0716",
+        "89553e83-3955-4b90-be2b-23ad5e0feda5"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "d70403d5-492c-46c8-8397-def3960cae7d",
+    "21073891-0005-4e7a-9215-27ef759aa8cb"
+  ]
+}

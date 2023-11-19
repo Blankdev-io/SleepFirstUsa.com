@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "policies",
+      "settings": {
+        "pre_heading": "",
+        "text_align": "left"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,111 @@
+{% liquid
+    assign heading = section.settings.heading 
+    assign button = section.settings.button
+%}
+
+<div id="product-grid" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <h2 class="text-title text-center text-text mb-6">{{ heading }}</h2>
+  
+    <div class="grid gap-5 mm:grid-cols-2 ts:gap-x-20 ts:gap-y-10 tl:grid-cols-4 tl:gap-4 ds:gap-7">
+        {% for product in section.settings.collection.products %}
+            {% liquid
+                assign backg = product.featured_image
+                assign name = product.title
+                assign price = product.price
+                assign compare = product.compare_at_price
+                assign url = product.url
+                assign substract = compare | minus: price | divided_by: 100.0
+                assign div = substract | divided_by: compare
+                assign savePercent = div | times: 10000 | floor
+            %}
+
+            <div>
+                <div class="grid grid-rows-4 group rounded-cl shadow-sp {% if button %}h-[470px]{% else %}h-[400px]{% endif %} ds:grid-rows-5 ds:h-[400px] ds:w-auto">
+                    <div class="row-span-2 relative ds:row-span-3">
+                        {% if compare != blank %}
+                            <div class="flex absolute left-4 top-4 bg-accent-4 rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+                                <p class="self-center font-bold text-xs text-center text-white">{{ savePercent }}% OFF</p>
+                            </div>
+                        {% endif %}
+                        {% for tag in product.tags %}
+                            {% if tag == "sold out" %}
+                                <div class="flex absolute right-4 top-4 bg-[#800007] rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                    <p class="self-center font-bold text-xs text-center text-white">SOLD OUT</p>
+                                </div>
+                            {% elsif tag == "new" %}
+                                <div class="flex absolute right-4 top-4 bg-secondary rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                    <p class="self-center font-bold text-xs text-center text-white">NEW!</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% if button %}
+                            <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button-hidden absolute bottom-4 inset-x-6" data-id="add-btn">ADD TO CART</a>
+                        {% endif %}
+                        <a href="{{ url }}"><picture>
+                            <source media="(min-width: 868px)" srcset="{{ backg | image_url: width: 260 }}">
+                            <source media="(min-width: 768px)" srcset="{{ backg | image_url: width: 380 }}">
+                            <source media="(min-width: 480px)" srcset="{{ backg | image_url: width: 360 }}">
+                            <img class="object-cover rounded-t-cl w-full h-full" src="{{ backg | image_url: width: 450 }}" title="{{ name }}" alt="{{ backg.alt }}" loading="lazy">                         
+                        </picture></a>
+                    </div>
+                    <div class="row-span-2 grid {% if button %}grid-rows-3{% else %}grid-rows-2{% endif %} text-text bg-white rounded-b-cl p-4 ds:grid-rows-2 ds:py-3">
+                        <h3 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a href="{{ url }}" title="{{ name }}">{{ name }}</a></h3>
+                        <div class="grid grid-cols-2 self-center">
+                            <div class="ds:self-center">
+                                <p class="text-[12px]">Starting at</p>
+                                <p class="font-bold text-[14px] text-primary">{{ price | money }}</p>
+                                {% if compare != blank %}
+                                    <p class="font-bold text-[14px] text-accent-2 line-through">{{ compare | money }}</p>
+                                {% endif %}  
+                            </div>
+                            <div class="grid justify-items-end ds:justify-items-center  ds:items-center">
+                                {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+                            </div>
+                        </div>
+                        {% if button %}
+                            <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button w-full ds:hidden" data-id="add-btn">ADD TO CART</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if product.metafields.custom.promotion != blank %}
+                    <div class="flex justify-center px-5">
+                        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ product.metafields.custom.promotion_tag_color }};">
+                        <span class="self-center">{{ product.metafields.custom.promotion }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Product Grid",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Collection"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        },
+        {
+            "type": "checkbox",
+            "id": "button",
+            "label": "Show 'Add to Cart' Button",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Grid"
+        }
+    ]
+}
+{% endschema %}

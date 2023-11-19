@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {
+        "checkAuthor": true,
+        "checkDate": false,
+        "checkReadTime": true,
+        "heading": "Related Blog Posts"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

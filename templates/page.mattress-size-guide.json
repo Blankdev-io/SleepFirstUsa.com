@@ -1,0 +1,169 @@
+{
+  "sections": {
+    "size-guide": {
+      "type": "size-guide",
+      "blocks": {
+        "dab423c6-2c0a-4e5b-9c9b-fd5838b031f4": {
+          "type": "slide",
+          "settings": {
+            "size_name": "Twin",
+            "inches": "38\" X 74\"",
+            "cms": "96.5cm X 190.5cm",
+            "url": "shopify:\/\/collections\/twin"
+          }
+        },
+        "4607fa5e-4a15-4529-b978-88efb14ef3b1": {
+          "type": "slide",
+          "settings": {
+            "size_name": "Twin XL",
+            "inches": "38\" X 80\"",
+            "cms": "96.5cm X 203cm",
+            "url": "shopify:\/\/collections\/twin-long"
+          }
+        },
+        "2a9c44f8-cfd0-4187-995a-64f42b645f83": {
+          "type": "slide",
+          "settings": {
+            "size_name": "Full (Double)",
+            "inches": "53\" X 75\"",
+            "cms": "134.5cm X 190.5cm",
+            "url": "shopify:\/\/collections\/double"
+          }
+        },
+        "ac5f2a8c-6a99-45ad-bcae-d7d7c58a65f5": {
+          "type": "slide",
+          "settings": {
+            "size_name": "Queen",
+            "inches": "60\" X 80\"",
+            "cms": "152.5cm X 203cm",
+            "url": "shopify:\/\/collections\/queen"
+          }
+        },
+        "5beda3e2-e476-4ccc-94d1-41f160f6ba5e": {
+          "type": "slide",
+          "settings": {
+            "size_name": "King",
+            "inches": "76\" X 80\"",
+            "cms": "193cm X 203cm",
+            "url": "shopify:\/\/collections\/king"
+          }
+        },
+        "8e50ab16-16e5-4b87-b287-181523a2761d": {
+          "type": "slide",
+          "settings": {
+            "size_name": "California King",
+            "inches": "72\" X 84\"",
+            "cms": "183cm X 213cm",
+            "url": "shopify:\/\/collections\/cal-king"
+          }
+        }
+      },
+      "block_order": [
+        "dab423c6-2c0a-4e5b-9c9b-fd5838b031f4",
+        "4607fa5e-4a15-4529-b978-88efb14ef3b1",
+        "2a9c44f8-cfd0-4187-995a-64f42b645f83",
+        "ac5f2a8c-6a99-45ad-bcae-d7d7c58a65f5",
+        "5beda3e2-e476-4ccc-94d1-41f160f6ba5e",
+        "8e50ab16-16e5-4b87-b287-181523a2761d"
+      ],
+      "settings": {
+        "title": "Mattress Size Guide",
+        "content": "<p><strong>Find the Mattress Size That’s Right For You<br\/><br\/><br\/><\/strong><\/p>",
+        "pre_heading": "Sleep First"
+      }
+    },
+    "mattresses": {
+      "type": "mattresses",
+      "blocks": {
+        "fbf677ba-8c93-4955-9eb2-fd7a7f9606bb": {
+          "type": "slide",
+          "settings": {
+            "name1": "Twin",
+            "name2": "Twin XL",
+            "url1": "shopify:\/\/collections\/twin",
+            "url2": "shopify:\/\/collections\/twin-long",
+            "logo_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-twin.svg?v=1664313210",
+            "logo_check1": true,
+            "logo_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-twin_xl.svg?v=1664313210",
+            "logo_check2": true,
+            "inches1": "38” x 74”",
+            "inches2": "38” x 80”",
+            "sub": "BEST FOR",
+            "option1": "Children",
+            "option2": "Adolescents",
+            "option3": "People with Pets or Children"
+          }
+        },
+        "77f4b59f-f65b-4e86-ac46-acd7c103a7b0": {
+          "type": "slide",
+          "settings": {
+            "name1": "Double",
+            "name2": "Queen",
+            "url1": "shopify:\/\/collections\/double",
+            "url2": "shopify:\/\/collections\/queen",
+            "logo_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-double.svg?v=1664313209",
+            "logo_check1": true,
+            "logo_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-queen.svg?v=1664313209",
+            "logo_check2": true,
+            "inches1": "54” x 74”",
+            "inches2": "60” x 80”",
+            "sub": "BEST FOR",
+            "option1": "Adolescents",
+            "option2": "Couples",
+            "option3": "People with Pets or Children"
+          }
+        },
+        "4cf5aa5f-9271-447f-9556-6e7a62490a50": {
+          "type": "slide",
+          "settings": {
+            "name1": "King",
+            "name2": "Cal. King",
+            "url1": "shopify:\/\/collections\/king",
+            "url2": "shopify:\/\/collections\/cal-king",
+            "logo_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-king.svg?v=1664313209",
+            "logo_check1": true,
+            "logo_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-calking.svg?v=1664368520",
+            "logo_check2": true,
+            "inches1": "76” x 80”",
+            "inches2": "72” x 84”",
+            "sub": "BEST FOR",
+            "option1": "Couples",
+            "option2": "Couples with Pets",
+            "option3": "Couples with Children"
+          }
+        },
+        "8d8cf4e5-1362-44f6-9eb1-93e5b7e94c67": {
+          "type": "slide",
+          "settings": {
+            "name1": "Split King",
+            "name2": "Split Cal. King",
+            "url1": "shopify:\/\/collections\/split-king-2-pieces",
+            "url2": "shopify:\/\/collections\/split-cal-king-2-pieces",
+            "logo_svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-splitking.svg?v=1665600411",
+            "logo_check1": true,
+            "logo_svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0613\/7017\/1542\/files\/bedsize-splitcalking.svg?v=1665601483",
+            "logo_check2": true,
+            "inches1": "76” x 80”",
+            "inches2": "72” x 84”",
+            "sub": "BEST FOR",
+            "option1": "Couples with separate sleeping needs\/wants",
+            "option2": "Couples with Pets",
+            "option3": "Couples with Children"
+          }
+        }
+      },
+      "block_order": [
+        "fbf677ba-8c93-4955-9eb2-fd7a7f9606bb",
+        "77f4b59f-f65b-4e86-ac46-acd7c103a7b0",
+        "4cf5aa5f-9271-447f-9556-6e7a62490a50",
+        "8d8cf4e5-1362-44f6-9eb1-93e5b7e94c67"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "size-guide",
+    "mattresses"
+  ]
+}

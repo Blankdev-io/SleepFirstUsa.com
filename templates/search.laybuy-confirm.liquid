@@ -1,0 +1,69 @@
+{%- layout none -%}
+                            {%- assign urlParamsArray = canonical_url | split: "?" -%}
+                            {%- assign urlParamsSize = urlParamsArray | size -%}
+                            {%- if urlParamsSize > 1 -%}
+                                {%- assign params = urlParamsArray[1] | split: "&" -%}
+                            {%- endif -%}
+                            {%- assign paramsSize = params | size -%}
+                            {%- assign keyString = "" -%}
+                            {%- assign valString = "" -%}
+                            {%- if paramsSize > 0 -%}
+                            {%- for val in params -%}
+                                {%- assign subParams = val | split: "=" -%}
+                                {%- assign subParamsSize = subParams | size -%}
+                                {%- if subParamsSize > 1 -%}
+                                {%- if keyString == "" -%}
+                                    {%-assign keyString = keyString | append:subParams [0]-%}
+                                {%-else-%}
+                                    {%-assign keyString = keyString | append: "~-" | append:subParams [0]-%}
+                                {%-endif-%}
+                                {%-if valString == ""-%}
+                                    {%-assign valString = valString | append:subParams [1]-%}
+                                {%-else-%}
+                                    {%-assign valString = valString | append: "~-" | append:subParams [1]-%}
+                                {%-endif-%}
+                                {%-endif-%}
+                            {%-endfor-%}
+                            {%-if keyString != ""-%}
+                                {%-assign keyStringArray = keyString | split: "~-"-%}
+                            {%-endif-%}
+                            {%-if valString != ""-%}
+                                {%-assign valStringArray = valString | split: "~-"-%}
+                            {%-endif-%}
+                            
+                            {%-endif-%}
+                            {%-assign collectionIndex = ""-%}
+                            {%-assign collectionString = ""-%}
+                            {%- assign paginateObject = "" -%}
+                            {%- if keyStringArray contains "collection"-%}
+                            {%-for val in keyStringArray-%}
+                                {%-if val == "collection"-%}
+                                    {%-assign collectionIndex = forloop.index | minus: 1-%}
+                                    {%-assign collectionString = valStringArray[collectionIndex]-%}
+                                {%- endif -%}
+                            {%-endfor-%}
+                            {%-endif-%}
+                            
+                            <script type="text/javascript">
+                                function deleteAllCookiesDDD() {
+                                    const cookies = document.cookie.split(";");
+                                    for (let i = 0; i < cookies.length; i++) {
+                                        const cookie = cookies[i];
+                                        const eqPos = cookie.indexOf("=");
+                                        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                                        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                                    }
+                                    console.log("cleared all cookies laybuys");
+                                }
+                                deleteAllCookiesDDD();
+                                function redirectToUrl(){
+                                    var url = '{{-collectionString-}}';
+                                    var unescapeUrl = unescape(url);
+                                    console.log("url is = "+url);
+                                    console.log(decodeURI(url));
+                                    console.log(unescape(url));
+                                    console.log("unescape url is = "+unescapeUrl);
+                                    window.location.href = unescapeUrl;
+                                } 
+                                redirectToUrl();
+                            </script>

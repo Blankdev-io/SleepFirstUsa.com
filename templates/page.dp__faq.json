@@ -1,0 +1,296 @@
+{
+  "sections": {
+    "main": {
+      "type": "image-and-text",
+      "settings": {
+        "heading": "MATTRESS FAQ",
+        "hierarchy": "h1",
+        "sub_title": "Questions? We've got answers.",
+        "content": "<p>All of the most common queries about our products in one place.<br\/><br\/>We've heard it all and then some!<\/p>",
+        "button": "Ask a question",
+        "button_url": "mailto:usasleepfirst@gmail.com",
+        "image": "shopify:\/\/shop_images\/Sleep_First_Mattress_FAQs.jpg",
+        "order": false
+      }
+    },
+    "mattress": {
+      "type": "faq",
+      "blocks": {
+        "2bfad1e9-33d8-4710-becc-acf6ba648908": {
+          "type": "slide",
+          "settings": {
+            "question": "Which mattress brand is the best?",
+            "answer": "<p>People are unique, and certain brands work best for different needs. Here <a href=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\" title=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\">at Sleep First<\/a>, we’re happy to be able to offer mattresses from some of the very best brands for you to choose from.<br\/><br\/>From <a href=\"\/collections\/tempurpedic\" title=\"Tempur-Pedic®\">Tempur-Pedic<\/a>, to <a href=\"https:\/\/sleepfirstusa.com\/collections\/sealy-mattress-collection\" title=\"https:\/\/sleepfirstusa.com\/collections\/sealy-mattress-collection\">Sealy<\/a>, there is something here for every sleep need and preference. We also carry popular traditional brands, like the iconic Beautyrest Collection: <a href=\"https:\/\/sleepfirstusa.com\/collections\/beautyrest-black\" title=\"https:\/\/sleepfirstusa.com\/collections\/beautyrest-black\">Beautyrest Black<\/a>, <a href=\"https:\/\/sleepfirstusa.com\/collections\/beautyrest-harmony\" title=\"https:\/\/sleepfirstusa.com\/collections\/beautyrest-harmony\">Harmony<\/a> & <a href=\"https:\/\/sleepfirstusa.com\/collections\/beautyrest-hybrid\" title=\"Beautyrest Hybrid\">Hybrid<\/a>, <a href=\"https:\/\/sleepfirstusa.com\/collections\/serta-mattresses\" title=\"Serta Mattresses\">Serta<\/a>, Simmons and <a href=\"https:\/\/sleepfirstusa.com\/collections\/serta-icomfort\" title=\"Serta iComfort\">iComfort<\/a>.<br\/><br\/>And don't forget the trendy online beds! You'll find <a href=\"https:\/\/sleepfirstusa.com\/products\/nectar-mattress\" title=\"Nectar Mattress\">Nectar Mattress<\/a>, <a href=\"https:\/\/sleepfirstusa.com\/products\/nectar-lush-mattress\" title=\"Nectar Lush Mattress\">Nectar Lush<\/a>, <a href=\"https:\/\/sleepfirstusa.com\/products\/awara-organic-latex-hybrid-mattress\" title=\"Awara Organic Latex Hybrid Mattress\">Awara Organic Latex mattress<\/a>, and <a href=\"https:\/\/sleepfirstusa.com\/products\/dreamcloud-mattress\" title=\"DreamCloud Mattress\">DreamCloud<\/a>, just to name a few. <br\/><br\/>At Sleep First you can compare top mattresses side by side to find your perfect fit. All under one roof! <br\/><br\/><strong>Now for a limited time, get a free gift when you book a <\/strong><a href=\"\/pages\/private-shopping\" title=\"Private Mattress Shopping\"><strong>private shopping appointment<\/strong><\/a><strong>!<\/strong><\/p>"
+          }
+        },
+        "a5dac2a0-6739-4ea1-b066-42ec76883c3c": {
+          "type": "slide",
+          "settings": {
+            "question": "How long will my mattress last?",
+            "answer": "<p>Though it may be tempting to believe you and your mattress will be together forever, eventually every mattress must be replaced.<br\/><br\/>Most mattresses will need to be replaced after 7-10 years, or even sooner if you’re experiencing discomfort or disturbances during sleep, or your mattress is showing obvious signs of sagging or other wear-and-tear.<\/p>"
+          }
+        },
+        "db9c29ea-ec2e-4a18-9ba1-f52696499502": {
+          "type": "slide",
+          "settings": {
+            "question": "What size mattress should I get? What sizes do you carry?",
+            "answer": "<p>That depends! In general, there are three main things to think about when it comes time to <a href=\"https:\/\/sleepfirstusa.com\/pages\/mattress-size-guide\" title=\"Mattress Size Guide\">choose a size<\/a> for your mattress: how many people will be sleeping on the mattress, the size of those people, and the dimensions of the bedroom.<br\/><br\/>Bigger mattress sizes like Queens, Kings and California Kings are better when there are more people and\/or a bigger space, while smaller sizes like Twin and Full \/Double are better for single sleepers and\/or smaller spaces. <a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-what-size-mattress-is-right-for-you\">Click here to learn more<\/a>. <br\/><br\/>We carry a range of sizes from Twin all the way to Split California King. Here are the dimensions:<br\/><br\/>Twin- 38” x 75” or 96.5cm x 190.5cm<br\/><br\/>Twin XL- 38” x 80” or 96.5cm x 203cm<br\/><br\/>Full-  53” x 75” or 134.5 x 190.5cm<br\/><br\/>Queen- 60” x 80” or 152.5 x 203cm<br\/><br\/>King- 76” x 80” or 193 x 203cm<br\/><br\/>California King- 72” x 84” or 183 x 213cm<\/p>"
+          }
+        },
+        "9bbaba6e-5242-4fd7-bdcb-3d681c456112": {
+          "type": "slide",
+          "settings": {
+            "question": "What is hybrid mattress?",
+            "answer": "<p>Good question! A <a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/what-is-a-hybrid-mattress\" title=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/what-is-a-hybrid-mattress\">hybrid mattress<\/a> is a hybridization between an old-school spring mattress and a more modern foam mattress.<br\/><br\/>Most hybrid mattresses have individually pocketed coils as well as a memory foam and\/or latex top, blending luxurious comfort with good old-fashioned support. Because of this, they work well for most every type of sleeper.<br\/><br\/>This, as well as their ability to minimize motion transfer, makes them a fantastic choice for couples. <a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/what-is-a-hybrid-mattress\" title=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/what-is-a-hybrid-mattress\">Learn more about hybrid beds here<\/a>. <\/p>"
+          }
+        },
+        "f08fafe5-9a89-4cca-ac15-560fb3d12708": {
+          "type": "slide",
+          "settings": {
+            "question": "What is an adjustable base?",
+            "answer": "<p>An adjustable base is a great way to increase the comfort and functionality of your bed. Essentially, it's a movable foundation that can shift the positioning of your head and legs.<br\/><br\/>Adjustable bases allow for even more comfort and support than a regular bed, particularly for sleepers that have trouble lying comfortably. <a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/5-reasons-you-need-an-adjustable-base\">Click here to learn more<\/a>.<\/p>"
+          }
+        },
+        "39a0c673-349b-45e1-8d4b-36adfb60b297": {
+          "type": "slide",
+          "settings": {
+            "question": "Is a firm mattress better for my back?",
+            "answer": "<p>Not always. Though old school chiropractors used to swear that firm mattresses were the way to go for back support, that's not quite true.<br\/><br\/>Firmness and support are actually two different things: firmness has to do with the top layer of the mattress, whereas support has to do with the lower layers. It's very possible to have a soft mattress with lots of support.<br\/><br\/>When choosing between firm and soft, go with what’s most comfortable for you!<\/p>"
+          }
+        },
+        "0f965a6f-7030-4b10-a391-3b9735fa322f": {
+          "type": "slide",
+          "settings": {
+            "question": "How should I clean my mattress?",
+            "answer": "<p>The best and most simple way to keep your mattress clean is by using a <a href=\"https:\/\/sleepfirstusa.com\/collections\/bedding\/products\/sleep-tite-omniphase-5-sided-tencel-mattress-protector\">mattress protector<\/a>.<br\/><br\/>As an added bonus, they're moisture wicking, temperature regulating, and hypo-allergenic. <br\/><br\/>Other cleaning methods include vacuuming your mattress and airing it out near a window.<br\/><br\/>Use caution with cleaning products, as many can actually degrade your mattress and cause it to age faster.<\/p>"
+          }
+        },
+        "301432f6-b29a-4824-8f7a-ccbd467b82bd": {
+          "type": "slide",
+          "settings": {
+            "question": "What is your price guarantee?",
+            "answer": "<p>Our price guarantee means that when you shop with Sleep First, you’ll get the lowest price, guaranteed!<br\/><br\/>If our price isn’t already lower, we’ll match any competitor’s advertised price (even online).  Here’s how it works: if you see a price from a competitor that impresses you, (even a “Going Out of Business” sale) just bring it to us. If we don’t already have the lowest price, we’ll match the price. All we ask is that you take the time to visit us at Sleep First.<br\/><br\/>In addition, most mattress stores give you a limited trial period. Our comfort guarantee gives you ONE FULL YEAR - that's 365 days vs everyone else's 90 - 120 days.<br\/><br\/>At Sleep First, we want you to be 100% sure that you're sleeping on the perfect mattress for you. <\/p>"
+          }
+        },
+        "9e9d8f0e-2442-45ba-b853-32a6ff71c317": {
+          "type": "slide",
+          "settings": {
+            "question": "Do I really need a new mattress?",
+            "answer": "<p>Your mattress plays an essential role in your quality of life and in your overall health, and it’s important to make sure it’s working in your favor.<br\/><br\/>If you’re uncomfortable at night, waking up groggy and in pain, or it’s been a while since you got your last mattress, it’s probably time for a new one. A new mattress can increase your comfort levels, sleep quality, and overall health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2bfad1e9-33d8-4710-becc-acf6ba648908",
+        "a5dac2a0-6739-4ea1-b066-42ec76883c3c",
+        "db9c29ea-ec2e-4a18-9ba1-f52696499502",
+        "9bbaba6e-5242-4fd7-bdcb-3d681c456112",
+        "f08fafe5-9a89-4cca-ac15-560fb3d12708",
+        "39a0c673-349b-45e1-8d4b-36adfb60b297",
+        "0f965a6f-7030-4b10-a391-3b9735fa322f",
+        "301432f6-b29a-4824-8f7a-ccbd467b82bd",
+        "9e9d8f0e-2442-45ba-b853-32a6ff71c317"
+      ],
+      "settings": {
+        "heading": "Mattress FAQ",
+        "hierarchy": "h2"
+      }
+    },
+    "recommendations": {
+      "type": "faq",
+      "blocks": {
+        "c7445089-fce5-4767-80b9-920891478be0": {
+          "type": "slide",
+          "settings": {
+            "question": "Which mattress is best for couples?",
+            "answer": "<p><strong>For many people, the decision of what mattress to get doesn't just involve them-- it involves their partner, too!<br\/><br\/>The best bed for a couple is one that takes into account both people’s sleeping needs, preferences, and past experiences.<br\/><br\/>In general, the best mattress for a couple is a queen size medium feel mattress. <\/strong><a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-best-mattresses-for-couples\"><span style=\"text-decoration:underline\"><strong>Click here to learn more.<\/strong><\/span><\/a><\/p>"
+          }
+        },
+        "14b409d1-1097-4aa4-a453-29e59fc85dd9": {
+          "type": "slide",
+          "settings": {
+            "question": "I sleep hot and wake up sweating. What mattress do you recommend?",
+            "answer": "<p><strong>We’ve got you! There are those of us who snuggle into bed at night with cozy flannel pajamas, a heavy comforter and a fluffy throw blanket, and we have options for both.<br\/><br\/>If you’re a hot sleeper, we recommend the <\/strong><a href=\"https:\/\/sleepfirstusa.com\/collections\/tempurpedic-breeze-mattress\"><span style=\"text-decoration:underline\"><strong>TEMPUR-Breeze° Collection<\/strong><\/span><\/a><strong> or the <\/strong><a href=\"https:\/\/sleepfirstusa.com\/collections\/simmons-beautyrest\/products\/beautyrest-harmony-carbon-lux-firm-mattress\"><span style=\"text-decoration:underline\"><strong>Beautyrest Harmony Carbon Lux Mattress<\/strong><\/span><\/a><strong>.<br\/><br\/><\/strong><a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-best-mattresses-for-hot-sleepers\"><span style=\"text-decoration:underline\"><strong>Click here to learn more<\/strong><\/span><\/a><strong>.<\/strong><\/p>"
+          }
+        },
+        "7ebee815-3d72-45c2-b877-d5d3a91f3e08": {
+          "type": "slide",
+          "settings": {
+            "question": "I sleep on my stomach. Which mattress do you recommend?",
+            "answer": "<p><strong>If you are a stomach sleeper, chances are you've heard that it’s not the most beneficial position and can be hard on your back.<br\/><br\/>But don’t worry, that doesn’t mean you need to switch it up and give up your favorite position! All you need to get the optimal nighttime support and comfort is the right mattress.<br\/><br\/>Generally speaking, the best are firmer mattresses with cooling technology and edge support. <\/strong><a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-best-mattresses-for-stomach-sleepers\"><span style=\"text-decoration:underline\"><strong>Click here to learn more and get our specific recommendations.<\/strong><\/span><\/a><\/p>"
+          }
+        },
+        "4788f247-3101-4b6a-850f-55d8a1ae5da1": {
+          "type": "slide",
+          "settings": {
+            "question": "I sleep on my back. Which mattress do you recommend?",
+            "answer": "<p><strong>If you're a back sleeper, you're in luck! Experts generally consider back sleeping to be ideal, though only about 10% of us naturally sleep that way.<br\/><br\/>Back sleeping is excellent for your back and spinal health, as well as for proper circulation-- as long as you're sleeping on the right mattress!<br\/><br\/>In general, back sleepers do best with medium-firm mattresses, as they provide a more consistent support for your pressure points.<br\/><br\/>If you go too soft, you could end up with sinking hips and a sore back. But go too firm and you'll likely have too much resistance on your hips and shoulders, also resulting in back pain.<br\/><br\/>The key is to find the firmness sweet spot: soft enough that the small of your back can rest comfortably on the mattress, but firm enough that your hips and shoulders are equally supported. <\/strong><a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-the-best-mattresses-for-back-sleepers\"><span style=\"text-decoration:underline\"><strong>Click here to learn more and get our specific recommendations.<\/strong><\/span><\/a><\/p>"
+          }
+        },
+        "a8dcf021-4cd6-4afb-bf79-7542352a772d": {
+          "type": "slide",
+          "settings": {
+            "question": "I sleep on my side. What mattress do you recommend?",
+            "answer": "<p><strong>Nearly 75% of people are side sleepers, and chances are that you sleep on your side for at least part of the night.<br\/><br\/>Side sleeping is gentle on your neck, but can put excess pressure on your arms and legs, leading to soreness and impaired circulation. Because of this, side sleepers do best with softer mattresses, as softness allows for optimal circulation.<br\/><br\/>Memory foam or hybrid mattresses are good choices for side sleepers, as they offer an ideal mix of comfort and support. <\/strong><a href=\"https:\/\/sleepfirstusa.com\/blogs\/your-mattress-matters\/buying-guide-the-best-mattresses-for-side-sleepers\"><span style=\"text-decoration:underline\"><strong>Click here to learn more and get our specific recommendations.<\/strong><\/span><\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c7445089-fce5-4767-80b9-920891478be0",
+        "14b409d1-1097-4aa4-a453-29e59fc85dd9",
+        "7ebee815-3d72-45c2-b877-d5d3a91f3e08",
+        "4788f247-3101-4b6a-850f-55d8a1ae5da1",
+        "a8dcf021-4cd6-4afb-bf79-7542352a772d"
+      ],
+      "settings": {
+        "heading": "Recommendations",
+        "hierarchy": "h2"
+      }
+    },
+    "general": {
+      "type": "faq",
+      "blocks": {
+        "93e1643e-30c8-49ae-8e90-3b9111ead5e3": {
+          "type": "slide",
+          "settings": {
+            "question": "Where are your stores located?",
+            "answer": "<p>To find a store near you, <a href=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\" title=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\">please visit this page<\/a>.<br\/><br\/><span style=\"text-decoration:underline\"><strong>California Locations<\/strong><\/span><br\/><br\/>Lodi<br\/><br\/>Vacaville<br\/><br\/><span style=\"text-decoration:underline\"><strong>Texas Locations<br\/><br\/><\/strong><\/span>Longview<br\/><br\/>Tyler - Cumberland<br\/><br\/>Tyler - Kinsey<\/p>"
+          }
+        },
+        "d5f91d66-0271-457a-bb58-3f7a4b0cce0a": {
+          "type": "slide",
+          "settings": {
+            "question": "Does Sleep First offer interest-free payments?",
+            "answer": "<p>We sure do! You can apply for credit or lease-to-own options online. If you're not approved for any of these options, we're happy to arrange a layaway for you. These are all fast, secure and easy processes.<br\/><br\/><a href=\"https:\/\/sleepfirstusa.com\/pages\/online-financing\">Learn more about your financing options here.<\/a><\/p>"
+          }
+        },
+        "8f6659fe-81a1-40d8-9eee-d851462be297": {
+          "type": "slide",
+          "settings": {
+            "question": "When will my order ship?",
+            "answer": "<p>In most cases, after your order is placed it will ship within 24-72 hours and should arrive to your home in 5-10 days. <br\/><br\/>If you’d like an update on your specific order, please contact us, we'll be happy to help! <br\/><br\/>- <a href=\"http:\/\/m.me\/sleepfirstusa\">chat with us<br\/><br\/><\/a>- <a href=\"tel:+18889753371\" title=\"tel:+18889753371\">give us a call<br\/><br\/><\/a>- <a href=\"mailto:molly@sleepfirstusa.com\" title=\"mailto:molly@sleepfirstusa.com\">send an email<br\/><br\/><\/a>- <a href=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\">visit a store<\/a><\/p>"
+          }
+        },
+        "01b0a280-61be-404a-9064-d84b5722d9ef": {
+          "type": "slide",
+          "settings": {
+            "question": "I have a question about my order. What should I do?",
+            "answer": "<p>Please contact us, we'll be happy to help! <br\/><br\/>- <a href=\"http:\/\/m.me\/sleepfirstusa\" title=\"http:\/\/m.me\/sleepfirstusa\">chat with us<br\/><br\/><\/a>- <a href=\"tel:+18889753371\" title=\"tel:+18889753371\">give us a call<br\/><br\/><\/a>- <a href=\"mailto:molly@sleepfirstusa.com\" title=\"mailto:molly@sleepfirstusa.com\">send an email<br\/><br\/><\/a>- <a href=\"https:\/\/sleepfirstusa.com\/pages\/store-locator\" title=\"https:\/\/sleepfirst.myshopify.com\/pages\/store-locator\">visit a store<br\/><br\/><\/a>Our team will gladly be able to assist you with any questions relating to Orders, Order Modifications, Shipping, Exchanges, & Cancellations.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "93e1643e-30c8-49ae-8e90-3b9111ead5e3",
+        "d5f91d66-0271-457a-bb58-3f7a4b0cce0a",
+        "8f6659fe-81a1-40d8-9eee-d851462be297",
+        "01b0a280-61be-404a-9064-d84b5722d9ef"
+      ],
+      "settings": {
+        "heading": "General Information",
+        "hierarchy": "h2"
+      }
+    },
+    "nectar": {
+      "type": "faq",
+      "blocks": {
+        "9c4b2ec3-3d51-44de-8204-40f2d4822b1c": {
+          "type": "slide",
+          "settings": {
+            "question": "What makes the Nectar Mattress special?",
+            "answer": "<p>Nectar not only offers contoured support at a fantastic price, but it also provides peace-of-mind with an industry-leading 365 night risk-free sleep trial and Forever Warranty™.<\/p>"
+          }
+        },
+        "ff55da99-9b99-4312-ba03-a33affa78746": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the 365 night trial?",
+            "answer": "<p>One of the best parts about choosing a Nectar mattress is the incredible year long trial period that starts the day your mattress is delivered to your door.<br\/><br\/>We encourage our customers to take the first 30 days to get to know your new Nectar and for it to get to know you before returning. We do this because studies and customers agree that it takes about 30 days for your body to adjust to a new mattress and we want to give you that time to get used to our product before making a final decision on your sleep experience.<br\/><br\/>This trial period is 3 times longer than most other trials we have seen in the industry.<\/p>"
+          }
+        },
+        "b57581c6-f0b2-4090-a90e-9f6db6efb9a1": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the Forever Warranty?",
+            "answer": "<p>Forever is a long, long time...and that’s how long we guarantee your Nectar mattress.<br\/><br\/>If in the unlikely chance you experience defects in construction, materials, or quality, Nectar will either replace or repair your Nectar mattress depending on how long you have owned it.<br\/><br\/>If you own a Nectar and sleep on a Nectar, we believe a Nectar should be the only mattress you’ll ever need.<\/p>"
+          }
+        },
+        "f4ad8e1e-7d8b-49ed-8d18-4118a729cbdf": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the Nectar Mattress manufactured?",
+            "answer": "<p><strong>Nectar has a diversified supply chain and their products are sourced, manufactured in places such as Vietnam, Malaysia, China, Mexico and USA with the utmost safety and sanitary precautions and measures taking place.<\/strong><\/p>"
+          }
+        },
+        "35f6accc-eb10-47dc-bd4d-9a48208353aa": {
+          "type": "slide",
+          "settings": {
+            "question": "How does the Nectar mattress feel?",
+            "answer": "<p>Nectar is designed with your comfort in mind, whether you sleep on your front, back, or side.<br\/><br\/>The mattress’ CertiPUR-US® Certified foams and breathable Tencel™ cover work together to help keep you cool, evenly distribute your weight, and contour to your unique shape to help relieve pressure points and fatigued muscles.<br\/><br\/>On a firmness scale of 1 to 10, they have designed Nectar to provide a medium-firm 6.5 feel, or, as we like to call it, the mattress sweet spot.<\/p>"
+          }
+        },
+        "9b21855f-7e68-446a-931e-286bd8fa72de": {
+          "type": "slide",
+          "settings": {
+            "question": "Which base do you recommend for the Nectar Mattress?",
+            "answer": "<p>Nectar will be the most comfortable mattress you ever owned if set up properly.<br\/><br\/>We recommend any foundation, base or adjustable frame that we sell or a similar\/like product. The Nectar Move adjustable base is an excellent choice.<br\/><br\/>We do not recommend placing your mattress on the floor, plastic base, or home-made foundation.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "9c4b2ec3-3d51-44de-8204-40f2d4822b1c",
+        "ff55da99-9b99-4312-ba03-a33affa78746",
+        "b57581c6-f0b2-4090-a90e-9f6db6efb9a1",
+        "f4ad8e1e-7d8b-49ed-8d18-4118a729cbdf",
+        "35f6accc-eb10-47dc-bd4d-9a48208353aa",
+        "9b21855f-7e68-446a-931e-286bd8fa72de"
+      ],
+      "settings": {
+        "heading": "Nectar Mattress FAQ",
+        "hierarchy": "h2"
+      }
+    },
+    "tempur-pedic": {
+      "type": "faq",
+      "blocks": {
+        "1aef65f8-3362-4034-bd56-ba39d0ccd724": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the comfort trial period for TEMPUR?",
+            "answer": "<p>Since your comfort is our #1 priority, we offer an industry-leading 365-day comfort trial, so you don’t have to worry about a thing while you take one full year to decide whether to keep your mattress. <br\/><br\/><strong>Our 365 day promise is around <\/strong><span style=\"text-decoration:underline\"><em><strong>120 days longer<\/strong><\/em><\/span><strong> than any other mattress store. <br\/><br\/><\/strong>Your purchase price is also guaranteed for a full year, and we’ll refund the difference if you see the same bed advertised cheaper elsewhere.<\/p>"
+          }
+        },
+        "7f157577-bf11-450a-bf9b-4b79368f6314": {
+          "type": "slide",
+          "settings": {
+            "question": "What is the warranty on a TEMPUR mattress purchased from Sleep First?",
+            "answer": "<p>When you purchase a TEMPUR® product from Sleep First, we provide an incredible 20 Year Full Replacement Warranty - doubling the 10 years that Tempur themselves provide.<br\/><br\/>The first 10 years of the warranty are covered directly by the manufacturer, Tempur-Pedic themselves. Sleep First offers you an exclusive EXTRA TEN YEARS covered directly by ServeCo, a global leader serving huge companies and their customers for more than three decades.<\/p>"
+          }
+        },
+        "21adb15c-9947-45a8-a3eb-bebfd2341ab2": {
+          "type": "slide",
+          "settings": {
+            "question": "How can I get my $300 gift or Amazon.com gift card?",
+            "answer": "<p>It's easy! With every <a href=\"https:\/\/sleepfirstusa.com\/collections\/tempurpedic\" title=\"Sleep First Tempurpedic Collection\">TEMPUR<\/a> mattress purchase, you'll get an instant $300 credit that can be used immediately, OR get a $300 Amazn.com gift card. The card will be delivered via email within 48 hours of your mattress delivery.<br\/><br\/>Use your $300 to grab a fresh new set of sheets, some pillows, a mattress protector, or a bed frame. The choice is yours! <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1aef65f8-3362-4034-bd56-ba39d0ccd724",
+        "7f157577-bf11-450a-bf9b-4b79368f6314",
+        "21adb15c-9947-45a8-a3eb-bebfd2341ab2"
+      ],
+      "settings": {
+        "heading": "Tempur-Pedic FAQ",
+        "hierarchy": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "mattress",
+    "recommendations",
+    "general",
+    "nectar",
+    "tempur-pedic"
+  ]
+}

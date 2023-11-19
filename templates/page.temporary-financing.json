@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "text": {
+      "type": "text",
+      "settings": {
+        "pre_heading": "Sleep First",
+        "heading": "Online Financing",
+        "content": "<p>Apply for financing online today.<\/p><p>It's a fast and secure process!<br\/><br\/>If your application has been approved, simply print your approval confirmation and bring it to any Sleep First store location.<\/p>",
+        "text_align": "center",
+        "hierarchy": "h2"
+      }
+    },
+    "double": {
+      "type": "double",
+      "settings": {
+        "heading": "A Faster Store Visit",
+        "hierarchy": "h2",
+        "content": "<p>Save yourself time and stress with a faster in-store experience. You'll manage your own approval process instead of our sales associate.<\/p>",
+        "button": "APPLY NOW",
+        "url": "https:\/\/retailservices.wellsfargo.com\/ahapp\/init-app?m=2176043198",
+        "image": "shopify:\/\/shop_images\/AtHomeBanner_600x300_A.png",
+        "order": false
+      }
+    }
+  },
+  "order": [
+    "text",
+    "double"
+  ]
+}

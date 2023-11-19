@@ -1,0 +1,18 @@
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+  <div class="text-text bg-white shadow-sp rounded-cl mb-10 py-6 px-5 ds:py-10 ds:px-10">
+    {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Product Reviews",
+    "settings": [
+    ],
+    "presets": [
+        {
+        "name": "Product Reviews"
+        }
+    ]
+}
+{% endschema %}

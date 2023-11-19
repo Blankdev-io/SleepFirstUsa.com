@@ -1,0 +1,25 @@
+{% liquid
+    assign logo = section.settings.logo
+    assign url = section.settings.url
+%}
+
+<a href="{{ url }}" title="{{ url.title }}"><img class="fixed z-40 bottom-3 left-3 h-[100px] mm:bottom-4 mm:left-4 mm:h-[120px] ts:bottom-5 ts:left-5 ts:h-[150px] ds:bottom-6 ds:left-6 ds:h-[180px]" src="{{ logo | image_url }}" title="{{ logo.title }}" alt="{{ logo.alt }}"></a>
+
+
+{% schema %}
+{   
+    "name": "Homepage Fixed Logo",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Homepage Fixed Logo"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Logo URL"
+        }
+    ]
+}
+{% endschema %}

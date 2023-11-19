@@ -1,0 +1,249 @@
+<div id="blog-page" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <h1 class="text-title text-center text-text mb-6">{{ blog.title }}</h1>
+
+    <template v-if="selectedTags.length != 0">
+        <div class="mb-4 ds:mb-5">
+            <span class="font-bold">Selected Filters: </span>
+            <span @click="clearAllFilters" class="text-primary cursor-pointer">Clear All</span>
+            <div class="flex flex-wrap gap-4 mt-4" >
+                <div v-if="selectedTags.length > 0" v-for="(tag, index) in selectedTags" class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl px-6 py-4">
+                    ${ tag }
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div class="grid gap-y-6 gap-x-5 text-text mm:grid-cols-2 ds:grid-cols-4 ds:gap-7">
+      <div id="extDiv" class="grid grid-cols-2 gap-3 sticky top-28 z-30 bg-white shadow-lp rounded-cl w-full px-4 py-3 mm:col-span-2 mm:gap-12 ts:gap-28 ds:col-span-1 ds:flex ds:flex-col ds:gap-0 ds:top-36 ds:shadow-sp ds:divide-y ds:divide-secondary ds:h-min ds:px-6 ds:py-7">
+        {% comment %} desktop {% endcomment %}
+        <div v-if="tags.length != 0" class="hidden relative ds:block">
+            <div onclick="myFunctionFlex('tags')" class="flex items-center gap-3 cursor-pointer">
+                <span id="tagsicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                <span class="font-bold">Tags</span>
+            </div>
+            <form id="tags" class="hidden static flex-col gap-2 mt-5">
+                <input v-if="selectedTags.length != 0" @click="clearFilter($event)" type="reset" name="tags" value="Clear"  class="absolute right-0 top-4 text-primary cursor-pointer"/>
+                <div v-for="(tag, index) in tags" class="flex items-center gap-2">
+                    <input @input="addToFilter($event, tag)" type="checkbox" name="tag" :id="tag" :value="tag" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                    <label :for="tag" class="align-middle capitalize">${ tag }</label><br>
+                </div>
+            </form>
+        </div>
+        {% comment %} mobile / tablet {% endcomment %}
+        <div class="flex invisible justify-between items-center ts:justify-around ds:hidden">
+            <span class="font-bold">Featured</span>
+            <span class="animate-bounce">{% render 'icons', icon: 'blue-down' %}</span>
+        </div>
+        <div onclick="myFunctionFilters('filters')" class="flex justify-between items-center ts:justify-around ds:hidden">
+            <span class="font-bold">Seach Filter</span>
+            {% render 'icons', icon: 'filter' %}
+        </div>
+        {% comment %} Mobile filters {% endcomment %}
+        <div id="ext_filters" onclick="myFunctionFilters('filters')" class="fixed z-40 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 backdrop-blur-[2px] bg-gray-600/50 w-screen h-screen"></div>
+        <div id="filters" class="flex justify-center fixed z-50 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 w-screen h-max">
+            <div class="flex gap-1 relative top-6 w-full max-w-[715px] mx-5 dm:mx-auto ds:mx-9">
+            <div onclick="myFunctionFilters('filters')" title="Close" class="cursor-pointer bg-primary shadow-sp rounded-full h-min p-2">{% render 'icons', icon: 'white-delete' %}</div>
+            <div class="flex-col gap-0 text-text bg-white shadow-sp rounded-cl h-min w-full px-6 py-7">
+                <div v-if="tags.length != 0" class="relative">
+                    <div onclick="myFunctionFlex('mob_tags')" class="flex items-center gap-4">
+                        <span id="mob_tagsicon" class="inline transition-all duration-300 ease-in-out rotate-0">{% render 'icons', icon: 'blue-down' %}</span>
+                        <span class="font-bold">Filters</span>
+                    </div>
+                    <form id="mob_tags" class="hidden flex-col gap-2 mt-5">
+                        <input v-if="selectedTags.length != 0" @click="clearFilter($event)" type="reset" name="tags" value="Clear"  class="absolute right-0 top-0 text-primary cursor-pointer"/>
+                        <div v-for="(tag, index) in tags" class="flex items-center gap-2">
+                            <input @input="addToFilter($event, tag)" type="checkbox" name="tag" :id="'mob-' + tag" :value="tag" class="border-secondary rounded focus:ring-0 w-5 h-5">
+                            <label :for="'mob-' + tag" class="align-middle capitalize">${ tag }</label><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="grid gap-5 mm:col-span-2 mm:grid-cols-2 ts:gap-x-20 ts:gap-y-10 ds:col-span-3 ds:grid-cols-3 ds:gap-7">
+        <template v-if="selectedTags.length != 0" v-for="(article, index) in articles">
+            <div v-if="includeBlogTags(article)" class="grid grid-rows-2 rounded-cl shadow-sp h-[340px] tl:w-auto">
+                <a :href="article.url">
+                    <img v-if="index < 6" class="object-cover rounded-t-cl w-full h-full" :src="article.image + '&width=450'" :title="article.title" :alt="article.title">
+                    <img v-else class="object-cover rounded-t-cl w-full h-full" :src="article.image + '&width=450'" :title="article.title" :alt="article.title" loading="lazy">
+                </a>
+                <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-4 mm:p-3">
+                    <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a :href="article.url" :title="article.title">${ article.title }</a></h3>
+                    <div class="grid grid-cols-2 items-center">
+                        <p class="text-xs text-text">by ${ article.author }</p>
+                        <p class="text-xs text-right">{{ totalReadTime | ceil }} min read</p>
+                    </div>
+                    <a class="font-bold text-base text-primary self-center" :href="article.url" :title="article.title">Read More</a>
+                </div>
+            </div>
+        </template>
+        <template v-else v-for="(article, index) in articles">        
+            <div class="grid grid-rows-2 rounded-cl shadow-sp h-[340px] tl:w-auto">
+                <a :href="article.url">
+                    <img v-if="index < 6" class="object-cover rounded-t-cl w-full h-full" :src="article.image + '&width=450'" :title="article.title" :alt="article.title">
+                    <img v-else class="object-cover rounded-t-cl w-full h-full" :src="article.image + '&width=450'" :title="article.title" :alt="article.title" loading="lazy">
+                </a>
+                <div class="grid grid-rows-5 text-text bg-white rounded-b-cl p-4 mm:p-3">
+                    <h3 class="row-span-3 line-clamp-3 font-bold text-xl ts:self-center dm:text-2xl"><a :href="article.url" :title="article.title">${ article.title }</a></h3>
+                    <div class="grid grid-cols-2 items-center">
+                        <p class="text-xs text-text">by ${ article.author }</p>
+                        <p class="text-xs text-right">${ article.totalReadTime } min read</p>
+                    </div>
+                    <a class="font-bold text-base text-primary self-center" :href="article.url" :title="article.title">Read More</a>
+                </div>
+            </div>
+        </template>
+      </div>
+    </div>
+</div>
+
+{% paginate blog.articles by 250 %}
+  {%- capture allArticles -%}
+  [
+    {%- for article in blog.articles -%}
+      {
+        "author": {{ article.author | json }},
+        "title": {{ article.title | json }},
+        "tags": {{ article.tags | json }},
+        "image": {{ article.image | json }},
+        "url": {{ article.url | json }},
+        "content": {{ article.content | json }},
+      },
+    {%- endfor -%}
+  ]
+  {%- endcapture -%}
+{% endpaginate %}
+
+
+<script>
+var { createApp } = Vue;
+
+const appBlog = createApp({
+    delimiters: ['${', '}'],
+    data() {
+      const articles = {{ allArticles }},
+            tags = {{ blog.all_tags | json }},
+            selectedTags = [];
+      return {
+        articles,
+        tags,
+        selectedTags
+      }
+    },
+
+    created() {
+        const articleArray = this.articles;
+        articleArray.forEach((item, index) => {
+            item.totalWords = (item.content).split(' ');
+            item.totalReadTime = (item.totalWords.length/270).toFixed(0);
+        });
+    },
+
+    methods: {
+        addToFilter(e, filter) {
+            if (e.target.name == "tag") {
+                if (e.target.checked) {
+                    this.selectedTags.push(filter);
+                } else {
+                    const tagIndex = this.selectedTags.indexOf(filter);
+                    this.selectedTags.splice(tagIndex, 1);
+                }
+            }
+        },
+
+        includeBlogTags(article) {
+            const tags = this.selectedTags;
+            let ret;
+
+            if (tags.length > 0) {
+                tags.forEach(tag => {
+                    if (article.tags.includes(`${tag}`)) {
+                        console.log(tag);
+                        ret = true; 
+                    }
+                });
+                return ret
+            } else {
+                return true
+            }
+        },
+
+        clearFilter(e) {
+            if (e.target.name == 'tags') {
+                this.selectedTags = [];
+                document.getElementById(e.target.name).reset();
+                document.getElementById('mob_' + e.target.name).reset();
+            }
+        },
+
+        clearAllFilters() {
+            this.selectedTags = [];
+            document.getElementById('tags').reset();
+            document.getElementById('mob_tags').reset();
+      }
+    }
+});
+appBlog.mount('#blog-page')
+</script>
+
+<script>
+  function myFunctionFlex(id) {
+        var x = document.getElementById(id);
+        var y = document.getElementById(id + 'icon');
+        if (x.classList.contains('hidden')) {
+            x.classList.remove('hidden');
+            x.classList.add('flex');
+        } else {
+            x.classList.remove('flex');
+            x.classList.add('hidden');
+        }
+        if (y.classList.contains('rotate-0')) {
+            y.classList.remove('rotate-0');
+            y.classList.add('rotate-180');
+        } else {
+            y.classList.remove('rotate-180');
+            y.classList.add('rotate-0');
+        }
+  }
+  function myFunctionFilters(id) {
+      var x = document.getElementById(id);
+      const y = document.getElementById('extDiv');
+      const z = document.getElementById('ext_filters');
+      if (x.classList.contains('invisible')) {
+          x.classList.remove('invisible');
+          x.classList.add('visible');
+          x.classList.remove('opacity-0');
+          x.classList.add('opacity-100');
+          z.classList.remove('invisible');
+          z.classList.add('visible');
+          z.classList.remove('opacity-0');
+          z.classList.add('opacity-100');
+      } else {
+          x.classList.remove('visible');
+          x.classList.add('invisible');
+          x.classList.remove('opacity-100');
+          x.classList.add('opacity-0');
+          z.classList.remove('visible');
+          z.classList.add('invisible');
+          z.classList.remove('opacity-100');
+          z.classList.add('opacity-0');
+      }
+      if (y.classList.contains('z-30')) {
+          y.classList.remove('z-30');
+          y.classList.add('z-50');
+      } else {
+          y.classList.remove('z-50');
+          y.classList.add('z-30');
+      }
+  } 
+</script>
+
+{% schema %}
+    {
+        "name": "Blog",
+        "settings": []
+    }
+{% endschema %}
