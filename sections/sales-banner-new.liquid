@@ -53,6 +53,7 @@
     {% endif %}
 </div>
 
+    {% if showStoreLocator == true %}
 <div id="store-locator-background" onclick="showLocatorPopup('store-locator-popup')" class="fixed z-50 top-0 right-0 transition-all duration-300 ease-in-out invisible opacity-0 backdrop-blur-[2px] bg-gray-600/50 w-screen h-screen"></div>
 <div id="store-locator-popup" class="flex justify-center fixed z-[60] top-12 right-0 transition-all duration-300 ease-in-out invisible opacity-0 w-screen h-max">
   <div class="w-full mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
@@ -96,6 +97,8 @@
         }
     }
 </script>
+
+        {% endif %}
 
 
 {% schema %}
