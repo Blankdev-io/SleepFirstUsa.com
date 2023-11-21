@@ -121,7 +121,6 @@ const appRecomendations = createApp({
         let variantId;
         const productVariants = this.recomendations[index].variants;
         for (var variant in productVariants) {
-            console.log(variant);
             if (productVariants[variant].available) {
                 variantId = productVariants[variant].id;
                 break;

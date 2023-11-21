@@ -488,7 +488,7 @@ const appProduct = createApp({
         const price = product.price.replace('$', '');
         const comparePrice = product.compare_at_price.replace('$', '');
         const save = parseFloat(comparePrice.replace(/,/g, '')) - parseFloat(price.replace(/,/g, ''));
-        console.log(formatter.format(parseFloat(save)));
+        
         product.price_min = formatter.format(parseFloat(save));
       } else {
         product.price_min = '$0.00';
@@ -614,9 +614,7 @@ const appProduct = createApp({
       for (const [index, product] of this.upsellProducts.entries()) { 
 
         for (const variant of product.variants) {
-          console.log(variant.title)
           if (variant.option1 == this.selected[0]) {
-            console.log(variant.option1)
             product.id = variant.id;
             product.price = variant.price;
             product.compare_at_price = variant.compare_at_price;
@@ -626,7 +624,7 @@ const appProduct = createApp({
               const price = product.price.replace('$', '');
               const comparePrice = product.compare_at_price.replace('$', '');
               const save = parseFloat(comparePrice.replace(/,/g, '')) - parseFloat(price.replace(/,/g, ''));
-              console.log(formatter.format(parseFloat(save)));
+              
               product.price_min = formatter.format(parseFloat(save));
             break;
             } else {
@@ -638,7 +636,6 @@ const appProduct = createApp({
     },
     upsellAdd(e, id) {
       e.preventDefault();
-      console.log(id)
 
       var data = {
         'items': [
