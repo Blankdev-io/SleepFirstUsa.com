@@ -12,9 +12,53 @@
   assign description_order = section.settings.description_order
   assign details_order = section.settings.details_order
 %}
+<style>
+  .font-size-14 {
+    font-size: 13px;
+  }
+  .link-iframe {
+    color: #384FAE;
+    text-decoration: underline;
+    font-family: 'times news roman';
+  }
+  .pay-button{
+    gap: 0.5rem;
+    padding: 16px;
+    height: fit-content;
+  }
+  .logo-button > svg{
+    height: 1.1rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pay-button{
+      font-size: 12px;
+    }
+    
+  }
+</style>
+{%  assign promo_tag = '' %}
+{% for tag in product.tags %}
+  {% if tag contains 'promo_' %}
+    {%  assign promo_tag = tag |  split: 'promo_' %}
+    {%  assign promo_tag = promo_tag[1] %}
+    
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+
 
 <div id="product" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
-
+  {% if shop.metaobjects['promotion'][promo_tag] %}
+    <div class="mb-6">
+      <picture>
+        <source media="(min-width: 568px)" srcset="{{shop.metaobjects['promotion'][promo_tag].promotion_page_banner_desktop |  image_url: width: '1200x', height: '150x' }}">
+        <img class="rounded-cl w-full h-full" src="{{shop.metaobjects['promotion'][promo_tag].promotion_page_banner_mobile |  image_url: width: '1009x', height: '126x' }}" alt="" title="" loading="lazy">
+      </picture>
+    </div>
+    
+  {% endif %}
   {% if product.metafields.banner.images != blank %}    
   <div class="mb-6">
     <picture>
@@ -107,7 +151,41 @@
             </div>
             <span v-if="variantComparePrice != '$0.00'" class="self-center bg-accent-4 text-white rounded-full px-4">-${ savePercent }%</span> 
           </div>
+
+        <div id="priceData"  class="month-amount total-amount" :data-unformated-price="unformatedVariantPrice" :data-month-price="montPrice" :data-variant-price="variantPrice"></div>
+
+          <!-- <div class="flex font-size-14 gap-1" v-if="montPrice">
+            <div>
+              <span>
+                <span>Suggested monthly payment</span>
+                <span class="font-bold" id="month-amount"> $${montPrice}</span>
+                <span> per month</span>
+              </span>
+              <span class="font-bold"> for 24 months.</span>
+            </div>            
+          </div> -->
+          <div class="flex flex-row items-center" id="tagline-item">
+            <!-- <div class="flex font-size-14">
+              <span>(Total Payment</span>
+              <span class="font-bold" id="total-amount" style="margin-left: 4px;"> $${ Math.round(unformatedVariantPrice).toFixed(2)}</span>
+              <span>)</span>
+            </div>
+            <a class="link-iframe ml-2" href="javascript:void(0);" onclick="openIframePopup()">Learn More</a> -->
+          </div>
+          <div class="">
+            <a class="pay-button button w-full" target="_blank" @click="sendCustomCheckout">
+              <span>Pay by</span>
+              <span class="logo-button">
+                <img style="height: 21px;" src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/1698169145-trimmy-Sleep_First_Logo_Primary_White_Outline.png?v=1698169163" alt="">
+              </span>
+              <span>Financing Card</span>
+            </a>
+          </div>
         </div>
+
+
+
+        
         {% if product.metafields.custom.mattress_height != blank or product.metafields.custom.mattress_comfort != blank or product.metafields.custom.mattress_type != blank or current_variant.metafields.custom.mattress_height != blank or current_variant.metafields.custom.mattress_comfort != blank or current_variant.metafields.custom.mattress_type != blank %}
           <div class="flex flex-wrap gap-3 pt-3 ds:pt-8">
             {% if current_variant.metafields.custom.mattress_height != blank %}
@@ -137,9 +215,9 @@
           <div v-if="variantAvailable == true" class="pt-3 ds:pt-8">
             <p class="pb-2 font-bold">Availability: <span class="bg-accent rounded-full text-accent-5 px-4 py-1">In Stock</span></p>
             <div class="ds:flex ds:gap-10 dl:gap-14">
-              <!-- <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2">
                 {% render 'icons', icon: 'check' %}<a href="https://goo.gl/maps/Z6jLV8i6phbgbrXt9" title="California Store">California</a>
-              </div> -->
+              </div>
               <div class="flex items-center gap-2">
                 {% if product.tags contains 'closeout' %}{% render 'icons', icon: 'red-delete' %}{% else %}{% render 'icons', icon: 'check' %}{% endif %}<a href="https://goo.gl/maps/tnx4MSrMmrDPmEqu5" title="Texas Store">Texas</a>
               </div>
@@ -421,7 +499,9 @@ const appProduct = createApp({
   data() {
       const qty = 1,
       id = "",
+      unformatedVariantPrice = "",
       variantPrice = "",
+      montPrice = "",
       variantComparePrice = "",
       variantID = "",
       saveAmmount = "",
@@ -438,6 +518,8 @@ const appProduct = createApp({
     return {
       qty,
       variantPrice,
+      unformatedVariantPrice,
+      montPrice,
       variantComparePrice,
       variantID,
       variantAvailable,
@@ -468,7 +550,10 @@ const appProduct = createApp({
       this.id = productData.id;
       this.form.options = productData.options.map(item => ({...item, visible: false}));
       this.variants = productData.variants;
-      this.variantPrice = formatter.format((productData.variants[this.initialPosition].price/100).toFixed(2));
+      this.unformatedVariantPrice = (productData.variants[this.initialPosition].price/100).toFixed(2)
+      this.variantPrice = formatter.format(this.unformatedVariantPrice);
+      const price = (productData.variants[this.initialPosition].price/100).toFixed(2);
+      this.montPrice = Math.round(price / 24);
       this.variantComparePrice = formatter.format((productData.variants[this.initialPosition].compare_at_price/100).toFixed(2));
       this.variantID = productData.variants[this.initialPosition].id;
       this.variantAvailable = productData.variants[this.initialPosition].available;
@@ -525,6 +610,14 @@ const appProduct = createApp({
     }); {% endcomment %}
   },
   methods: {
+    sendCustomCheckout(e) {
+        const productsIdsArray = [{ product_id: this.id, variant_id: this.variantID, quantity: this.qty}]
+        const encodedArray = encodeURIComponent(JSON.stringify(productsIdsArray));
+        const finalTotalPrice = Math.ceil(this.totalPriceUnformated/100)
+        const finalTotalPriceUnformated = (this.totalPriceUnformated/100).toFixed(2)
+
+        window.open('https://sleepfirstfinancing.com/products?' + 'data=' + encodedArray, "_blank") ;
+    },
     //Change Price
     changePrice(e) {
       const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
@@ -534,7 +627,12 @@ const appProduct = createApp({
           selectedVariant = variant;
         }
       });
-      this.variantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+      this.unformatedVariantPrice = (selectedVariant.price/100).toFixed(2);
+      const iframe = document.getElementById('taglinePopupIframe')
+      iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${Math.ceil(this.unformatedVariantPrice)}`);
+      this.variantPrice = formatter.format(this.unformatedVariantPrice);
+      const price = (selectedVariant.price/100).toFixed(2);
+      this.montPrice = Math.round(price / 24);
       this.variantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
       this.variantID = selectedVariant.id;
       this.variantAvailable = selectedVariant.available;
