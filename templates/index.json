@@ -19,19 +19,19 @@
             "url": "shopify:\/\/collections\/purple"
           }
         },
-        "8b831004-584a-4128-bc64-cf493d51ded4": {
+        "ea7baeea-26f7-4b8e-8f98-e2f007583a5e": {
           "type": "banner",
           "settings": {
-            "banner_img": "shopify:\/\/shop_images\/1.03-376x700-IRG-JVD-200286.jpg",
-            "banner_img_mob": "shopify:\/\/shop_images\/1.03-727x350-IRG-JVD-200286.jpg",
-            "url": "shopify:\/\/collections\/nectar-mattress"
+            "banner_img": "shopify:\/\/shop_images\/1.01-376x700-IRG-RR-202089.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.01-727x350-IRG-RR-202089.jpg",
+            "url": "shopify:\/\/pages\/store-locator"
           }
         }
       },
       "block_order": [
         "9d5bc0ae-87f9-497a-89a2-b974217b559c",
         "2d1f52b5-5efe-4bb6-8088-c816a1c71936",
-        "8b831004-584a-4128-bc64-cf493d51ded4"
+        "ea7baeea-26f7-4b8e-8f98-e2f007583a5e"
       ],
       "settings": {
         "showStoreLocator": true
@@ -289,19 +289,19 @@
             "url": "shopify:\/\/collections\/tempurpedic"
           }
         },
-        "3ecf528b-a0cd-46d7-917d-a424d220f14b": {
+        "ace71ff4-fc03-4193-9064-d1e3c68b5121": {
           "type": "banner",
           "settings": {
-            "banner_img": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Desktop.png",
-            "banner_img_mob": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Mobile.png",
-            "url": "shopify:\/\/collections\/king-for-queen-free-adjustable-base"
+            "banner_img": "shopify:\/\/shop_images\/1.02-376x700-IRG-JVD-200286.jpg",
+            "banner_img_mob": "shopify:\/\/shop_images\/1.03-727x350-IRG-JVD-200286.jpg",
+            "url": "shopify:\/\/collections\/nectar-mattress"
           }
         }
       },
       "block_order": [
         "86ca0dfb-9e27-4f5b-9019-1ff801f1e7c4",
         "6e001c51-7c5e-4d5c-9b50-e89358cc01a5",
-        "3ecf528b-a0cd-46d7-917d-a424d220f14b"
+        "ace71ff4-fc03-4193-9064-d1e3c68b5121"
       ],
       "settings": {
         "showStoreLocator": false
