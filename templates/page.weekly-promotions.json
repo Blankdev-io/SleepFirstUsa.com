@@ -56,7 +56,7 @@
             "url": "shopify:\/\/pages\/store-locator",
             "select": "url",
             "button": false,
-            "description": "<p>Save up to $500 on select smart base sets<\/p>",
+            "description": "<p><strong>Unbeatable Deals - In-Store Only!<\/strong><\/p><p>This Black Friday, dive into the comfort of your dreams with SleepFirst! Our exclusive in-store sale is here to ensure you get the perfect sleep you deserve.<\/p>",
             "btn_label": "SHOP NOW",
             "label_color": "#ffffff",
             "btn_color": "#231f20"
