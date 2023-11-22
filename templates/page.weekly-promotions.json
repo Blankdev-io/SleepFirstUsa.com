@@ -49,6 +49,22 @@
         "8a0ba324-55ec-44af-88c0-fa9fc4bfbe6f": {
           "type": "banners",
           "settings": {
+            "desk_banner": "shopify:\/\/shop_images\/1.01-1200x150-IRG-RR-202089.jpg",
+            "mob_banner": "shopify:\/\/shop_images\/1.01-528x182-IRG-RR-202089.jpg",
+            "collection": "",
+            "product": "",
+            "url": "shopify:\/\/pages\/store-locator",
+            "select": "url",
+            "button": false,
+            "description": "<p>Save up to $500 on select smart base sets<\/p>",
+            "btn_label": "SHOP NOW",
+            "label_color": "#ffffff",
+            "btn_color": "#2864a4"
+          }
+        },
+        "e9a029b5-6e69-4204-9c32-a2dd957ccbfa": {
+          "type": "banners",
+          "settings": {
             "desk_banner": "shopify:\/\/shop_images\/1.02-1200x150-IRG-JVD-198525.jpg",
             "mob_banner": "shopify:\/\/shop_images\/1.02-528x182-IRG-JVD-198525.jpg",
             "collection": "tempurpedic",
@@ -275,6 +291,7 @@
       },
       "block_order": [
         "8a0ba324-55ec-44af-88c0-fa9fc4bfbe6f",
+        "e9a029b5-6e69-4204-9c32-a2dd957ccbfa",
         "05fb6ff9-4141-4d16-bb21-e5b962d6aeab",
         "28b8e743-83bb-441e-b968-1d84b91760d8",
         "fdbf827b-35e2-429b-9b7b-018c43ffd987",
