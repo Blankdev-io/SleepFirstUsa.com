@@ -570,24 +570,6 @@ const appProduct = createApp({
       body: JSON.stringify(reqBody),
       redirect: 'follow'
     };
-
-    fetch("http://stamped.io/api/widget/badges?isIncludeBreakdown=true&isincludehtml=true", requestOptions)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(response.status);
-      }
-    })
-    .then(data => {
-      const reviewContainer = document.getElementById("product-reviews");
-      if(reviewContainer) {
-        reviewContainer.innerHTML = data[0].badge;
-      }
-    })
-    .catch(error => { 
-      console.log('error', error)
-    });
   },
   methods: {
     sendCustomCheckout(e) {
