@@ -441,9 +441,9 @@
                             <textarea v-model="orderNote" name="notes" id="notes" cols="30" rows="4" class="border-primary rounded-cl">${ orderNote }</textarea>
                             <button @click="updateNote" name="update-note" class="button-white w-full">SUBMIT</button>
                         </div>
-                        {% if settings.financing_checkbox %}
-                            <div class="flex flex-col items-end gap-3 pt-3 ts:pt-8">
-                                <button @click="clearCart" name="clear" class="button-white w-full" data-id="add-btn">CLEAR CART</button>
+                        <div class="flex flex-col items-end gap-3 pt-3 ts:pt-8">
+                            <button @click="clearCart" name="clear" class="button-white w-full" data-id="add-btn">CLEAR CART</button>
+                                {% if settings.financing_checkbox %}
                                     <button type="button" @click="sendCustomCheckout" class="pay-button button w-full" target="_blank">
                                             <span>Pay by</span>
                                                 <span class="logo-button">
@@ -451,9 +451,9 @@
                                                 </span>
                                             <span>Financing Card</span>
                                     </button>
-                                <button type="submit" name="checkout" class="button w-full">CHECKOUT</button>
-                            </div>
-                        {% endif %}
+                                {% endif %}
+                            <button type="submit" name="checkout" class="button w-full">CHECKOUT</button>
+                        </div>
                     </div>
                 </form>
             </template>
