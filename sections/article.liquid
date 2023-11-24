@@ -17,15 +17,18 @@
 %}
 
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
-    <div class="relative h-[500px] mb-4 mm:h-[600px] ds:mb-5">
-        <h1 class="absolute inset-x-4 inset-y-44 font-extrabold text-3xl text-center text-white text-shadow mm:inset-x-5 mm:inset-y-60 mm:text-title">{{ title }}</h1>
-        <picture class="row-span-3 mm:row-span-1">
-            <source media="(min-width: 1024px)" srcset="{{ image | image_url: width: 1120 }}">
-            <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 990 }}">
-            <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
-            <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
-        </picture>
-    </div>
+    {% if article.tags contains "with_header" %}
+    {% else %}
+        <div class="relative h-[500px] mb-4 mm:h-[600px] ds:mb-5">
+            <h1 class="absolute inset-x-4 inset-y-44 font-extrabold text-3xl text-center text-white text-shadow mm:inset-x-5 mm:inset-y-60 mm:text-title">{{ title }}</h1>
+            <picture class="row-span-3 mm:row-span-1">
+                <source media="(min-width: 1024px)" srcset="{{ image | image_url: width: 1120 }}">
+                <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 990 }}">
+                <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
+                <img class="object-cover rounded-cl w-full h-full" src="{{ image | image_url: width: 440 }}" title="{{ title }}" alt="{{ image.alt }}" loading="lazy">
+            </picture>
+        </div>
+    {% endif %}
     <div class="flex justify-center">
         <p class="text-center text-text whitespace-pre-wrap bg-white shadow-sp rounded-cl divide-x divide-primary mx-auto mb-4 px-6 py-4 ds:mb-5">{% if checkAuthor %}<span> by {{ author }}  </span>{% endif %}{% if checkDate %}<span>  {{ published_at | date: '%B %d, %Y' }}  </span>{% endif %}{% if checkReadTime %}<span>  {{ totalReadTime | ceil }} min read{% endif %}</span></p>
     </div>

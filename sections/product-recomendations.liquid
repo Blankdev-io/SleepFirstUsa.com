@@ -66,6 +66,43 @@
     </div>
 </div>
 
+{%  assign render_articles = false %}
+{% for tag in product.tags %}
+  {% if tag contains 'render_articles' %}
+    {%  assign render_articles = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if render_articles %}
+  {%  assign article1_name =  %}
+  <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+    <h2 class="text-title text-center text-text mb-6">See This Articles</h2>
+    <div class="grid grid-cols-1 gap-4 ts:grid-cols-2 ts:gap-4 ds:gap-6">
+        <div class="flex flex-col gap-1 bg-white rounded-cl shadow-mp ts:flex-row ts:h-[325px] ds:gap-2">
+            <a href="{{shop.metaobjects['articles']['articles-1'].article_url_1}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_1}}" class="ts:w-2/5">
+              <img class="object-cover rounded-t-cl w-full h-full ts:rounded-r-none ts:rounded-l-cl" src="{{shop.metaobjects['articles']['articles-1'].article_image_1 | image_url }}" title="{{shop.metaobjects['articles']['articles-1'].article_name_1}}" alt="{{shop.metaobjects['articles']['articles-1'].article_name_1}}" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-4 p-4 ts:w-3/5">
+                <a href="{{shop.metaobjects['articles']['articles-1'].article_url_1}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_1}}" class="font-bold text-lg line-clamp-3 ds:text-xl"><h3>{{shop.metaobjects['articles']['articles-1'].article_name_1}}</h3></a>
+                <p class="text-sm ds:text-base">{{shop.metaobjects['articles']['articles-1'].article_description_1}}</p>
+                <a href="{{shop.metaobjects['articles']['articles-1'].article_url_1}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_1}}" class="button ds:w-max">READ MORE</a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-1 bg-white rounded-cl shadow-mp ts:flex-row ts:h-[325px] ds:gap-2">
+            <a href="{{shop.metaobjects['articles']['articles-1'].article_url_2}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_2}}" class="ts:w-2/5">
+              <img class="object-cover rounded-t-cl w-full h-full ts:rounded-r-none ts:rounded-l-cl" src="{{shop.metaobjects['articles']['articles-1'].article_image_2 | image_url}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_2}}" alt="{{shop.metaobjects['articles']['articles-1'].article_name_2}}" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-4 p-4 ts:w-3/5">
+                <a href="{{shop.metaobjects['articles']['articles-1'].article_url_2}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_2}}" class="font-bold text-lg line-clamp-3 ds:text-xl"><h3>{{shop.metaobjects['articles']['articles-1'].article_name_2}}</h3></a>
+                <p class="text-sm ds:text-base">{{shop.metaobjects['articles']['articles-1'].article_description_2}}</p>
+                <a href="{{shop.metaobjects['articles']['articles-1'].article_url_2}}" title="{{shop.metaobjects['articles']['articles-1'].article_name_2}}" class="button ds:w-max">READ MORE</a>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endif %}
+
 <script>
 var { createApp} = Vue;
 

@@ -7,6 +7,33 @@
     assign sug_she = section.settings.sug_she
 %}
 
+<style>
+  .font-size-14 {
+    font-size: 13px;
+  }
+  .link-iframe {
+    color: #384FAE;
+    text-decoration: underline;
+    font-style: italic;
+  }
+  .pay-button{
+    gap: 0.5rem;
+    padding: 16px;
+    height: fit-content;
+    text-transform: uppercase;
+  }
+  .logo-button > svg{
+    height: 1rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pay-button{
+      font-size: 12px;
+    }
+    
+  }
+</style>
+
 <div id="cart-items" class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     <div class="text-text bg-white shadow-sp rounded-cl py-6 px-3 ds:py-10 ds:px-7">
         <template v-if="loading == true">
@@ -403,6 +430,11 @@
                         <p class="font-extrabold text-3xl">Subtotal: <span>${ totalPrice }</span></p>
                         <p class="hidden font-bold text-2xl text-primary">Total Savings: {{ cart.total_discount | money }}</p>
                     </div>
+                    <div class="">
+                    
+                    
+                   
+                    </div>
                     <div class="flex flex-col justify-between gap-y-4 mt-4 ts:flex-row ts:px-8">
                         <div class="flex flex-col gap-2">
                             <label for="notes">Order Notes:</label>
@@ -411,6 +443,13 @@
                         </div>
                         <div class="flex flex-col items-end gap-3 pt-3 ts:pt-8">
                             <button @click="clearCart" name="clear" class="button-white w-full" data-id="add-btn">CLEAR CART</button>
+                            <button type="button" @click="sendCustomCheckout" class="pay-button button w-full" target="_blank">
+                                <span>Pay by</span>
+                                <span class="logo-button">
+                                    <img style="height: 19px;" src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/1698169145-trimmy-Sleep_First_Logo_Primary_White_Outline.png?v=1698169163" alt="">
+                                </span>
+                                <span>Financing Card</span>
+                            </button>
                             <button type="submit" name="checkout" class="button w-full">CHECKOUT</button>
                         </div>
                     </div>
@@ -456,6 +495,7 @@ const appCart = createApp({
       loading = true,
       addingToCart = false,
       totalPrice = "",
+      totalPriceUnformated = '',
       orderNote = "",
       itemsPrice = [],
       linesPrice = [],
@@ -539,6 +579,7 @@ const appCart = createApp({
         loading,
         addingToCart,
         totalPrice,
+        totalPriceUnformated,
         orderNote,
         itemsPrice,
         linesPrice,
@@ -592,7 +633,6 @@ const appCart = createApp({
         sheet2Form
       }
     },
-
     created() {
 
         const options = {
@@ -611,6 +651,7 @@ const appCart = createApp({
                 const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
                 this.products = cartData.items;
                 this.itemsCount = cartData.item_count;
+                this.totalPriceUnformated = cartData.total_price;
                 this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
                 this.orderNote = cartData.note;
 
@@ -623,6 +664,7 @@ const appCart = createApp({
                     item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
                     item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
                     item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                    item.final_line_price_outformated = (item.final_line_price/100).toFixed(2);
                     item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
                 });
                 this.loading = false;
@@ -873,6 +915,14 @@ const appCart = createApp({
 
     },
     methods: {
+        sendCustomCheckout(e) {
+            const productsIdsArray = this.products.map(item => {return { product_id: item.product_id, variant_id: item.variant_id, quantity: item.quantity}})
+            const encodedArray = encodeURIComponent(JSON.stringify(productsIdsArray));
+            const finalTotalPrice = Math.ceil(this.totalPriceUnformated/100)
+            const finalTotalPriceUnformated = (this.totalPriceUnformated/100).toFixed(2)
+
+            window.open('https://sleepfirstfinancing.com/products?' + 'data=' + encodedArray, "_blank") ;
+        },
         orderNoteText(e) {
             this.orderNote = e.target.value
         },
@@ -927,6 +977,7 @@ const appCart = createApp({
                     const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
                     this.products = cartData.items;
                     this.itemsCount = cartData.item_count;
+                    this.totalPriceUnformated = cartData.total_price;
                     this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
 
                     const productArray = this.products;
@@ -938,6 +989,7 @@ const appCart = createApp({
                         item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
                         item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
                         item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price_outformated = (item.final_line_price/100).toFixed(2);
                         item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
                     });
 
@@ -977,6 +1029,7 @@ const appCart = createApp({
                     const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
                     this.products = cartData.items;
                     this.itemsCount = cartData.item_count;
+                    this.totalPriceUnformated = cartData.total_price;
                     this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
 
                     const productArray = this.products;
@@ -988,6 +1041,7 @@ const appCart = createApp({
                         item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
                         item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
                         item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price_outformated = (item.final_line_price/100).toFixed(2);
                         item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
                     });
 
@@ -1025,6 +1079,7 @@ const appCart = createApp({
                     const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
                     this.products = cartData.items;
                     this.itemsCount = cartData.item_count;
+                    this.totalPriceUnformated = cartData.total_price;
                     this.totalPrice = formatter.format((cartData.total_price/100).toFixed(2));
 
                     const productArray = this.products;
@@ -1036,6 +1091,7 @@ const appCart = createApp({
                         item.original_line_price = formatter.format((item.original_line_price/100).toFixed(2));
                         item.total_discount = formatter.format((item.total_discount/100).toFixed(2));
                         item.final_price = formatter.format((item.final_price/100).toFixed(2));
+                        item.final_line_price_outformated = (item.final_line_price/100).toFixed(2);
                         item.final_line_price = formatter.format((item.final_line_price/100).toFixed(2));
                     });
                     

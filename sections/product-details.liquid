@@ -571,9 +571,7 @@ const appProduct = createApp({
     .catch(error => {
       console.log(error);
     });
-
-  {% comment %} /*Get product reviews*/
-  const reqBody = {
+    const reqBody = {
       "productIds": [
         {
           "productId": "{{ product.id }}"
@@ -581,33 +579,34 @@ const appProduct = createApp({
       ],
       "apiKey": "pubkey-rGbQ9ej2ru3wpvpU923eB8jXR3S436",
       "storeUrl": "sleepfirstusa.com"
-  };
+    };
 
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(reqBody),
-    redirect: 'follow'
-  };
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reqBody),
+      redirect: 'follow'
+    };
 
-  fetch("http://stamped.io/api/widget/badges?isIncludeBreakdown=true&isincludehtml=true", requestOptions)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(response.status);
-      }
-    })
-    .then(data => {
-      const reviewContainer = document.getElementById("product-reviews");
-      
-      reviewContainer.innerHTML = data[0].badge;
-    })
-    .catch(error => { 
-      console.log('error', error)
-    }); {% endcomment %}
+    fetch("http://stamped.io/api/widget/badges?isIncludeBreakdown=true&isincludehtml=true", requestOptions)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.status);
+        }
+      })
+      .then(data => {
+        const reviewContainer = document.getElementById("product-reviews");
+        if(reviewContainer) {
+          reviewContainer.innerHTML = data[0].badge;
+        }
+      })
+      .catch(error => { 
+        console.log('error', error)
+      });
   },
   methods: {
     sendCustomCheckout(e) {

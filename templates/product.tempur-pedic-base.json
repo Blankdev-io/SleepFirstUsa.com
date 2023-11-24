@@ -2,43 +2,6 @@
   "sections": {
     "main": {
       "type": "product-details-tempur-alternative",
-      "blocks": {
-        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0": {
-          "type": "model",
-          "settings": {
-            "model_name": "Ergo® Power",
-            "model_list": [
-              "tempur-ergo-adjustable-power_base"
-            ],
-            "model_url": "shopify:\/\/products\/tempur-ergo-adjustable-power_base"
-          }
-        },
-        "0c067a14-9f95-4045-8bfd-d921a8319ad4": {
-          "type": "model",
-          "settings": {
-            "model_name": "Ergo® Smart",
-            "model_list": [
-              "tempur-ergo-smartbase-adjustable-power-base"
-            ],
-            "model_url": "shopify:\/\/products\/tempur-ergo-smartbase-adjustable-power-base"
-          }
-        },
-        "26cb1ccc-f74d-4183-8f53-c660b581212b": {
-          "type": "model",
-          "settings": {
-            "model_name": "Ergo® ProSmart™",
-            "model_list": [
-
-            ],
-            "model_url": "shopify:\/\/products\/tempur-ergo-extend"
-          }
-        }
-      },
-      "block_order": [
-        "9df1e8f6-d5c9-4757-a80a-acf65b7710b0",
-        "0c067a14-9f95-4045-8bfd-d921a8319ad4",
-        "26cb1ccc-f74d-4183-8f53-c660b581212b"
-      ],
       "settings": {
         "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
         "stamp_message": "FAST FREE DELIVERY",
@@ -341,7 +304,7 @@
         "button": false
       }
     },
-    "67b553b2-a499-40e3-8011-f2596fbf915d": {
+    "87c2248e-3971-46ed-a510-4d7e43524014": {
       "type": "article-recomendations",
       "settings": {
         "title": "See This Articles",
@@ -361,6 +324,6 @@
     "0b42ea98-4400-4d15-a230-78b0739b2f1c",
     "7996d260-f64c-433a-a489-d1afc2d611ba",
     "3ec80e46-bc8a-4275-a13d-416ad2e2c9e5",
-    "67b553b2-a499-40e3-8011-f2596fbf915d"
+    "87c2248e-3971-46ed-a510-4d7e43524014"
   ]
 }

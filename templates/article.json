@@ -1,5 +1,16 @@
 {
   "sections": {
+    "153e4102-ab35-4be9-9192-d0c39ca0e350": {
+      "type": "article-header",
+      "settings": {
+        "pre-title": "CHOOSING THE BEST MATTRESS",
+        "checkAuthor": true,
+        "checkDate": true,
+        "checkReadTime": false,
+        "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/documents.svg?v=1682450635",
+        "frameText": "Take your time and do your research when shopping for a mattress, and don't be afraid to ask questions and seek advice from experts. "
+      }
+    },
     "main": {
       "type": "article",
       "settings": {
@@ -11,6 +22,7 @@
     }
   },
   "order": [
+    "153e4102-ab35-4be9-9192-d0c39ca0e350",
     "main"
   ]
 }

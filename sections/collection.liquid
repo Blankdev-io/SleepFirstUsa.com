@@ -78,10 +78,20 @@
     </div>
   </div>
   {% for product in collection.products %}
-    {% if product.metafields.custom.promotion != blank %}
+    {% for tag in product.tags %}
+      {% assign promo_tag = '' %}
+      {% if tag contains 'promo_' %}
+        {%  assign promo_tag = tag |  split: 'promo_' %}
+        {%  assign promo_tag = promo_tag[1] %}
+        
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if shop.metaobjects['promotion'][promo_tag] %}
+      {% assign promotion = shop.metaobjects['promotion'][promo_tag] %}
       <div v-if="product.id == '{{ product.id }}'" class="flex justify-center px-5">
-        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ product.metafields.custom.promotion_tag_color }};">
-          <span class="self-center">{{ product.metafields.custom.promotion }}</span>
+        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ promotion.show_more_tab_color }};">
+          <span class="self-center">{{ promotion.tab_text }}</span>
         </div>
       </div>
     {% endif %}
@@ -114,16 +124,14 @@
 
 <div id="collection-page" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
 
-  {% if collection.metafields.banner.images != blank %}    
+  {% if collection.metafields.custom.promotion_banner != blank %}    
   <div class="mb-6">
     <picture>
-      {% for elem in collection.metafields.banner.images.value %}
-        {% if forloop.index == 1 %}
-            <source media="(min-width: 568px)" srcset="{{ elem | image_url }}">
-        {% else %}
-            <img class="rounded-cl w-full h-full" src="{{ elem | image_url }}" alt="{{ elem.alt }}" title="{{ title }}" loading="lazy">
-        {% endif %}
-      {% endfor %}
+      {% assign promotion = collection.metafields.custom.promotion_banner.value %}
+      {%  assign mobile_banner = promotion.promotion_page_banner_mobile %}
+      {%  assign desktop_banner = promotion.promotion_page_banner_desktop %}
+      <source media="(min-width: 568px)" srcset="{{ desktop_banner | image_url }}">
+      <img class="rounded-cl w-full h-full" src="{{ mobile_banner | image_url }}" alt="{{ promotion.title }}" title="{{ promotion.title }}" loading="lazy">
     </picture>
   </div>
   {% endif %}

@@ -1,4 +1,119 @@
-<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
+
+<div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0 flex flex-col">
+
+  {% for promotion in shop.metaobjects.promotion.values %}
+      {% liquid
+          assign desk_banner = promotion.promotion_page_banner_desktop
+          assign mob_banner = promotion.promotion_page_banner_desktop
+          assign title = promotion.title
+          assign collection = promotion.collection.value
+          assign url = promotion.url
+          assign select = block.settings.select
+          assign button = block.settings.button
+          assign description = promotion.promotion_description
+          assign label_text = promotion.tab_text
+          assign label_color = promotion.tab_color
+          assign btn_color = promotion.show_more_tab_color
+          assign order = promotion.order
+      %}
+      <div style="order: {{ order }}" >
+        <div class="bg-white shadow-sp rounded-cl">
+            <a href="{{ url }}" title="title">
+            <picture>
+                <source media="(min-width: 568px)" srcset="{{ desk_banner | image_url }}">
+                <img class="rounded-cl w-full h-full" src="{{ mob_banner | image_url }}" alt="{{ title | escape }}" title="{{ title | escape }}" loading="lazy">
+            </picture>
+            </a>
+            <div id="{{ forloop.index }}" class="hidden py-6 px-8">
+            <div class="text-center text-text mb-6">
+                {{ description }}
+            </div>
+            <div class="flex justify-center relative mb-10">
+                <hr class="absolute top-[22.5px] w-4/5 h-0.5 mx-auto" style="background-color:{{ label_color }}; color:white;">
+                <a class="button-custom z-10" href="{{ url }}" style="background-color:{{ label_color }}; color:white;" title="{{ title }}">SHOP NOW</a>
+            </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper py-2 ds:px-0.5">
+                    {% for product in collection.products limit: 4 %}
+                        {% liquid
+                            assign backg = product.featured_image
+                            assign name = product.title
+                            assign price = product.price
+                            assign compare = product.compare_at_price
+                            assign url = product.url
+                            assign substract = compare | minus: price | divided_by: 100.0
+                            assign div = substract | divided_by: compare
+                            assign savePercent = div | times: 10000 | floor
+                        %}
+                        <div class="swiper-slide max-w-[268px] ds:w-auto">
+                            <div class="grid grid-rows-4 group rounded-cl shadow-mp {% if button %}h-[470px]{% else %}h-[400px]{% endif %} {% if button %}max-h-[470px]{% else %}max-h-[400px]{% endif %} ds:grid-rows-5 ds:h-[400px] ds:max-h-[400px]">
+                                <div class="row-span-2 relative ds:row-span-3">
+                                    {% if compare != blank %}
+                                        <div class="flex absolute left-4 top-4 bg-accent-4 rounded-full max-h-[25px] py-1 px-5 ds:left-2.5 ds:top-2.5">
+                                            <p class="self-center font-bold text-xs text-center text-white">{{ savePercent }}% OFF</p>
+                                        </div>
+                                    {% endif %}
+                                    {% for tag in product.tags %}
+                                        {% if tag == "sold out" %}
+                                            <div class="flex absolute right-4 top-4 bg-[#800007] rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                                <p class="self-center font-bold text-xs text-center text-white">SOLD OUT</p>
+                                            </div>
+                                        {% elsif tag == "new" %}
+                                            <div class="flex absolute right-4 top-4 bg-secondary rounded-full max-h-[25px] py-1 px-5 ds:right-2.5 ds:top-2.5">
+                                                <p class="self-center font-bold text-xs text-center text-white">NEW!</p>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if button %}
+                                        <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button-hidden absolute bottom-4 inset-x-6" data-id="add-btn">ADD TO CART</a>
+                                    {% endif %}
+                                    <a href="{{ url }}"><picture>
+                                        <source media="(min-width: 868px)" srcset="{{ backg | image_url: width: 260 }}">
+                                        <source media="(min-width: 768px)" srcset="{{ backg | image_url: width: 380 }}">
+                                        <source media="(min-width: 480px)" srcset="{{ backg | image_url: width: 360 }}">
+                                        <img class="object-cover rounded-t-cl w-full h-full" src="{{ backg | image_url: width: 450 }}" title="{{ name }}" alt="{{ backg.alt }}" loading="lazy">                         
+                                    </picture></a>
+                                </div>
+                                <div class="row-span-2 grid {% if button %}grid-rows-3{% else %}grid-rows-2{% endif %} text-text bg-white rounded-b-cl p-3 ds:grid-rows-2 ds:py-3">
+                                    <h3 class="self-center font-bold text-[22px] line-clamp-2 ds:text-2xl"><a href="{{ url }}" title="{{ name }}">{{ name }}</a></h3>
+                                    <div class="grid grid-cols-2 self-center">
+                                        <div class="ds:self-center">
+                                            <p class="text-[12px]">Starting at</p>
+                                            <p class="font-bold text-[14px] text-primary">{{ price | money }}</p>
+                                            {% if compare != blank %}
+                                                <p class="font-bold text-[14px] text-accent-2 line-through">{{ compare | money }}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="grid justify-items-end ds:justify-items-center ds:items-center">
+                                            {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+                                        </div>
+                                    </div>
+                                    {% if button %}
+                                        <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" title="ADD TO CART" class="button w-full ds:hidden" data-id="add-btn">ADD TO CART</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if product.metafields.custom.promotion != blank %}
+                                <div class="flex justify-center px-5">
+                                    <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ btn_color }};">
+                                    <span class="self-center">{{ label_text }}</span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mb-10">
+            <button onclick="showHide('{{ forloop.index }}')" class="flex justify-center items-center z-20 font-bold text-center rounded-b-cl h-[45px] px-6 mm:px-8" style="background-color:{{ btn_color }}; color:white;"><span id="{{ forloop.index }}more" class="inline">SHOW MORE</span><span id="{{ forloop.index }}less" class="hidden">SHOW LESS</span></button>
+        </div>
+      </div>
+  {% endfor %}
+</div>
+
+{% comment %} <div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     {% for block in section.blocks %}
         {% liquid
             assign desk_banner = block.settings.desk_banner
@@ -108,7 +223,7 @@
             <button onclick="showHide('{{ block.id }}')" class="flex justify-center items-center z-20 font-bold text-center rounded-b-cl h-[45px] px-6 mm:px-8" style="background-color:{{ btn_color }}; color:{{ label_color }};"><span id="{{ block.id }}more" class="inline">SHOW MORE</span><span id="{{ block.id }}less" class="hidden">SHOW LESS</span></button>
         </div>
     {% endfor %}
-</div>
+</div> {% endcomment %}
 
 <script>
     function showHide(id) {

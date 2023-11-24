@@ -261,7 +261,9 @@ const section{{ product.id }} = createApp({
     .then(data => {
       const reviewContainer = document.getElementById("product-{{ product.id }}-reviews");
       
-      reviewContainer.innerHTML = data[0].badge;
+      if(reviewContainer) {
+        reviewContainer.innerHTML = data[0].badge;
+      }
     })
     .catch(error => { 
       console.log('error', error)
