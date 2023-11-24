@@ -24,8 +24,9 @@
       {
         "type": "checkbox",
         "id": "example_checkbox",
-        "label": "Enable Feature",
-        "default": false
+        "label": "Enable SleepFirst Financing Feature",
+        "default": false,
+        "info": "Enabling this option will make the \"Pay By SleepFirst Financing Card\" button appear on product pages, cart page, along with the payment installments messaging in the product page."
       }
     ]
   }
