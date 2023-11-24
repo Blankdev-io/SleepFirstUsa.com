@@ -17,5 +17,16 @@
         "info": "64 x 64px required"
       }
     ]
+  },
+  {
+    "name": "Financing",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "example_checkbox",
+        "label": "Enable Feature",
+        "default": false
+      }
+    ]
   }
 ]
