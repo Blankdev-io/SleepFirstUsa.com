@@ -90,7 +90,7 @@
     {% if shop.metaobjects['promotion'][promo_tag] %}
       {% assign promotion = shop.metaobjects['promotion'][promo_tag] %}
       <div v-if="product.id == '{{ product.id }}'" class="flex justify-center px-5">
-        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ promotion.show_more_tab_color }};">
+        <div class="flex font-bold text-center text-white rounded-b-cl px-4 py-2 mm:px-8" style="background-color:{{ promotion.tab_color }};">
           <span class="self-center">{{ promotion.tab_text }}</span>
         </div>
       </div>
