@@ -53,18 +53,22 @@
         "stamp": "shopify:\/\/shop_images\/Fast-Free-Delivery.png",
         "stamp_message": "FAST FREE DELIVERY",
         "stamp_url": "shopify:\/\/policies\/shipping-policy",
-        "upsell_title": "",
+        "upsell_title": "Choose Your Base",
         "product_list": [
-
+          "tempurpedic-flat-foundation",
+          "tempur-ergo-adjustable-power_base",
+          "tempur-ergo-smartbase-adjustable-power-base"
         ],
         "quantity": false,
-        "pre_title": "test",
-        "gift_title1": "",
-        "gift_color1": "",
-        "gift_text1": "",
-        "gift_title2": "",
-        "gift_color2": "",
-        "gift_text2": "",
+        "pre_title": "Select a Gift",
+        "gift_title1": "YETI Tundra® 35 Hard Cooler",
+        "gift_color1": "#006481",
+        "gift_text1": "YETI Tundra 35",
+        "gift_img1": "shopify:\/\/shop_images\/W-Tundra_35_White_Front_33582_B.png",
+        "gift_title2": "$300 Amazon.com Gift Card",
+        "gift_color2": "#231f20",
+        "gift_text2": "$300",
+        "gift_img2": "shopify:\/\/shop_images\/Amazon_Gift.png",
         "stock": "Not available at this time. This product will be available soon. Please contact us if you would still like to place an order.",
         "pre_order": "This product will be available soon. Please contact us if you would like to pre-order it."
       }
