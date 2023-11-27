@@ -7,6 +7,15 @@
   assign stamp_message = section.settings.stamp_message
   assign stamp_url = section.settings.stamp_url
   assign quant = section.settings.quantity
+  assign pre_title = section.settings.pre_title
+  assign gift_title1 = section.settings.gift_title1
+  assign gift_color1 = section.settings.gift_color1
+  assign gift_text1 = section.settings.gift_text1
+  assign gift_img1 = section.settings.gift_img1
+  assign gift_title2 = section.settings.gift_title2
+  assign gift_color2 = section.settings.gift_color2
+  assign gift_text2 = section.settings.gift_text2
+  assign gift_img2 = section.settings.gift_img2
   assign stock = section.settings.stock
   assign pre_order = section.settings.pre_order
   assign description_order = section.settings.description_order
@@ -262,6 +271,29 @@
               </div>
             </div>
             {% endif %}
+
+            {%- comment -%}Included gift{%- endcomment -%}
+            <div class="flex flex-col gap-4 pb-4 pt-3 ds:py-8">
+              <div class="font-bold">{{ pre_title }}: <span class="font-normal" >${ giftPicked }</span></div>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4 rounded-cs h-[80px] w-full px-2 mm:gap-8 mm:px-4 ml:gap-10 ml:px-8 ml:max-w-max ds:gap-14 ds:max-w-none" style="background-color:{{ gift_color1 }};">
+                  <input v-model="giftPicked" type="radio" name="gift" id="gift1" value="{{ gift_title1 }}" class="w-5 h-5" checked>
+                  <label for="gift1" class="flex justify-center items-center gap-2 cursor-pointer mm:gap-3 ml:gap-4">
+                    <div class="font-black text-[24px] text-white mm:text-[28px] ml:text-[32px]">{{ gift_text1 }}</div>
+                    <img src="{{ gift_img1 | image_url }}" alt="{{ gift_img1.alt }}" title="{{ gift_title1 }}" class="max-h-[80px] max-w-[150px] mm:max-w-[200px] ml:max-w-none">
+                  </label>
+                </div>
+
+                <div class="flex items-center gap-4 rounded-cs h-[80px] w-full px-2 mm:gap-8 mm:px-4 ml:gap-10 ml:px-8 ml:max-w-max ds:gap-14 ds:max-w-none" style="background-color:{{ gift_color2 }};">
+                  <input v-model="giftPicked" type="radio" name="gift" id="gift2" value="{{ gift_title2 }}" class="w-5 h-5">
+                  <label for="gift2" class="flex justify-center items-center gap-2 cursor-pointer mm:gap-3 ml:gap-4">
+                    <div class="font-black text-[24px] text-white mm:text-[28px] ml:text-[32px]">{{ gift_text2 }}</div>
+                    <img src="{{ gift_img2 | image_url }}" alt="{{ gift_img2.alt }}" title="{{ gift_title2 }}" class="max-h-[80px] max-w-[150px] mm:max-w-[200px] ml:max-w-none">
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <div class="flex flex-col gap-4 mm:flex-row">
               <template v-if="variantAvailable == true">
                 <button @click="addToCart" class="addToCartBtn button w-full" title="add to cart">
@@ -780,6 +812,51 @@ appProduct.mount('#product')
             "id": "quantity",
             "label": "Show Quantity selector",
             "default": false
+        },
+        {
+            "type": "text",
+            "id": "pre_title",
+            "label": "Gifts Pre-title"
+        },
+        {
+            "type": "text",
+            "id": "gift_title1",
+            "label": "Gift Title 1"
+        },
+        {
+            "type": "color",
+            "id": "gift_color1",
+            "label": "Gift Color 1"
+        },
+        {
+            "type": "text",
+            "id": "gift_text1",
+            "label": "Gift Text 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_img1",
+          "label": "Gift Image 1"
+        },
+        {
+            "type": "text",
+            "id": "gift_title2",
+            "label": "Gift Title 2"
+        },
+        {
+            "type": "color",
+            "id": "gift_color2",
+            "label": "Gift Color 2"
+        },
+        {
+            "type": "text",
+            "id": "gift_text2",
+            "label": "Gift Text 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_img2",
+          "label": "Gift Image 2"
         },
         {
           "type": "textarea",
