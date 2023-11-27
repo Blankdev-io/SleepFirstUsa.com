@@ -67,6 +67,7 @@
     },
     "b5d4752e-8488-49bd-8831-31b779e2cf92": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "invert": false,
         "product_ann": true,
@@ -77,6 +78,7 @@
     },
     "bc81ed8a-ef68-4319-9400-10c92d8f7a8b": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "invert": true,
         "product_ann": true,
@@ -87,6 +89,7 @@
     },
     "8e5d9e8b-8155-4d83-9a15-9f35224c6008": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "invert": false,
         "product_ann": true,
@@ -97,6 +100,7 @@
     },
     "bd0b6eef-d2aa-4a39-b13a-8671bc2f0621": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "invert": true,
         "product_ann": true,
@@ -107,6 +111,7 @@
     },
     "4cf74d03-7e97-4a63-9ef7-647b8302e75f": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "invert": false,
         "product_ann": true,
