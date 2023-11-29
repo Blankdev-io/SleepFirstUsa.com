@@ -5,6 +5,7 @@
       "blocks": {
         "42f68dcc-caa9-4fbe-b369-c896ddbd7cee": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner_img": "shopify:\/\/shop_images\/1.01-376x700-IRG-ZX-190163.jpg",
             "banner_img_mob": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-190163.jpg",
