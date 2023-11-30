@@ -2099,6 +2099,15 @@ input[type='number']::-webkit-outer-spin-button,
   grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+
 .flex-col {
   flex-direction: column;
 }
