@@ -4445,6 +4445,10 @@ input[type='number']::-webkit-outer-spin-button,
     height: 40%;
   }
 
+  .tl\:h-25 {
+    height: 25%;
+  }
+
   .tl\:h-\[215px\] {
     height: 215px;
   }
