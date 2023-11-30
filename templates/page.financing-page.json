@@ -45,20 +45,23 @@
     },
     "financing-information": {
       "type": "financing-information",
+      "custom_css": [
+
+      ],
       "settings": {
         "pre_heading": "",
         "heading": "Three ways to apply for your sleep First financing card",
         "content": "<p>If you already have one, select “Pay By Sleep First Financing Card” on a product  or In your cart<\/p>",
         "font_size": 16,
         "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/image_118.svg?v=1701381685",
-        "heading1": "Shop online at sleepfirstusa.com",
-        "content1": "<p>Content 1<\/p><p><\/p>",
+        "heading1": "<p>Shop online at sleepfirstusa.com<\/p>",
+        "content1": "<p><a href=\"\/collections\" title=\"All collections\">SHOP NOW<\/a><\/p><p><\/p>",
         "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/image_122.svg?v=1701381686",
-        "heading2": "Talk to us",
-        "content2": "<p>Content 2<\/p><p><\/p>",
+        "heading2": "<p>Talk to us<\/p>",
+        "content2": "<p><a href=\"tel:8889753371\" title=\"tel:8889753371\">(888) 975-3371<\/a><\/p>",
         "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/image_118.svg?v=1701381685",
-        "heading3": "Visit a Sleep First store",
-        "content3": "<p>Content 3<\/p><p><\/p>"
+        "heading3": "<p>Visit a Sleep First store<\/p>",
+        "content3": "<p><a href=\"\/pages\/store-locator\" title=\"Store Locator\">STORE LOCATOR<\/a><\/p>"
       }
     }
   },
