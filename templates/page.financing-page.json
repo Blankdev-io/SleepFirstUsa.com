@@ -46,6 +46,16 @@
     "financing-information": {
       "type": "financing-information",
       "settings": {
+        "pre_heading": "",
+        "heading": "Three ways to apply for your sleep First financing card",
+        "content": "<p>If you already have one, select “Pay By Sleep First Financing Card” on a product  or In your cart<\/p>",
+        "font_size": 16,
+        "button1": "",
+        "url1": "",
+        "button2": "",
+        "url2": "",
+        "button3": "",
+        "url3": ""
       }
     }
   },
