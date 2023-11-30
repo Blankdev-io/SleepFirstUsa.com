@@ -9,10 +9,10 @@
     assign order = section.settings.order
     assign contain = section.settings.contain
     assign v-center = section.settings.v-center
-    if section.settings.hierarchy == "h1" 
-        assign subheadingtag == "h2"
+    if section.settings.hierarchy == 'h1' 
+        assign subheadingtag = 'h2'
     else 
-        assign subheadingtag == "h3"
+        assign subheadingtag = 'h3'
     endif
 %}
 
