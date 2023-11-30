@@ -24,9 +24,11 @@
             {% if content1 != blank %}
                 <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content1 }}</div>
             {% endif %}
-            <div class="flex gap-2 justify-center ds:gap-8">
-                <a href="{{ url1 }}" title="{{ url1.title }}" class="button mm:w-max">{{ button1 }}</a>
-            </div>
+            {% if button1 != blank %}
+              <div class="flex gap-2 justify-center ds:gap-8">
+                  <a href="{{ url1 }}" title="{{ url1.title }}" class="button mm:w-max">{{ button1 }}</a>
+              </div>
+            {% endif %}
         </div>
         <div class="flex flex-col justify-between items-center text-center h-full">
             <img src="{{ svg2 }}" alt="{{ svg2.title }}" title="{{ svg2.title }}" class="h-14 mb-5">
@@ -34,9 +36,11 @@
             {% if content2 != blank %}
                 <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content2 }}</div>
             {% endif %}
+            {% if button2 != blank %}
             <div class="flex gap-2 justify-center ds:gap-8">
                 <a href="{{ url2 }}" title="{{ url2.title }}" class="button mm:w-max">{{ button2 }}</a>
             </div>
+            {% endif %}
         </div>
         <div class="flex flex-col justify-between items-center text-center h-full">
             <img src="{{ svg3 }}" alt="{{ svg3.title }}" title="{{ svg3.title }}" class="h-14 mb-5">
@@ -44,9 +48,11 @@
             {% if content3 != blank %}
                 <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content3 }}</div>
             {% endif %}
+            {% if button3 != blank %}
             <div class="flex gap-2 justify-center ds:gap-8">
                 <a href="{{ url3 }}" title="{{ url3.title }}" class="button mm:w-max">{{ button3 }}</a>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
