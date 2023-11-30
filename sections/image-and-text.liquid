@@ -19,7 +19,7 @@
 
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     <div class="flex text-text bg-white shadow-sp rounded-cl h-auto mb-10 {% if order == true %}flex-col tl:flex-row{% else %}flex-col-reverse tl:flex-row-reverse{% endif %}">
-            <div>
+            <div class="tl:pr-10">
                 {% if image != blank %}
                     <picture>
                         <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 565 }}">
@@ -33,7 +33,7 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="flex flex-col p-4 tl:order-1 tl:h-[600px] tl:p-10{% if v-center == true %} justify-center{% else %} justify-between{% endif %}">
+            <div class="flex flex-col p-4 tl:order-1 tl:h-[600px] tl:pl-10{% if v-center == true %} justify-center{% else %} justify-between{% endif %}">
                     <div class="flex flex-col justify-around mb-6 tl:h-2/5">
                             <{{section.settings.hierarchy}} class="text-title mb-4 tl:mb-0">{{ heading }}</{{section.settings.hierarchy}}>
                             <{{subheadingtag}} class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</{{subheadingtag}}>
