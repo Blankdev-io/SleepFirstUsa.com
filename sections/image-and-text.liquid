@@ -38,7 +38,7 @@
                             <{{section.settings.hierarchy}} class="text-title mb-4 tl:mb-0">{{ heading }}</{{section.settings.hierarchy}}>
                             <{{subheadingtag}} class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</{{subheadingtag}}>
                     </div>
-                    <div class="flex flex-col{% unless v-center == true %} justify-between tl:h-1/2{% endunless %}">   
+                    <div class="flex flex-col{% if v-center == false %} justify-between tl:h-1/2{% endif %}">   
                         <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
                         <a href="{{ button_url }}" title="{{ button }}" class="button{% if whitebutton == true %}-white{% endif %} mm:w-max">{{ button }}</a>
                     </div>               
