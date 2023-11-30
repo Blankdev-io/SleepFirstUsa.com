@@ -16,9 +16,32 @@
         <p class="font-extrabold text-2xl mb-5">{{ pre }}</p>
         <h2 class="text-title mb-8 tl:pl-10 tl:pr-10">{{ heading }}</h2>
         <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12 tl:pl-10 tl:pr-10" style="font-size:{{ font_size }}px;">{{ content }}</div>
-
-      
     </div>
+
+    <div class="grid grid-cols-1 gap-6 text-text bg-white shadow-sp rounded-cl py-10 px-4 ts:grid-cols-3 ts:gap-3 ds:gap-8 ds:px-10">
+        <div class="flex flex-col justify-between items-center text-center h-full justify-start">
+            <img src="{{ svg1 }}" alt="{{ svg1.title }}" title="{{ svg1.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading1 }}</h2>
+            {% if content1 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content1 }}</div>
+            {% endif %}
+        </div>
+        <div class="flex flex-col justify-between items-center text-center h-full justify-start">
+            <img src="{{ svg2 }}" alt="{{ svg2.title }}" title="{{ svg2.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading2 }}</h2>
+            {% if content2 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content2 }}</div>
+            {% endif %}
+        </div>
+        <div class="flex flex-col justify-between items-center text-center h-full justify-start">
+            <img src="{{ svg3 }}" alt="{{ svg3.title }}" title="{{ svg3.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ heading3 }}</h2>
+            {% if content3 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content3 }}</div>
+            {% endif %}
+        </div>
+    </div>
+    
 </div>
 
 
@@ -53,7 +76,58 @@
             "unit": "px",
             "label": "Font size",
             "default": 16
-        }
+        },
+        {
+            "type": "url",
+            "id": "svg1",
+            "label": "SVG 1"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "Heading 1"
+        },
+        {
+            "type": "richtext",
+            "id": "content1",
+            "label": "Content 1",
+            "default": "<p>Content 1<p>"
+        },
+        {
+            "type": "url",
+            "id": "svg2",
+            "label": "SVG 2"
+        },
+        {
+            "type": "text",
+            "id": "heading2",
+            "label": "Heading 2",
+            "default": "Heading 2"
+        },
+        {
+            "type": "richtext",
+            "id": "content2",
+            "label": "Content 2",
+            "default": "<p>Content 2<p>"
+        },
+        {
+            "type": "url",
+            "id": "svg3",
+            "label": "SVG 3"
+        },
+        {
+            "type": "text",
+            "id": "heading3",
+            "label": "Heading 3",
+            "default": "Heading 3"
+        },
+        {
+            "type": "richtext",
+            "id": "content3",
+            "label": "Content 3",
+            "default": "<p>Content 3<p>"
+        } 
     ],
     "presets": [
         {
