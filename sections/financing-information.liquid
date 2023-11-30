@@ -1,43 +1,30 @@
-{% liquid
-    assign pre = section.settings.pre_heading
-    assign heading = section.settings.heading
-    assign content = section.settings.content
-    assign font_size = section.settings.font_size
-    assign button1 = section.settings.button1
-    assign url1 = section.settings.url1
-    assign button2 = section.settings.button2
-    assign url2 = section.settings.url2
-    assign button3 = section.settings.button3
-    assign url3 = section.settings.url3
-%}
-
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     <div class="text-center text-text bg-white shadow-sp rounded-cl py-10 px-4 ds:px-10">
-        <p class="font-extrabold text-2xl mb-5">{{ pre }}</p>
-        <h2 class="text-title mb-8 tl:pl-10 tl:pr-10">{{ heading }}</h2>
+        <p class="font-extrabold text-2xl mb-5">{{ section.settings.pre_heading }}</p>
+        <h2 class="text-title mb-8 tl:pl-10 tl:pr-10">{{ section.settings.heading }}</h2>
         <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12 tl:pl-10 tl:pr-10" style="font-size:{{ font_size }}px;">{{ content }}</div>
     </div>
 
-    <div class="grid grid-cols-1 gap-6 text-text bg-white shadow-sp rounded-cl py-10 px-4 ts:grid-cols-3 ts:gap-3 ds:gap-8 ds:px-10">
+    <div class="grid grid-cols-1 gap-6 text-text bg-white py-10 px-4 ts:grid-cols-3 ts:gap-3 ds:gap-8 ds:px-10">
         <div class="flex flex-col justify-between items-center text-center h-full justify-start">
-            <img src="{{ svg1 }}" alt="{{ svg1.title }}" title="{{ svg1.title }}" class="h-14 mb-5">
-            <h2 class="font-bold text-3xl mb-8">{{ heading1 }}</h2>
-            {% if content1 != blank %}
-                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content1 }}</div>
+            <img src="{{ section.settings.svg1 }}" alt="{{ section.settings.svg1.title }}" title="{{ section.settings.svg1.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ section.settings.heading1 }}</h2>
+            {% if section.settings.content1 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ section.settings.content1 }}</div>
             {% endif %}
         </div>
         <div class="flex flex-col justify-between items-center text-center h-full justify-start">
-            <img src="{{ svg2 }}" alt="{{ svg2.title }}" title="{{ svg2.title }}" class="h-14 mb-5">
-            <h2 class="font-bold text-3xl mb-8">{{ heading2 }}</h2>
-            {% if content2 != blank %}
-                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content2 }}</div>
+            <img src="{{ section.settings.svg2 }}" alt="{{ section.settings.svg2.title }}" title="{{ section.settings.svg2.title }}" class="h-14 mb-5">
+            <h2 class="font-bold text-3xl mb-8">{{ section.settings.heading2 }}</h2>
+            {% if section.settings.content2 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ section.settings.content2 }}</div>
             {% endif %}
         </div>
         <div class="flex flex-col justify-between items-center text-center h-full justify-start">
             <img src="{{ svg3 }}" alt="{{ svg3.title }}" title="{{ svg3.title }}" class="h-14 mb-5">
-            <h2 class="font-bold text-3xl mb-8">{{ heading3 }}</h2>
-            {% if content3 != blank %}
-                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ content3 }}</div>
+            <h2 class="font-bold text-3xl mb-8">{{ section.settings.heading3 }}</h2>
+            {% if section.settings.content3 != blank %}
+                <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12">{{ section.settings.content3 }}</div>
             {% endif %}
         </div>
     </div>
