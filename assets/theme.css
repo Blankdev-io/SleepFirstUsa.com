@@ -5663,3 +5663,9 @@ input[type='number']::-webkit-outer-spin-button,
 .object-contain {
   object-fit: contain;
 }
+
+@media (max-width: 868px) {
+  .small-p4 {
+    padding: 1rem;
+  }
+}
