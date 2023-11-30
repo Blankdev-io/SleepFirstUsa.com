@@ -17,7 +17,7 @@
         "button": "PREQUALIFY",
         "whitebutton": true,
         "button_url": "",
-        "v-center": false,
+        "v-center": true,
         "image": "shopify:\/\/shop_images\/Frame_344.png",
         "contain": true,
         "order": false
