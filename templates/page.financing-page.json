@@ -15,8 +15,11 @@
         "sub_title": "Sleep now, pay later",
         "content": "",
         "button": "PREQUALIFY",
+        "whitebutton": true,
         "button_url": "",
+        "v-center": false,
         "image": "shopify:\/\/shop_images\/Frame_344.png",
+        "contain": false,
         "order": false
       }
     },
