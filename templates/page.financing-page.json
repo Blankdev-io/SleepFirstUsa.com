@@ -19,7 +19,7 @@
         "button_url": "",
         "v-center": false,
         "image": "shopify:\/\/shop_images\/Frame_344.png",
-        "contain": false,
+        "contain": true,
         "order": false
       }
     },
