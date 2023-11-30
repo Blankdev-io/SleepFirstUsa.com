@@ -4429,6 +4429,10 @@ input[type='number']::-webkit-outer-spin-button,
     display: flex;
   }
 
+  .tl\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
   .tl\:grid {
     display: grid;
   }
