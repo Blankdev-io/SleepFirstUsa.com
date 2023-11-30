@@ -2,12 +2,106 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "text_align": "left"
+      }
+    },
+    "926d0804-cab1-41e6-b657-2dd8face1f33": {
+      "type": "image-and-text",
+      "settings": {
+        "heading": "Heading",
+        "hierarchy": "h2",
+        "sub_title": "Sub-title",
+        "content": "<p>Content<\/p>",
+        "button": "Button",
+        "button_url": "",
+        "order": false
+      }
+    },
+    "c61513f7-f773-4e64-aeac-1f2c0505c19c": {
+      "type": "image-with-title",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "hierarchy": "h2",
+        "sub": "",
+        "imageDesk": "shopify:\/\/shop_images\/image_2023-11-21_200855471.png",
+        "url": ""
+      }
+    },
+    "e51b777e-ecf8-478a-8a8d-af52caedc875": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "Pre heading",
+        "heading": "Heading",
+        "content": "<p>Content<\/p><p><\/p>",
+        "font_size": 16,
+        "button1": "",
+        "url1": "",
+        "button2": "",
+        "url2": "",
+        "button3": "",
+        "url3": ""
+      }
+    },
+    "70103450-9eca-4bdb-a3fd-73c96753f2f1": {
+      "type": "text-banner",
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/image_2023-11-21_200855471.png",
+        "heading": "Heading",
+        "font_size": 16,
+        "hierarchy": "h2",
+        "order": false,
+        "content": "<p>Content<\/p>",
+        "button": "",
+        "url": ""
+      }
+    },
+    "fea76f89-6398-4e76-af49-1a7179348e93": {
+      "type": "steps",
+      "settings": {
+        "heading": "",
+        "hierarchy": "h2",
+        "sub": "",
+        "heading1": "Heading 1",
+        "content1": "<p>Content 1<\/p><p><\/p>",
+        "heading2": "Heading 2",
+        "content2": "<p>Content 2<\/p><p><\/p>",
+        "heading3": "Heading 3",
+        "content3": "<p>Content 3<\/p><p><\/p>",
+        "heading4": "",
+        "content4": ""
+      }
+    },
+    "0209b49d-28d9-4af8-afb4-8bc54cfeec3c": {
+      "type": "features",
+      "settings": {
+        "svg1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/icon-park-outline_check-one.svg?v=1701370826",
+        "heading1": "No annual fees*",
+        "content1": "<p>You won’t be charged a yearly fee, so you can spend your cash on the stuff that counts.<\/p>",
+        "button1": "",
+        "url1": "",
+        "svg2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/icon-park-outline_check-one.svg?v=1701370826",
+        "heading2": "Easy to apply",
+        "content2": "<p>Follow the steps during checkout to apply for your Sleep First Financing Card.<\/p>",
+        "button2": "",
+        "url2": "",
+        "svg3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0248\/6163\/8710\/files\/icon-park-outline_check-one.svg?v=1701370826",
+        "heading3": "Secure transaction",
+        "content3": "<p>Built-in protection features ensure that you won't be held responsible for unauthorized transactions. <\/p>",
+        "button3": "",
+        "url3": ""
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "926d0804-cab1-41e6-b657-2dd8face1f33",
+    "c61513f7-f773-4e64-aeac-1f2c0505c19c",
+    "e51b777e-ecf8-478a-8a8d-af52caedc875",
+    "70103450-9eca-4bdb-a3fd-73c96753f2f1",
+    "fea76f89-6398-4e76-af49-1a7179348e93",
+    "0209b49d-28d9-4af8-afb4-8bc54cfeec3c"
   ]
 }
