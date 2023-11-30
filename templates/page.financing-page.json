@@ -10,12 +10,13 @@
     "926d0804-cab1-41e6-b657-2dd8face1f33": {
       "type": "image-and-text",
       "settings": {
-        "heading": "Heading",
+        "heading": "Finance Your Purchase with Sleep First",
         "hierarchy": "h2",
-        "sub_title": "Sub-title",
-        "content": "<p>Content<\/p>",
-        "button": "Button",
+        "sub_title": "Sleep now, pay later",
+        "content": "",
+        "button": "PREQUALIFY",
         "button_url": "",
+        "image": "shopify:\/\/shop_images\/Frame_344.png",
         "order": false
       }
     },
