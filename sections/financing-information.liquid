@@ -14,19 +14,10 @@
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     <div class="text-center text-text bg-white shadow-sp rounded-cl py-10 px-4 ds:px-10">
         <p class="font-extrabold text-2xl mb-5">{{ pre }}</p>
-        <h2 class="text-title mb-8">{{ heading }}</h2>
-        <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12" style="font-size:{{ font_size }}px;">{{ content }}</div>
-        <div class="flex flex-wrap justify-center gap-2 ds:gap-8">
-            {% if button1 != blank %}
-                <a href="{{ url1 }}" title="{{ url1.title }}" class="button mm:w-max">{{ button1 }}</a>
-            {% endif %}
-            {% if button2 != blank %}
-                <a href="{{ url2 }}" title="{{ url2.title }}" class="button mm:w-max">{{ button2 }}</a>
-            {% endif %}
-            {% if button3 != blank %}
-                <a href="{{ url3 }}" title="{{ url3.title }}" class="button mm:w-max">{{ button3 }}</a>
-            {% endif %}
-        </div>
+        <h2 class="text-title mb-8 tl:pl-10 tl:pr-10">{{ heading }}</h2>
+        <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12 tl:pl-10 tl:pr-10" style="font-size:{{ font_size }}px;">{{ content }}</div>
+
+      
     </div>
 </div>
 
@@ -62,36 +53,6 @@
             "unit": "px",
             "label": "Font size",
             "default": 16
-        },
-        {
-            "type": "text",
-            "id": "button1",
-            "label": "Button 1"
-        },
-        {
-            "type": "url",
-            "id": "url1",
-            "label": "Button link 1"
-        },
-        {
-            "type": "text",
-            "id": "button2",
-            "label": "Button 2"
-        },
-        {
-            "type": "url",
-            "id": "url2",
-            "label": "Button link 2"
-        },
-        {
-            "type": "text",
-            "id": "button3",
-            "label": "Button 3"
-        },
-        {
-            "type": "url",
-            "id": "url3",
-            "label": "Button link 3"
         }
     ],
     "presets": [
