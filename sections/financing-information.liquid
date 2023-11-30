@@ -26,6 +26,9 @@
                 <div class="flex flex-col gap-1 whitespace-pre-wrap mb-10 ds:mb-12 text-l font-semibold content-link">{{ section.settings.content3 }}</div>
             {% endif %}
         </div>
+
+      <div class="font-normal text-base mb-5 content-link">{{ section.settings.legal_text }}</div>
+      
       </div>
     </div>
 </div>
@@ -119,7 +122,13 @@
             "id": "content3",
             "label": "Content 3",
             "default": "<p>Content 3<p>"
-        } 
+        },
+        {
+            "type": "richtext",
+            "id": "legal_text",
+            "label": "Legal Text",
+            "default": "<p>Legal Text<p>"
+        }
     ],
     "presets": [
         {
