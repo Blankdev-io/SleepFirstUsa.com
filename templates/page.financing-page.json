@@ -42,11 +42,17 @@
         "button3": "",
         "url3": ""
       }
+    },
+    "financing-information": {
+      "type": "financing-information",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "926d0804-cab1-41e6-b657-2dd8face1f33",
-    "0209b49d-28d9-4af8-afb4-8bc54cfeec3c"
+    "0209b49d-28d9-4af8-afb4-8bc54cfeec3c",
+    "financing-information"
   ]
 }
