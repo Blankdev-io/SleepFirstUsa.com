@@ -2099,6 +2099,15 @@ input[type='number']::-webkit-outer-spin-button,
   grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+
 .flex-col {
   flex-direction: column;
 }
@@ -4420,6 +4429,10 @@ input[type='number']::-webkit-outer-spin-button,
     display: flex;
   }
 
+  .tl\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
   .tl\:grid {
     display: grid;
   }
@@ -4430,6 +4443,10 @@ input[type='number']::-webkit-outer-spin-button,
 
   .tl\:h-2\/5 {
     height: 40%;
+  }
+
+  .tl\:h-25 {
+    height: 25%;
   }
 
   .tl\:h-\[215px\] {
@@ -5644,5 +5661,15 @@ input[type='number']::-webkit-outer-spin-button,
   .dl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+@media (max-width: 868px) {
+  .small-p4 {
+    padding: 1rem;
   }
 }

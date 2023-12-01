@@ -7,18 +7,25 @@
     assign button_url = section.settings.button_url
     assign image = section.settings.image
     assign order = section.settings.order
+    assign contain = section.settings.contain
+    assign v-center = section.settings.v-center
+    assign whitebutton = section.settings.whitebutton
+    if section.settings.hierarchy == 'h1' 
+        assign subheadingtag = 'h2'
+    else 
+        assign subheadingtag = 'h3'
+    endif
 %}
 
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
-    <div class="grid grid-flow-row text-text bg-white shadow-sp rounded-cl h-auto mb-10 tl:grid-cols-2">
-        {% if order == false %}
-            <div class="tl:order-2">
+    <div class="flex text-text bg-white shadow-sp rounded-cl h-auto mb-10 {% if order == true %}flex-col-reverse tl:flex-row{% else %}flex-col tl:flex-row-reverse{% endif %}">
+            <div class="tl:pr-10">
                 {% if image != blank %}
                     <picture>
                         <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 565 }}">
                         <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
                         <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
-                        <img class="object-cover rounded-t-cl w-full h-full max-h-[600px] tl:rounded-l-none tl:rounded-r-cl" src="{{ image | image_url: width: 440 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
+                        <img class="object-cover rounded-t-cl w-full h-full max-h-[600px] tl:rounded-l-none tl:rounded-r-cl {% if contain == true  %}object-contain{% endif %}" src="{{ image | image_url: width: 440 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
                     </picture>          
                 {% else %}
                     <div class="flex items-center justify-center bg-black/50 rounded-t-cl w-full h-24 tl:rounded-l-none tl:rounded-r-cl tl:h-full">
@@ -26,72 +33,16 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="flex flex-col justify-between p-4 tl:order-1 tl:h-[600px] tl:p-10">
-                {% if sub_title != blank %}
-                    <div class="flex flex-col justify-around mb-6 tl:h-2/5">
-                        {% if hierarchy == "h2" %}
-                            <h2 class="text-title mb-4 tl:mb-0">{{ heading }}</h2>
-                            <h3 class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</h3>
-                        {% else %}
-                            <h1 class="text-title mb-4 tl:mb-0">{{ heading }}</h1>
-                            <h2 class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</h2>
-                        {% endif %}
+            <div class="flex flex-col small-p4 tl:order-1 tl:h-[600px] tl:pl-10{% if v-center == true %} justify-center{% else %} justify-between{% endif %}">
+                    <div class="flex flex-col justify-around mb-6 tl:h-25">
+                            <{{section.settings.hierarchy}} class="text-title mb-4 tl:mb-0">{{ heading }}</{{section.settings.hierarchy}}>
+                            <{{subheadingtag}} class="font-bold text-l mb-4 tl:mb-0">{{ sub_title }}</{{subheadingtag}}>
                     </div>
-                    <div class="flex flex-col justify-between tl:h-1/2">   
+                    <div class="flex flex-col{% if v-center == false %} justify-between tl:h-1/2{% endif %}">   
                         <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
-                        <a href="{{ button_url }}" title="{{ button }}" class="button mm:w-max">{{ button }}</a>
-                    </div> 
-                {% else %}
-                    {% if hierarchy == "h2" %}
-                        <h2 class="text-title mb-4 tl:mb-0">{{ heading }}</h2> 
-                    {% else %}
-                        <h1 class="text-title mb-4 tl:mb-0">{{ heading }}</h1> 
-                    {% endif %}
-                    <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
-                    <a href="{{ button_url }}" title="{{ button }}" class="button mm:w-max">{{ button }}</a>
-                {% endif %}                
+                        <a href="{{ button_url }}" title="{{ button }}" class="button{% if whitebutton == true %}-white{% endif %} mm:w-max">{{ button }}</a>
+                    </div>               
             </div>            
-        {% else %}
-            <div>
-                {% if image != blank %}
-                    <picture>
-                        <source media="(min-width: 868px)" srcset="{{ image | image_url: width: 565 }}">
-                        <source media="(min-width: 768px)" srcset="{{ image | image_url: width: 830 }}">
-                        <source media="(min-width: 480px)" srcset="{{ image | image_url: width: 730 }}">
-                        <img class="object-cover rounded-t-cl w-full h-full max-h-[600px] tl:rounded-r-none tl:rounded-l-cl" src="{{ image | image_url: width: 440 }}" title="{{ heading }}" alt="{{ image.alt }}" loading="lazy">
-                    </picture>
-                {% else %}
-                    <div class="flex items-center justify-center bg-black/50 rounded-t-cl w-full h-24 tl:rounded-r-none tl:rounded-l-cl tl:h-full">
-                        <p class="font-bold text-2xl text-center text-white">Image</p>
-                    </div>
-                {% endif %}
-            </div>
-            <div class="flex flex-col justify-between p-4 tl:h-[600px] tl:p-10">
-                {% if sub_title != blank %}            
-                    <div class="flex flex-col justify-around mb-6 tl:h-2/5">
-                        {% if hierarchy == "h2" %}
-                            <h2 class="text-title mb-4 tl:mb-0">{{ heading }}</h2>                   
-                            <h3 class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</h3>    
-                        {% else %}
-                            <h1 class="text-title mb-4 tl:mb-0">{{ heading }}</h1>                   
-                            <h2 class="font-bold text-2xl mb-4 tl:mb-0">{{ sub_title }}</h2>    
-                        {% endif %}  
-                    </div>
-                    <div class="flex flex-col justify-between tl:h-1/2">   
-                        <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
-                        <a href="{{ button_url }}" title="{{ button }}" class="button mm:w-max">{{ button }}</a>
-                    </div> 
-                {% else %}
-                    {% if hierarchy == "h2" %}
-                        <h2 class="text-title mb-4 tl:mb-0">{{ heading }}</h2> 
-                    {% else %}
-                        <h1 class="text-title mb-4 tl:mb-0">{{ heading }}</h1> 
-                    {% endif %}                   
-                    <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
-                    <a href="{{ button_url }}" title="{{ button }}" class="button mm:w-max">{{ button }}</a>
-                {% endif %}                
-            </div>            
-        {% endif %}
     </div>
 </div>
 
@@ -141,14 +92,32 @@
             "default": "Button"
         },
         {
+            "type": "checkbox",
+            "id": "whitebutton",
+            "label": "White button",
+            "default": false
+        }, 
+        {
             "type": "url",
             "id": "button_url",
             "label": "Button url"
+        },
+        {
+            "type": "checkbox",
+            "id": "v-center",
+            "label": "Center text and button vertically",
+            "default": false
         },        
         {
             "type": "image_picker",
             "id": "image",
             "label": "Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "contain",
+            "label": "Contain Image Inside Container",
+            "default": false
         },
         {
             "type": "checkbox",
