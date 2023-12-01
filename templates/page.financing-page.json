@@ -149,6 +149,10 @@
     "find-store": {
       "type": "find-store",
       "settings": {
+        "heading": "",
+        "content": "",
+        "hours1": "",
+        "hours2": ""
       }
     }
   },
