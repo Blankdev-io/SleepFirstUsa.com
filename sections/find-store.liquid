@@ -5,6 +5,7 @@
     assign hours2 = section.settings.hours2
 %}
 
+{% if heading != blank and content != blank and hours1 != blank and hours2 != blank %}
 <div class="mx-5 mb-10 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
     <div class="text-text bg-white shadow-sp rounded-cl mb-8 p-8 ds:mb-10 ds:p-10">
         <h1 class="text-title text-center mb-8 ds:mb-10">{{ heading }}</h1>
@@ -14,6 +15,9 @@
             <div class="text-center whitespace-pre-wrap">{{ hours2 }}</div>
         </div>
     </div>
+{% endif %}
+
+  
     <div class="text-text bg-white shadow-sp rounded-cl mb-8 p-8 ds:mb-10 ds:p-10">
         <!-- Start Stockist.co widget -->
         <div data-stockist-widget-tag="u7981">Loading store locator
