@@ -65,6 +65,21 @@
         "legal_text": "<p>*The Wells Fargo credit card is issued with approved credit by Wells Fargo Bank, N.A. For newly opened accounts, the APR for Purchases is 28.99%. If you are charged interest in any billing cycle, the minimum interest charge will be $1.00. This information is accurate as of 12\/01\/2023 and is subject to change. For current information, call us at <a href=\"tel:18004315921\" title=\"tel:18004315921\">1-800-431-5921<\/a>.<\/p>"
       }
     },
+    "5ef3b7ac-9757-4c1a-bb69-b3a6465dac7e": {
+      "type": "text-with-buttons",
+      "settings": {
+        "pre_heading": "",
+        "heading": "Start Shopping!",
+        "content": "<p>Add products to your online shopping cart, and apply for financing at checkout.<\/p><p>Visit any product page to view a payment calculator, and prequalify with just a few easy clicks.<\/p>",
+        "font_size": 16,
+        "button1": "",
+        "url1": "",
+        "button2": "",
+        "url2": "",
+        "button3": "",
+        "url3": ""
+      }
+    },
     "f7771a7b-0f2c-43bb-bf9f-d1cb3f5e0255": {
       "type": "products-list",
       "settings": {
@@ -137,6 +152,7 @@
     "926d0804-cab1-41e6-b657-2dd8face1f33",
     "0209b49d-28d9-4af8-afb4-8bc54cfeec3c",
     "financing-information",
+    "5ef3b7ac-9757-4c1a-bb69-b3a6465dac7e",
     "f7771a7b-0f2c-43bb-bf9f-d1cb3f5e0255",
     "c842b50f-8c9a-4157-bbff-3d6a4aa1593e"
   ]
