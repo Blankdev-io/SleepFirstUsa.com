@@ -595,28 +595,23 @@ const appProduct = createApp({
 
         window.open('https://sleepfirstfinancing.com/products?' + 'data=' + encodedArray, "_blank") ;
     },
-    //Change Price
-    changePrice(e) {
-      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
-      let selectedVariant;
-      this.variants.forEach(variant => {
-        if (variant.option1 == this.form.selections[0] && variant.option2 == this.form.selections[1] && variant.option3 == this.form.selections[2]) {
-          selectedVariant = variant;
-        }
-      });
-      this.unformatedVariantPrice = (selectedVariant.price/100).toFixed(2);
-      const iframe = document.getElementById('taglinePopupIframe')
-      iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${Math.ceil(this.unformatedVariantPrice)}`);
-      this.variantPrice = formatter.format(this.unformatedVariantPrice);
-      const price = (selectedVariant.price/100).toFixed(2);
-      this.montPrice = Math.round(price / 24);
-      this.variantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
-      this.variantID = selectedVariant.id;
-      this.variantAvailable = selectedVariant.available;
-      this.saveAmmount = formatter.format(((selectedVariant.compare_at_price - selectedVariant.price) / 100).toFixed(2));
-      this.savePercent = (((selectedVariant.compare_at_price - selectedVariant.price) / selectedVariant.compare_at_price ) * 100).toFixed(2);
-
-    },
+      //Change Price
+      changePrice(e) {
+        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  minimumFractionDigits: 2, vmaximumFractionDigits: 2, });
+        let selectedVariant;
+        this.variants.forEach(variant => {
+          if (variant.option1 == this.form.selections[0] && variant.option2 == this.form.selections[1] && variant.option3 == this.form.selections[2]) {
+            selectedVariant = variant;
+          }
+        });
+        this.variantPrice = formatter.format((selectedVariant.price/100).toFixed(2));
+        this.variantComparePrice = formatter.format((selectedVariant.compare_at_price/100).toFixed(2));
+        this.variantID = selectedVariant.id;
+        this.variantAvailable = selectedVariant.available;
+        this.saveAmmount = formatter.format(((selectedVariant.compare_at_price - selectedVariant.price) / 100).toFixed(2));
+        this.savePercent = (((selectedVariant.compare_at_price - selectedVariant.price) / selectedVariant.compare_at_price ) * 100).toFixed(2);
+  
+      },
 
     //Add to cart funtion
     addToCart(e) {
