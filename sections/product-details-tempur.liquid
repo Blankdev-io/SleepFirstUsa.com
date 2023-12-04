@@ -25,6 +25,32 @@
   assign product_list = section.settings.product_list
 %}
 
+<style>
+  .font-size-14 {
+    font-size: 13px;
+  }
+  .link-iframe {
+    color: #384FAE;
+    text-decoration: underline;
+    font-family: 'times news roman';
+  }
+  .pay-button{
+    gap: 0.5rem;
+    padding: 16px;
+    height: fit-content;
+  }
+  .logo-button > svg{
+    height: 1.1rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pay-button{
+      font-size: 12px;
+    }
+    
+  }
+</style>
+
 <div id="product" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
 
   {% if product.metafields.banner.images != blank %}    
@@ -118,6 +144,35 @@
                 <span class="text-3xl text-primary">${ variantPrice }</span>
             </div>
             <span v-if="variantComparePrice != '$0.00'" class="self-center bg-accent-4 text-white rounded-full px-4">-${ savePercent }%</span> 
+          </div>
+          <div id="priceData"  class="month-amount total-amount" :data-unformated-price="unformatedVariantPrice" :data-month-price="montPrice" :data-variant-price="variantPrice"></div>
+
+          <!-- <div class="flex font-size-14 gap-1" v-if="montPrice">
+            <div>
+              <span>
+                <span>Suggested monthly payment</span>
+                <span class="font-bold" id="month-amount"> $${montPrice}</span>
+                <span> per month</span>
+              </span>
+              <span class="font-bold"> for 24 months.</span>
+            </div>            
+          </div> -->
+          <div class="flex flex-row items-center" id="tagline-item">
+            <!-- <div class="flex font-size-14">
+              <span>(Total Payment</span>
+              <span class="font-bold" id="total-amount" style="margin-left: 4px;"> $${ Math.round(unformatedVariantPrice).toFixed(2)}</span>
+              <span>)</span>
+            </div>
+            <a class="link-iframe ml-2" href="javascript:void(0);" onclick="openIframePopup()">Learn More</a> -->
+          </div>
+          <div class="">
+            <a class="pay-button button w-full" target="_blank" @click="sendCustomCheckout">
+              <span>Pay by</span>
+              <span class="logo-button">
+                <img style="height: 21px;" src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/1698169145-trimmy-Sleep_First_Logo_Primary_White_Outline.png?v=1698169163" alt="">
+              </span>
+              <span>Financing Card</span>
+            </a>
           </div>
         </div>
         {% if product.metafields.custom.mattress_height != blank or product.metafields.custom.mattress_comfort != blank or product.metafields.custom.mattress_type != blank or current_variant.metafields.custom.mattress_height != blank or current_variant.metafields.custom.mattress_comfort != blank or current_variant.metafields.custom.mattress_type != blank %}
@@ -399,6 +454,40 @@
 
 {% comment %} Js {% endcomment %}
 <script>
+      function showHideDescription(id) {
+        var x = document.getElementById(id);
+        var y = document.getElementById(id + '-icon');
+        if (x.classList.contains('visible')) {
+            x.classList.remove('visible');
+            x.classList.add('invisible');
+            x.classList.remove('h-max');
+            x.classList.add('h-0');
+            x.classList.remove('mt-5');
+            x.classList.add('mt-0');
+            x.classList.remove('pt-5');
+            x.classList.add('pt-0');
+            x.classList.remove('opacity-100');
+            x.classList.add('opacity-0');
+        } else {
+            x.classList.remove('invisible');
+            x.classList.add('visible');
+            x.classList.remove('h-0');
+            x.classList.add('h-max');
+            x.classList.remove('mt-0');
+            x.classList.add('mt-5');
+            x.classList.remove('pt-0');
+            x.classList.add('pt-5');
+            x.classList.remove('opacity-0');
+            x.classList.add('opacity-100');
+        }
+        if (y.classList.contains('rotate-180')) {
+            y.classList.remove('rotate-180');
+            y.classList.add('rotate-0');
+        } else {
+            y.classList.remove('rotate-0');
+            y.classList.add('rotate-180');
+        }
+
     function showLocatorPopup(id) {
         var x = document.getElementById(id);
         const y = document.getElementById('store-locator-background');
