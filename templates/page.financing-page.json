@@ -16,6 +16,7 @@
         "content": "",
         "button": "PREQUALIFY",
         "whitebutton": true,
+        "financingbutton": true,
         "button_url": "",
         "v-center": true,
         "image": "shopify:\/\/shop_images\/1701376100-trimmy-Frame_344.png",
