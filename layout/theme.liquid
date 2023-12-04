@@ -1130,271 +1130,270 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Klaviyo main script end -->
     {% if template.name == 'product' %}
       <script>
-        function closeIframeTagLinePopup() {
-          let body = document.getElementsByTagName('body')[0];
-          let iframeWrapper = document.getElementById('iframeWrapperTagLine');
-          let nav = document.getElementById('shopify-section-header');
-          let iframe = document.getElementById('taglinePopupIframe');
-          let logoContainer = document.getElementById('logoContainer');
-          if(logoContainer) {
-            logoContainer.remove()
-          }
-
-          
-          body.style.removeProperty('overflow-y')
-          iframeWrapper.style.removeProperty('top')
-          iframeWrapper.style.removeProperty('left')
-          iframeWrapper.style.width = '100%'
-          iframeWrapper.style.height = '90px'
-          iframeWrapper.style.removeProperty('background')
-          iframeWrapper.style.removeProperty('display')
-          iframeWrapper.style.removeProperty('flex-direction')
-          iframeWrapper.style.removeProperty('align-items')
-          iframeWrapper.style.removeProperty('justify-content')
-          iframeWrapper.style.removeProperty('position')
-          
-          iframe.style.width = '100%'
-          iframe.style.height = '100%'
-          iframe.style.removeProperty('background')
-
-          iframe.contentWindow.postMessage('Hello from iframe', 'https://sleepfirstfinancing.com');
+      function closeIframeTagLinePopup() {
+        let body = document.getElementsByTagName('body')[0];
+        let iframeWrapper = document.getElementById('iframeWrapperTagLine');
+        let nav = document.getElementById('shopify-section-header');
+        let iframe = document.getElementById('taglinePopupIframe');
+        let logoContainer = document.getElementById('logoContainer');
+        if(logoContainer) {
+          logoContainer.remove()
         }
+
         
-        function openIframePopup() {
-            // Display the spinner
-            // document.getElementById('iframeSpinner').style.display = 'block';
-    
-            // Create a wrapper div
-            let iframeWrapper = document.createElement('div');
-            iframeWrapper.setAttribute('id', 'iframeWrapper');
-            iframeWrapper.style.position = 'fixed';
-            iframeWrapper.style.top = '50%';
-            iframeWrapper.style.left = '50%';
-            iframeWrapper.style.transform = 'translate(-50%, -50%)';
-            iframeWrapper.style.zIndex = '1000';
-    
-            // Check if the iframe already exists
-            let iframe = document.getElementById('popupIframe');
-            if (!iframe) {
-                const pay_button = document.getElementsByClassName('pay-button')[0]
-                const url = pay_button.getAttribute('href')
-                let priceDataDiv = document.getElementById('priceData');
-                let montPrice = ''
-                let variantPrice = ''
-                
-                if (priceDataDiv) {
-                  montPrice = priceDataDiv.getAttribute('data-month-price');
-                  unformatedVariantPrice = Math.ceil(parseFloat(priceDataDiv.getAttribute('data-unformated-price')));
-                  variantPrice = priceDataDiv.getAttribute('data-variant-price');
-                  // ... rest of the code
-                } else {
-                  console.warn("priceData element not found!");
-                }
-                iframe = document.createElement('iframe');
-                iframe.setAttribute('src', `https://sleepfirstfinancing.com/index-fullworkflow?amount_payment=${unformatedVariantPrice}`);
-                iframe.setAttribute('id', 'popupIframe');
-    
-                
-                // Base styles
-                iframe.style.width = '80vw';
-                iframe.style.height = '80vh';
-                iframe.style.border = 'none';
-                iframe.style.background = 'white';
-    
-                // Apply media query for desktop
-                const mediaQuery = window.matchMedia('(min-width: 768px)');
-                if (mediaQuery.matches) { // If it's desktop
-                    iframe.style.maxWidth = '1138px';
-                }
-    
-                iframe.onload = function() {
-                    // Hide the spinner when iframe content is loaded
-                    document.getElementById('iframeSpinner').style.display = 'none';
-                };
-                
-
-                const logo_container = document.createElement('DIV')
-                logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
-                logo_container.style.background = 'white'
-                logo_container.innerHTML = `
-                  <div class="image_logo flex justify-between w-full">
-                    {% render 'icons', icon: 'logo' %}
-                    <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframePopup()">
-                      <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
-                    </div>
-                  </div>
-                `
-                const spinner = document.createElement('div')
-                spinner.id = 'iframeSpinner'
-                spinner.style.position = 'absolute'
-                spinner.style.top = '0'
-                spinner.style.width = '100%'
-                spinner.style.height = '100%'
-                spinner.style.zIndex = '2000'
-                spinner.style.textAlign = 'center'
-                spinner.innerHTML = `
-                  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                      <!-- You can use an image, SVG, or CSS-based spinner here. I'm using a basic CSS spinner as an example. -->
-                      <div style="border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
-                  </div>
-                `
-
-                iframeWrapper.appendChild(logo_container); // Append close button to the wrapper
-                
-                iframeWrapper.appendChild(spinner); // Append close button to the wrapper
-                
-                iframeWrapper.appendChild(iframe); // Append iframe to the wrapper
-                
-
-                // Listen for a message from the iframe
-                window.addEventListener('message', function(event) {
-                    if (event.origin !== "https://sleepfirstfinancing.com") return;
-    
-                    if (event.data.ready) {
-                        event.source.postMessage({
-                          montPrice: montPrice,
-                          variantPrice: variantPrice
-                        }, event.origin);
-                    }
-                });
-    
-    
-                document.body.appendChild(iframeWrapper); // Append wrapper to the body
-    
-                // Add an overlay behind the iframe
-                let overlay = document.createElement('div');
-                overlay.setAttribute('id', 'iframeOverlay');
-                overlay.style.position = 'fixed';
-                overlay.style.top = '0';
-                overlay.style.left = '0';
-                overlay.style.width = '100vw';
-                overlay.style.height = '100vh';
-                overlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
-                overlay.style.zIndex = '999';
-                overlay.onclick = function() {
-                    closeIframePopup();
-                };
-                document.body.appendChild(overlay);
-            }
-        }
-    
-        function closeIframePopup() {
-            let iframeWrapper = document.getElementById('iframeWrapper'); // New
-            let overlay = document.getElementById('iframeOverlay');
-    
-            if (iframeWrapper) {
-                document.body.removeChild(iframeWrapper);
-            }
-            if (overlay) {
-                document.body.removeChild(overlay);
-            }
-        }
+        body.style.removeProperty('overflow-y')
+        iframeWrapper.style.removeProperty('top')
+        iframeWrapper.style.removeProperty('left')
+        iframeWrapper.style.width = '100%'
+        iframeWrapper.style.height = '90px'
+        iframeWrapper.style.removeProperty('background')
+        iframeWrapper.style.removeProperty('display')
+        iframeWrapper.style.removeProperty('flex-direction')
+        iframeWrapper.style.removeProperty('align-items')
+        iframeWrapper.style.removeProperty('justify-content')
+        iframeWrapper.style.removeProperty('position')
         
-      </script>
-      <script>
-        window.onload = () => {
-          function openTagLineIframePopup() {
-            const tagline_item = document.getElementById('tagline-item')
-            let iframeWrapper = document.createElement('div');
-            iframeWrapper.setAttribute('id', 'iframeWrapperTagLine');
-            iframeWrapper.setAttribute('onclick', 'closeIframeTagLinePopup()');
-            iframeWrapper.style.width = '100%'
-            iframeWrapper.style.height = '90px'
-            iframeWrapper.style.zIndex = '10200932018309823'
-            let iframe = document.getElementById('taglinePopupIframe');
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.style.removeProperty('background')
 
-            if (!iframe) {          
-              const link_iframe = document.createElement('a')
-              link_iframe.classList.add('link-iframe','ml-2')
-              link_iframe.setAttribute('href', 'javascript:void(0);')
-              link_iframe.setAttribute('onclick', 'openIframePopup()')
-              link_iframe.innerHTML = 'Learn More'
+        iframe.contentWindow.postMessage('Hello from iframe', 'https://sleepfirstfinancing.com');
+      }
+      
+      function openIframePopup() {
+          // Display the spinner
+          // document.getElementById('iframeSpinner').style.display = 'block';
+  
+          // Create a wrapper div
+          let iframeWrapper = document.createElement('div');
+          iframeWrapper.setAttribute('id', 'iframeWrapper');
+          iframeWrapper.style.position = 'fixed';
+          iframeWrapper.style.top = '50%';
+          iframeWrapper.style.left = '50%';
+          iframeWrapper.style.transform = 'translate(-50%, -50%)';
+          iframeWrapper.style.zIndex = '1000';
+  
+          // Check if the iframe already exists
+          let iframe = document.getElementById('popupIframe');
+          if (!iframe) {
+              const pay_button = document.getElementsByClassName('pay-button')[0]
+              const url = pay_button.getAttribute('href')
               let priceDataDiv = document.getElementById('priceData');
-              let unformatedVariantPrice = 0
-              
+              let montPrice = ''
+              let variantPrice = ''
               if (priceDataDiv) {
+                montPrice = priceDataDiv.getAttribute('data-month-price');
                 unformatedVariantPrice = Math.ceil(parseFloat(priceDataDiv.getAttribute('data-unformated-price')));
+                variantPrice = priceDataDiv.getAttribute('data-variant-price');
+                // ... rest of the code
               } else {
                 console.warn("priceData element not found!");
-                return
               }
-
               iframe = document.createElement('iframe');
-              iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${unformatedVariantPrice}`);
-              iframe.setAttribute('id', 'taglinePopupIframe');
-
+              iframe.setAttribute('src', `https://sleepfirstfinancing.com/index-fullworkflow?amount_payment=${unformatedVariantPrice}`);
+              iframe.setAttribute('id', 'popupIframe');
+  
               
               // Base styles
-              iframe.style.width = '100%';
-              iframe.style.height = '100%';
+              iframe.style.width = '80vw';
+              iframe.style.height = '80vh';
               iframe.style.border = 'none';
+              iframe.style.background = 'white';
+  
+              // Apply media query for desktop
+              const mediaQuery = window.matchMedia('(min-width: 768px)');
+              if (mediaQuery.matches) { // If it's desktop
+                  iframe.style.maxWidth = '1138px';
+              }
+  
+              iframe.onload = function() {
+                  // Hide the spinner when iframe content is loaded
+                  document.getElementById('iframeSpinner').style.display = 'none';
+              };
+              
+
+              const logo_container = document.createElement('DIV')
+              logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
+              logo_container.style.background = 'white'
+              logo_container.innerHTML = `
+                <div class="image_logo flex justify-between w-full">
+                  {% render 'icons', icon: 'logo' %}
+                  <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframePopup()">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
+                  </div>
+                </div>
+              `
+              const spinner = document.createElement('div')
+              spinner.id = 'iframeSpinner'
+              spinner.style.position = 'absolute'
+              spinner.style.top = '0'
+              spinner.style.width = '100%'
+              spinner.style.height = '100%'
+              spinner.style.zIndex = '2000'
+              spinner.style.textAlign = 'center'
+              spinner.innerHTML = `
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <!-- You can use an image, SVG, or CSS-based spinner here. I'm using a basic CSS spinner as an example. -->
+                    <div style="border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
+                </div>
+              `
+
+              iframeWrapper.appendChild(logo_container); // Append close button to the wrapper
+              
+              iframeWrapper.appendChild(spinner); // Append close button to the wrapper
+              
               iframeWrapper.appendChild(iframe); // Append iframe to the wrapper
-              // iframeWrapper.appendChild(link_iframe); // Append iframe to the wrapper
               
 
               // Listen for a message from the iframe
               window.addEventListener('message', function(event) {
-                if (event.origin !== "https://sleepfirstfinancing.com") return;
-
-                if (event.data.ready) {
-                  event.source.postMessage({
-                    montPrice: montPrice,
-                    variantPrice: variantPrice
-                  }, event.origin);
-                }
+                  if (event.origin !== "https://sleepfirstfinancing.com") return;
+  
+                  if (event.data.ready) {
+                      event.source.postMessage({
+                        montPrice: montPrice,
+                        variantPrice: variantPrice
+                      }, event.origin);
+                  }
               });
-              tagline_item.appendChild(iframeWrapper);
-            }
+  
+  
+              document.body.appendChild(iframeWrapper); // Append wrapper to the body
+  
+              // Add an overlay behind the iframe
+              let overlay = document.createElement('div');
+              overlay.setAttribute('id', 'iframeOverlay');
+              overlay.style.position = 'fixed';
+              overlay.style.top = '0';
+              overlay.style.left = '0';
+              overlay.style.width = '100vw';
+              overlay.style.height = '100vh';
+              overlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+              overlay.style.zIndex = '999';
+              overlay.onclick = function() {
+                  closeIframePopup();
+              };
+              document.body.appendChild(overlay);
           }
-          
-          window.addEventListener('message', function(event) {
-            // Check the origin of the message to ensure it's from a trusted source
-            if (event.origin !== 'https://sleepfirstfinancing.com') return;
+      }
+  
+      function closeIframePopup() {
+          let iframeWrapper = document.getElementById('iframeWrapper'); // New
+          let overlay = document.getElementById('iframeOverlay');
+  
+          if (iframeWrapper) {
+              document.body.removeChild(iframeWrapper);
+          }
+          if (overlay) {
+              document.body.removeChild(overlay);
+          }
+      }
+      
+    </script>
+     <script>
+      window.onload = () => {
+        function openTagLineIframePopup() {
+          const tagline_item = document.getElementById('tagline-item')
+          let iframeWrapper = document.createElement('div');
+          iframeWrapper.setAttribute('id', 'iframeWrapperTagLine');
+          iframeWrapper.setAttribute('onclick', 'closeIframeTagLinePopup()');
+          iframeWrapper.style.width = '100%'
+          iframeWrapper.style.height = '90px'
+          iframeWrapper.style.zIndex = '10200932018309823'
+          let iframe = document.getElementById('taglinePopupIframe');
 
-            // Handle the message
-            let body = document.getElementsByTagName('body')[0];
-            let nav = document.getElementById('shopify-section-header');
-            let iframeWrapper = document.getElementById('iframeWrapperTagLine');
-            let iframe = document.getElementById('taglinePopupIframe');
-            iframeWrapper.style.position = 'fixed'
-
-            const logo_container = document.createElement('DIV')
-            logo_container.setAttribute('id', 'logoContainer');
-            logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
-            logo_container.style.background = 'white'
-            logo_container.style.width = '80%'
-            logo_container.innerHTML = `
-              <div class="image_logo flex justify-between w-full">
-                {% render 'icons', icon: 'logo' %}
-                <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframeTagLinePopup()">
-                  <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
-                </div>
-              </div>
-            `
-
-            nav.classList.remove('sticky')
-            body.style.overflowY = 'hidden'
+          if (!iframe) {          
+            const link_iframe = document.createElement('a')
+            link_iframe.classList.add('link-iframe','ml-2')
+            link_iframe.setAttribute('href', 'javascript:void(0);')
+            link_iframe.setAttribute('onclick', 'openIframePopup()')
+            link_iframe.innerHTML = 'Learn More'
+            let priceDataDiv = document.getElementById('priceData');
+            let unformatedVariantPrice = 0
             
-            iframeWrapper.style.top = '0'
-            iframeWrapper.style.left = '0'
-            iframeWrapper.style.width = '100vw'
-            iframeWrapper.style.height = '100vh'
-            iframeWrapper.style.background = 'rgba(0,0,0,0.4)'
-            iframeWrapper.style.display = 'flex'
-            iframeWrapper.style.flexDirection = 'column'
-            iframeWrapper.style.alignItems = 'center'
-            iframeWrapper.style.justifyContent = 'center'
-            iframeWrapper.style.zIndex = '1237128931298378912'
+            if (priceDataDiv) {
+              unformatedVariantPrice = Math.ceil(parseFloat(priceDataDiv.getAttribute('data-unformated-price')));
+            } else {
+              console.warn("priceData element not found!");
+              return
+            }
 
-            iframe.style.width = '80%'
-            iframe.style.height= '80%'
-            iframe.style.background = 'white'
+            iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${unformatedVariantPrice}`);
+            iframe.setAttribute('id', 'taglinePopupIframe');
 
-            iframeWrapper.prepend(logo_container)
-          });
-          openTagLineIframePopup()
+            
+            // Base styles
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframeWrapper.appendChild(iframe); // Append iframe to the wrapper
+            // iframeWrapper.appendChild(link_iframe); // Append iframe to the wrapper
+            
+
+            // Listen for a message from the iframe
+            window.addEventListener('message', function(event) {
+              if (event.origin !== "https://sleepfirstfinancing.com") return;
+
+              if (event.data.ready) {
+                event.source.postMessage({
+                  montPrice: montPrice,
+                  variantPrice: variantPrice
+                }, event.origin);
+              }
+            });
+            tagline_item.appendChild(iframeWrapper);
+          }
         }
-      </script>
+        
+        window.addEventListener('message', function(event) {
+           // Check the origin of the message to ensure it's from a trusted source
+          if (event.origin !== 'https://sleepfirstfinancing.com') return;
+
+          // Handle the message
+          let body = document.getElementsByTagName('body')[0];
+          let nav = document.getElementById('shopify-section-header');
+          let iframeWrapper = document.getElementById('iframeWrapperTagLine');
+          let iframe = document.getElementById('taglinePopupIframe');
+          iframeWrapper.style.position = 'fixed'
+
+          const logo_container = document.createElement('DIV')
+          logo_container.setAttribute('id', 'logoContainer');
+          logo_container.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'py-5', 'px-3')
+          logo_container.style.background = 'white'
+          logo_container.style.width = '80%'
+          logo_container.innerHTML = `
+            <div class="image_logo flex justify-between w-full">
+              {% render 'icons', icon: 'logo' %}
+              <div style="color: white; text-align:center; border-radius: 15px; cursor: pointer; z-index: 10;" onclick="closeIframeTagLinePopup()">
+                <img src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/close.png?v=1697120912">
+              </div>
+            </div>
+          `
+
+          nav.classList.remove('sticky')
+          body.style.overflowY = 'hidden'
+          
+          iframeWrapper.style.top = '0'
+          iframeWrapper.style.left = '0'
+          iframeWrapper.style.width = '100vw'
+          iframeWrapper.style.height = '100vh'
+          iframeWrapper.style.background = 'rgba(0,0,0,0.4)'
+          iframeWrapper.style.display = 'flex'
+          iframeWrapper.style.flexDirection = 'column'
+          iframeWrapper.style.alignItems = 'center'
+          iframeWrapper.style.justifyContent = 'center'
+          iframeWrapper.style.zIndex = '1237128931298378912'
+
+          iframe.style.width = '80%'
+          iframe.style.height= '80%'
+          iframe.style.background = 'white'
+
+          iframeWrapper.prepend(logo_container)
+        });
+        openTagLineIframePopup()
+      }
+    </script>
     {% endif %}
   
 
