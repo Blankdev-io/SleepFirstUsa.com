@@ -1130,15 +1130,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Klaviyo main script end -->
 
       <script>
-        function closeIframeTagLinePopup() {
-          let body = document.getElementsByTagName('body')[0];
-          let iframeWrapper = document.getElementById('iframeWrapperTagLine');
-          let nav = document.getElementById('shopify-section-header');
-          let iframe = document.getElementById('taglinePopupIframe');
-          let logoContainer = document.getElementById('logoContainer');
-          if(logoContainer) {
-            logoContainer.remove()
-          }
+      function closeIframeTagLinePopup() {
+        let body = document.getElementsByTagName('body')[0];
+        let iframeWrapper = document.getElementById('iframeWrapperTagLine');
+        let nav = document.getElementById('shopify-section-header');
+        let iframe = document.getElementById('taglinePopupIframe');
+        let logoContainer = document.getElementById('logoContainer');
+        
+        if(logoContainer) {
+          logoContainer.remove();
+        }
+      
+        // Add this line to reload the iframe
+        if (iframe) {
+          iframe.src = iframe.src;
+        }
 
           
           body.style.removeProperty('overflow-y')
