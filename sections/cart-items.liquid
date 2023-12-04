@@ -443,15 +443,13 @@
                         </div>
                         <div class="flex flex-col items-end gap-3 pt-3 ts:pt-8">
                             <button @click="clearCart" name="clear" class="button-white w-full" data-id="add-btn">CLEAR CART</button>
-                                {% if settings.financing_checkbox %}
-                                    <button type="button" @click="sendCustomCheckout" class="pay-button button w-full" target="_blank">
-                                            <span>Pay by</span>
-                                                <span class="logo-button">
-                                                    <img style="height: 19px;" src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/1698169145-trimmy-Sleep_First_Logo_Primary_White_Outline.png?v=1698169163" alt="">
-                                                </span>
-                                            <span>Financing Card</span>
-                                    </button>
-                                {% endif %}
+                            <button type="button" @click="sendCustomCheckout" class="pay-button button w-full" target="_blank">
+                                <span>Pay by</span>
+                                <span class="logo-button">
+                                    <img style="height: 19px;" src="https://cdn.shopify.com/s/files/1/0248/6163/8710/files/1698169145-trimmy-Sleep_First_Logo_Primary_White_Outline.png?v=1698169163" alt="">
+                                </span>
+                                <span>Financing Card</span>
+                            </button>
                             <button type="submit" name="checkout" class="button w-full">CHECKOUT</button>
                         </div>
                     </div>
