@@ -40,7 +40,11 @@
                     </div>
                     <div class="flex flex-col{% if v-center == false %} justify-between tl:h-1/2{% endif %}">   
                         <div class="whitespace-pre-wrap mb-4">{{ content }}</div>
+                        {% if section.settings.financingbutton %}
+                        <div class="flex flex-row items-center" id="tagline-item">
+                        {% else %}
                         <a href="{{ button_url }}" title="{{ button }}" class="button{% if whitebutton == true %}-white{% endif %} mm:w-max">{{ button }}</a>
+                        {% endif %}
                     </div>               
             </div>            
     </div>
@@ -96,7 +100,13 @@
             "id": "whitebutton",
             "label": "White button",
             "default": false
-        }, 
+        },
+        {
+            "type": "checkbox",
+            "id": "financingbutton",
+            "label": "Financing Button",
+            "default": false
+        },  
         {
             "type": "url",
             "id": "button_url",
