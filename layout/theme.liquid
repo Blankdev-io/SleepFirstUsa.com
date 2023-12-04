@@ -1312,7 +1312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               let priceDataDiv = document.getElementById('priceData');
               let unformatedVariantPrice = 0
               
-              {% if template contains 'financing' %}
+              {% if template.name contains 'financing' %}
                 //So it doesn't run on financing page
               {% else %}
               if (priceDataDiv) {
