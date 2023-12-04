@@ -1324,7 +1324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {% endif %}
 
               iframe = document.createElement('iframe');
-              iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?amount_payment=${unformatedVariantPrice}`);
+              iframe.setAttribute('src', `https://sleepfirstfinancing.com/taglines?{% if template.name contains 'financing' %}amount_payment=100{% else %}amount_payment=${unformatedVariantPrice}{% endif %}`);
               iframe.setAttribute('id', 'taglinePopupIframe');
 
               
