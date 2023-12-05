@@ -1135,7 +1135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           iframeWrapper.style.removeProperty('top')
           iframeWrapper.style.removeProperty('left')
           iframeWrapper.style.width = '100%'
-          iframeWrapper.style.height = '90px'
+          iframeWrapper.style.height = {% if template.name == 'product' %}'90px'{% else %}'600px'{% endif %}
           iframeWrapper.style.removeProperty('background')
           iframeWrapper.style.removeProperty('display')
           iframeWrapper.style.removeProperty('flex-direction')
@@ -1183,6 +1183,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 iframe = document.createElement('iframe');
                 iframe.setAttribute('src', `https://sleepfirstfinancing.com/{% if template.name == 'product' %}taglines?amount_payment=${unformatedVariantPrice}{% else %}taglinefinancingpage?amount_payment=3500{% endif %}`);
                 iframe.setAttribute('id', 'popupIframe');
+                iframe.setAttribute('style', `{% if template.name == 'product' %}{% else %}'600px'{% endif %}`);
+
     
                 
                 // Base styles
@@ -1289,7 +1291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             iframeWrapper.setAttribute('id', 'iframeWrapperTagLine');
             iframeWrapper.setAttribute('onclick', 'closeIframeTagLinePopup()');
             iframeWrapper.style.width = '100%'
-            iframeWrapper.style.height = '90px'
+            iframeWrapper.style.height = {% if template.name == 'product' %}'90px'{% else %}'600px'{% endif %}
             iframeWrapper.style.zIndex = '10200932018309823'
             let iframe = document.getElementById('taglinePopupIframe');
 
