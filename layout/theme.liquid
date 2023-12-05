@@ -1183,6 +1183,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 iframe = document.createElement('iframe');
                 iframe.setAttribute('src', `https://sleepfirstfinancing.com/{% if template.name == 'product' %}taglines?amount_payment=${unformatedVariantPrice}{% else %}taglinefinancingpage?amount_payment=3500{% endif %}`);
                 iframe.setAttribute('id', 'popupIframe');
+                iframe.setAttribute('style', `{% if template.name == 'product' %}{% else %}'600px'{% endif %}`);
+
     
                 
                 // Base styles
