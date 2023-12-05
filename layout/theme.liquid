@@ -1135,7 +1135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           iframeWrapper.style.removeProperty('top')
           iframeWrapper.style.removeProperty('left')
           iframeWrapper.style.width = '100%'
-          iframeWrapper.style.height = '90px'
+          iframeWrapper.style.height = {% if template.name == 'product' %}'90px'{% else %}'600px'{% endif %}
           iframeWrapper.style.removeProperty('background')
           iframeWrapper.style.removeProperty('display')
           iframeWrapper.style.removeProperty('flex-direction')
