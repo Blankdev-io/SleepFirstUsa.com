@@ -304,6 +304,7 @@
         "6e001c51-7c5e-4d5c-9b50-e89358cc01a5",
         "3ecf528b-a0cd-46d7-917d-a424d220f14b"
       ],
+      "disabled": true,
       "settings": {
         "showStoreLocator": false,
         "position": "2"
