@@ -131,8 +131,8 @@
       <div class="mb-6">
         <picture>
           {% assign promotion_banner = shop.metaobjects.promotion.value %}
-          {% assign mobile_banner = promotion_banner.promotion_page_banner_mobile %}
-          {% assign desktop_banner = promotion_banner.promotion_page_banner_desktop %}
+          {% assign mobile_banner = promotion.promotion_page_banner_mobile %}
+          {% assign desktop_banner = promotion.promotion_page_banner_desktop %}
           <source media="(min-width: 568px)" srcset="{{ desktop_banner | image_url }}">
           <img class="rounded-cl w-full h-full" src="{{ mobile_banner | image_url }}" alt="{{ promotion.title }}" title="{{ promotion.title }}" loading="lazy">
         </picture>
