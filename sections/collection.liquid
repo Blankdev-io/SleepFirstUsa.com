@@ -128,7 +128,7 @@
   {% if promotion.collection == collection.handle %}  
       <div class="mb-6">
         <picture>
-          {% assign promotion_banner = collection.metafields.custom.promotion_banner.value %}
+          {% assign promotion_banner = shop.metaobjects.promotion.value %}
           {% assign mobile_banner = promotion_banner.promotion_page_banner_mobile %}
           {% assign desktop_banner = promotion_banner.promotion_page_banner_desktop %}
           <source media="(min-width: 568px)" srcset="{{ desktop_banner | image_url }}">
