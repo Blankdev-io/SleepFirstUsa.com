@@ -125,8 +125,8 @@
 <div id="collection-page" class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
 
 {% for promotion in shop.metaobjects.promotion.values %}
-  {% assign collection = promotion.collection %}
-  {% if collection == collection.handle %}  
+  {% assign collection_banner = promotion.collection %}
+  {% if collection_banner == collection.handle %}  
       <div class="mb-6">
         <picture>
           {% assign promotion_banner = shop.metaobjects.promotion.value %}
