@@ -1,41 +1,39 @@
 {% liquid
     assign showStoreLocator = section.settings.showStoreLocator
     assign current_date = 'now' | date: "%s"
+    assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'order'
+    assign counter = 0
   %}
 
   
   <div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
       <div class="flex flex-col gap-4 ts:flex-row {% if showStoreLocator == true %}ts:mb-8{% endif %} ds:gap-8">
-          {% for promotion in shop.metaobjects.promotion.values %}
-            {% liquid 
+          {% for promotion in sorted_promotions %}
+            {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
+            {% assign promotion_hide = promotion.hide_promotion %}
+
+            {% if current_date < promotion_date or promotion_hide != true %}
+              {% if counter < 3 %}
+                {% assign counter = counter | plus: 1 %}
+              {% liquid 
                 assign banner_img = promotion.homepage_banner_desktop
                 assign banner_img_mob = promotion.homepage_banner_mobile
                 assign order = promotion.order
                 assign title = promotion.title
                 assign url = promotion.url
-                assign promotion_date = promotion.end_of_promotion | date: "%s"
-                assign promotion_hide = promotion.hide_promotion
             %}
-            {% if section.settings.position == '1' %}
-              {% if order == 1 %}
-                {% if current_date < promotion_date and promotion_hide != true %}
-                    <div class="order-2 w-full ts:w-1/3 ts:order-1">
+
+        <div class="order-2 w-full ts:w-1/3 ts:order-1">
                       <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
                           <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
                           <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
                       </picture></a>
                   </div>
-                {% endif %}
-              {% elsif order == 2 %}
-                {% if current_date < promotion_date and promotion_hide != true %}
-                  <div class="order-1 w-full ts:w-1/3 ts:order-2">
-                      <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
-                          <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                          <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                      </picture></a>
-                  </div>
-                {% endif %}
-              {% elsif order == 3 %}
+
+    {% endif %}
+  {% endif %}
+{% endfor %}
+  
                   {% if showStoreLocator == true %}
                       <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="order-3 flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
                           <div class="flex justify-center items-center gap-4 w-full">
@@ -45,56 +43,7 @@
                           <div class="button w-max">Find A Store</div>
                       </div>
                   {% endif %}
-                {% if current_date < promotion_date and promotion_hide != true %}
-                  <div class="order-4 w-full ts:w-1/3">
-                      <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
-                          <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                          <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                      </picture></a>
-                  </div>
-                {% endif %}
-              {% endif %}
-            {% elsif section.settings.position == '2' %}
-              {% if order == 4 %}
-              {% if current_date < promotion_date and promotion_hide != true %}
-                <div class="order-2 w-full ts:w-1/3 ts:order-1">
-                    <a href="{{ url }}" alt="{{ url.alt }}" title="{{ title }}"><picture>
-                        <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                        <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                    </picture></a>
-                </div>
-              {% endif %}
-              {% elsif order == 5 %}
-              {% if current_date < promotion_date and promotion_hide != true %}
-                  <div class="order-1 w-full ts:w-1/3 ts:order-2">
-                      <a href="{{ url }}" alt="{{ url.alt }}" title="{{ title }}"><picture>
-                          <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                          <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                      </picture></a>
-                  </div>
-              {% endif %}
-              {% elsif order == 6 %}
-                  {% if showStoreLocator == true %}
-                      <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="order-3 flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
-                          <div class="flex justify-center items-center gap-4 w-full">
-                              <span>{% render 'icons', icon: 'map' %}</span>
-                              <span class="text-center ds:text-lg">Experience our personalized service.</span>
-                          </div>
-                          <div class="button w-max">Find A Store</div>
-                      </div>
-                  {% endif %}
-                {% if current_date < promotion_date and promotion_hide != true %}
-                  <div class="order-4 w-full ts:w-1/3">
-                      <a href="{{ url }}" alt="{{ url.alt }}" title="{{ url.title }}"><picture>
-                          <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                          <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                      </picture></a>
-                  </div>
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-      </div>
+                
       {% if showStoreLocator == true %}
           <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="hidden justify-around items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:flex">
               <span>{% render 'icons', icon: 'map' %}</span>
