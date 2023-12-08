@@ -12,7 +12,7 @@
             {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
             {% assign promotion_hide = promotion.hide_promotion %}
 <script>console.log('{{ promotion_hide }}')</script>
-            {% if current_date < promotion_date or promotion_hide != true %}
+            {% if current_date < promotion_date or promotion_hide == false %}
               {% if counter < 3 %}
                 {% assign counter = counter | plus: 1 %}
               {% liquid 
