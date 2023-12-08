@@ -127,7 +127,7 @@
 {% for promotion in shop.metaobjects.promotion.values %}
   {% assign promotion_url_parts = promotion.url | split: '/' %}
   {% assign collection_url_parts = collection.url | split: '/' %}
-  {% if promotion_url_parts == collection_url_parts %}  
+  {% if promotion_url_parts.last == collection_url_parts.last %}  
       <div class="mb-6">
         <picture>
           {% assign promotion_banner = shop.metaobjects.promotion.value %}
