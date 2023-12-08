@@ -5,10 +5,6 @@
     assign sorted_promotions = sorted_promotions | sort: 'order2'
     assign counter = 0
   %}
-  
-<script>
-console.log('{{ sorted_promotions }}')
-</script>
 
 <div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
       <div class="flex flex-col gap-4 ts:flex-row {% if showStoreLocator == true %}ts:mb-8{% endif %} ds:gap-8">
@@ -16,7 +12,7 @@ console.log('{{ sorted_promotions }}')
             {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
             {% assign promotion_hide = promotion.hide_promotion %}
 
-            {% if current_date < promotion_date or promotion_hide != true %}
+            {% if current_date < promotion_date and promotion_hide != true %}
               {% if counter < 3 %}
                 {% assign counter = counter | plus: 1 %}
               {% liquid 
@@ -34,9 +30,9 @@ console.log('{{ sorted_promotions }}')
                       </picture></a>
                   </div>
 
-    {% endif %}
-  {% endif %}
-{% endfor %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
   
                   {% if showStoreLocator == true %}
                       <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="order-3 flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
