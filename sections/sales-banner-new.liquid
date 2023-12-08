@@ -13,11 +13,12 @@
                 assign order = promotion.order
                 assign title = promotion.title
                 assign url = promotion.url
-                assign promotion_date = promotion.end_of_promotion | date: "%s" 
+                assign promotion_date = promotion.end_of_promotion | date: "%s"
+                assign promotion_hide = promotion.hide_promotion
             %}
             {% if section.settings.position == '1' %}
               {% if order == 1 %}
-                {% if current_date < promotion_date %}
+                {% if current_date < promotion_date and promotion_hide != true %}
                     <div class="order-2 w-full ts:w-1/3 ts:order-1">
                       <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
                           <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
