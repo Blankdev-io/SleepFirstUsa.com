@@ -4,8 +4,9 @@
     assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'order'
     assign counter = 0
   %}
-
-  
+<script>
+console.log({{ sorted_promotions }})
+  </script>
   <div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
       <div class="flex flex-col gap-4 ts:flex-row {% if showStoreLocator == true %}ts:mb-8{% endif %} ds:gap-8">
           {% for promotion in sorted_promotions %}
