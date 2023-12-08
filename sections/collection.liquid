@@ -126,18 +126,19 @@
 
 {% for promotion in shop.metaobjects.promotion.values %}
   {% assign collection_banner = promotion.url %}
+  
   {% if collection_banner == collection.url %}  
-      <div class="mb-6">
-        <picture>
-          {% assign promotion_banner = shop.metaobjects.promotion.value %}
-          {% assign mobile_banner = promotion_banner.promotion_page_banner_mobile %}
-          {% assign desktop_banner = promotion_banner.promotion_page_banner_desktop %}
-          <source media="(min-width: 568px)" srcset="{{ desktop_banner | image_url }}">
-          <img class="rounded-cl w-full h-full" src="{{ mobile_banner | image_url }}" alt="{{ promotion.title }}" title="{{ promotion.title }}" loading="lazy">
-        </picture>
-      </div>
+    <div class="mb-6">
+      <picture>
+        {% assign mobile_banner = promotion.promotion_page_banner_mobile %}
+        {% assign desktop_banner = promotion.promotion_page_banner_desktop %}
+        <source media="(min-width: 568px)" srcset="{{ desktop_banner | img_url: '800x' }}">
+        <img class="rounded-cl w-full h-full" src="{{ mobile_banner | img_url: '400x' }}" alt="{{ promotion.title }}" title="{{ promotion.title }}" loading="lazy">
+      </picture>
+    </div>
   {% endif %}
 {% endfor %}
+
 
   <div class="flex justify-between mb-6">
     <div class="flex items-center">
