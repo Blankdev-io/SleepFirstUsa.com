@@ -1,7 +1,7 @@
 {% liquid
     assign showStoreLocator = section.settings.showStoreLocator
     assign current_date = 'now' | date: "%s"
-    assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'promotion.order'
+    assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'shop.metaobjects.promotion.order'
     assign counter = 0
   %}
   
