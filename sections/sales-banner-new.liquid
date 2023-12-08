@@ -1,7 +1,7 @@
 {% liquid
     assign showStoreLocator = section.settings.showStoreLocator
     assign current_date = 'now' | date: "%s"
-    assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'shop.metaobjects.promotion.order'
+    assign sorted_promotions = shop.metaobjects.promotion.values | sort: 'promotion.order'
     assign counter = 0
   %}
   
@@ -26,7 +26,7 @@ console.log('{{ sorted_promotions }}')
                 assign url = promotion.url
             %}
 
-        <div class="order-2 w-full ts:w-1/3 ts:order-1">
+        <div class="order-{{ order }} w-full ts:w-1/3 ts:order-1">
                       <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
                           <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
                           <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
