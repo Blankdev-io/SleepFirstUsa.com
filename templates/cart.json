@@ -2,38 +2,6 @@
   "sections": {
     "cart-items": {
       "type": "cart-items",
-      "blocks": {
-        "42f68dcc-caa9-4fbe-b369-c896ddbd7cee": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/1.01-376x700-IRG-ZX-190163.jpg",
-            "banner_img_mob": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-190163.jpg",
-            "url": "shopify:\/\/collections\/tempur-pedic-mattress-collection"
-          }
-        },
-        "0467e726-5259-4275-8125-9339228cf7c2": {
-          "type": "banner",
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Desktop.png",
-            "banner_img_mob": "shopify:\/\/shop_images\/K4Q_2nd_version_Homepage_Banner_Mobile.png",
-            "url": "shopify:\/\/pages\/store-locator"
-          }
-        },
-        "e91885c7-b0ea-4e9d-992e-decec073116c": {
-          "type": "banner",
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/1.01_-_376x700_-_IRG_-_MIC_-_189901.jpg",
-            "banner_img_mob": "shopify:\/\/shop_images\/4.01_-_727x350_-_IRG_-_MIC_-_189901.jpg",
-            "url": "shopify:\/\/collections\/purple"
-          }
-        }
-      },
-      "block_order": [
-        "42f68dcc-caa9-4fbe-b369-c896ddbd7cee",
-        "0467e726-5259-4275-8125-9339228cf7c2",
-        "e91885c7-b0ea-4e9d-992e-decec073116c"
-      ],
       "settings": {
         "upsell_title": "Check out this products as well:",
         "sug_mat": [

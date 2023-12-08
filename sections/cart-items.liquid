@@ -460,7 +460,8 @@
             <template v-else-if="itemsCount == 0">
                 <h1 class="text-title mb-7">Cart</h1>
                 <p class="text-bold text-2xl mb-7">Your cart is empty</p>
-                <p class="text-bold text-2xl mb-7">You can take a look at these offers:</p>
+                {% if section.blocks.size > 0 %}
+                  <p class="text-bold text-2xl mb-7">You can take a look at these offers:</p>
                 <div class="flex flex-col gap-4 mb-10 ts:flex-row ds:gap-8">
                     {% for block in section.blocks %}
                     {% liquid 
@@ -478,6 +479,7 @@
                     {% endfor %}
                 </div>
                 <p class="text-bold text-2xl mb-7">Or visit our collections:</p>
+                  {% endif %}
                 <a class="button w-max" href="/collections/all">Continue Shopping</a>
             </template>
         </template>
