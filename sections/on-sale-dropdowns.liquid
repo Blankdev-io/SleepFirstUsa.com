@@ -22,7 +22,7 @@
           assign promotion_date = promotion.end_of_promotion | date: "%s"
           assign promotion_hide = promotion.hide_promotion
       %}
-      {% if current_date < promotion_date and promotion_hide != true %}
+      {% if current_date < promotion_date or promotion_hide != true %}
       <div style="order: {{ order }}" >
         <div class="bg-white shadow-sp rounded-cl">
             <a href="{{ url }}" title="title">
