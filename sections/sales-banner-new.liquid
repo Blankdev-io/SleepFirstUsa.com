@@ -2,7 +2,7 @@
     assign showStoreLocator = section.settings.showStoreLocator
     assign current_date = 'now' | date: "%s"
     assign sorted_promotions = shop.metaobjects.promotion.values
-    assign sorted_promotions = sorted_promotions | sort: 'order'
+    assign sorted_promotions = sorted_promotions | sort_natural: 'order'
     assign counter = 0
   %}
   
