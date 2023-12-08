@@ -12,7 +12,7 @@
             {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
             {% assign promotion_hide = promotion.hide_promotion %}
 
-            {% if current_date < promotion_date and promotion_hide != true %}
+            {% if current_date < promotion_date or promotion_hide != true %}
               {% if counter < 3 %}
                 {% assign counter = counter | plus: 1 %}
               {% liquid 
@@ -23,12 +23,12 @@
                 assign url = promotion.url
             %}
 
-                  <div class="order-{{ order }} w-full ts:w-1/3 ts:order-{{ order }}">
-                      <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
-                          <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
-                          <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
-                      </picture></a>
-                  </div>
+              <div class="order-{{ order }} w-full ts:w-1/3 ts:order-{{ order }}">
+                  <a href="{{ url }}" alt="{{ title }}" title="{{ title }}"><picture>
+                      <source media="(min-width: 768px)" srcset="{{ banner_img | image_url: width: 400 }}">
+                      <img class="object-cover rounded-cl w-full h-full" src="{{ banner_img_mob | image_url: width: 800 }}" alt="{{ banner_img.alt }}" title="{{ banner_img.title }}">
+                  </picture></a>
+              </div>
 
             {% endif %}
           {% endif %}
@@ -36,15 +36,15 @@
 
       </div>
   
-                  {% if showStoreLocator == true %}
-                      <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="order-3 flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
-                          <div class="flex justify-center items-center gap-4 w-full">
-                              <span>{% render 'icons', icon: 'map' %}</span>
-                              <span class="text-center ds:text-lg">Experience our personalized service.</span>
-                          </div>
-                          <div class="button w-max">Find A Store</div>
-                      </div>
-                  {% endif %}
+      {% if showStoreLocator == true %}
+          <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="order-3 flex flex-col justify-between items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:hidden">
+              <div class="flex justify-center items-center gap-4 w-full">
+                  <span>{% render 'icons', icon: 'map' %}</span>
+                  <span class="text-center ds:text-lg">Experience our personalized service.</span>
+              </div>
+              <div class="button w-max">Find A Store</div>
+          </div>
+      {% endif %}
                 
       {% if showStoreLocator == true %}
           <div onclick="showLocatorPopup('store-locator-popup')" title="FIND MY STORE" class="hidden justify-around items-center gap-4 cursor-pointer bg-white rounded-cl shadow-sp w-full p-4 ts:flex">
