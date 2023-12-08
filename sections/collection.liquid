@@ -126,7 +126,8 @@
 
 {% for promotion in shop.metaobjects.promotion.values %}
   {% assign collection_banner = promotion.url %}
-  
+  <script>console.log('{{ collection_banner }}')</script>
+  <script>console.log('{{ collection.url }}')</script>
   {% if collection_banner == collection.url %}  
     <div class="mb-6">
       <picture>
