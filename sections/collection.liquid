@@ -9,6 +9,7 @@
   assign content = section.settings.content 
   assign page_button = section.settings.page_button
   assign page_button_url = section.settings.page_button_url 
+  assign current_date = 'now' | date: "%s"
 %}
 
 {% capture card %}
@@ -127,7 +128,7 @@
 {% for promotion in shop.metaobjects.promotion.values %}
   {% assign promotion_url_parts = promotion.url | split: '/' %}
   {% assign collection_url_parts = collection.url | split: '/' %}
-  {% if promotion_url_parts.last == collection_url_parts.last and promotion.display_in_collection_page == true %}  
+  {% if promotion_url_parts.last == collection_url_parts.last and promotion.display_in_collection_page == true and current_date < promotion_date %}  
       <div class="mb-6">
         <picture>
           {% assign mobile_banner = promotion.promotion_page_banner_mobile %}
