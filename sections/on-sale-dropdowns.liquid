@@ -8,7 +8,7 @@
   {% for promotion in shop.metaobjects.promotion.values %}
       {% liquid
           assign desk_banner = promotion.promotion_page_banner_desktop
-          assign mob_banner = promotion.promotion_page_banner_desktop
+          assign mob_banner = promotion.promotion_page_banner_mobile
           assign title = promotion.title
           assign collection = promotion.collection.value
           assign url = promotion.url
