@@ -12,7 +12,7 @@
             {% assign promotion_end_date = promotion.end_of_promotion | date: "%s" %}
             {% assign promotion_start_date = promotion.start_of_promotion | date: "%s" %}
             {% assign promotion_hide = promotion.hide_promotion %}
-            {% if current_date < promotion_end_date and current_date > promotion_start_date and promotion_hide == false %}
+            {% if current_date > promotion_start_date and current_date < promotion_end_date and promotion_hide == false %}
               {% if counter < 3 %}
                 {% assign counter = counter | plus: 1 %}
               {% liquid 
