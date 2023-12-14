@@ -128,8 +128,9 @@
 {% for promotion in shop.metaobjects.promotion.values %}
   {% assign promotion_url_parts = promotion.url | split: '/' %}
   {% assign collection_url_parts = collection.url | split: '/' %}
-  {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
-  {% if promotion_url_parts.last == collection_url_parts.last and promotion.display_in_collection_page == true and current_date < promotion_date %}  
+  {% assign promotion_end_date = promotion.end_of_promotion | date: "%s" %}
+  {% assign promotion_start_date = promotion.start_of_promotion | date: "%s" %}
+  {% if promotion_url_parts.last == collection_url_parts.last and promotion.display_in_collection_page == true and current_date > promotion_start_date and current_date < promotion_end_date %}  
       <div class="mb-6">
         <picture>
           {% assign mobile_banner = promotion.promotion_page_banner_mobile %}
