@@ -9,10 +9,10 @@
 <div class="mb-10 mx-5 dm:max-w-screen-dm dm:mx-auto dm:px-10 ds:mx-9 dl:px-0">
       <div class="flex flex-col gap-4 ts:flex-row {% if showStoreLocator == true %}ts:mb-8{% endif %} ds:gap-8">
           {% for promotion in sorted_promotions %}
-            {% assign promotion_date = promotion.end_of_promotion | date: "%s" %}
+            {% assign promotion_end_date = promotion.end_of_promotion | date: "%s" %}
+            {% assign promotion_start_date = promotion.start_of_promotion | date: "%s" %}
             {% assign promotion_hide = promotion.hide_promotion %}
-<script>console.log('{{ promotion_date }}')</script>
-            {% if current_date < promotion_date and promotion_hide == false %}
+            {% if current_date < promotion_end_date and current_date > promotion_start_date and promotion_hide == false %}
               {% if counter < 3 %}
                 {% assign counter = counter | plus: 1 %}
               {% liquid 
