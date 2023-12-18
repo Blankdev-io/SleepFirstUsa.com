@@ -47,7 +47,7 @@
             {% if current_date > promotion_start_date and current_date < promotion_end_date and promotion_hide == false %}
               {% if counter2 < 3 %}
                 {% assign counter2 = counter2 | plus: 1 %}
-              {% elsif counter2 > 3 and counter2 < 6  %}
+              {% elsif counter2 > 3 %}
                 {% assign counter2 = counter2 | plus: 1 %}
               {% liquid 
                 assign banner_img = promotion.homepage_banner_desktop
