@@ -407,6 +407,46 @@
     },
     "stores_banner_tiTihP": {
       "type": "stores-banner",
+      "blocks": {
+        "banner_MWgyVC": {
+          "type": "banner",
+          "settings": {
+            "name": "",
+            "address": "",
+            "label": "",
+            "button": "",
+            "button_url": "",
+            "url": ""
+          }
+        },
+        "banner_iAqJDf": {
+          "type": "banner",
+          "settings": {
+            "name": "",
+            "address": "",
+            "label": "",
+            "button": "",
+            "button_url": "",
+            "url": ""
+          }
+        },
+        "banner_fm73tb": {
+          "type": "banner",
+          "settings": {
+            "name": "",
+            "address": "",
+            "label": "",
+            "button": "",
+            "button_url": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_MWgyVC",
+        "banner_iAqJDf",
+        "banner_fm73tb"
+      ],
       "settings": {
         "heading": "Stores"
       }
