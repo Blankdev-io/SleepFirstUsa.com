@@ -404,6 +404,12 @@
       "settings": {
         "custom_html": "<div class=\"klaviyo-form-REgYdn\"><\/div>"
       }
+    },
+    "stores_banner_tiTihP": {
+      "type": "stores-banner",
+      "settings": {
+        "heading": "Stores"
+      }
     }
   },
   "order": [
@@ -420,6 +426,7 @@
     "16645689562ca2c00e",
     "1664805458b02e917b",
     "16648223710eccdae6",
-    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5"
+    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5",
+    "stores_banner_tiTihP"
   ]
 }
