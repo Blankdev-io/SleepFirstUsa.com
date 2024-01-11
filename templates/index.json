@@ -242,6 +242,7 @@
     },
     "a4641aaf-6c7d-4bd6-9fa2-36c6ad25c37c": {
       "type": "sales-banner-new",
+      "disabled": true,
       "settings": {
         "showStoreLocator": false,
         "position": "2"
