@@ -408,47 +408,50 @@
     "stores_banner_tiTihP": {
       "type": "stores-banner",
       "blocks": {
-        "banner_MWgyVC": {
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a": {
           "type": "banner",
           "settings": {
-            "name": "",
-            "address": "",
-            "label": "",
-            "button": "",
-            "button_url": "",
-            "url": ""
+            "banner_img": "shopify:\/\/shop_images\/Longview_Mattress_Clearance_Center.jpg",
+            "name": "Longview, Texas",
+            "address": "<p>106 E Loop 281<br\/>Longview, Texas 75605<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 220-0704",
+            "button_url": "tel:+19032200704",
+            "url": "shopify:\/\/pages\/longview-tx"
           }
         },
-        "banner_iAqJDf": {
+        "9c7f6458-58ea-4621-b53c-187de15dd063": {
           "type": "banner",
           "settings": {
-            "name": "",
-            "address": "",
-            "label": "",
-            "button": "",
-            "button_url": "",
-            "url": ""
+            "banner_img": "shopify:\/\/shop_images\/Sleep_First_Mattress_Tyler_Kinsey_Exterior_1.jpg",
+            "name": "Tyler, Texas <br>(Kinsey Crossing)",
+            "address": "<p>1400 W SW Loop 323<br\/>Tyler, Texas 75701<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 707-2000",
+            "button_url": "tel:+19037072000",
+            "url": "shopify:\/\/pages\/tyler-tx-kinsey"
           }
         },
-        "banner_fm73tb": {
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1": {
           "type": "banner",
           "settings": {
-            "name": "",
-            "address": "",
-            "label": "",
-            "button": "",
-            "button_url": "",
-            "url": ""
+            "banner_img": "shopify:\/\/shop_images\/Cumberland_Exterior_1_8771146d-2ab6-4261-ae6e-44eef9687ce0.jpg",
+            "name": "Tyler, Texas <br>(Cumberland)",
+            "address": "<p>8982 S Broadway Ave<br\/>Tyler, Texas 75703<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 944-7820",
+            "button_url": "tel:+19039447820",
+            "url": "shopify:\/\/pages\/tyler-tx-cumberland"
           }
         }
       },
       "block_order": [
-        "banner_MWgyVC",
-        "banner_iAqJDf",
-        "banner_fm73tb"
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a",
+        "9c7f6458-58ea-4621-b53c-187de15dd063",
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1"
       ],
       "settings": {
-        "heading": "Stores"
+        "heading": "Visit Our Stores"
       }
     }
   },
