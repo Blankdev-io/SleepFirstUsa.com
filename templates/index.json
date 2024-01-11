@@ -3,8 +3,57 @@
     "997ccedc-e356-4d55-92e0-a365612b885d": {
       "type": "sales-banner-new",
       "settings": {
-        "showStoreLocator": true,
+        "showStoreLocator": false,
         "position": "1"
+      }
+    },
+    "stores_banner_tiTihP": {
+      "type": "stores-banner",
+      "blocks": {
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Longview_Mattress_Clearance_Center.jpg",
+            "name": "Longview, Texas",
+            "address": "<p>106 E Loop 281<br\/>Longview, Texas 75605<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 220-0704",
+            "button_url": "tel:+19032200704",
+            "url": "shopify:\/\/pages\/longview-tx"
+          }
+        },
+        "9c7f6458-58ea-4621-b53c-187de15dd063": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Sleep_First_Mattress_Tyler_Kinsey_Exterior_1.jpg",
+            "name": "Tyler, Texas <br>(Kinsey Crossing)",
+            "address": "<p>1400 W SW Loop 323<br\/>Tyler, Texas 75701<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 707-2000",
+            "button_url": "tel:+19037072000",
+            "url": "shopify:\/\/pages\/tyler-tx-kinsey"
+          }
+        },
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1": {
+          "type": "banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/Cumberland_Exterior_1_8771146d-2ab6-4261-ae6e-44eef9687ce0.jpg",
+            "name": "Tyler, Texas <br>(Cumberland)",
+            "address": "<p>8982 S Broadway Ave<br\/>Tyler, Texas 75703<br\/>USA<\/p>",
+            "label": "Click to call:",
+            "button": "(903) 944-7820",
+            "button_url": "tel:+19039447820",
+            "url": "shopify:\/\/pages\/tyler-tx-cumberland"
+          }
+        }
+      },
+      "block_order": [
+        "cda661e7-f26b-48e1-8de7-80e499b05f0a",
+        "9c7f6458-58ea-4621-b53c-187de15dd063",
+        "a7dc072a-21af-467e-842e-d0f674ae7bf1"
+      ],
+      "settings": {
+        "heading": "Visit Our Stores"
       }
     },
     "1664312891a4b2e7cf": {
@@ -404,59 +453,11 @@
       "settings": {
         "custom_html": "<div class=\"klaviyo-form-REgYdn\"><\/div>"
       }
-    },
-    "stores_banner_tiTihP": {
-      "type": "stores-banner",
-      "blocks": {
-        "cda661e7-f26b-48e1-8de7-80e499b05f0a": {
-          "type": "banner",
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/Longview_Mattress_Clearance_Center.jpg",
-            "name": "Longview, Texas",
-            "address": "<p>106 E Loop 281<br\/>Longview, Texas 75605<br\/>USA<\/p>",
-            "label": "Click to call:",
-            "button": "(903) 220-0704",
-            "button_url": "tel:+19032200704",
-            "url": "shopify:\/\/pages\/longview-tx"
-          }
-        },
-        "9c7f6458-58ea-4621-b53c-187de15dd063": {
-          "type": "banner",
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/Sleep_First_Mattress_Tyler_Kinsey_Exterior_1.jpg",
-            "name": "Tyler, Texas <br>(Kinsey Crossing)",
-            "address": "<p>1400 W SW Loop 323<br\/>Tyler, Texas 75701<br\/>USA<\/p>",
-            "label": "Click to call:",
-            "button": "(903) 707-2000",
-            "button_url": "tel:+19037072000",
-            "url": "shopify:\/\/pages\/tyler-tx-kinsey"
-          }
-        },
-        "a7dc072a-21af-467e-842e-d0f674ae7bf1": {
-          "type": "banner",
-          "settings": {
-            "banner_img": "shopify:\/\/shop_images\/Cumberland_Exterior_1_8771146d-2ab6-4261-ae6e-44eef9687ce0.jpg",
-            "name": "Tyler, Texas <br>(Cumberland)",
-            "address": "<p>8982 S Broadway Ave<br\/>Tyler, Texas 75703<br\/>USA<\/p>",
-            "label": "Click to call:",
-            "button": "(903) 944-7820",
-            "button_url": "tel:+19039447820",
-            "url": "shopify:\/\/pages\/tyler-tx-cumberland"
-          }
-        }
-      },
-      "block_order": [
-        "cda661e7-f26b-48e1-8de7-80e499b05f0a",
-        "9c7f6458-58ea-4621-b53c-187de15dd063",
-        "a7dc072a-21af-467e-842e-d0f674ae7bf1"
-      ],
-      "settings": {
-        "heading": "Visit Our Stores"
-      }
     }
   },
   "order": [
     "997ccedc-e356-4d55-92e0-a365612b885d",
+    "stores_banner_tiTihP",
     "1664312891a4b2e7cf",
     "166431289526836eec",
     "a4641aaf-6c7d-4bd6-9fa2-36c6ad25c37c",
@@ -469,7 +470,6 @@
     "16645689562ca2c00e",
     "1664805458b02e917b",
     "16648223710eccdae6",
-    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5",
-    "stores_banner_tiTihP"
+    "ef2d7284-ce91-4740-91b5-9d1db0eb15f5"
   ]
 }
