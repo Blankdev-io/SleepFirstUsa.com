@@ -8,7 +8,7 @@
         "settings": {
           "color": "#384fae",
           "ann_enable": true,
-          "ann_text": "$300 Amazon.com gift card with any TEMPUR or PURPLE mattress",
+          "ann_text": "$300 Amazon.com gift card with any Tempur-Pedic mattress",
           "mess_color": "#ffffff",
           "url": "shopify:\/\/collections\/tempurpedic",
           "btn_color": "#ffffff",
@@ -35,7 +35,9 @@
           "banner": "shopify:\/\/shop_images\/SleepFirst_Texas_Clearance_On_Sale_Banner_Desktop.png",
           "banner_mobile": "shopify:\/\/shop_images\/SleepFirst_Texas_Clearance_On_Sale_Banner_Mobile.png",
           "banner_url": "shopify:\/\/pages\/clearance-outlet",
+          "banner_1": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-19739.jpg",
           "banner_1_url": "shopify:\/\/collections\/nectar-mattress",
+          "banner_2": "shopify:\/\/shop_images\/1.01-727x350-IRG-ZX-197834.jpg",
           "banner_2_url": "shopify:\/\/collections\/purple"
         }
       },
