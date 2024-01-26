@@ -1,7 +1,7 @@
 {
   "current": {
     "favicon": "shopify:\/\/shop_images\/602397_Shopify_Favicon_SF__120619.png",
-    "financing_checkbox": true,
+    "financing_checkbox": false,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
