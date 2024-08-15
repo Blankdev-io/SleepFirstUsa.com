@@ -178,15 +178,15 @@
           "color": "#133ebf",
           "ann_enable": true,
           "ann_text": "<p><strong>33% OFF<\/strong> any <strong>NECTAR<\/strong> mattres<\/p>",
-          "mess_color": "#FFF",
+          "mess_color": "#ffffff",
           "url": "shopify:\/\/pages\/store-locator",
-          "btn_color": "#FFF",
+          "btn_color": "#ffffff",
           "custom_url_1": "shopify:\/\/pages\/store-locator",
           "custom_text_1": "Find A Store",
-          "text_color1": "#384FAE",
+          "text_color1": "#384fae",
           "custom_url_2": "tel:+18889753371",
           "custom_text_2": "(888) 975-3371",
-          "text_color2": "#384FAE"
+          "text_color2": "#384fae"
         }
       }
     },
@@ -194,12 +194,6 @@
 
     ],
     "blocks": {
-      "3847134708050210359": {
-        "type": "shopify:\/\/apps\/transcy-ai-language-translate\/blocks\/switcher_embed_block\/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "17992116214976573926": {
         "type": "shopify:\/\/apps\/seo-manager-venntov\/blocks\/seomanager\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
         "disabled": true,
@@ -217,11 +211,22 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "3847134708050210359": {
+        "type": "shopify:\/\/apps\/transcy\/blocks\/switcher_embed_block\/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
+        "disabled": true,
+        "settings": {
+        }
       }
     }
   },
   "presets": {
     "Default": {
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+
+    ]
   }
 }
