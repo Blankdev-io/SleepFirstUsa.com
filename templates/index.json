@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "997ccedc-e356-4d55-92e0-a365612b885d": {
@@ -441,7 +450,7 @@
     "16648223710eccdae6": {
       "type": "reviews",
       "settings": {
-        "heading": "Over 4,500 Five Star Reviews",
+        "heading": "THOUSANDS of Five Star Reviews!",
         "principal_logo": "shopify:\/\/shop_images\/logo-sleepfirst_medal.png",
         "left_logo": "shopify:\/\/shop_images\/logo-google.png",
         "right_logo": "shopify:\/\/shop_images\/logo-facebook.png"
