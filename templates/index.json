@@ -11,6 +11,17 @@
   "sections": {
     "997ccedc-e356-4d55-92e0-a365612b885d": {
       "type": "sales-banner-new",
+      "blocks": {
+        "banner_BfYLrq": {
+          "type": "banner",
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_BfYLrq"
+      ],
       "settings": {
         "showStoreLocator": false,
         "position": "1"
